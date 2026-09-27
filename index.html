@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>六年二班 · 班级主页</title>
+<style>
+  :root{
+    --border:rgba(167,139,250,.18);
+    --border-strong:rgba(167,139,250,.38);
+    --primary-light:#a78bfa;
+    --primary-lighter:#c4b5fd;
+    --accent-light:#f0abfc;
+    --text:#f3e8ff;
+    --text-dim:#c4b5fd;
+    --text-muted:#8b7bb8;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(1000px 700px at 15% 0%, rgba(124,58,237,.28), transparent 60%),
+      radial-gradient(900px 600px at 85% 20%, rgba(217,70,239,.16), transparent 60%),
+      radial-gradient(1000px 800px at 50% 100%, rgba(91,33,182,.32), transparent 65%),
+      linear-gradient(180deg,#14081f 0%,#1e0b30 100%);
+    background-attachment:fixed;
+    overflow-x:hidden;
+  }
+
+  /* 导航 */
+  .navbar{
+    position:fixed;top:0;left:0;right:0;height:68px;z-index:200;
+    display:flex;align-items:center;gap:20px;padding:0 26px;
+    background:rgba(20,8,31,.72);
+    backdrop-filter:blur(20px) saturate(160%);
+    -webkit-backdrop-filter:blur(20px) saturate(160%);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-brand{display:flex;align-items:center;gap:11px;cursor:pointer;user-select:none;flex-shrink:0;}
+  .nav-logo{width:38px;height:38px;flex:0 0 38px;filter:drop-shadow(0 4px 10px rgba(167,139,250,.45));transition:transform .3s;}
+  .nav-brand:hover .nav-logo{transform:rotate(-8deg) scale(1.06);}
+  .nav-title{
+    font-size:17px;font-weight:800;letter-spacing:.6px;
+    background:linear-gradient(120deg,#c4b5fd,#f0abfc);
+    -webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;
+  }
+  .nav-sub{font-size:11px;color:var(--text-muted);letter-spacing:1.5px;white-space:nowrap;}
+  .nav-links{
+    display:flex;gap:6px;margin-left:auto;
+    background:rgba(139,92,246,.10);padding:5px;border-radius:999px;
+    border:1px solid var(--border);overflow-x:auto;scrollbar-width:none;
+  }
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-link{
+    border:none;cursor:pointer;font-family:inherit;
+    font-size:13.5px;font-weight:700;letter-spacing:.4px;
+    padding:8px 18px;border-radius:999px;
+    background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap;
+  }
+  .nav-link:hover{color:var(--text);background:rgba(139,92,246,.18);}
+  .nav-link.active{
+    color:#fff;background:linear-gradient(120deg,#7c3aed,#a855f7);
+    box-shadow:0 6px 18px -6px rgba(139,92,246,.9);
+  }
+
+  .view{display:none;}
+  .view.active{display:block;}
+
+  /* 首页 */
+  #view-home{min-height:100vh;padding:120px 24px 70px;display:flex;align-items:center;justify-content:center;}
+  .home-wrap{width:min(820px,100%);text-align:center;animation:fadeUp .8s cubic-bezier(.22,1,.36,1) both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:none;}}
+  .home-logo{
+    width:172px;height:172px;margin:0 auto 26px;display:block;
+    filter:drop-shadow(0 22px 50px rgba(139,92,246,.55));
+    animation:floaty 5s ease-in-out infinite;
+  }
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  .hero-title{
+    font-size:clamp(34px,6vw,52px);font-weight:900;letter-spacing:3px;margin:0 0 10px;
+    background:linear-gradient(120deg,#ddd6fe 0%,#c4b5fd 35%,#f0abfc 70%,#e879f9 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    outline:none;border-radius:12px;padding:4px 16px;cursor:text;transition:background .25s;
+  }
+  .hero-sub{
+    font-size:15.5px;letter-spacing:4px;font-weight:600;color:var(--primary-lighter);
+    margin:0 0 34px;outline:none;cursor:text;border-radius:10px;padding:4px 12px;
+    display:inline-block;transition:background .25s;
+  }
+  .hero-title:focus,.hero-sub:focus{background:rgba(139,92,246,.22);box-shadow:0 0 0 2px rgba(167,139,250,.45);}
+  .intro-card{
+    position:relative;background:rgba(45,17,71,.72);
+    border:1px solid var(--border);border-radius:26px;
+    padding:36px 38px;text-align:left;
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    box-shadow:0 30px 70px -28px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .intro-card::before{
+    content:"班级简介";position:absolute;top:-12px;left:32px;
+    font-size:12px;font-weight:800;letter-spacing:2.5px;color:#fff;
+    background:linear-gradient(120deg,#7c3aed,#c026d3);
+    padding:5px 16px;border-radius:999px;
+    box-shadow:0 8px 20px -8px rgba(139,92,246,.9);
+  }
+  .hero-intro{
+    font-size:15.5px;line-height:2.05;color:var(--text-dim);margin:0;
+    white-space:pre-wrap;word-break:break-word;outline:none;cursor:text;
+    border-radius:12px;padding:8px 10px;min-height:80px;transition:background .25s;
+  }
+  .hero-intro:focus{background:rgba(139,92,246,.14);box-shadow:0 0 0 2px rgba(167,139,250,.35);}
+  .edit-tip{
+    margin-top:22px;font-size:12px;color:var(--text-muted);letter-spacing:1.2px;
+    display:flex;align-items:center;justify-content:center;gap:7px;
+  }
+  .edit-tip .dot{
+    width:6px;height:6px;border-radius:50%;background:var(--accent-light);
+    box-shadow:0 0 10px var(--accent-light);animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+
+  /* 气泡 */
+  #view-bubbles{position:relative;height:100vh;padding-top:68px;}
+  #view-bubbles .stage{position:relative;width:100%;height:100%;overflow:hidden;}
+  .bubble{
+    position:absolute;border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+    cursor:pointer;
+    background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85),rgba(255,255,255,0) 58%),var(--c);
+    box-shadow:0 12px 30px -8px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08),
+      inset 0 -8px 18px rgba(255,255,255,.28),inset 0 4px 10px rgba(255,255,255,.4);
+    transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s;
+    will-change:transform;animation:pop .5s cubic-bezier(.34,1.56,.64,1) backwards;
+    user-select:none;-webkit-tap-highlight-color:transparent;
+  }
+  @keyframes pop{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .bubble:hover{
+    transform:scale(1.09);
+    box-shadow:0 22px 48px -12px rgba(0,0,0,.7),0 0 0 8px rgba(167,139,250,.28),0 0 0 2px rgba(240,171,252,.5);
+    z-index:10;
+  }
+  .bubble:active{transform:scale(.96);}
+  .bub-emoji{line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2));}
+  .bub-name{font-weight:800;line-height:1.1;letter-spacing:.3px;text-shadow:0 1px 2px rgba(255,255,255,.55);color:#2e1065;}
+
+  /* 浮层 */
+  .overlay{
+    position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;
+    background:rgba(20,8,31,.78);
+    backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);
+    opacity:0;pointer-events:none;transition:opacity .3s ease;
+  }
+  .overlay.open{opacity:1;pointer-events:auto;}
+  .card{
+    position:relative;width:min(1000px,100%);max-height:calc(100vh - 48px);overflow:auto;
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:32px;
+    padding:38px 40px;border-radius:30px;
+    background:linear-gradient(160deg,rgba(45,17,71,.96),rgba(30,11,48,.96));
+    border:1px solid var(--border-strong);
+    box-shadow:0 40px 100px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.07);
+    transform:translateY(18px) scale(.97);
+    transition:transform .38s cubic-bezier(.34,1.4,.64,1);
+  }
+  .overlay.open .card{transform:none;}
+  .close-btn{
+    position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;
+    border:1px solid var(--border);cursor:pointer;
+    background:rgba(139,92,246,.14);color:var(--text-dim);font-size:15px;line-height:1;
+    transition:.25s;z-index:2;
+  }
+  .close-btn:hover{background:rgba(139,92,246,.3);color:#fff;transform:rotate(90deg);}
+  .p-left{display:flex;flex-direction:column;align-items:flex-start;}
+  .big-avatar{
+    width:104px;height:104px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:50px;margin-bottom:20px;
+    box-shadow:0 18px 40px -12px rgba(0,0,0,.7),0 0 0 3px rgba(167,139,250,.25),
+      inset 0 -8px 20px rgba(255,255,255,.3),inset 0 4px 12px rgba(255,255,255,.4);
+    animation:floaty 4s ease-in-out infinite;
+  }
+  .p-name{font-size:28px;font-weight:900;margin:0 0 10px;letter-spacing:.5px;color:#fff;}
+  .p-tags{margin-bottom:16px;min-height:24px;}
+  .tag{
+    display:inline-block;padding:4px 12px;margin:0 6px 6px 0;border-radius:999px;
+    background:rgba(139,92,246,.2);border:1px solid rgba(167,139,250,.3);
+    color:var(--primary-lighter);font-size:12.5px;font-weight:700;
+  }
+  .p-intro{font-size:15px;line-height:1.9;color:var(--text-dim);margin:0 0 24px;white-space:pre-wrap;word-break:break-word;}
+  .p-meta{font-size:12.5px;color:var(--text-muted);margin-bottom:22px;letter-spacing:.5px;}
+  .btn-edit{
+    border:none;cursor:pointer;font-family:inherit;padding:11px 24px;border-radius:999px;
+    font-size:14px;font-weight:800;color:#fff;
+    background:linear-gradient(120deg,#7c3aed,#c026d3);
+    box-shadow:0 12px 28px -10px rgba(139,92,246,.95);transition:.22s;
+  }
+  .btn-edit:hover{transform:translateY(-2px);box-shadow:0 18px 34px -10px rgba(139,92,246,1);}
+  .p-right{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px;}
+  .p-right h3{margin:0 0 4px;font-size:13px;color:var(--text-muted);font-weight:800;letter-spacing:3px;}
+  .p-right .sub{font-size:11.5px;color:var(--text-muted);opacity:.7;margin-bottom:8px;}
+  #relGraph{width:100%;height:auto;display:block;}
+
+  /* 弹窗 */
+  .modal{
+    position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:20px;
+    background:rgba(10,4,18,.72);backdrop-filter:blur(8px);
+    opacity:0;pointer-events:none;transition:opacity .25s;
+  }
+  .modal.open{opacity:1;pointer-events:auto;}
+  .modal-box{
+    width:min(580px,100%);max-height:88vh;overflow:auto;
+    background:linear-gradient(160deg,#2d1147,#1e0b30);
+    border:1px solid var(--border-strong);border-radius:24px;padding:30px;
+    box-shadow:0 40px 90px -25px rgba(0,0,0,.95);
+    transform:scale(.96);transition:transform .28s cubic-bezier(.34,1.4,.64,1);
+    color:var(--text);position:relative;
+  }
+  .modal.open .modal-box{transform:none;}
+  .modal-box h3{margin:0 0 22px;font-size:18px;font-weight:800;color:#fff;}
+  .field{margin-bottom:16px;}
+  .field>label{display:block;font-size:12.5px;font-weight:800;color:var(--text-muted);margin-bottom:7px;letter-spacing:.6px;}
+  .field input,.field textarea,.rel-row select,.rel-row input[type=text]{
+    width:100%;padding:10px 14px;border-radius:12px;
+    border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);
+    color:var(--text);font-size:14px;font-family:inherit;outline:none;
+    transition:border-color .2s,background .2s,box-shadow .2s;
+  }
+  .field input:focus,.field textarea:focus,.rel-row select:focus,.rel-row input[type=text]:focus{
+    border-color:var(--primary-light);background:rgba(20,8,31,.9);
+    box-shadow:0 0 0 4px rgba(139,92,246,.22);
+  }
+  .field textarea{resize:vertical;min-height:84px;line-height:1.7;}
+  .row2{display:grid;grid-template-columns:1fr 110px;gap:12px;}
+  .rel-head{display:flex;align-items:center;justify-content:space-between;margin:22px 0 10px;}
+  .rel-head span{font-size:12.5px;font-weight:800;color:var(--text-muted);letter-spacing:.6px;}
+  .btn-add{
+    border:1px dashed rgba(167,139,250,.45);background:rgba(139,92,246,.14);
+    color:var(--primary-lighter);font-family:inherit;font-size:12.5px;font-weight:800;
+    padding:6px 14px;border-radius:999px;cursor:pointer;transition:.2s;
+  }
+  .btn-add:hover{background:rgba(139,92,246,.3);color:#fff;}
+  .rel-row{display:flex;gap:8px;align-items:center;margin-bottom:9px;}
+  .rel-row select{flex:0 0 122px;padding:9px 10px;font-size:13px;}
+  .rel-row input[type=text]{flex:1 1 60px;min-width:0;padding:9px 12px;font-size:13px;}
+  .rel-row input[type=range]{flex:0 0 72px;accent-color:var(--primary-light);}
+  .rel-del{
+    flex:0 0 30px;height:30px;border-radius:50%;border:none;
+    background:rgba(239,68,68,.15);color:#fca5a5;cursor:pointer;font-size:12px;transition:.2s;
+  }
+  .rel-del:hover{background:rgba(239,68,68,.32);}
+  .modal-actions{
+    display:flex;justify-content:flex-end;gap:10px;margin-top:26px;padding-top:20px;
+    border-top:1px solid rgba(167,139,250,.16);
+  }
+  .modal-actions button{
+    font-family:inherit;font-size:14px;font-weight:800;
+    padding:10px 24px;border-radius:12px;cursor:pointer;border:none;transition:.2s;
+  }
+  .btn-cancel{background:rgba(139,92,246,.14);color:var(--text-dim);}
+  .btn-cancel:hover{background:rgba(139,92,246,.26);color:#fff;}
+  .btn-save{
+    background:linear-gradient(120deg,#7c3aed,#c026d3);color:#fff;
+    box-shadow:0 12px 26px -10px rgba(139,92,246,.95);
+  }
+  .btn-save:hover{transform:translateY(-2px);}
+
+  /* 加分 */
+  #view-score{min-height:100vh;padding:104px 24px 70px;}
+  .score-wrap{max-width:1280px;margin:0 auto;}
+  .score-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:14px;}
+  .score-header h2{
+    font-size:26px;margin:0;
+    background:linear-gradient(120deg,#ddd6fe,#f0abfc);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-weight:900;letter-spacing:2px;display:flex;align-items:center;gap:12px;
+  }
+  .score-header h2 .ico{font-size:24px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6));}
+  .score-header-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .score-search{
+    border:1px solid var(--border-strong);background:rgba(139,92,246,.12);
+    color:var(--text);font-family:inherit;padding:9px 18px;border-radius:999px;
+    outline:none;font-size:13px;width:190px;transition:.2s;
+  }
+  .score-search:focus{background:rgba(139,92,246,.22);border-color:var(--primary-light);box-shadow:0 0 0 4px rgba(139,92,246,.18);}
+  .score-btn{
+    border:1px solid var(--border-strong);background:rgba(139,92,246,.14);
+    color:var(--primary-lighter);font-family:inherit;font-size:13px;font-weight:700;
+    padding:9px 18px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap;
+  }
+  .score-btn:hover{background:rgba(139,92,246,.3);color:#fff;}
+  .score-btn.danger{color:#fca5a5;border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.1);}
+  .score-btn.danger:hover{background:rgba(239,68,68,.25);color:#fff;}
+
+  .students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:36px;}
+  .student-card{
+    position:relative;background:linear-gradient(160deg,rgba(45,17,71,.9),rgba(30,11,48,.9));
+    border:1px solid var(--border);border-radius:20px;padding:16px 16px 14px;
+    overflow:hidden;transition:.3s;box-shadow:0 16px 40px -22px rgba(0,0,0,.7);
+  }
+  .student-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:3px;
+    background:var(--c,#a78bfa);box-shadow:0 0 16px -2px var(--c,#a78bfa);
+  }
+  .student-card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:0 24px 50px -22px rgba(0,0,0,.8);}
+  .student-top{display:flex;align-items:center;gap:11px;margin-bottom:12px;}
+  .student-avatar{
+    width:46px;height:46px;flex:0 0 46px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:24px;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.55),inset 0 -4px 10px rgba(255,255,255,.2),inset 0 2px 6px rgba(255,255,255,.35);
+    background:var(--c,#a78bfa);
+  }
+  .student-info{flex:1;min-width:0;}
+  .student-name{
+    font-size:15px;font-weight:800;color:#fff;outline:none;border-radius:6px;
+    padding:2px 6px;margin-left:-6px;transition:.2s;cursor:text;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block;
+  }
+  .student-name:focus{background:rgba(139,92,246,.2);box-shadow:0 0 0 2px rgba(167,139,250,.4);}
+  .student-tags{font-size:10.5px;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;}
+  .student-score-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;gap:8px;}
+  .student-score-label{font-size:10.5px;color:var(--text-muted);letter-spacing:1.5px;font-weight:700;}
+  .student-score{
+    font-size:26px;font-weight:900;color:var(--c,#a78bfa);
+    text-shadow:0 0 18px var(--c,#a78bfa);font-variant-numeric:tabular-nums;line-height:1;
+  }
+  .student-add{display:flex;gap:5px;flex-wrap:wrap;}
+  .score-add-btn{
+    flex:1 1 34px;border:1px solid rgba(167,139,250,.3);
+    background:rgba(139,92,246,.15);color:#fff;font-family:inherit;
+    font-size:12.5px;font-weight:800;padding:7px 0;border-radius:10px;cursor:pointer;
+    transition:.2s;font-variant-numeric:tabular-nums;min-width:0;
+  }
+  .score-add-btn:hover{background:rgba(139,92,246,.4);border-color:var(--primary-light);transform:translateY(-1px);}
+  .score-add-btn.minus{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.12);color:#fca5a5;}
+  .score-add-btn.minus:hover{background:rgba(239,68,68,.3);border-color:rgba(239,68,68,.6);color:#fff;}
+
+  /* 记录 */
+  .records-section{
+    background:linear-gradient(160deg,rgba(45,17,71,.7),rgba(30,11,48,.7));
+    border:1px solid var(--border);border-radius:24px;padding:26px 28px;
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    margin-bottom:24px;
+  }
+  .records-section h3{
+    font-size:16px;margin:0 0 18px;color:var(--text-dim);letter-spacing:2px;font-weight:800;
+    display:flex;align-items:center;gap:10px;
+  }
+  .records-section h3::before{content:"";width:4px;height:18px;border-radius:2px;background:linear-gradient(180deg,#a78bfa,#c026d3);}
+  .records-section h3 .count{font-size:12px;color:var(--text-muted);font-weight:600;letter-spacing:0;margin-left:auto;}
+  .records-list{display:flex;flex-direction:column;gap:8px;max-height:440px;overflow-y:auto;padding-right:6px;}
+  .records-list::-webkit-scrollbar{width:6px;}
+  .records-list::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:3px;}
+  .record-item{
+    display:flex;align-items:center;gap:12px;padding:11px 16px;
+    background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.1);
+    border-radius:12px;font-size:13.5px;animation:slideIn .35s ease backwards;
+  }
+  @keyframes slideIn{from{opacity:0;transform:translateX(-10px);}to{opacity:1;transform:none;}}
+  .record-delta{font-weight:900;font-size:15px;min-width:52px;font-variant-numeric:tabular-nums;text-align:center;flex-shrink:0;}
+  .record-delta.plus{color:#86efac;}
+  .record-delta.minus{color:#fca5a5;}
+  .record-avatar{width:26px;height:26px;flex:0 0 26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .record-student{font-weight:700;color:var(--primary-lighter);min-width:60px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .record-reason{flex:1;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;}
+  .record-time{
+    font-size:11.5px;color:#a78bfa;font-weight:700;font-variant-numeric:tabular-nums;
+    white-space:nowrap;flex-shrink:0;background:rgba(139,92,246,.12);
+    padding:3px 9px;border-radius:8px;border:1px solid rgba(167,139,250,.18);
+    letter-spacing:.3px;
+  }
+  .record-undo{
+    border:none;background:rgba(139,92,246,.15);color:var(--text-dim);
+    font-family:inherit;font-size:11px;font-weight:700;padding:5px 10px;
+    border-radius:8px;cursor:pointer;transition:.2s;flex-shrink:0;
+  }
+  .record-undo:hover{background:rgba(139,92,246,.4);color:#fff;}
+  .empty-records{text-align:center;color:var(--text-muted);font-size:13px;padding:34px 0;letter-spacing:1px;}
+  .empty-records .ico{display:block;font-size:32px;margin-bottom:10px;opacity:.5;}
+
+  /* 排行榜 */
+  .leaderboard-section{
+    background:linear-gradient(160deg,rgba(91,33,182,.35),rgba(45,17,71,.85));
+    border:1px solid rgba(240,171,252,.25);
+    border-radius:24px;padding:26px 28px;
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    box-shadow:0 20px 60px -28px rgba(240,171,252,.45),inset 0 1px 0 rgba(255,255,255,.06);
+    position:relative;overflow:hidden;
+  }
+  .leaderboard-section::before{
+    content:"";position:absolute;top:-50%;right:-20%;width:340px;height:340px;
+    background:radial-gradient(circle,rgba(240,171,252,.22),transparent 65%);
+    pointer-events:none;
+  }
+  .leaderboard-section h3{
+    font-size:16px;margin:0 0 20px;color:#fff;letter-spacing:2px;font-weight:800;
+    display:flex;align-items:center;gap:10px;position:relative;
+  }
+  .leaderboard-section h3::before{
+    content:"";width:4px;height:18px;border-radius:2px;
+    background:linear-gradient(180deg,#fbbf24,#f0abfc);
+    box-shadow:0 0 12px rgba(251,191,36,.7);
+  }
+  .leaderboard-section h3 .hint{
+    font-size:11.5px;color:var(--text-muted);font-weight:600;letter-spacing:0;margin-left:auto;
+  }
+  .leaderboard-list{display:flex;flex-direction:column;gap:10px;position:relative;}
+  .leaderboard-item{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;border-radius:16px;
+    background:rgba(20,8,31,.55);
+    border:1px solid rgba(167,139,250,.12);
+    transition:.28s;animation:slideIn .4s ease backwards;
+    position:relative;overflow:hidden;
+  }
+  .leaderboard-item:hover{
+    border-color:var(--border-strong);
+    transform:translateX(6px);
+    background:rgba(20,8,31,.75);
+  }
+  .leaderboard-rank{
+    width:42px;height:42px;flex:0 0 42px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:17px;font-weight:900;font-variant-numeric:tabular-nums;
+    background:rgba(139,92,246,.18);
+    border:2px solid rgba(167,139,250,.3);
+    color:var(--primary-lighter);
+  }
+  .leaderboard-item.rank-1{
+    background:linear-gradient(120deg,rgba(251,191,36,.16),rgba(20,8,31,.6));
+    border-color:rgba(251,191,36,.45);
+    box-shadow:0 0 30px -10px rgba(251,191,36,.55);
+  }
+  .leaderboard-item.rank-1 .leaderboard-rank{
+    background:linear-gradient(135deg,#fde68a,#f59e0b);
+    border-color:#fef3c7;color:#78350f;
+    box-shadow:0 0 22px rgba(251,191,36,.85);
+    font-size:20px;
+  }
+  .leaderboard-item.rank-2{
+    background:linear-gradient(120deg,rgba(229,231,235,.13),rgba(20,8,31,.6));
+    border-color:rgba(229,231,235,.4);
+  }
+  .leaderboard-item.rank-2 .leaderboard-rank{
+    background:linear-gradient(135deg,#f3f4f6,#9ca3af);
+    border-color:#f9fafb;color:#374151;
+    box-shadow:0 0 16px rgba(229,231,235,.6);
+  }
+  .leaderboard-item.rank-3{
+    background:linear-gradient(120deg,rgba(217,119,6,.14),rgba(20,8,31,.6));
+    border-color:rgba(217,119,6,.4);
+  }
+  .leaderboard-item.rank-3 .leaderboard-rank{
+    background:linear-gradient(135deg,#fbbf24,#b45309);
+    border-color:#fcd34d;color:#fff;
+    box-shadow:0 0 16px rgba(217,119,6,.65);
+  }
+  .leaderboard-avatar{
+    width:46px;height:46px;flex:0 0 46px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:23px;
+    box-shadow:inset 0 -4px 10px rgba(255,255,255,.22),0 4px 14px -4px rgba(0,0,0,.6);
+  }
+  .leaderboard-name{
+    flex:1;font-size:15.5px;font-weight:800;color:#fff;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;
+  }
+  .leaderboard-score{
+    font-size:24px;font-weight:900;font-variant-numeric:tabular-nums;
+    color:#86efac;text-shadow:0 0 16px rgba(134,239,172,.7);
+    line-height:1;flex-shrink:0;
+  }
+  .leaderboard-item.rank-1 .leaderboard-score{
+    color:#fbbf24;text-shadow:0 0 20px rgba(251,191,36,.95);
+  }
+  .leaderboard-medal{
+    font-size:22px;flex-shrink:0;line-height:1;
+    filter:drop-shadow(0 2px 6px rgba(0,0,0,.45));
+  }
+
+  /* 老师 */
+  #view-teachers{min-height:100vh;padding:104px 24px 70px;}
+  .teacher-wrap{max-width:1180px;margin:0 auto;}
+  .teacher-header{text-align:center;margin-bottom:46px;}
+  .teacher-header h2{
+    font-size:30px;margin:0 0 10px;
+    background:linear-gradient(120deg,#ddd6fe,#f0abfc);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:12px;
+  }
+  .teacher-header h2 .ico{font-size:28px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6));}
+  .teacher-hint{font-size:13px;color:var(--text-muted);letter-spacing:1.8px;margin:0;}
+  .teachers-grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    gap:26px;max-width:1080px;margin:0 auto;
+  }
+  .teacher-card{
+    position:relative;display:flex;flex-direction:column;align-items:center;gap:13px;
+    padding:28px 16px 22px;border-radius:26px;
+    background:linear-gradient(160deg,rgba(45,17,71,.75),rgba(30,11,48,.75));
+    border:1px solid var(--border);cursor:pointer;transition:.32s;overflow:hidden;
+    box-shadow:0 16px 40px -22px rgba(0,0,0,.7);
+  }
+  .teacher-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:var(--c);box-shadow:0 0 22px -2px var(--c);border-radius:26px 26px 0 0;
+  }
+  .teacher-card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:0 32px 70px -25px rgba(0,0,0,.85);}
+  .teacher-avatar-circle{
+    width:154px;height:154px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:76px;
+    background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85),rgba(255,255,255,0) 60%),var(--c);
+    box-shadow:0 20px 48px -12px rgba(0,0,0,.7),0 0 0 4px rgba(167,139,250,.2),
+      inset 0 -10px 24px rgba(255,255,255,.3),inset 0 5px 14px rgba(255,255,255,.45);
+    transition:.35s cubic-bezier(.34,1.56,.64,1);flex-shrink:0;
+  }
+  .teacher-card:hover .teacher-avatar-circle{
+    transform:scale(1.06);
+    box-shadow:0 28px 60px -14px rgba(0,0,0,.85),0 0 0 9px rgba(167,139,250,.32),0 0 50px rgba(240,171,252,.4);
+  }
+  .teacher-name{font-size:20px;font-weight:800;color:#fff;letter-spacing:1px;}
+  .teacher-subject{
+    font-size:12.5px;font-weight:700;padding:4px 14px;border-radius:999px;
+    background:rgba(139,92,246,.2);border:1px solid rgba(167,139,250,.3);
+    color:var(--primary-lighter);letter-spacing:1.5px;
+  }
+  .teacher-counts{display:flex;gap:14px;font-size:13px;color:var(--text-dim);font-weight:800;margin-top:2px;}
+  .teacher-counts span{
+    display:flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums;
+    padding:3px 10px;border-radius:999px;
+    background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.1);
+  }
+  .teacher-modal-box{width:min(540px,100%);}
+  .teacher-modal-head{display:flex;align-items:center;gap:18px;margin-bottom:22px;}
+  .teacher-modal-avatar{
+    width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:46px;flex-shrink:0;background:var(--c,#a78bfa);
+    box-shadow:0 16px 38px -12px rgba(0,0,0,.75),0 0 0 3px rgba(167,139,250,.2),
+      inset 0 -8px 20px rgba(255,255,255,.3),inset 0 4px 12px rgba(255,255,255,.4);
+  }
+  .teacher-modal-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px;}
+  .teacher-input-name{
+    width:100%;padding:9px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);
+    background:rgba(20,8,31,.6);color:#fff;font-family:inherit;font-size:17px;font-weight:800;
+    outline:none;transition:.2s;
+  }
+  .teacher-input-subject{
+    width:100%;padding:7px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);
+    background:rgba(20,8,31,.6);color:var(--text-dim);font-family:inherit;
+    font-size:12.5px;font-weight:700;letter-spacing:1px;outline:none;transition:.2s;
+  }
+  .teacher-input-name:focus,.teacher-input-subject:focus{
+    border-color:var(--primary-light);background:rgba(20,8,31,.9);box-shadow:0 0 0 4px rgba(139,92,246,.22);
+  }
+  .teacher-gift-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 4px;}
+  .gift-stat{
+    display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;
+    border-radius:14px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);font-weight:700;
+  }
+  .gift-stat-emoji{font-size:20px;}
+  .gift-stat-count{font-size:22px;font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1;}
+  .gift-stat-label{font-size:11.5px;color:var(--text-muted);letter-spacing:1px;}
+  .gift-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px;}
+  .gift-btn{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    padding:18px 12px;border-radius:18px;border:1px solid transparent;
+    font-family:inherit;font-size:14px;font-weight:800;letter-spacing:1.5px;
+    cursor:pointer;transition:.25s;color:#fff;position:relative;overflow:hidden;
+  }
+  .gift-btn-emoji{font-size:34px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));transition:transform .35s cubic-bezier(.34,1.56,.64,1);line-height:1;}
+  .gift-btn:hover .gift-btn-emoji{transform:scale(1.28) rotate(-10deg);}
+  .gift-btn:active{transform:scale(.97);}
+  .gift-btn-flower{background:linear-gradient(135deg,rgba(244,114,182,.32),rgba(217,70,239,.32));border-color:rgba(244,114,182,.5);box-shadow:0 12px 30px -12px rgba(244,114,182,.75);}
+  .gift-btn-flower:hover{background:linear-gradient(135deg,rgba(244,114,182,.55),rgba(217,70,239,.55));box-shadow:0 18px 42px -12px rgba(244,114,182,1);transform:translateY(-3px);}
+  .gift-btn-heart{background:linear-gradient(135deg,rgba(239,68,68,.32),rgba(236,72,153,.32));border-color:rgba(239,68,68,.5);box-shadow:0 12px 30px -12px rgba(239,68,68,.75);}
+  .gift-btn-heart:hover{background:linear-gradient(135deg,rgba(239,68,68,.55),rgba(236,72,153,.55));box-shadow:0 18px 42px -12px rgba(239,68,68,1);transform:translateY(-3px);}
+
+  #giftLayer{position:fixed;inset:0;pointer-events:none;z-index:600;overflow:hidden;}
+  .gift-particle{
+    position:absolute;bottom:-90px;will-change:transform,opacity;
+    animation:giftFloat 2s cubic-bezier(.22,.61,.36,1) forwards;
+    filter:drop-shadow(0 0 10px rgba(240,171,252,.65));user-select:none;
+  }
+  @keyframes giftFloat{
+    0%{transform:translateY(0) translateX(0) scale(.4) rotate(0deg);opacity:0;}
+    18%{opacity:1;transform:translateY(-14vh) translateX(calc(var(--drift) * .25)) scale(1.1) rotate(50deg);}
+    100%{transform:translateY(-118vh) translateX(var(--drift)) scale(1.35) rotate(420deg);opacity:0;}
+  }
+
+  @media (max-width:780px){
+    .navbar{padding:0 12px;gap:8px;height:60px;}
+    .nav-logo{width:32px;height:32px;flex-basis:32px;}
+    .nav-title{font-size:14px;}
+    .nav-sub{display:none;}
+    .nav-link{padding:7px 11px;font-size:11.5px;}
+    #view-home{padding:92px 16px 50px;}
+    .home-logo{width:126px;height:126px;margin-bottom:20px;}
+    .intro-card{padding:30px 22px;border-radius:22px;}
+    #view-bubbles{padding-top:60px;}
+    #view-score{padding:88px 14px 50px;}
+    .score-header h2{font-size:20px;}
+    .score-search{width:130px;padding:8px 14px;font-size:12.5px;}
+    .students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+    .student-card{padding:13px 13px 12px;border-radius:16px;}
+    .student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px;}
+    .student-name{font-size:13px;}
+    .student-score{font-size:22px;}
+    .score-add-btn{font-size:11px;padding:6px 0;}
+    .records-section{padding:20px 16px;border-radius:20px;}
+    .record-item{padding:9px 11px;font-size:12.5px;gap:8px;}
+    .record-delta{min-width:44px;font-size:13.5px;}
+    .record-student{min-width:48px;}
+    .record-time{font-size:10px;padding:2px 7px;}
+    .record-undo{font-size:10px;padding:4px 8px;}
+    .leaderboard-section{padding:20px 16px;border-radius:20px;}
+    .leaderboard-section h3{font-size:14px;}
+    .leaderboard-section h3 .hint{font-size:10px;}
+    .leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px;}
+    .leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px;}
+    .leaderboard-item.rank-1 .leaderboard-rank{font-size:17px;}
+    .leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px;}
+    .leaderboard-name{font-size:13.5px;}
+    .leaderboard-score{font-size:20px;}
+    .leaderboard-medal{font-size:18px;}
+    #view-teachers{padding:88px 16px 50px;}
+    .teacher-header h2{font-size:22px;}
+    .teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px;}
+    .teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px;}
+    .teacher-avatar-circle{width:112px;height:112px;font-size:56px;}
+    .teacher-name{font-size:16px;}
+    .teacher-subject{font-size:11px;padding:3px 11px;}
+    .teacher-counts{font-size:11.5px;gap:8px;}
+    .teacher-modal-avatar{width:74px;height:74px;font-size:36px;}
+    .gift-btn{padding:14px 8px;font-size:12.5px;}
+    .gift-btn-emoji{font-size:28px;}
+    .card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px;}
+    .big-avatar{width:80px;height:80px;font-size:38px;}
+    .p-name{font-size:23px;}
+    .p-right{min-height:auto;}
+    .close-btn{top:14px;right:14px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="giftLayer"></div>
+
+<nav class="navbar">
+  <div class="nav-brand" id="navBrand">
+    <svg class="nav-logo" viewBox="0 0 240 240">
+      <defs>
+        <linearGradient id="ng1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#c4b5fd"/>
+          <stop offset="100%" stop-color="#e879f9"/>
+        </linearGradient>
+        <radialGradient id="ng2" cx="0.5" cy="0.4">
+          <stop offset="0%" stop-color="#4c1d95"/>
+          <stop offset="100%" stop-color="#1e0b30"/>
+        </radialGradient>
+      </defs>
+      <circle cx="120" cy="120" r="105" fill="url(#ng2)" stroke="url(#ng1)" stroke-width="5"/>
+      <path d="M120 60 L127 82 L150 82 L131.5 96 L138.5 118.5 L120 104.5 L101.5 118.5 L108.5 96 L90 82 L113 82 Z" fill="url(#ng1)"/>
+      <path d="M80 144 Q99.5 132 120 146 L120 182 Q99.5 168 80 180 Z" fill="#a78bfa"/>
+      <path d="M160 144 Q140.5 132 120 146 L120 182 Q140.5 168 160 180 Z" fill="#8b5cf6"/>
+    </svg>
+    <span class="nav-title" id="navTitleText">六年二班</span>
+    <span class="nav-sub">北邮附小</span>
+  </div>
+  <div class="nav-links">
+    <button class="nav-link active" data-view="home">首页</button>
+    <button class="nav-link" data-view="bubbles">班级关系图</button>
+    <button class="nav-link" data-view="score">个人加分</button>
+    <button class="nav-link" data-view="teachers">老师</button>
+  </div>
+</nav>
+
+<section id="view-home" class="view active">
+  <div class="home-wrap">
+    <svg class="home-logo" viewBox="0 0 240 240">
+      <defs>
+        <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#c4b5fd"/>
+          <stop offset="50%" stop-color="#e879f9"/>
+          <stop offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+        <radialGradient id="lg2" cx="0.5" cy="0.38">
+          <stop offset="0%" stop-color="#5b21b6"/>
+          <stop offset="70%" stop-color="#2d1147"/>
+          <stop offset="100%" stop-color="#1a0a2a"/>
+        </radialGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <circle cx="120" cy="120" r="116" fill="url(#lg1)" opacity="0.12"/>
+      <circle cx="120" cy="120" r="98" fill="url(#lg2)" stroke="url(#lg1)" stroke-width="4.5"/>
+      <circle cx="120" cy="120" r="85" fill="none" stroke="url(#lg1)" stroke-width="1.4" opacity="0.55"/>
+      <path d="M120 52 L127.5 75.5 L152 75.5 L132.5 90.5 L140 114 L120 99 L100 114 L107.5 90.5 L88 75.5 L112.5 75.5 Z" fill="url(#lg1)" filter="url(#glow)"/>
+      <path d="M76 142 Q98 129.5 120 144 L120 184 Q98 169.5 76 182 Z" fill="#a78bfa"/>
+      <path d="M164 142 Q142 129.5 120 144 L120 184 Q142 169.5 164 182 Z" fill="#8b5cf6"/>
+      <path d="M120 144 L120 184" stroke="#3b0764" stroke-width="2.6" opacity="0.7"/>
+    </svg>
+    <h1 class="hero-title" contenteditable="true" spellcheck="false" data-key="className">六年二班</h1>
+    <p class="hero-sub" contenteditable="true" spellcheck="false" data-key="schoolName">北京邮电大学附属小学</p>
+    <div class="intro-card">
+      <p class="hero-intro" contenteditable="true" spellcheck="false" data-key="intro">六年二班是一个温暖又热闹的大家庭。我们在这里一起读书、一起运动、一起长大。
+
+北邮附小见证着我们的每一次进步，每一张笑脸都是班级最珍贵的风景。愿我们永远保持好奇与热爱，把这段时光写成最棒的故事。</p>
+    </div>
+    <div class="edit-tip"><span class="dot"></span><span>点击文字即可直接编辑，内容会自动保存</span></div>
+  </div>
+</section>
+
+<section id="view-bubbles" class="view">
+  <div class="stage" id="stage"></div>
+</section>
+
+<section id="view-score" class="view">
+  <div class="score-wrap">
+    <div class="score-header">
+      <h2><span class="ico">🏆</span>个人加分系统</h2>
+      <div class="score-header-actions">
+        <input type="text" id="studentSearch" class="score-search" placeholder="🔍 搜索同学…">
+        <button class="score-btn danger" id="clearRecordsBtn">清空记录</button>
+      </div>
+    </div>
+
+    <div class="students-grid" id="studentsGrid"></div>
+
+    <div class="records-section">
+      <h3>加分记录 <span class="count" id="recordsCount"></span></h3>
+      <div class="records-list" id="recordsList"></div>
+    </div>
+
+    <div class="leaderboard-section">
+      <h3>🥇 表扬前五排行榜 <span class="hint">实时更新</span></h3>
+      <div class="leaderboard-list" id="leaderboardList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="view-teachers" class="view">
+  <div class="teacher-wrap">
+    <div class="teacher-header">
+      <h2><span class="ico">🎓</span>我们的老师</h2>
+      <p class="teacher-hint">点击老师，送上一束花或一颗爱心 💐❤️</p>
+    </div>
+    <div class="teachers-grid" id="teachersGrid"></div>
+  </div>
+</section>
+
+<div class="overlay" id="overlay">
+  <div class="card" id="profileCard">
+    <button class="close-btn" id="closeProfile">✕</button>
+    <div class="p-left">
+      <div class="big-avatar" id="pAvatar">🙂</div>
+      <h2 class="p-name" id="pName"></h2>
+      <div class="p-tags" id="pTags"></div>
+      <p class="p-intro" id="pIntro"></p>
+      <div class="p-meta" id="pMeta"></div>
+      <button class="btn-edit" id="editBtn">✏️ 编辑资料</button>
+    </div>
+    <div class="p-right">
+      <h3>关系图</h3>
+      <div class="sub">线的粗细 = 关系亲密度</div>
+      <svg id="relGraph" viewBox="0 0 500 480" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>✏️ 编辑资料</h3>
+    <div class="field"><label>昵称</label><input type="text" id="fName"></div>
+    <div class="row2">
+      <div class="field"><label>头像 Emoji</label><input type="text" id="fEmoji" maxlength="4"></div>
+      <div class="field"><label>主题色</label><input type="color" id="fColor" style="height:42px;padding:4px;cursor:pointer;"></div>
+    </div>
+    <div class="field"><label>个人简介</label><textarea id="fIntro"></textarea></div>
+    <div class="field"><label>标签（用逗号分隔）</label><input type="text" id="fTags"></div>
+    <div class="rel-head"><span>我的关系网</span><button class="btn-add" id="addRelBtn">+ 添加关系</button></div>
+    <div id="relList"></div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="cancelBtn">取消</button>
+      <button class="btn-save" id="saveBtn">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="teacherModal">
+  <div class="modal-box teacher-modal-box">
+    <button class="close-btn" id="closeTeacherModal">✕</button>
+    <h3>🎓 老师主页</h3>
+    <div class="teacher-modal-head">
+      <div class="teacher-modal-avatar" id="tmAvatar">👩‍🏫</div>
+      <div class="teacher-modal-info">
+        <input type="text" class="teacher-input-name" id="tmName" placeholder="老师姓名">
+        <input type="text" class="teacher-input-subject" id="tmSubject" placeholder="科目 / 职务">
+      </div>
+    </div>
+    <div class="field"><label>简介</label><textarea id="tmIntro"></textarea></div>
+    <div class="teacher-gift-stats">
+      <div class="gift-stat"><span class="gift-stat-emoji">🌸</span><span class="gift-stat-count" id="tmFlowers">0</span><span class="gift-stat-label">朵花</span></div>
+      <div class="gift-stat"><span class="gift-stat-emoji">❤️</span><span class="gift-stat-count" id="tmHearts">0</span><span class="gift-stat-label">颗爱心</span></div>
+    </div>
+    <div class="gift-buttons">
+      <button class="gift-btn gift-btn-flower" id="sendFlowerBtn"><span class="gift-btn-emoji">💐</span><span>送一束花</span></button>
+      <button class="gift-btn gift-btn-heart" id="sendHeartBtn"><span class="gift-btn-emoji">💖</span><span>送爱心</span></button>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" id="cancelTeacherBtn">取消</button>
+      <button class="btn-save" id="saveTeacherBtn">保存</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ========== 常量 ========== */
+const STORAGE_KEY = 'class-bubbles-v3';
+const HOME_KEY = 'class-home-v1';
+const SCORE_KEY = 'class-score-v3';
+const TEACHERS_KEY = 'class-teachers-v1';
+
+const HOME_DEFAULT = {
+  className:'六年二班',
+  schoolName:'北京邮电大学附属小学',
+  intro:'六年二班是一个温暖又热闹的大家庭。我们在这里一起读书、一起运动、一起长大。\n\n北邮附小见证着我们的每一次进步，每一张笑脸都是班级最珍贵的风景。愿我们永远保持好奇与热爱，把这段时光写成最棒的故事。'
+};
+
+const COLORS = ['#c4b5fd','#e9d5ff','#f0abfc','#ddd6fe','#d8b4fe','#a78bfa','#f5d0fe','#c084fc','#e879f9','#ede9fe'];
+
+const BASE = [
+  {id:'p1',name:'林小雨',emoji:'🌧️',intro:'喜欢下雨天和耳机里的歌，\n画画是我和世界说话的方式。',tags:['画画','民谣','猫']},
+  {id:'p2',name:'陈子航',emoji:'⚽',intro:'球场上的位置：哪里缺人补哪里。',tags:['足球','篮球','熬夜']},
+  {id:'p3',name:'苏念',emoji:'📚',intro:'看书很快，写字很慢。',tags:['阅读','写作','历史']},
+  {id:'p4',name:'王浩',emoji:'🎮',intro:'每天上分一小时（实际三小时）。',tags:['游戏','编程','B站']},
+  {id:'p5',name:'李思远',emoji:'🎸',intro:'吉他初学者，弹得最好的是《晴天》。',tags:['吉他','唱歌','周杰伦']},
+  {id:'p6',name:'周佳怡',emoji:'🍰',intro:'甜品鉴赏家，兼职数学课代表。',tags:['烘焙','数学','奶茶']},
+  {id:'p7',name:'赵一鸣',emoji:'🏀',intro:'身高是优势，投篮是玄学。',tags:['篮球','球鞋','说唱']},
+  {id:'p8',name:'孙悦',emoji:'🎬',intro:'电影看得比作业多。',tags:['电影','摄影','剪辑']},
+  {id:'p9',name:'吴桐',emoji:'🌱',intro:'养了七盆多肉，活下来三盆。',tags:['植物','手工','安静']},
+  {id:'p10',name:'郑亦然',emoji:'🐱',intro:'猫派，坚定不移。',tags:['猫','画画','二次元']},
+  {id:'p11',name:'刘星宇',emoji:'🚀',intro:'想造火箭，先从物理及格开始。',tags:['物理','天文','科幻']},
+  {id:'p12',name:'何雨薇',emoji:'🎹',intro:'钢琴十级，最近在学即兴。',tags:['钢琴','古典乐','日语']},
+  {id:'p13',name:'马小跳',emoji:'🏃',intro:'课间十分钟能跑三圈操场。',tags:['跑步','田径','活力']},
+  {id:'p14',name:'许安然',emoji:'☕',intro:'安静地待在角落，偶尔说一句很好笑的话。',tags:['咖啡','手账','独立音乐']},
+  {id:'p15',name:'高一诺',emoji:'🎨',intro:'美术生，随时在速写本上涂涂画画。',tags:['美术','设计','展览']},
+  {id:'p16',name:'黄子豪',emoji:'🍜',intro:'学校周边美食活地图。',tags:['美食','探店','相声']},
+  {id:'p17',name:'徐一诺',emoji:'🎭',intro:'话剧社主力，最喜欢扮演反派。',tags:['话剧','表演','配音']},
+  {id:'p18',name:'曹雨欣',emoji:'🌸',intro:'喜欢春天，也喜欢所有粉色的东西。',tags:['春天','粉色','手工']},
+  {id:'p19',name:'沈嘉树',emoji:'🌳',intro:'立志把教室窗台的绿植养活。',tags:['植物','环保','徒步']},
+  {id:'p20',name:'韩雪',emoji:'❄️',intro:'冬天出生的，所以不怕冷。',tags:['滑雪','阅读','安静']},
+  {id:'p21',name:'唐子墨',emoji:'🖋️',intro:'字写得还不错，可以帮同学抄笔记。',tags:['书法','写作','历史']},
+  {id:'p22',name:'顾念',emoji:'🍀',intro:'运气型选手，考试全靠蒙对。',tags:['幸运','游戏','音乐']},
+  {id:'p23',name:'程宇航',emoji:'🛰️',intro:'航天迷，梦想去酒泉看一次发射。',tags:['航天','天文','科幻']},
+  {id:'p24',name:'卢佳琪',emoji:'🎤',intro:'唱歌跑调，但热情不减。',tags:['唱歌','K歌','综艺']},
+  {id:'p25',name:'蒋子涵',emoji:'🏊',intro:'夏天最期待的就是游泳课。',tags:['游泳','运动','夏天']},
+  {id:'p26',name:'宋雨桐',emoji:'🌈',intro:'喜欢雨后的天空和棉花糖。',tags:['彩虹','甜品','画画']},
+  {id:'p27',name:'方启铭',emoji:'⚡',intro:'做什么都很快，除了写作业。',tags:['游戏','运动','熬夜']},
+  {id:'p28',name:'秦悦',emoji:'🎻',intro:'学小提琴四年，还在和音准斗争。',tags:['小提琴','古典乐','阅读']},
+  {id:'p29',name:'丁一',emoji:'📖',intro:'名字笔画最少，作业写得最多。',tags:['阅读','写作','历史']},
+  {id:'p30',name:'罗子谦',emoji:'🎯',intro:'射箭社团成员，专注力满分。',tags:['射箭','专注','运动']},
+  {id:'p31',name:'谢婉清',emoji:'🍵',intro:'喜欢喝茶和安静的下午。',tags:['茶道','安静','阅读']},
+  {id:'p32',name:'崔博文',emoji:'🧩',intro:'拼图爱好者，一千片起步。',tags:['拼图','解谜','手工']},
+  {id:'p33',name:'潘星辰',emoji:'✨',intro:'喜欢看星星，也喜欢看漫画。',tags:['天文','漫画','幻想']},
+  {id:'p34',name:'汪雨萌',emoji:'🐰',intro:'养了两只兔子，一只叫团子一只叫汤圆。',tags:['兔子','萌宠','手工']},
+  {id:'p35',name:'石天佑',emoji:'🏔️',intro:'暑假跟爸妈爬过泰山，全程没哭。',tags:['爬山','户外','旅行']},
+  {id:'p36',name:'龚心悦',emoji:'💖',intro:'喜欢所有可爱的东西。',tags:['可爱','手账','甜品']},
+  {id:'p37',name:'白泽宇',emoji:'🦉',intro:'博学多识，但考试总粗心。',tags:['百科','历史','科学']},
+  {id:'p38',name:'钟灵',emoji:'🌙',intro:'晚上精神最好，白天永远没睡醒。',tags:['熬夜','写作','音乐']},
+  {id:'p39',name:'严子轩',emoji:'🎧',intro:'耳机不离身，歌单比作业长。',tags:['音乐','耳机','电竞']},
+  {id:'p40',name:'熊思远',emoji:'🌊',intro:'喜欢大海，也喜欢一切蓝色。',tags:['大海','游泳','蓝色']},
+  {id:'p41',name:'孔令仪',emoji:'🎀',intro:'发饰收藏家，今天也是蝴蝶结。',tags:['发饰','可爱','手作']},
+  {id:'p42',name:'温子瑜',emoji:'🍭',intro:'甜食爱好者，糖果分你一半。',tags:['甜品','分享','画画']},
+  {id:'p43',name:'尹嘉树',emoji:'🌲',intro:'喜欢森林和一切绿色的东西。',tags:['自然','徒步','摄影']}
+];
+
+const BASE_RELATIONS = [
+  ['p1','p10','画友',5],['p1','p3','好朋友',4],['p1','p14','同桌',5],
+  ['p2','p7','球友',5],['p2','p13','球友',4],['p2','p6','前后桌',3],
+  ['p3','p14','书友',3],['p3','p11','辩论队',4],
+  ['p4','p11','室友',4],['p4','p8','游戏搭子',5],
+  ['p5','p12','乐队',4],['p5','p8','好朋友',3],
+  ['p6','p16','饭搭子',5],['p6','p9','好朋友',3],
+  ['p7','p13','队友',4],['p8','p15','社团',3],
+  ['p9','p15','画友',3],['p9','p14','安静组',3],
+  ['p10','p15','同好',4],['p11','p12','学习小组',3],
+  ['p17','p24','话剧社',4],['p18','p26','甜品搭子',3],
+  ['p19','p43','绿植组',4],['p20','p31','安静组',3],
+  ['p21','p3','书友',4],['p22','p27','游戏搭子',4],
+  ['p23','p33','天文社',5],['p25','p40','泳伴',5],
+  ['p28','p12','弦乐组',4],['p29','p21','写作组',3],
+  ['p30','p25','运动社',3],['p32','p9','手工组',3],
+  ['p34','p41','萌物组',4],['p35','p43','徒步社',4],
+  ['p36','p42','甜品组',4],['p37','p23','知识组',3],
+  ['p38','p39','夜猫组',3],['p40','p25','泳伴',4],
+  ['p41','p36','可爱联盟',4],['p42','p18','甜品组',3]
+];
+
+const TEACHER_COLORS = ['#a78bfa','#f0abfc','#c4b5fd','#e879f9','#d8b4fe','#c084fc','#ddd6fe','#f5d0fe'];
+const BASE_TEACHERS = [
+  {id:'t1',name:'王老师',emoji:'👩‍🏫',subject:'语文',intro:'教我们读书写字，也教我们做一个温柔而坚定的人。',color:'#a78bfa',flowers:0,hearts:0},
+  {id:'t2',name:'李老师',emoji:'👨‍🏫',subject:'数学',intro:'黑板上写满公式，心里装满对我们的期待。',color:'#f0abfc',flowers:0,hearts:0},
+  {id:'t3',name:'张老师',emoji:'👩‍🔬',subject:'英语',intro:'一口流利的英语，带我们看见更大的世界。',color:'#c4b5fd',flowers:0,hearts:0},
+  {id:'t4',name:'刘老师',emoji:'🧑‍🏫',subject:'班主任',intro:'班里大大小小的事，都是她在操心。',color:'#e879f9',flowers:0,hearts:0},
+  {id:'t5',name:'赵老师',emoji:'🧑‍🎤',subject:'音乐',intro:'琴键上跳动的音符，是他送给我们的礼物。',color:'#d8b4fe',flowers:0,hearts:0},
+  {id:'t6',name:'孙老师',emoji:'🎨',subject:'美术',intro:'调色盘里装着整个世界的颜色。',color:'#c084fc',flowers:0,hearts:0}
+];
+
+/* ========== 工具 ========== */
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function toHex(c){
+  if(!c)return '#c4b5fd';
+  if(/^#[0-9a-f]{6}$/i.test(c))return c;
+  const m=c.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+  if(m)return '#'+[1,2,3].map(i=>(+m[i]).toString(16).padStart(2,'0')).join('');
+  return '#c4b5fd';
+}
+/* 精确到秒的绝对时间 */
+function formatFullTime(ts){
+  const d=new Date(ts);
+  const Y=d.getFullYear();
+  const M=String(d.getMonth()+1).padStart(2,'0');
+  const D=String(d.getDate()).padStart(2,'0');
+  const hh=String(d.getHours()).padStart(2,'0');
+  const mm=String(d.getMinutes()).padStart(2,'0');
+  const ss=String(d.getSeconds()).padStart(2,'0');
+  return `${Y}-${M}-${D} ${hh}:${mm}:${ss}`;
+}
+/* 相对 + 精确时间 */
+function formatTime(ts){
+  const d=new Date(ts),now=new Date(),diff=now-d;
+  if(diff<60000)return '刚刚';
+  if(diff<3600000)return Math.floor(diff/60000)+' 分钟前';
+  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const thatDay=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+  const dayDiff=Math.round((today-thatDay)/86400000);
+  const hh=String(d.getHours()).padStart(2,'0');
+  const mm=String(d.getMinutes()).padStart(2,'0');
+  const ss=String(d.getSeconds()).padStart(2,'0');
+  if(dayDiff===0)return `今天 ${hh}:${mm}:${ss}`;
+  if(dayDiff===1)return `昨天 ${hh}:${mm}:${ss}`;
+  return `${d.getMonth()+1}月${d.getDate()}日 ${hh}:${mm}:${ss}`;
+}
+
+/* ========== 状态 ========== */
+const state = { people: [], currentId: null };
+const scoreState = { scores:{}, records:[] };
+let teachers = [];
+let searchKeyword = '';
+let editingId = null;
+let editingTeacherId = null;
+
+/* ========== 存储 ========== */
+function buildPeople(){
+  const people = BASE.map((p,i)=>({...p,color:COLORS[i%COLORS.length],relations:{}}));
+  const map = Object.fromEntries(people.map(p=>[p.id,p]));
+  for(const [a,b,label,strength] of BASE_RELATIONS){
+    if(map[a]&&map[b]){
+      map[a].relations[b]={label,strength};
+      map[b].relations[a]={label,strength};
+    }
+  }
+  return people;
+}
+function saveData(){ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state.people));}catch(e){} }
+function loadData(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(!raw)return null;
+    const parsed=JSON.parse(raw);
+    if(Array.isArray(parsed)&&parsed.length>=40)return parsed;
+  }catch(e){}
+  return null;
+}
+function loadHomeData(){
+  try{
+    const raw=localStorage.getItem(HOME_KEY);
+    if(!raw)return {...HOME_DEFAULT};
+    return {...HOME_DEFAULT,...JSON.parse(raw)};
+  }catch(e){return {...HOME_DEFAULT};}
+}
+function saveHomeData(d){ try{localStorage.setItem(HOME_KEY,JSON.stringify(d));}catch(e){} }
+function loadScoreData(){
+  try{
+    const raw=localStorage.getItem(SCORE_KEY);
+    if(!raw)return;
+    const p=JSON.parse(raw);
+    if(p&&typeof p==='object'){
+      scoreState.scores=p.scores||{};
+      scoreState.records=Array.isArray(p.records)?p.records:[];
+    }
+  }catch(e){}
+}
+function saveScore(){
+  try{localStorage.setItem(SCORE_KEY,JSON.stringify({scores:scoreState.scores,records:scoreState.records}));}catch(e){}
+}
+function loadTeachers(){
+  try{
+    const raw=localStorage.getItem(TEACHERS_KEY);
+    if(!raw)return BASE_TEACHERS.map(t=>({...t}));
+    const p=JSON.parse(raw);
+    if(Array.isArray(p)&&p.length)return p;
+  }catch(e){}
+  return BASE_TEACHERS.map(t=>({...t}));
+}
+function saveTeachers(){ try{localStorage.setItem(TEACHERS_KEY,JSON.stringify(teachers));}catch(e){} }
+
+/* ========== 首页 ========== */
+function applyHomeData(){
+  const data=loadHomeData();
+  document.querySelectorAll('#view-home [data-key]').forEach(el=>{
+    const key=el.dataset.key;
+    if(data[key]!==undefined)el.innerText=data[key];
+  });
+  const t=document.getElementById('navTitleText');
+  if(t)t.textContent=data.className||'六年二班';
+  document.title=(data.className||'六年二班')+' · 班级主页';
+}
+function initHomeEditing(){
+  document.querySelectorAll('#view-home [data-key]').forEach(el=>{
+    el.addEventListener('keydown',e=>{
+      if(e.key==='Enter'&&el.dataset.key!=='intro'){e.preventDefault();el.blur();}
+    });
+    el.addEventListener('blur',()=>{
+      const data=loadHomeData();
+      data[el.dataset.key]=el.innerText.trim();
+      saveHomeData(data);
+      if(el.dataset.key==='className'){
+        const t=document.getElementById('navTitleText');
+        if(t)t.textContent=data.className||'六年二班';
+        document.title=(data.className||'六年二班')+' · 班级主页';
+      }
+    });
+    el.addEventListener('paste',e=>{
+      e.preventDefault();
+      const text=(e.clipboardData||window.clipboardData).getData('text/plain');
+      document.execCommand('insertText',false,text);
+    });
+  });
+}
+
+/* ========== 视图切换 ========== */
+function switchView(name){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  const target=document.getElementById('view-'+name);
+  if(target)target.classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l=>{
+    l.classList.toggle('active',l.dataset.view===name);
+  });
+  if(name==='bubbles'){ requestAnimationFrame(()=>renderBubbles()); }
+  else if(name==='score'){ renderStudents(); renderRecords(); renderLeaderboard(); }
+  else if(name==='teachers'){ renderTeachers(); }
+}
+
+/* ========== 气泡布局 ========== */
+function computeLayout(people,W,H){
+  const n=people.length;
+  if(!n||W<10||H<10)return [];
+  const cx=W/2,cy=H/2,GOLDEN=2.399963;
+  const baseR=Math.max(16,Math.min(48,Math.sqrt((W*H)/(n*Math.PI*5))));
+  const nodes=people.map((p,i)=>{
+    const relCount=Object.keys(p.relations||{}).length;
+    const r=baseR+Math.min(relCount,8)*1.6;
+    const ang=i*GOLDEN;
+    const rad=Math.sqrt((i+0.5)/n)*Math.min(W,H)*0.42;
+    return {id:p.id,r,x:cx+Math.cos(ang)*rad,y:cy+Math.sin(ang)*rad};
+  });
+  for(let it=0;it<420;it++){
+    for(let i=0;i<n;i++){
+      for(let j=i+1;j<n;j++){
+        const a=nodes[i],b=nodes[j];
+        let dx=b.x-a.x,dy=b.y-a.y;
+        let d=Math.hypot(dx,dy)||0.01;
+        const minD=a.r+b.r+8;
+        if(d<minD){
+          const push=(minD-d)/2;
+          const ux=dx/d,uy=dy/d;
+          a.x-=ux*push;a.y-=uy*push;
+          b.x+=ux*push;b.y+=uy*push;
+        }
+      }
+    }
+    for(const nd of nodes){ nd.x+=(cx-nd.x)*0.012; nd.y+=(cy-nd.y)*0.012; }
+  }
+  for(const nd of nodes){
+    nd.x=Math.max(nd.r+4,Math.min(W-nd.r-4,nd.x));
+    nd.y=Math.max(nd.r+4,Math.min(H-nd.r-4,nd.y));
+  }
+  return nodes;
+}
+
+/* ========== 渲染气泡 ========== */
+const stage=document.getElementById('stage');
+function renderBubbles(){
+  if(!stage)return;
+  stage.innerHTML='';
+  const W=stage.clientWidth,H=stage.clientHeight;
+  if(W<10||H<10)return;
+  const nodes=computeLayout(state.people,W,H);
+  nodes.forEach((node,i)=>{
+    const p=state.people.find(x=>x.id===node.id);
+    if(!p)return;
+    const el=document.createElement('div');
+    el.className='bubble';
+    el.style.width=(node.r*2)+'px';
+    el.style.height=(node.r*2)+'px';
+    el.style.left=(node.x-node.r)+'px';
+    el.style.top=(node.y-node.r)+'px';
+    el.style.setProperty('--c',p.color);
+    el.style.animationDelay=Math.min(i*18,800)+'ms';
+    const emojiSize=Math.max(13,node.r*0.60);
+    const nameSize=Math.max(9,node.r*0.27);
+    el.innerHTML=`<span class="bub-emoji" style="font-size:${emojiSize}px">${escapeHtml(p.emoji||'🙂')}</span><span class="bub-name" style="font-size:${nameSize}px">${escapeHtml(p.name)}</span>`;
+    el.addEventListener('click',()=>openProfile(p.id));
+    stage.appendChild(el);
+  });
+}
+
+/* ========== 个人主页 ========== */
+const overlay=document.getElementById('overlay');
+function openProfile(id){
+  const p=state.people.find(x=>x.id===id);
+  if(!p)return;
+  state.currentId=id;
+  renderProfile(p);
+  overlay.classList.add('open');
+}
+function closeProfile(){
+  overlay.classList.remove('open');
+  state.currentId=null;
+}
+function renderProfile(p){
+  const av=document.getElementById('pAvatar');
+  av.textContent=p.emoji||'🙂';
+  av.style.background=`radial-gradient(circle at 32% 26%, rgba(255,255,255,.8), rgba(255,255,255,0) 60%), ${p.color}`;
+  document.getElementById('pName').textContent=p.name;
+  const tagsEl=document.getElementById('pTags');
+  tagsEl.innerHTML=(p.tags||[]).filter(Boolean).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('');
+  document.getElementById('pIntro').textContent=(p.intro&&p.intro.trim())?p.intro:'这个人很懒，什么都没写 ~';
+  const relCount=Object.keys(p.relations||{}).length;
+  const score=scoreState.scores[p.id]||0;
+  document.getElementById('pMeta').textContent=`当前得分 ${score} 分 · 班级关系 ${relCount} 人 · 编号 ${state.people.indexOf(p)+1} / ${state.people.length}`;
+  renderGraph(p);
+}
+
+/* ========== 关系图 ========== */
+function renderGraph(p){
+  const svg=document.getElementById('relGraph');
+  const W=500,H=480,cx=W/2,cy=232;
+  const entries=Object.entries(p.relations||{})
+    .map(([id,r])=>({id,label:r.label||'同学',strength:Math.max(1,Math.min(5,r.strength||3)),person:state.people.find(x=>x.id===id)}))
+    .filter(e=>e.person).slice(0,8);
+  const defs=`<defs><filter id="softShadow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.45"/></filter></defs>`;
+  if(!entries.length){
+    svg.innerHTML=defs+
+      `<circle cx="${cx}" cy="${cy}" r="48" fill="${p.color}" opacity=".95" filter="url(#softShadow)"/>
+       <text x="${cx}" y="${cy-4}" text-anchor="middle" dominant-baseline="middle" font-size="30">${escapeHtml(p.emoji||'🙂')}</text>
+       <text x="${cx}" y="${cy+28}" text-anchor="middle" font-size="14" font-weight="800" fill="#2e1065">${escapeHtml(p.name)}</text>
+       <text x="${cx}" y="${cy+110}" text-anchor="middle" font-size="13" fill="#8b7bb8">还没有添加关系 ~</text>`;
+    return;
+  }
+  const R=158,n=entries.length;
+  entries.forEach((e,i)=>{
+    const ang=-Math.PI/2+(i*2*Math.PI/n);
+    e._x=cx+Math.cos(ang)*R;
+    e._y=cy+Math.sin(ang)*R;
+  });
+  let edges='';
+  entries.forEach(e=>{
+    const w=1+e.strength*1.7,op=0.22+e.strength*0.14;
+    edges+=`<line x1="${cx}" y1="${cy}" x2="${e._x}" y2="${e._y}" stroke="${p.color}" stroke-width="${w}" stroke-linecap="round" opacity="${op}"/>`;
+  });
+  let nodesHtml=`<g><circle cx="${cx}" cy="${cy}" r="50" fill="${p.color}" filter="url(#softShadow)"/><circle cx="${cx}" cy="${cy}" r="50" fill="none" stroke="#fff" stroke-width="3" opacity=".55"/><text x="${cx}" y="${cy-6}" text-anchor="middle" dominant-baseline="middle" font-size="30">${escapeHtml(p.emoji||'🙂')}</text><text x="${cx}" y="${cy+26}" text-anchor="middle" font-size="14" font-weight="800" fill="#2e1065">${escapeHtml(p.name)}</text></g>`;
+  entries.forEach(e=>{
+    nodesHtml+=`<g><circle cx="${e._x}" cy="${e._y}" r="30" fill="${e.person.color}" filter="url(#softShadow)"/><text x="${e._x}" y="${e._y-3}" text-anchor="middle" dominant-baseline="middle" font-size="21">${escapeHtml(e.person.emoji||'🙂')}</text><text x="${e._x}" y="${e._y+44}" text-anchor="middle" font-size="12" font-weight="800" fill="#e9d5ff">${escapeHtml(e.person.name)}</text><text x="${e._x}" y="${e._y+59}" text-anchor="middle" font-size="10" fill="#8b7bb8">${escapeHtml(e.label)}</text></g>`;
+  });
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.innerHTML=defs+edges+nodesHtml;
+}
+
+/* ========== 编辑弹窗 ========== */
+const modal=document.getElementById('modal');
+function openEdit(){
+  const p=state.people.find(x=>x.id===state.currentId);
+  if(!p)return;
+  editingId=p.id;
+  document.getElementById('fName').value=p.name||'';
+  document.getElementById('fEmoji').value=p.emoji||'🙂';
+  document.getElementById('fColor').value=toHex(p.color)||'#c4b5fd';
+  document.getElementById('fIntro').value=p.intro||'';
+  document.getElementById('fTags').value=(p.tags||[]).join(', ');
+  renderRelRows(p);
+  modal.classList.add('open');
+}
+function closeModal(){ modal.classList.remove('open'); editingId=null; }
+function renderRelRows(p){
+  const list=document.getElementById('relList');
+  list.innerHTML='';
+  Object.entries(p.relations||{}).forEach(([id,r])=>addRelRow(id,r.label,r.strength));
+}
+function addRelRow(targetId='',label='',strength=3){
+  const list=document.getElementById('relList');
+  const options=state.people.filter(x=>x.id!==editingId)
+    .map(x=>`<option value="${x.id}" ${x.id===targetId?'selected':''}>${escapeHtml(x.emoji||'🙂')} ${escapeHtml(x.name)}</option>`).join('');
+  const row=document.createElement('div');
+  row.className='rel-row';
+  row.innerHTML=`<select class="rel-person">${options}</select><input type="text" class="rel-label" value="${escapeHtml(label)}" placeholder="关系，如 同桌"><input type="range" class="rel-strength" min="1" max="5" value="${strength}"><button class="rel-del">✕</button>`;
+  row.querySelector('.rel-del').addEventListener('click',()=>row.remove());
+  list.appendChild(row);
+}
+function saveEdit(){
+  const p=state.people.find(x=>x.id===editingId);
+  if(!p)return;
+  Object.keys(p.relations||{}).forEach(oid=>{
+    const other=state.people.find(x=>x.id===oid);
+    if(other&&other.relations)delete other.relations[p.id];
+  });
+  p.name=document.getElementById('fName').value.trim()||p.name;
+  p.emoji=document.getElementById('fEmoji').value.trim()||'🙂';
+  p.color=document.getElementById('fColor').value;
+  p.intro=document.getElementById('fIntro').value.trim();
+  p.tags=document.getElementById('fTags').value.split(/[,，、]/).map(s=>s.trim()).filter(Boolean);
+  const newRel={};
+  document.querySelectorAll('#relList .rel-row').forEach(row=>{
+    const tid=row.querySelector('.rel-person').value;
+    if(!tid)return;
+    const label=row.querySelector('.rel-label').value.trim()||'同学';
+    const strength=Number(row.querySelector('.rel-strength').value)||3;
+    newRel[tid]={label,strength};
+    const other=state.people.find(x=>x.id===tid);
+    if(other){ other.relations=other.relations||{}; other.relations[p.id]={label,strength}; }
+  });
+  p.relations=newRel;
+  saveData();
+  renderBubbles();
+  renderProfile(p);
+  if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderLeaderboard();}
+  closeModal();
+}
+
+/* ========== 个人加分 ========== */
+function addScore(studentId,delta,reason){
+  const student=state.people.find(s=>s.id===studentId);
+  if(!student||!delta)return;
+  scoreState.scores[studentId]=(scoreState.scores[studentId]||0)+delta;
+  const finalReason=(reason&&reason.trim())||(delta>0?'表现优秀':'违反纪律');
+  scoreState.records.unshift({
+    id:'r'+Date.now()+'_'+Math.random().toString(36).slice(2,6),
+    studentId:student.id,
+    studentName:student.name,
+    delta,reason:finalReason,
+    time:Date.now()
+  });
+  if(scoreState.records.length>300)scoreState.records=scoreState.records.slice(0,300);
+  saveScore();
+  renderStudents();
+  renderRecords();
+  renderLeaderboard();
+}
+function undoRecord(recordId){
+  const idx=scoreState.records.findIndex(r=>r.id===recordId);
+  if(idx<0)return;
+  const rec=scoreState.records[idx];
+  scoreState.scores[rec.studentId]=(scoreState.scores[rec.studentId]||0)-rec.delta;
+  scoreState.records.splice(idx,1);
+  saveScore();
+  renderStudents();
+  renderRecords();
+  renderLeaderboard();
+}
+function renderStudents(){
+  const grid=document.getElementById('studentsGrid');
+  if(!grid)return;
+  grid.innerHTML='';
+  const kw=searchKeyword.trim().toLowerCase();
+  const list=kw?state.people.filter(p=>p.name.toLowerCase().includes(kw)||(p.tags||[]).some(t=>t.toLowerCase().includes(kw))):state.people;
+  if(!list.length){
+    grid.innerHTML=`<div class="empty-records" style="grid-column:1/-1"><span class="ico">🔍</span>没有找到匹配的同学</div>`;
+    return;
+  }
+  list.forEach(p=>{
+    const score=scoreState.scores[p.id]||0;
+    const card=document.createElement('div');
+    card.className='student-card';
+    card.style.setProperty('--c',p.color);
+    const tagsText=(p.tags||[]).slice(0,3).join(' · ');
+    card.innerHTML=`
+      <div class="student-top">
+        <div class="student-avatar">${escapeHtml(p.emoji||'🙂')}</div>
+        <div class="student-info">
+          <span class="student-name" contenteditable="true" spellcheck="false">${escapeHtml(p.name)}</span>
+          <div class="student-tags">${escapeHtml(tagsText||'—')}</div>
+        </div>
+      </div>
+      <div class="student-score-row"><span class="student-score-label">SCORE</span><span class="student-score">${score}</span></div>
+      <div class="student-add">
+        <button class="score-add-btn" data-add="1">+1</button>
+        <button class="score-add-btn" data-add="2">+2</button>
+        <button class="score-add-btn" data-add="5">+5</button>
+        <button class="score-add-btn minus" data-add="-1">−1</button>
+        <button class="score-add-btn" data-add="custom">＋?</button>
+      </div>`;
+    const nameEl=card.querySelector('.student-name');
+    nameEl.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();nameEl.blur();}});
+    nameEl.addEventListener('blur',()=>{
+      const newName=nameEl.innerText.trim()||p.name;
+      if(newName!==p.name){p.name=newName;saveData();renderLeaderboard();}
+      nameEl.innerText=newName;
+    });
+    nameEl.addEventListener('paste',e=>{
+      e.preventDefault();
+      const text=(e.clipboardData||window.clipboardData).getData('text/plain');
+      document.execCommand('insertText',false,text);
+    });
+    card.querySelectorAll('.score-add-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const val=btn.dataset.add;
+        if(val==='custom'){
+          const input=prompt(`给「${p.name}」加减分（正数加分 / 负数扣分）：`,'3');
+          if(input===null)return;
+          const n=Number(input);
+          if(!Number.isFinite(n)||n===0)return;
+          const reason=prompt('原因（可选）：','');
+          if(reason===null)return;
+          addScore(p.id,n,reason);
+        } else {
+          addScore(p.id,Number(val),'');
+        }
+      });
+    });
+    grid.appendChild(card);
+  });
+}
+function renderRecords(){
+  const list=document.getElementById('recordsList');
+  const countEl=document.getElementById('recordsCount');
+  if(!list)return;
+  if(countEl)countEl.textContent=scoreState.records.length?`共 ${scoreState.records.length} 条`:'';
+  if(!scoreState.records.length){
+    list.innerHTML=`<div class="empty-records"><span class="ico">📋</span>还没有加分记录，点同学卡片上的 +1 试试吧~</div>`;
+    return;
+  }
+  list.innerHTML='';
+  scoreState.records.forEach((r,i)=>{
+    const item=document.createElement('div');
+    item.className='record-item';
+    item.style.animationDelay=Math.min(i*15,400)+'ms';
+    const isPlus=r.delta>0;
+    const deltaText=(isPlus?'+':'')+r.delta;
+    const student=state.people.find(s=>s.id===r.studentId);
+    const avatar=student?(student.emoji||'🙂'):'🙂';
+    const color=student?student.color:'#a78bfa';
+    item.innerHTML=`
+      <span class="record-delta ${isPlus?'plus':'minus'}">${deltaText}</span>
+      <span class="record-avatar" style="background:${color}">${escapeHtml(avatar)}</span>
+      <span class="record-student">${escapeHtml(r.studentName||'未知同学')}</span>
+      <span class="record-reason">${escapeHtml(r.reason||'')}</span>
+      <span class="record-time" title="${formatFullTime(r.time)}">${formatTime(r.time)}</span>
+      <button class="record-undo">撤销</button>`;
+    item.querySelector('.record-undo').addEventListener('click',()=>undoRecord(r.id));
+    list.appendChild(item);
+  });
+}
+
+/* ========== 表扬前五排行榜 ========== */
+function renderLeaderboard(){
+  const listEl=document.getElementById('leaderboardList');
+  if(!listEl)return;
+
+  /* 取所有正分同学，按分数从高到低排序，分数相同按名字稳定排序 */
+  const ranked=state.people
+    .map(p=>({...p,score:scoreState.scores[p.id]||0}))
+    .filter(p=>p.score>0)
+    .sort((a,b)=>{
+      if(b.score!==a.score)return b.score-a.score;
+      return a.name.localeCompare(b.name,'zh');
+    })
+    .slice(0,5);
+
+  if(!ranked.length){
+    listEl.innerHTML=`<div class="empty-records" style="padding:24px 0"><span class="ico">🏆</span>还没有人获得加分，快去表扬同学吧~</div>`;
+    return;
+  }
+
+  const medals=['🥇','🥈','🥉','',''];
+  listEl.innerHTML='';
+  ranked.forEach((p,i)=>{
+    const item=document.createElement('div');
+    item.className='leaderboard-item rank-'+(i+1);
+    item.style.animationDelay=(i*50)+'ms';
+    const medal=medals[i]||`#${i+1}`;
+    item.innerHTML=`
+      <div class="leaderboard-rank">${i+1}</div>
+      <div class="leaderboard-avatar" style="background:${p.color}">${escapeHtml(p.emoji||'🙂')}</div>
+      <div class="leaderboard-name">${escapeHtml(p.name)}</div>
+      <div class="leaderboard-score">+${p.score}</div>
+      <div class="leaderboard-medal">${medal}</div>
+    `;
+    listEl.appendChild(item);
+  });
+}
+
+/* ========== 老师 ========== */
+function renderTeachers(){
+  const grid=document.getElementById('teachersGrid');
+  if(!grid)return;
+  grid.innerHTML='';
+  teachers.forEach(t=>{
+    const card=document.createElement('div');
+    card.className='teacher-card';
+    card.style.setProperty('--c',t.color);
+    card.innerHTML=`
+      <div class="teacher-avatar-circle">${escapeHtml(t.emoji||'🧑‍🏫')}</div>
+      <div class="teacher-name">${escapeHtml(t.name)}</div>
+      <div class="teacher-subject">${escapeHtml(t.subject||'老师')}</div>
+      <div class="teacher-counts">
+        <span>🌸 ${t.flowers||0}</span>
+        <span>❤️ ${t.hearts||0}</span>
+      </div>`;
+    card.addEventListener('click',()=>openTeacher(t.id));
+    grid.appendChild(card);
+  });
+}
+function openTeacher(id){
+  const t=teachers.find(x=>x.id===id);
+  if(!t)return;
+  editingTeacherId=id;
+  const av=document.getElementById('tmAvatar');
+  av.textContent=t.emoji||'🧑‍🏫';
+  av.style.background=t.color;
+  document.getElementById('tmName').value=t.name||'';
+  document.getElementById('tmSubject').value=t.subject||'';
+  document.getElementById('tmIntro').value=t.intro||'';
+  document.getElementById('tmFlowers').textContent=t.flowers||0;
+  document.getElementById('tmHearts').textContent=t.hearts||0;
+  document.getElementById('teacherModal').classList.add('open');
+}
+function closeTeacherModal(){
+  document.getElementById('teacherModal').classList.remove('open');
+  editingTeacherId=null;
+}
+function saveTeacher(){
+  const t=teachers.find(x=>x.id===editingTeacherId);
+  if(!t)return;
+  t.name=document.getElementById('tmName').value.trim()||t.name;
+  t.subject=document.getElementById('tmSubject').value.trim();
+  t.intro=document.getElementById('tmIntro').value.trim();
+  saveTeachers();
+  renderTeachers();
+  closeTeacherModal();
+}
+
+/* ========== 送礼动画 ========== */
+function sendGift(teacherId,type){
+  const t=teachers.find(x=>x.id===teacherId);
+  if(!t)return;
+  if(type==='flower'){ t.flowers=(t.flowers||0)+1; }
+  else { t.hearts=(t.hearts||0)+1; }
+  saveTeachers();
+  document.getElementById('tmFlowers').textContent=t.flowers||0;
+  document.getElementById('tmHearts').textContent=t.hearts||0;
+  renderTeachers();
+  playGiftAnimation(type);
+}
+function playGiftAnimation(type){
+  const layer=document.getElementById('giftLayer');
+  const emojis=type==='flower'?['🌸','💐','🌷','🌺','🏵️','🌼']:['❤️','💖','💗','💓','💕','💝'];
+  const count=18;
+  for(let i=0;i<count;i++){
+    const el=document.createElement('div');
+    el.className='gift-particle';
+    el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=(Math.random()*100)+'vw';
+    el.style.fontSize=(20+Math.random()*22)+'px';
+    el.style.setProperty('--drift',((Math.random()-0.5)*220).toFixed(1)+'px');
+    el.style.animationDelay=(Math.random()*0.5)+'s';
+    el.style.animationDuration=(1.6+Math.random()*0.9)+'s';
+    layer.appendChild(el);
+    setTimeout(()=>el.remove(),3200);
+  }
+}
+
+/* ========== 事件绑定 ========== */
+document.querySelectorAll('.nav-link').forEach(btn=>{
+  btn.addEventListener('click',()=>switchView(btn.dataset.view));
+});
+document.getElementById('navBrand').addEventListener('click',()=>switchView('home'));
+
+document.getElementById('closeProfile').addEventListener('click',closeProfile);
+overlay.addEventListener('click',e=>{ if(e.target===overlay)closeProfile(); });
+
+document.getElementById('editBtn').addEventListener('click',openEdit);
+document.getElementById('addRelBtn').addEventListener('click',()=>addRelRow());
+document.getElementById('cancelBtn').addEventListener('click',closeModal);
+document.getElementById('saveBtn').addEventListener('click',saveEdit);
+modal.addEventListener('click',e=>{ if(e.target===modal)closeModal(); });
+
+document.getElementById('studentSearch').addEventListener('input',e=>{
+  searchKeyword=e.target.value;
+  renderStudents();
+});
+document.getElementById('clearRecordsBtn').addEventListener('click',()=>{
+  if(!scoreState.records.length){ alert('还没有记录可以清空~'); return; }
+  if(!confirm('确定要清空所有加分记录吗？（同学分数和排行榜不会重置）'))return;
+  scoreState.records=[];
+  saveScore();
+  renderRecords();
+});
+
+document.getElementById('closeTeacherModal').addEventListener('click',closeTeacherModal);
+document.getElementById('cancelTeacherBtn').addEventListener('click',closeTeacherModal);
+document.getElementById('saveTeacherBtn').addEventListener('click',saveTeacher);
+document.getElementById('teacherModal').addEventListener('click',e=>{
+  if(e.target===document.getElementById('teacherModal'))closeTeacherModal();
+});
+document.getElementById('sendFlowerBtn').addEventListener('click',()=>{
+  if(editingTeacherId)sendGift(editingTeacherId,'flower');
+});
+document.getElementById('sendHeartBtn').addEventListener('click',()=>{
+  if(editingTeacherId)sendGift(editingTeacherId,'heart');
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(modal.classList.contains('open'))closeModal();
+    else if(document.getElementById('teacherModal').classList.contains('open'))closeTeacherModal();
+    else if(overlay.classList.contains('open'))closeProfile();
+  }
+});
+
+let resizeTimer;
+window.addEventListener('resize',()=>{
+  clearTimeout(resizeTimer);
+  resizeTimer=setTimeout(()=>{
+    if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles();
+  },180);
+});
+
+/* ========== 启动 ========== */
+(function init(){
+  applyHomeData();
+  initHomeEditing();
+
+  const saved=loadData();
+  if(saved){ state.people=saved; }
+  else { state.people=buildPeople(); saveData(); }
+
+  loadScoreData();
+  teachers=loadTeachers();
+})();
+</script>
+</body>
+</html>
