@@ -279,7 +279,7 @@ async function cloudPush(immediate){
       if(checkRes.ok){const j=await checkRes.json();curSha=j.sha}
       const body={access_token:GITEE_TOKEN,content:b64Encode(JSON.stringify(dataCache,null,2)),message:'更新班级数据 '+new Date().toLocaleString('zh-CN')};
       if(curSha)body.sha=curSha;
-      const res=await fetch(GITEE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      const method=curSha?'PUT':'POST';const res=await fetch(GITEE_API,{method:method,headers:{'Content-Type':'application/json'},bod
       if(res.ok){const json=await res.json();fileSha=json.content?.sha||json.sha;setSync('🟢 已同步','#86efac')}
       else{setSync('❌ 保存失败','#fca5a5')}
     }catch(e){console.error('推送失败',e);setSync('❌ 保存失败','#fca5a5')}
