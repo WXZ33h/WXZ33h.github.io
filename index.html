@@ -250,6 +250,37 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 @keyframes giftFloat{0%{transform:translateY(0) translateX(0) scale(.4) rotate(0deg);opacity:0}18%{opacity:1;transform:translateY(-14vh) translateX(calc(var(--drift) * .25)) scale(1.1) rotate(50deg)}100%{transform:translateY(-118vh) translateX(var(--drift)) scale(1.35) rotate(420deg);opacity:0}}
 @media(max-width:780px){.navbar{padding:0 12px;gap:8px;height:60px}.nav-logo{width:32px;height:32px;flex-basis:32px}.nav-title{font-size:14px}.nav-sub{display:none}.nav-link{padding:7px 11px;font-size:11.5px}.sync-status{display:none}#view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}#view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}}
 @media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px;letter-spacing:1px}}
+
+/* ================= 联机贪吃蛇 ================= */
+#view-snake{min-height:100vh;padding:96px 18px 50px;background:radial-gradient(900px 500px at 50% 20%,rgba(124,58,237,.18),transparent 65%)}
+.snake-wrap{width:min(1180px,100%);margin:0 auto}
+.snake-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.snake-title{margin:0;font-size:26px;font-weight:900;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.snake-status{font-size:12px;color:#86efac;background:rgba(34,197,94,.08);border:1px solid rgba(134,239,172,.2);padding:7px 12px;border-radius:999px}
+.snake-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:16px}
+.snake-board-card,.snake-side{background:linear-gradient(160deg,rgba(45,17,71,.88),rgba(20,8,31,.9));border:1px solid var(--border);border-radius:24px;box-shadow:0 24px 60px -30px #000;backdrop-filter:blur(12px)}
+.snake-board-card{padding:14px;overflow:hidden}
+#snakeCanvas{width:100%;height:auto;display:block;border-radius:16px;background:#090414;touch-action:none}
+.snake-controls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.snake-controls button,.snake-action{border:1px solid var(--border-strong);background:rgba(139,92,246,.14);color:#fff;border-radius:12px;min-width:48px;height:42px;font-size:18px;font-family:inherit;font-weight:800;cursor:pointer}
+.snake-controls button:hover,.snake-action:hover{background:rgba(139,92,246,.3)}
+.snake-action{font-size:13px;padding:0 16px}
+.snake-side{padding:18px}
+.snake-login{display:flex;gap:8px;margin-bottom:18px}
+.snake-login input{flex:1;min-width:0;border:1px solid var(--border-strong);background:rgba(20,8,31,.7);color:#fff;border-radius:11px;padding:10px 12px;font-family:inherit;outline:none}
+.snake-login button{border:0;border-radius:11px;padding:0 13px;background:linear-gradient(120deg,#7c3aed,#c026d3);color:#fff;font-weight:800;cursor:pointer}
+.snake-panel-title{font-size:12px;letter-spacing:2px;color:var(--text-muted);font-weight:800;margin:0 0 10px}
+#snakeRank{display:flex;flex-direction:column;gap:7px}
+.snake-rank-item{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:7px;padding:9px 10px;background:rgba(20,8,31,.52);border:1px solid rgba(167,139,250,.1);border-radius:11px}
+.snake-rank-num{color:var(--text-muted);font-weight:900}.snake-rank-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text-dim);font-size:13px}.snake-rank-score{color:#f0abfc;font-weight:900}
+.snake-help{margin-top:18px;padding-top:14px;border-top:1px solid rgba(167,139,250,.12);font-size:11.5px;line-height:1.8;color:var(--text-muted)}
+.snake-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(9,4,20,.62);backdrop-filter:blur(5px);border-radius:16px;pointer-events:none;opacity:0;transition:.2s}
+.snake-overlay.show{opacity:1;pointer-events:auto}
+.snake-board-wrap{position:relative}
+.snake-overlay-box{text-align:center;padding:24px;border:1px solid var(--border-strong);border-radius:20px;background:rgba(30,11,48,.9);box-shadow:0 25px 70px -30px #000}
+.snake-overlay-box h3{margin:0 0 8px;font-size:22px}.snake-overlay-box p{margin:0 0 16px;color:var(--text-muted);font-size:13px}
+@media(max-width:850px){.snake-layout{grid-template-columns:1fr}.snake-side{order:-1}.snake-rank-item{padding:7px 9px}#view-snake{padding:78px 10px 35px}.snake-title{font-size:21px}}
+
 </style>
 </head>
 <body>
@@ -265,6 +296,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <button class="nav-link" data-view="score">个人加分</button>
 <button class="nav-link" data-view="countdown">倒计时</button>
 <button class="nav-link" data-view="teachers">老师</button>
+<button class="nav-link" data-view="snake">🎮 联机贪吃蛇</button>
 </div>
 <span class="sync-status" id="syncStatus">⏳ 连接中…</span>
 </nav>
@@ -302,6 +334,25 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 </div>
 </section>
 <section id="view-teachers" class="view"><div class="teacher-wrap"><div class="teacher-header"><h2><span class="ico">🎓</span>我们的老师</h2><p class="teacher-hint">点击老师，送上一束花或一颗爱心 💐❤️</p></div><div class="teachers-grid" id="teachersGrid"></div></div></section>
+<section id="view-snake" class="view">
+<div class="snake-wrap">
+  <div class="snake-head"><h2 class="snake-title">🎮 六年二班 · 联机贪吃蛇</h2><span class="snake-status" id="snakeStatus">● 正在连接游戏服务器…</span></div>
+  <div class="snake-layout">
+    <div class="snake-board-card">
+      <div class="snake-board-wrap">
+        <canvas id="snakeCanvas" width="720" height="520"></canvas>
+        <div class="snake-overlay show" id="snakeOverlay"><div class="snake-overlay-box"><h3 id="snakeOverlayTitle">输入昵称开始游戏</h3><p id="snakeOverlayText">输入昵称后点击“加入游戏”</p><button class="snake-action" id="snakeOverlayBtn">加入游戏</button></div></div>
+      </div>
+      <div class="snake-controls"><button data-dir="up">▲</button><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button><button class="snake-action" id="snakeRestart">重新开始</button></div>
+    </div>
+    <aside class="snake-side">
+      <div class="snake-login"><input id="snakeName" maxlength="10" placeholder="输入你的昵称"><button id="snakeJoin">加入</button></div>
+      <h3 class="snake-panel-title">实时排行榜</h3><div id="snakeRank"><div class="snake-rank-item"><span class="snake-rank-num">—</span><span class="snake-rank-name">等待玩家加入</span><span class="snake-rank-score">0</span></div></div>
+      <div class="snake-help">电脑：方向键 / WASD<br>手机：点击下方方向键<br>吃到食物会变长并增加分数<br>撞墙或撞到蛇身后出局<br>所有同学进入同一个网页即可联机</div>
+    </aside>
+  </div>
+</div>
+</section>
 <div class="overlay" id="overlay"><div class="card" id="profileCard"><button class="close-btn" id="closeProfile">✕</button><div class="p-left"><div class="big-avatar" id="pAvatar">🙂</div><h2 class="p-name" id="pName"></h2><div class="p-tags" id="pTags"></div><p class="p-intro" id="pIntro"></p><div class="p-meta" id="pMeta"></div><div class="medal-wall" id="medalWall"><h4>🏅 荣誉勋章</h4><div class="medal-list" id="medalList"></div><div class="medal-progress" id="medalProgress"></div></div><button class="btn-edit" id="editBtn">✏️ 编辑资料</button></div><div class="p-right"><h3>关系图</h3><div class="sub">线的粗细 = 关系亲密度</div><svg id="relGraph" viewBox="0 0 500 480" preserveAspectRatio="xMidYMid meet"></svg></div></div></div>
 <div class="modal" id="modal"><div class="modal-box"><h3>✏️ 编辑资料</h3><div class="field"><label>昵称</label><input type="text" id="fName"></div><div class="row2"><div class="field"><label>头像 Emoji</label><input type="text" id="fEmoji" maxlength="4"></div><div class="field"><label>主题色</label><input type="color" id="fColor" style="height:42px;padding:4px;cursor:pointer;"></div></div><div class="field"><label>个人简介</label><textarea id="fIntro"></textarea></div><div class="field"><label>标签（用逗号分隔）</label><input type="text" id="fTags"></div><div class="rel-head"><span>我的关系网</span><button class="btn-add" id="addRelBtn">+ 添加关系</button></div><div id="relList"></div><div class="modal-actions"><button class="btn-cancel" id="cancelBtn">取消</button><button class="btn-save" id="saveBtn">保存</button></div></div></div>
 <div class="modal" id="teacherModal"><div class="modal-box teacher-modal-box"><button class="close-btn" id="closeTeacherModal">✕</button><h3>🎓 老师主页</h3><div class="teacher-modal-head"><div class="teacher-modal-avatar" id="tmAvatar">👩‍🏫</div><div class="teacher-modal-info"><input type="text" class="teacher-input-name" id="tmName" placeholder="老师姓名"><input type="text" class="teacher-input-subject" id="tmSubject" placeholder="科目 / 职务"></div></div><div class="field"><label>简介</label><textarea id="tmIntro"></textarea></div><div class="teacher-gift-stats"><div class="gift-stat"><span class="gift-stat-emoji">🌸</span><span class="gift-stat-count" id="tmFlowers">0</span><span class="gift-stat-label">朵花</span></div><div class="gift-stat"><span class="gift-stat-emoji">❤️</span><span class="gift-stat-count" id="tmHearts">0</span><span class="gift-stat-label">颗爱心</span></div></div><div class="gift-buttons"><button class="gift-btn gift-btn-flower" id="sendFlowerBtn"><span class="gift-btn-emoji">💐</span><span>送一束花</span></button><button class="gift-btn gift-btn-heart" id="sendHeartBtn"><span class="gift-btn-emoji">💖</span><span>送爱心</span></button></div><div class="modal-actions"><button class="btn-cancel" id="cancelTeacherBtn">取消</button><button class="btn-save" id="saveTeacherBtn">保存</button></div></div></div>
@@ -414,6 +465,7 @@ function switchView(name){
   if(name==='bubbles'){requestAnimationFrame(()=>renderBubbles())}
   else if(name==='score'){renderStudents();renderRecords();renderLeaderboard()}
   else if(name==='teachers'){renderTeachers()}
+  else if(name==='snake'){initSnake()}
   else if(name==='countdown'){startCountdown()}
   else if(name!=='countdown'&&countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
 }
@@ -576,6 +628,34 @@ document.getElementById('sendFlowerBtn').addEventListener('click',()=>{if(editin
 document.getElementById('sendHeartBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'heart')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(modal.classList.contains('open'))closeModal();else if(document.getElementById('teacherModal').classList.contains('open'))closeTeacherModal();else if(overlay.classList.contains('open'))closeProfile()}});
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles()},180)});
+/* ================= 联机贪吃蛇 ================= */
+let snakeSocket=null,snakeInitialized=false,snakeState=null,snakeDir='right',snakeNextDir='right';
+const SNAKE_SERVER=window.location.origin;
+function snakeSetStatus(t,c){const e=document.getElementById('snakeStatus');if(e){e.textContent='● '+t;e.style.color=c||'#86efac'}}
+function snakeShowOverlay(title,text,button,show=true){const o=document.getElementById('snakeOverlay');if(!o)return;o.classList.toggle('show',show);document.getElementById('snakeOverlayTitle').textContent=title;document.getElementById('snakeOverlayText').textContent=text;document.getElementById('snakeOverlayBtn').textContent=button}
+function initSnake(){
+ if(snakeInitialized)return; snakeInitialized=true;
+ const script=document.createElement('script');script.src=SNAKE_SERVER+'/socket.io/socket.io.js';script.onload=()=>snakeConnect();script.onerror=()=>{snakeSetStatus('服务器未启动','#fca5a5');snakeShowOverlay('游戏服务器未连接','请先启动联机游戏服务器','重试',true)};document.head.appendChild(script);
+ document.getElementById('snakeJoin').onclick=snakeJoin;document.getElementById('snakeOverlayBtn').onclick=snakeJoin;document.getElementById('snakeRestart').onclick=()=>snakeJoin(true);
+ document.querySelectorAll('[data-dir]').forEach(b=>b.onclick=()=>snakeChangeDir(b.dataset.dir));
+ window.addEventListener('keydown',snakeKeyHandler); window.addEventListener('resize',snakeDraw);
+}
+function snakeConnect(){
+ snakeSocket=io(SNAKE_SERVER,{transports:['websocket','polling']});
+ snakeSocket.on('connect',()=>snakeSetStatus('已连接 · 在线游戏中','#86efac'));
+ snakeSocket.on('disconnect',()=>snakeSetStatus('连接断开','#fca5a5'));
+ snakeSocket.on('state',st=>{snakeState=st;snakeDraw();snakeRenderRank()});
+ snakeSocket.on('errorMessage',m=>alert(m));
+}
+function snakeJoin(force){if(!snakeSocket||!snakeSocket.connected)return;const input=document.getElementById('snakeName');let name=(input.value||'').trim();if(!name)name='同学'+Math.floor(Math.random()*900+100);input.value=name;snakeSocket.emit('joinGame',{name,force:!!force});snakeShowOverlay('准备开始…','正在进入六年二班联机大厅','游戏中',false)}
+function snakeChangeDir(d){const bad={up:'down',down:'up',left:'right',right:'left'};if(bad[d]===snakeDir)return;snakeNextDir=d;if(snakeSocket&&snakeSocket.connected)snakeSocket.emit('direction',d)}
+function snakeKeyHandler(e){if(!document.getElementById('view-snake')?.classList.contains('active'))return;const m={ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right'};if(m[e.key]){e.preventDefault();snakeChangeDir(m[e.key])}}
+function snakeRenderRank(){const el=document.getElementById('snakeRank');if(!el||!snakeState)return;const arr=[...(snakeState.players||[])].sort((a,b)=>b.score-a.score);el.innerHTML=arr.length?arr.map((p,i)=>'<div class="snake-rank-item"><span class="snake-rank-num">'+(i+1)+'</span><span class="snake-rank-name">'+escapeHtml(p.name)+(p.id===snakeSocket?.id?'（你）':'')+'</span><span class="snake-rank-score">'+p.score+'</span></div>').join(''):'<div class="snake-rank-item"><span class="snake-rank-num">—</span><span class="snake-rank-name">等待玩家加入</span><span class="snake-rank-score">0</span></div>'}
+function snakeDraw(){const c=document.getElementById('snakeCanvas');if(!c)return;const ctx=c.getContext('2d'),W=c.width,H=c.height,grid=30;ctx.clearRect(0,0,W,H);ctx.fillStyle='#090414';ctx.fillRect(0,0,W,H);ctx.strokeStyle='rgba(167,139,250,.08)';ctx.lineWidth=1;for(let x=0;x<=W;x+=grid){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}for(let y=0;y<=H;y+=grid){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}if(!snakeState)return;
+ const food=snakeState.food||[];food.forEach(f=>{ctx.beginPath();ctx.arc(f.x*grid+grid/2,f.y*grid+grid/2,8,0,Math.PI*2);ctx.fillStyle='#f0abfc';ctx.shadowBlur=18;ctx.shadowColor='#f0abfc';ctx.fill();ctx.shadowBlur=0});
+ (snakeState.players||[]).forEach(p=>{const alpha=p.alive===false?.35:1;ctx.globalAlpha=alpha;(p.body||[]).forEach((b,i)=>{const pad=i?4:2;ctx.fillStyle=p.color||'#a78bfa';ctx.shadowBlur=i?6:14;ctx.shadowColor=p.color||'#a78bfa';ctx.beginPath();ctx.roundRect(b.x*grid+pad,b.y*grid+pad,grid-pad*2,grid-pad*2,7);ctx.fill();if(i===0){ctx.fillStyle='#fff';ctx.shadowBlur=0;ctx.beginPath();ctx.arc(b.x*grid+10,b.y*grid+10,2.5,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(b.x*grid+20,b.y*grid+10,2.5,0,Math.PI*2);ctx.fill()}});ctx.globalAlpha=1});
+}
+
 /* ================= 启动 ================= */
 (async function init(){
   await cloudInit();
