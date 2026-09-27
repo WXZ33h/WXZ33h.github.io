@@ -16,7 +16,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .nav-sub{font-size:11px;color:var(--text-muted);letter-spacing:1.5px;white-space:nowrap}
 .nav-links{display:flex;gap:6px;margin-left:auto;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
 .nav-links::-webkit-scrollbar{display:none}
-.nav-link{border:none;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;padding:8px 18px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap}
+.nav-link{border:none;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;padding:8px 16px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap}
 .nav-link:hover{color:var(--text);background:rgba(139,92,246,.18)}
 .nav-link.active{color:#fff;background:linear-gradient(120deg,#7c3aed,#a855f7);box-shadow:0 6px 18px -6px rgba(139,92,246,.9)}
 .sync-status{font-size:11px;color:var(--text-muted);margin-left:8px;white-space:nowrap}
@@ -57,18 +57,17 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tag{display:inline-block;padding:4px 12px;margin:0 6px 6px 0;border-radius:999px;background:rgba(139,92,246,.2);border:1px solid rgba(167,139,250,.3);color:var(--primary-lighter);font-size:12.5px;font-weight:700}
 .p-intro{font-size:15px;line-height:1.9;color:var(--text-dim);margin:0 0 24px;white-space:pre-wrap;word-break:break-word}
 .p-meta{font-size:12.5px;color:var(--text-muted);margin-bottom:22px}
-/* 勋章墙 */
 .medal-wall{margin:0 0 22px;padding:16px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);border-radius:16px;width:100%}
 .medal-wall h4{margin:0 0 12px;font-size:12px;letter-spacing:2px;color:var(--text-muted);font-weight:800}
-.medal-list{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-start}
+.medal-list{display:flex;gap:10px;flex-wrap:wrap}
 .medal-item{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;background:rgba(139,92,246,.1);border:2px solid rgba(167,139,250,.15);position:relative;transition:.3s;filter:grayscale(1) brightness(.5);opacity:.45}
 .medal-item.unlocked{filter:none;opacity:1;border-color:currentColor;box-shadow:0 0 18px -4px currentColor;animation:medalPop .55s cubic-bezier(.34,1.56,.64,1)}
 .medal-item.unlocked:hover{transform:scale(1.15) rotate(-8deg)}
 @keyframes medalPop{0%{transform:scale(0) rotate(-180deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
-.medal-item .medal-tip{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--text-muted);white-space:nowrap;font-weight:700;letter-spacing:.5px}
+.medal-item .medal-tip{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--text-muted);white-space:nowrap;font-weight:700}
 .medal-progress{margin-top:26px;font-size:11px;color:var(--text-muted);letter-spacing:1px}
 .medal-progress-bar{width:100%;height:6px;background:rgba(139,92,246,.15);border-radius:3px;margin-top:8px;overflow:hidden}
-.medal-progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#f0abfc);border-radius:3px;transition:width .6s cubic-bezier(.22,1,.36,1);box-shadow:0 0 12px rgba(240,171,252,.7)}
+.medal-progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#f0abfc);border-radius:3px;transition:width .6s;box-shadow:0 0 12px rgba(240,171,252,.7)}
 .btn-edit{border:none;cursor:pointer;font-family:inherit;padding:11px 24px;border-radius:999px;font-size:14px;font-weight:800;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);box-shadow:0 12px 28px -10px rgba(139,92,246,.95);transition:.22s}
 .btn-edit:hover{transform:translateY(-2px)}
 .p-right{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px}
@@ -118,7 +117,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .student-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,#a78bfa);box-shadow:0 0 16px -2px var(--c,#a78bfa)}
 .student-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
 .student-top{display:flex;align-items:center;gap:11px;margin-bottom:12px}
-.student-avatar{width:46px;height:46px;flex:0 0 46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 14px -4px rgba(0,0,0,.55),inset 0 -4px 10px rgba(255,255,255,.2),inset 0 2px 6px rgba(255,255,255,.35);background:var(--c,#a78bfa);position:relative}
+.student-avatar{width:46px;height:46px;flex:0 0 46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 14px -4px rgba(0,0,0,.55),inset 0 -4px 10px rgba(255,255,255,.2);background:var(--c,#a78bfa);position:relative}
 .student-mini-medal{position:absolute;bottom:-2px;right:-2px;width:20px;height:20px;border-radius:50%;background:rgba(20,8,31,.95);display:flex;align-items:center;justify-content:center;font-size:11px;border:1.5px solid currentColor;box-shadow:0 0 8px currentColor}
 .student-info{flex:1;min-width:0}
 .student-name{font-size:15px;font-weight:800;color:#fff;outline:none;border-radius:6px;padding:2px 6px;margin-left:-6px;transition:.2s;cursor:text;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
@@ -129,9 +128,9 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .student-score{font-size:26px;font-weight:900;color:var(--c,#a78bfa);text-shadow:0 0 18px var(--c,#a78bfa);font-variant-numeric:tabular-nums;line-height:1}
 .student-add{display:flex;gap:5px;flex-wrap:wrap}
 .score-add-btn{flex:1 1 34px;border:1px solid rgba(167,139,250,.3);background:rgba(139,92,246,.15);color:#fff;font-family:inherit;font-size:12.5px;font-weight:800;padding:7px 0;border-radius:10px;cursor:pointer;transition:.2s;font-variant-numeric:tabular-nums;min-width:0}
-.score-add-btn:hover{background:rgba(139,92,246,.4);border-color:var(--primary-light);transform:translateY(-1px)}
+.score-add-btn:hover{background:rgba(139,92,246,.4);border-color:var(--primary-light)}
 .score-add-btn.minus{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.12);color:#fca5a5}
-.score-add-btn.minus:hover{background:rgba(239,68,68,.3);border-color:rgba(239,68,68,.6);color:#fff}
+.score-add-btn.minus:hover{background:rgba(239,68,68,.3);color:#fff}
 .records-section{background:linear-gradient(160deg,rgba(45,17,71,.7),rgba(30,11,48,.7));border:1px solid var(--border);border-radius:24px;padding:26px 28px;backdrop-filter:blur(12px);margin-bottom:24px}
 .records-section h3{font-size:16px;margin:0 0 18px;color:var(--text-dim);letter-spacing:2px;font-weight:800;display:flex;align-items:center;gap:10px}
 .records-section h3::before{content:"";width:4px;height:18px;border-radius:2px;background:linear-gradient(180deg,#a78bfa,#c026d3)}
@@ -153,26 +152,24 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .empty-records{text-align:center;color:var(--text-muted);font-size:13px;padding:34px 0;letter-spacing:1px}
 .empty-records .ico{display:block;font-size:32px;margin-bottom:10px;opacity:.5}
 .leaderboard-section{background:linear-gradient(160deg,rgba(91,33,182,.35),rgba(45,17,71,.85));border:1px solid rgba(240,171,252,.25);border-radius:24px;padding:26px 28px;backdrop-filter:blur(14px);box-shadow:0 20px 60px -28px rgba(240,171,252,.45);position:relative;overflow:hidden}
-.leaderboard-section::before{content:"";position:absolute;top:-50%;right:-20%;width:340px;height:340px;background:radial-gradient(circle,rgba(240,171,252,.22),transparent 65%);pointer-events:none}
 .leaderboard-section h3{font-size:16px;margin:0 0 20px;color:#fff;letter-spacing:2px;font-weight:800;display:flex;align-items:center;gap:10px;position:relative}
 .leaderboard-section h3::before{content:"";width:4px;height:18px;border-radius:2px;background:linear-gradient(180deg,#fbbf24,#f0abfc);box-shadow:0 0 12px rgba(251,191,36,.7)}
 .leaderboard-section h3 .hint{font-size:11.5px;color:var(--text-muted);font-weight:600;letter-spacing:0;margin-left:auto}
 .leaderboard-list{display:flex;flex-direction:column;gap:10px;position:relative}
-.leaderboard-item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:rgba(20,8,31,.55);border:1px solid rgba(167,139,250,.12);transition:.28s;animation:slideIn .4s ease backwards;position:relative;overflow:hidden}
-.leaderboard-item:hover{border-color:var(--border-strong);transform:translateX(6px);background:rgba(20,8,31,.75)}
-.leaderboard-rank{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;font-variant-numeric:tabular-nums;background:rgba(139,92,246,.18);border:2px solid rgba(167,139,250,.3);color:var(--primary-lighter)}
-.leaderboard-item.rank-1{background:linear-gradient(120deg,rgba(251,191,36,.16),rgba(20,8,31,.6));border-color:rgba(251,191,36,.45);box-shadow:0 0 30px -10px rgba(251,191,36,.55)}
-.leaderboard-item.rank-1 .leaderboard-rank{background:linear-gradient(135deg,#fde68a,#f59e0b);border-color:#fef3c7;color:#78350f;box-shadow:0 0 22px rgba(251,191,36,.85);font-size:20px}
-.leaderboard-item.rank-2{background:linear-gradient(120deg,rgba(229,231,235,.13),rgba(20,8,31,.6));border-color:rgba(229,231,235,.4)}
-.leaderboard-item.rank-2 .leaderboard-rank{background:linear-gradient(135deg,#f3f4f6,#9ca3af);border-color:#f9fafb;color:#374151;box-shadow:0 0 16px rgba(229,231,235,.6)}
-.leaderboard-item.rank-3{background:linear-gradient(120deg,rgba(217,119,6,.14),rgba(20,8,31,.6));border-color:rgba(217,119,6,.4)}
-.leaderboard-item.rank-3 .leaderboard-rank{background:linear-gradient(135deg,#fbbf24,#b45309);border-color:#fcd34d;color:#fff;box-shadow:0 0 16px rgba(217,119,6,.65)}
-.leaderboard-avatar{width:46px;height:46px;flex:0 0 46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px;box-shadow:inset 0 -4px 10px rgba(255,255,255,.22),0 4px 14px -4px rgba(0,0,0,.6)}
+.leaderboard-item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:rgba(20,8,31,.55);border:1px solid rgba(167,139,250,.12);transition:.28s;animation:slideIn .4s ease backwards}
+.leaderboard-item:hover{border-color:var(--border-strong);transform:translateX(6px)}
+.leaderboard-rank{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;background:rgba(139,92,246,.18);border:2px solid rgba(167,139,250,.3);color:var(--primary-lighter)}
+.leaderboard-item.rank-1{background:linear-gradient(120deg,rgba(251,191,36,.16),rgba(20,8,31,.6));border-color:rgba(251,191,36,.45)}
+.leaderboard-item.rank-1 .leaderboard-rank{background:linear-gradient(135deg,#fde68a,#f59e0b);border-color:#fef3c7;color:#78350f;font-size:20px}
+.leaderboard-item.rank-2{background:linear-gradient(120deg,rgba(229,231,235,.13),rgba(20,8,31,.6))}
+.leaderboard-item.rank-2 .leaderboard-rank{background:linear-gradient(135deg,#f3f4f6,#9ca3af);color:#374151}
+.leaderboard-item.rank-3{background:linear-gradient(120deg,rgba(217,119,6,.14),rgba(20,8,31,.6))}
+.leaderboard-item.rank-3 .leaderboard-rank{background:linear-gradient(135deg,#fbbf24,#b45309);color:#fff}
+.leaderboard-avatar{width:46px;height:46px;flex:0 0 46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px}
 .leaderboard-name{flex:1;font-size:15.5px;font-weight:800;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.leaderboard-score{font-size:24px;font-weight:900;font-variant-numeric:tabular-nums;color:#86efac;text-shadow:0 0 16px rgba(134,239,172,.7);line-height:1;flex-shrink:0}
-.leaderboard-item.rank-1 .leaderboard-score{color:#fbbf24;text-shadow:0 0 20px rgba(251,191,36,.95)}
-.leaderboard-medal{font-size:22px;flex-shrink:0;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
-/* 倒计时视图 */
+.leaderboard-score{font-size:24px;font-weight:900;color:#86efac;text-shadow:0 0 16px rgba(134,239,172,.7);flex-shrink:0}
+.leaderboard-item.rank-1 .leaderboard-score{color:#fbbf24}
+.leaderboard-medal{font-size:22px;flex-shrink:0}
 #view-countdown{min-height:100vh;padding:104px 24px 70px;position:relative;overflow:hidden}
 .stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0}
 .star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 3s ease-in-out infinite;opacity:.7}
@@ -182,17 +179,17 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .countdown-header h2{font-size:32px;margin:0 0 10px;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:14px}
 .countdown-header h2 .ico{font-size:30px;filter:drop-shadow(0 4px 16px rgba(240,171,252,.8))}
 .countdown-header p{font-size:13px;color:var(--text-muted);letter-spacing:2px;margin:0}
-.countdown-main{background:linear-gradient(160deg,rgba(91,33,182,.5),rgba(45,17,71,.9));border:1px solid rgba(240,171,252,.3);border-radius:32px;padding:52px 36px;text-align:center;backdrop-filter:blur(14px);box-shadow:0 30px 80px -30px rgba(240,171,252,.6),inset 0 1px 0 rgba(255,255,255,.08);position:relative;overflow:hidden;margin-bottom:32px}
+.countdown-main{background:linear-gradient(160deg,rgba(91,33,182,.5),rgba(45,17,71,.9));border:1px solid rgba(240,171,252,.3);border-radius:32px;padding:52px 36px;text-align:center;backdrop-filter:blur(14px);box-shadow:0 30px 80px -30px rgba(240,171,252,.6);position:relative;overflow:hidden;margin-bottom:32px}
 .countdown-main::before{content:"";position:absolute;top:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(240,171,252,.28),transparent 65%);pointer-events:none;animation:glowPulse 4s ease-in-out infinite}
 @keyframes glowPulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
 .festival-icon{font-size:80px;line-height:1;margin-bottom:14px;display:inline-block;filter:drop-shadow(0 8px 24px rgba(240,171,252,.8));animation:floaty 4s ease-in-out infinite}
 .festival-name{font-size:28px;font-weight:900;color:#fff;letter-spacing:3px;margin-bottom:6px;position:relative}
 .festival-date{font-size:14px;color:var(--primary-lighter);letter-spacing:2px;margin-bottom:40px;position:relative;font-weight:700}
 .countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:640px;margin:0 auto;position:relative}
-.countdown-box{background:rgba(20,8,31,.7);border:1px solid rgba(167,139,250,.28);border-radius:20px;padding:22px 10px 18px;position:relative;overflow:hidden;transition:.3s}
+.countdown-box{background:rgba(20,8,31,.7);border:1px solid rgba(167,139,250,.28);border-radius:20px;padding:22px 10px 18px;position:relative;overflow:hidden}
 .countdown-box::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c4b5fd,transparent);animation:scanline 3s linear infinite}
 @keyframes scanline{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-.countdown-num{font-size:clamp(36px,6vw,56px);font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1;text-shadow:0 0 24px rgba(240,171,252,.9);margin-bottom:6px;transition:.3s}
+.countdown-num{font-size:clamp(36px,6vw,56px);font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1;text-shadow:0 0 24px rgba(240,171,252,.9);margin-bottom:6px}
 .countdown-num.flip{animation:numFlip .5s cubic-bezier(.34,1.56,.64,1)}
 @keyframes numFlip{0%{transform:scale(1.35);color:#f0abfc}100%{transform:scale(1);color:#fff}}
 .countdown-label{font-size:11.5px;color:var(--text-muted);letter-spacing:3px;font-weight:800}
@@ -201,13 +198,13 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .festival-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
 .festival-card{background:linear-gradient(160deg,rgba(45,17,71,.85),rgba(30,11,48,.85));border:1px solid var(--border);border-radius:18px;padding:18px 20px;transition:.3s;cursor:pointer;position:relative;overflow:hidden}
 .festival-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--fc,#a78bfa);box-shadow:0 0 16px -2px var(--fc,#a78bfa)}
-.festival-card:hover{transform:translateY(-4px);border-color:var(--border-strong);box-shadow:0 20px 45px -20px rgba(0,0,0,.8)}
-.festival-card .fc-icon{font-size:32px;margin-bottom:8px;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
+.festival-card:hover{transform:translateY(-4px);border-color:var(--border-strong)}
+.festival-card .fc-icon{font-size:32px;margin-bottom:8px;display:block}
 .festival-card .fc-name{font-size:15px;font-weight:800;color:#fff;letter-spacing:1px;margin-bottom:4px}
 .festival-card .fc-days{font-size:13px;color:var(--fc,#a78bfa);font-weight:900;font-variant-numeric:tabular-nums}
-.festival-card .fc-date{font-size:11px;color:var(--text-muted);margin-top:2px;letter-spacing:.5px}
+.festival-card .fc-date{font-size:11px;color:var(--text-muted);margin-top:2px}
 .festival-card.is-next{border-color:var(--fc,#a78bfa);box-shadow:0 0 30px -8px var(--fc,#a78bfa)}
-.festival-card .next-tag{position:absolute;top:12px;right:12px;font-size:10px;font-weight:800;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);padding:3px 9px;border-radius:999px;letter-spacing:1px;box-shadow:0 4px 12px -4px rgba(139,92,246,.9)}
+.festival-card .next-tag{position:absolute;top:12px;right:12px;font-size:10px;font-weight:800;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);padding:3px 9px;border-radius:999px;letter-spacing:1px}
 #view-teachers{min-height:100vh;padding:104px 24px 70px}
 .teacher-wrap{max-width:1180px;margin:0 auto}
 .teacher-header{text-align:center;margin-bottom:46px}
@@ -215,18 +212,18 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .teacher-header h2 .ico{font-size:28px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
 .teacher-hint{font-size:13px;color:var(--text-muted);letter-spacing:1.8px;margin:0}
 .teachers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:26px;max-width:1080px;margin:0 auto}
-.teacher-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:13px;padding:28px 16px 22px;border-radius:26px;background:linear-gradient(160deg,rgba(45,17,71,.75),rgba(30,11,48,.75));border:1px solid var(--border);cursor:pointer;transition:.32s;overflow:hidden;box-shadow:0 16px 40px -22px rgba(0,0,0,.7)}
+.teacher-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:13px;padding:28px 16px 22px;border-radius:26px;background:linear-gradient(160deg,rgba(45,17,71,.75),rgba(30,11,48,.75));border:1px solid var(--border);cursor:pointer;transition:.32s;overflow:hidden}
 .teacher-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--c);box-shadow:0 0 22px -2px var(--c);border-radius:26px 26px 0 0}
-.teacher-card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:0 32px 70px -25px rgba(0,0,0,.85)}
-.teacher-avatar-circle{width:154px;height:154px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:76px;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85),rgba(255,255,255,0) 60%),var(--c);box-shadow:0 20px 48px -12px rgba(0,0,0,.7),0 0 0 4px rgba(167,139,250,.2),inset 0 -10px 24px rgba(255,255,255,.3),inset 0 5px 14px rgba(255,255,255,.45);transition:.35s cubic-bezier(.34,1.56,.64,1);flex-shrink:0}
-.teacher-card:hover .teacher-avatar-circle{transform:scale(1.06);box-shadow:0 28px 60px -14px rgba(0,0,0,.85),0 0 0 9px rgba(167,139,250,.32),0 0 50px rgba(240,171,252,.4)}
+.teacher-card:hover{transform:translateY(-6px);border-color:var(--border-strong)}
+.teacher-avatar-circle{width:154px;height:154px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:76px;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85),rgba(255,255,255,0) 60%),var(--c);box-shadow:0 20px 48px -12px rgba(0,0,0,.7),inset 0 -10px 24px rgba(255,255,255,.3);transition:.35s;flex-shrink:0}
+.teacher-card:hover .teacher-avatar-circle{transform:scale(1.06)}
 .teacher-name{font-size:20px;font-weight:800;color:#fff;letter-spacing:1px}
 .teacher-subject{font-size:12.5px;font-weight:700;padding:4px 14px;border-radius:999px;background:rgba(139,92,246,.2);border:1px solid rgba(167,139,250,.3);color:var(--primary-lighter);letter-spacing:1.5px}
-.teacher-counts{display:flex;gap:14px;font-size:13px;color:var(--text-dim);font-weight:800;margin-top:2px}
-.teacher-counts span{display:flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums;padding:3px 10px;border-radius:999px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.1)}
+.teacher-counts{display:flex;gap:14px;font-size:13px;color:var(--text-dim);font-weight:800}
+.teacher-counts span{display:flex;align-items:center;gap:4px;padding:3px 10px;border-radius:999px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.1)}
 .teacher-modal-box{width:min(540px,100%)}
 .teacher-modal-head{display:flex;align-items:center;gap:18px;margin-bottom:22px}
-.teacher-modal-avatar{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:46px;flex-shrink:0;background:var(--c,#a78bfa);box-shadow:0 16px 38px -12px rgba(0,0,0,.75),0 0 0 3px rgba(167,139,250,.2),inset 0 -8px 20px rgba(255,255,255,.3)}
+.teacher-modal-avatar{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:46px;flex-shrink:0;background:var(--c,#a78bfa);box-shadow:0 16px 38px -12px rgba(0,0,0,.75)}
 .teacher-modal-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px}
 .teacher-input-name{width:100%;padding:9px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:#fff;font-family:inherit;font-size:17px;font-weight:800;outline:none;transition:.2s}
 .teacher-input-subject{width:100%;padding:7px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:var(--text-dim);font-family:inherit;font-size:12.5px;font-weight:700;letter-spacing:1px;outline:none;transition:.2s}
@@ -234,22 +231,65 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .teacher-gift-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 4px}
 .gift-stat{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:14px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);font-weight:700}
 .gift-stat-emoji{font-size:20px}
-.gift-stat-count{font-size:22px;font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1}
-.gift-stat-label{font-size:11.5px;color:var(--text-muted);letter-spacing:1px}
+.gift-stat-count{font-size:22px;font-weight:900;color:#fff;line-height:1}
+.gift-stat-label{font-size:11.5px;color:var(--text-muted)}
 .gift-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px}
 .gift-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:18px 12px;border-radius:18px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:800;letter-spacing:1.5px;cursor:pointer;transition:.25s;color:#fff;position:relative;overflow:hidden}
-.gift-btn-emoji{font-size:34px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));transition:transform .35s cubic-bezier(.34,1.56,.64,1);line-height:1}
+.gift-btn-emoji{font-size:34px;transition:transform .35s;line-height:1}
 .gift-btn:hover .gift-btn-emoji{transform:scale(1.28) rotate(-10deg)}
-.gift-btn:active{transform:scale(.97)}
-.gift-btn-flower{background:linear-gradient(135deg,rgba(244,114,182,.32),rgba(217,70,239,.32));border-color:rgba(244,114,182,.5);box-shadow:0 12px 30px -12px rgba(244,114,182,.75)}
-.gift-btn-flower:hover{background:linear-gradient(135deg,rgba(244,114,182,.55),rgba(217,70,239,.55));box-shadow:0 18px 42px -12px rgba(244,114,182,1);transform:translateY(-3px)}
-.gift-btn-heart{background:linear-gradient(135deg,rgba(239,68,68,.32),rgba(236,72,153,.32));border-color:rgba(239,68,68,.5);box-shadow:0 12px 30px -12px rgba(239,68,68,.75)}
-.gift-btn-heart:hover{background:linear-gradient(135deg,rgba(239,68,68,.55),rgba(236,72,153,.55));box-shadow:0 18px 42px -12px rgba(239,68,68,1);transform:translateY(-3px)}
+.gift-btn-flower{background:linear-gradient(135deg,rgba(244,114,182,.32),rgba(217,70,239,.32));border-color:rgba(244,114,182,.5)}
+.gift-btn-flower:hover{background:linear-gradient(135deg,rgba(244,114,182,.55),rgba(217,70,239,.55));transform:translateY(-3px)}
+.gift-btn-heart{background:linear-gradient(135deg,rgba(239,68,68,.32),rgba(236,72,153,.32));border-color:rgba(239,68,68,.5)}
+.gift-btn-heart:hover{background:linear-gradient(135deg,rgba(239,68,68,.55),rgba(236,72,153,.55));transform:translateY(-3px)}
 #giftLayer{position:fixed;inset:0;pointer-events:none;z-index:600;overflow:hidden}
-.gift-particle{position:absolute;bottom:-90px;will-change:transform,opacity;animation:giftFloat 2s cubic-bezier(.22,.61,.36,1) forwards;filter:drop-shadow(0 0 10px rgba(240,171,252,.65));user-select:none}
-@keyframes giftFloat{0%{transform:translateY(0) translateX(0) scale(.4) rotate(0deg);opacity:0}18%{opacity:1;transform:translateY(-14vh) translateX(calc(var(--drift) * .25)) scale(1.1) rotate(50deg)}100%{transform:translateY(-118vh) translateX(var(--drift)) scale(1.35) rotate(420deg);opacity:0}}
-@media(max-width:780px){.navbar{padding:0 12px;gap:8px;height:60px}.nav-logo{width:32px;height:32px;flex-basis:32px}.nav-title{font-size:14px}.nav-sub{display:none}.nav-link{padding:7px 11px;font-size:11.5px}.sync-status{display:none}#view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}#view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}}
-@media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px;letter-spacing:1px}}
+.gift-particle{position:absolute;bottom:-90px;animation:giftFloat 2s cubic-bezier(.22,.61,.36,1) forwards;filter:drop-shadow(0 0 10px rgba(240,171,252,.65));user-select:none}
+@keyframes giftFloat{0%{transform:translateY(0) translateX(0) scale(.4);opacity:0}18%{opacity:1;transform:translateY(-14vh) translateX(calc(var(--drift) * .25)) scale(1.1)}100%{transform:translateY(-118vh) translateX(var(--drift)) scale(1.35) rotate(420deg);opacity:0}}
+/* 像素世界 */
+#view-pixel{min-height:100vh;padding:104px 24px 70px}
+.pixel-wrap{max-width:1200px;margin:0 auto}
+.pixel-header{text-align:center;margin-bottom:24px}
+.pixel-header h2{font-size:30px;margin:0 0 8px;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:12px}
+.pixel-header h2 .ico{font-size:28px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
+.pixel-header p{font-size:12.5px;color:var(--text-muted);letter-spacing:1.8px;margin:0}
+.pixel-toolbar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;background:rgba(45,17,71,.6);border:1px solid var(--border);border-radius:18px;padding:12px 18px;margin-bottom:18px;backdrop-filter:blur(12px)}
+.pixel-tool-group{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.pixel-tool-label{font-size:11px;color:var(--text-muted);font-weight:800;letter-spacing:1.5px;margin-right:4px}
+.pixel-btn{border:1px solid rgba(167,139,250,.3);background:rgba(139,92,246,.15);color:#fff;font-family:inherit;font-size:12.5px;font-weight:800;padding:7px 13px;border-radius:10px;cursor:pointer;transition:.2s;white-space:nowrap}
+.pixel-btn:hover{background:rgba(139,92,246,.35);border-color:var(--primary-light);transform:translateY(-1px)}
+.pixel-btn.active{background:linear-gradient(120deg,#7c3aed,#a855f7);border-color:transparent;box-shadow:0 6px 16px -6px rgba(139,92,246,.9)}
+.pixel-btn.primary{background:linear-gradient(120deg,#7c3aed,#c026d3);border-color:transparent;box-shadow:0 8px 20px -8px rgba(139,92,246,.9)}
+.pixel-main{display:grid;grid-template-columns:1fr 290px;gap:18px}
+.pixel-canvas-wrap{background:rgba(20,8,31,.8);border:1px solid var(--border-strong);border-radius:18px;padding:12px;overflow:auto;backdrop-filter:blur(12px)}
+#pixelCanvas{display:block;margin:0 auto;image-rendering:pixelated;image-rendering:crisp-edges;border-radius:10px;cursor:crosshair;max-width:100%;height:auto;background:#1a3a1f}
+.pixel-sidebar{display:flex;flex-direction:column;gap:12px}
+.pixel-panel{background:linear-gradient(160deg,rgba(45,17,71,.75),rgba(30,11,48,.75));border:1px solid var(--border);border-radius:14px;padding:14px 16px;backdrop-filter:blur(10px)}
+.pixel-panel h4{margin:0 0 10px;font-size:12.5px;color:var(--text-dim);letter-spacing:1.5px;font-weight:800;display:flex;align-items:center;gap:8px}
+.pixel-panel h4::before{content:"";width:3px;height:14px;border-radius:2px;background:linear-gradient(180deg,#a78bfa,#c026d3)}
+.pixel-info-item{font-size:12.5px;color:var(--text-dim);padding:6px 0;display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed rgba(167,139,250,.1)}
+.pixel-info-item:last-child{border-bottom:none}
+.pixel-info-item strong{color:#fff;font-weight:800}
+.pixel-events{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto}
+.pixel-events::-webkit-scrollbar{width:4px}
+.pixel-events::-webkit-scrollbar-thumb{background:rgba(139,92,246,.3);border-radius:2px}
+.pixel-event{font-size:11.5px;color:var(--text-dim);padding:7px 9px;background:rgba(20,8,31,.5);border-radius:8px;border-left:3px solid var(--ec,#a78bfa);line-height:1.5}
+.pixel-event .pe-time{font-size:10px;color:var(--text-muted);display:block;margin-top:2px}
+.pixel-picker{display:flex;flex-wrap:wrap;gap:3px}
+.pixel-rule-modal{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(10,4,18,.85);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:.3s}
+.pixel-rule-modal.open{opacity:1;pointer-events:auto}
+.pixel-rule-box{width:min(640px,100%);max-height:88vh;overflow:auto;background:linear-gradient(160deg,#2d1147,#1e0b30);border:1px solid var(--border-strong);border-radius:24px;padding:30px;box-shadow:0 40px 90px -25px rgba(0,0,0,.95);transform:scale(.96);transition:.3s;color:var(--text)}
+.pixel-rule-modal.open .pixel-rule-box{transform:none}
+.pixel-rule-box h2{margin:0 0 18px;font-size:22px;font-weight:900;color:#fff;text-align:center;letter-spacing:2px}
+.pixel-rule-warning{background:linear-gradient(135deg,rgba(239,68,68,.25),rgba(217,70,239,.2));border:2px solid rgba(239,68,68,.6);border-radius:16px;padding:18px 22px;margin-bottom:20px;font-size:14px;line-height:1.9;color:#fef3c7;text-align:center;font-weight:700;animation:warningPulse 2s ease-in-out infinite}
+@keyframes warningPulse{0%,100%{box-shadow:0 0 30px -8px rgba(239,68,68,.6)}50%{box-shadow:0 0 40px -4px rgba(239,68,68,.9)}}
+.pixel-rule-warning strong{color:#fca5a5;font-size:15px;display:block;margin-bottom:6px}
+.pixel-rule-content h3{margin:20px 0 8px;font-size:14.5px;color:#f0abfc;letter-spacing:1.5px;font-weight:800}
+.pixel-rule-content h3:first-child{margin-top:0}
+.pixel-rule-content ul{margin:0;padding-left:20px}
+.pixel-rule-content li{font-size:13px;line-height:1.9;color:var(--text-dim);margin-bottom:4px}
+.pixel-rule-content li strong{color:#fff}
+.pixel-rule-actions{display:flex;justify-content:center;gap:12px;margin-top:24px;padding-top:18px;border-top:1px solid rgba(167,139,250,.16)}
+@media(max-width:780px){.navbar{padding:0 12px;gap:8px;height:60px}.nav-logo{width:32px;height:32px;flex-basis:32px}.nav-title{font-size:14px}.nav-sub{display:none}.nav-link{padding:7px 10px;font-size:11.5px}.sync-status{display:none}#view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}#view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-item{padding:11px 13px;gap:10px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-pixel{padding:88px 14px 50px}.pixel-header h2{font-size:22px}.pixel-toolbar{padding:10px 12px;gap:8px}.pixel-btn{padding:6px 9px;font-size:11px}.pixel-tool-label{display:none}.pixel-main{grid-template-columns:1fr;gap:12px}.pixel-panel{padding:12px}.pixel-rule-box{padding:22px 18px}.pixel-rule-box h2{font-size:18px}.pixel-rule-warning{font-size:12.5px;padding:14px 16px}.pixel-rule-content li{font-size:12px}}
+@media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px}}
 </style>
 </head>
 <body>
@@ -264,6 +304,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <button class="nav-link" data-view="bubbles">班级关系图</button>
 <button class="nav-link" data-view="score">个人加分</button>
 <button class="nav-link" data-view="countdown">倒计时</button>
+<button class="nav-link" data-view="pixel">像素世界</button>
 <button class="nav-link" data-view="teachers">老师</button>
 </div>
 <span class="sync-status" id="syncStatus">⏳ 连接中…</span>
@@ -301,16 +342,59 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="festival-list" id="festivalList"></div>
 </div>
 </section>
+<section id="view-pixel" class="view">
+<div class="pixel-wrap">
+<div class="pixel-header"><h2><span class="ico">🌍</span>像素世界</h2><p>属于六年二班的像素国度 · 慢慢建造，慢慢成长</p></div>
+<div class="pixel-toolbar">
+<div class="pixel-tool-group"><span class="pixel-tool-label">性别</span><button class="pixel-btn" data-gender="male">👦 男生</button><button class="pixel-btn" data-gender="female">👧 女生</button></div>
+<div class="pixel-tool-group"><span class="pixel-tool-label">建造</span><button class="pixel-btn" data-build="house">🏠 小屋</button><button class="pixel-btn" data-build="castle">🏰 城堡</button><button class="pixel-btn" data-build="tree">🌳 树</button><button class="pixel-btn" data-build="flag">🚩 旗帜</button><button class="pixel-btn" data-build="erase">🗑️ 清除</button></div>
+<div class="pixel-tool-group"><button class="pixel-btn primary" id="createNationBtn">🏛️ 创建国家</button><button class="pixel-btn" id="showRulesBtn">📜 规则</button></div>
+</div>
+<div class="pixel-main">
+<div class="pixel-canvas-wrap"><canvas id="pixelCanvas"></canvas></div>
+<div class="pixel-sidebar">
+<div class="pixel-panel"><h4>👤 我的信息</h4><div id="myPixelInfo"></div></div>
+<div class="pixel-panel"><h4>🌐 世界事件</h4><div class="pixel-events" id="pixelEvents"></div></div>
+</div>
+</div>
+</div>
+</section>
 <section id="view-teachers" class="view"><div class="teacher-wrap"><div class="teacher-header"><h2><span class="ico">🎓</span>我们的老师</h2><p class="teacher-hint">点击老师，送上一束花或一颗爱心 💐❤️</p></div><div class="teachers-grid" id="teachersGrid"></div></div></section>
 <div class="overlay" id="overlay"><div class="card" id="profileCard"><button class="close-btn" id="closeProfile">✕</button><div class="p-left"><div class="big-avatar" id="pAvatar">🙂</div><h2 class="p-name" id="pName"></h2><div class="p-tags" id="pTags"></div><p class="p-intro" id="pIntro"></p><div class="p-meta" id="pMeta"></div><div class="medal-wall" id="medalWall"><h4>🏅 荣誉勋章</h4><div class="medal-list" id="medalList"></div><div class="medal-progress" id="medalProgress"></div></div><button class="btn-edit" id="editBtn">✏️ 编辑资料</button></div><div class="p-right"><h3>关系图</h3><div class="sub">线的粗细 = 关系亲密度</div><svg id="relGraph" viewBox="0 0 500 480" preserveAspectRatio="xMidYMid meet"></svg></div></div></div>
 <div class="modal" id="modal"><div class="modal-box"><h3>✏️ 编辑资料</h3><div class="field"><label>昵称</label><input type="text" id="fName"></div><div class="row2"><div class="field"><label>头像 Emoji</label><input type="text" id="fEmoji" maxlength="4"></div><div class="field"><label>主题色</label><input type="color" id="fColor" style="height:42px;padding:4px;cursor:pointer;"></div></div><div class="field"><label>个人简介</label><textarea id="fIntro"></textarea></div><div class="field"><label>标签（用逗号分隔）</label><input type="text" id="fTags"></div><div class="rel-head"><span>我的关系网</span><button class="btn-add" id="addRelBtn">+ 添加关系</button></div><div id="relList"></div><div class="modal-actions"><button class="btn-cancel" id="cancelBtn">取消</button><button class="btn-save" id="saveBtn">保存</button></div></div></div>
 <div class="modal" id="teacherModal"><div class="modal-box teacher-modal-box"><button class="close-btn" id="closeTeacherModal">✕</button><h3>🎓 老师主页</h3><div class="teacher-modal-head"><div class="teacher-modal-avatar" id="tmAvatar">👩‍🏫</div><div class="teacher-modal-info"><input type="text" class="teacher-input-name" id="tmName" placeholder="老师姓名"><input type="text" class="teacher-input-subject" id="tmSubject" placeholder="科目 / 职务"></div></div><div class="field"><label>简介</label><textarea id="tmIntro"></textarea></div><div class="teacher-gift-stats"><div class="gift-stat"><span class="gift-stat-emoji">🌸</span><span class="gift-stat-count" id="tmFlowers">0</span><span class="gift-stat-label">朵花</span></div><div class="gift-stat"><span class="gift-stat-emoji">❤️</span><span class="gift-stat-count" id="tmHearts">0</span><span class="gift-stat-label">颗爱心</span></div></div><div class="gift-buttons"><button class="gift-btn gift-btn-flower" id="sendFlowerBtn"><span class="gift-btn-emoji">💐</span><span>送一束花</span></button><button class="gift-btn gift-btn-heart" id="sendHeartBtn"><span class="gift-btn-emoji">💖</span><span>送爱心</span></button></div><div class="modal-actions"><button class="btn-cancel" id="cancelTeacherBtn">取消</button><button class="btn-save" id="saveTeacherBtn">保存</button></div></div></div>
+<div class="pixel-rule-modal" id="pixelRuleModal">
+<div class="pixel-rule-box">
+<h2>📜 像素世界 · 玩法说明</h2>
+<div class="pixel-rule-warning"><strong>⚠️ 重要提醒：在校期间请勿游玩！</strong>本功能仅供放学后、周末和假期在家使用。<br>上课、课间、午休期间请勿打开，请把学习放在第一位。</div>
+<div class="pixel-rule-content">
+<h3>🎮 基础玩法</h3>
+<ul>
+<li><strong>选择性别</strong>：第一次进入时选择男生 👦 或女生 👧，会在地图上出现你的像素小人</li>
+<li><strong>建造建筑</strong>：先选建筑类型（小屋/城堡/树/旗帜），再点击地图上的空地放置</li>
+<li><strong>创建国家</strong>：给你的国家起个名字，你自己的小人会成为国王，周围 5×5 的领地会自动归你</li>
+<li><strong>宣战/结盟</strong>：点击别人的小人，可以发起宣战、结盟或送花</li>
+</ul>
+<h3>⚖️ 简单规则</h3>
+<ul>
+<li>每个人一个像素小人，位置固定，不能移动</li>
+<li>每人最多建造 20 个建筑</li>
+<li>每人最多创建 1 个国家</li>
+<li>所有操作都会记录在世界事件里</li>
+</ul>
+<h3>🤝 友谊第一</h3>
+<ul>
+<li>游戏中的宣战只是娱乐，不要影响现实中的友谊</li>
+<li>如果班里有同学玩得不开心，请立即停止</li>
+<li>游戏中的内容不带到现实中</li>
+</ul>
+</div>
+<div class="pixel-rule-actions"><button class="pixel-btn primary" id="agreeRulesBtn">我已阅读，进入世界</button><button class="pixel-btn" id="closeRulesBtn">取消</button></div>
+</div>
+</div>
 <script>
 /* ================= Gitee 配置 ================= */
-const GITEE_OWNER='wxz33h';
-const GITEE_REPO='class-data';
-const GITEE_TOKEN='91052abf83218cbf06806d8ba068f165';
-const GITEE_FILE='data.json';
+const GITEE_OWNER='wxz33h',GITEE_REPO='class-data',GITEE_TOKEN='91052abf83218cbf06806d8ba068f165',GITEE_FILE='data.json';
 const GITEE_API='https://gitee.com/api/v5/repos/'+GITEE_OWNER+'/'+GITEE_REPO+'/contents/'+GITEE_FILE;
 function b64Encode(str){const bytes=new TextEncoder().encode(str);let binary='';for(const b of bytes)binary+=String.fromCharCode(b);return btoa(binary)}
 function b64Decode(b64){const binary=atob(b64.replace(/\s/g,''));const bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);return new TextDecoder().decode(bytes)}
@@ -323,48 +407,36 @@ async function cloudInit(){
     const res=await fetch(GITEE_API+'?access_token='+GITEE_TOKEN+'&t='+Date.now());
     if(res.status===404){
       dataCache={people:buildPeople(),home:{...HOME_DEFAULT},score:{scores:{},records:[]},teachers:BASE_TEACHERS.map(t=>({...t}))};
-      fileSha=null;cloudReady=true;setSync('🔄 初始化…','#fbbf24');
-      await cloudPush(true);
+      fileSha=null;cloudReady=true;setSync('🔄 初始化…','#fbbf24');await cloudPush(true);
     }else if(res.ok){
-      const json=await res.json();fileSha=json.sha;
-      dataCache=JSON.parse(b64Decode(json.content));cloudReady=true;
-      setSync('🟢 已同步','#86efac');
+      const json=await res.json();fileSha=json.sha;dataCache=JSON.parse(b64Decode(json.content));cloudReady=true;setSync('🟢 已同步','#86efac');
     }else{setSync('❌ 连接失败','#fca5a5')}
   }catch(e){console.error(e);setSync('❌ 连接失败','#fca5a5')}
 }
 let pushTimer=null;
 async function cloudPush(immediate){
-  if(!dataCache)return;
-  clearTimeout(pushTimer);
+  if(!dataCache)return;clearTimeout(pushTimer);
   const doPush=async()=>{
     setSync('🔄 保存中…','#fbbf24');
     try{
       const checkRes=await fetch(GITEE_API+'?access_token='+GITEE_TOKEN+'&t='+Date.now());
-      let curSha=null;
-      if(checkRes.ok){const j=await checkRes.json();curSha=j.sha}
+      let curSha=null;if(checkRes.ok){const j=await checkRes.json();curSha=j.sha}
       const body={access_token:GITEE_TOKEN,content:b64Encode(JSON.stringify(dataCache,null,2)),message:'更新班级数据 '+new Date().toLocaleString('zh-CN')};
       if(curSha)body.sha=curSha;
       const method=curSha?'PUT':'POST';
-      const res=await fetch(GITEE_API,{method:method,headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+      const res=await fetch(GITEE_API,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       if(res.ok){const json=await res.json();fileSha=json.content?.sha||json.sha;setSync('🟢 已同步','#86efac')}
       else{setSync('❌ 保存失败','#fca5a5')}
-    }catch(e){console.error('推送失败',e);setSync('❌ 保存失败','#fca5a5')}
+    }catch(e){console.error(e);setSync('❌ 保存失败','#fca5a5')}
   };
-  if(immediate)return doPush();
-  pushTimer=setTimeout(doPush,800);
+  if(immediate)return doPush();pushTimer=setTimeout(doPush,800);
 }
 async function cloudPoll(){
   if(!cloudReady)return;
   try{
-    const res=await fetch(GITEE_API+'?access_token='+GITEE_TOKEN+'&t='+Date.now());
-    if(!res.ok)return;
-    const json=await res.json();
-    if(json.sha===fileSha)return;
-    fileSha=json.sha;
-    dataCache=JSON.parse(b64Decode(json.content));
-    applyCacheToState();
-    refreshAllUI();
-    setSync('🟢 已同步（有新更新）','#86efac');
+    const res=await fetch(GITEE_API+'?access_token='+GITEE_TOKEN+'&t='+Date.now());if(!res.ok)return;
+    const json=await res.json();if(json.sha===fileSha)return;
+    fileSha=json.sha;dataCache=JSON.parse(b64Decode(json.content));applyCacheToState();refreshAllUI();setSync('🟢 已同步（有新更新）','#86efac');
   }catch(e){}
 }
 /* ================= 基础数据 ================= */
@@ -373,217 +445,10 @@ const COLORS=['#c4b5fd','#e9d5ff','#f0abfc','#ddd6fe','#d8b4fe','#a78bfa','#f5d0
 const BASE=[{id:'p1',name:'林小雨',emoji:'🌧️',intro:'喜欢下雨天和耳机里的歌，\n画画是我和世界说话的方式。',tags:['画画','民谣','猫']},{id:'p2',name:'陈子航',emoji:'⚽',intro:'球场上的位置：哪里缺人补哪里。',tags:['足球','篮球','熬夜']},{id:'p3',name:'苏念',emoji:'📚',intro:'看书很快，写字很慢。',tags:['阅读','写作','历史']},{id:'p4',name:'王浩',emoji:'🎮',intro:'每天上分一小时（实际三小时）。',tags:['游戏','编程','B站']},{id:'p5',name:'李思远',emoji:'🎸',intro:'吉他初学者，弹得最好的是《晴天》。',tags:['吉他','唱歌','周杰伦']},{id:'p6',name:'周佳怡',emoji:'🍰',intro:'甜品鉴赏家，兼职数学课代表。',tags:['烘焙','数学','奶茶']},{id:'p7',name:'赵一鸣',emoji:'🏀',intro:'身高是优势，投篮是玄学。',tags:['篮球','球鞋','说唱']},{id:'p8',name:'孙悦',emoji:'🎬',intro:'电影看得比作业多。',tags:['电影','摄影','剪辑']},{id:'p9',name:'吴桐',emoji:'🌱',intro:'养了七盆多肉，活下来三盆。',tags:['植物','手工','安静']},{id:'p10',name:'郑亦然',emoji:'🐱',intro:'猫派，坚定不移。',tags:['猫','画画','二次元']},{id:'p11',name:'刘星宇',emoji:'🚀',intro:'想造火箭，先从物理及格开始。',tags:['物理','天文','科幻']},{id:'p12',name:'何雨薇',emoji:'🎹',intro:'钢琴十级，最近在学即兴。',tags:['钢琴','古典乐','日语']},{id:'p13',name:'马小跳',emoji:'🏃',intro:'课间十分钟能跑三圈操场。',tags:['跑步','田径','活力']},{id:'p14',name:'许安然',emoji:'☕',intro:'安静地待在角落，偶尔说一句很好笑的话。',tags:['咖啡','手账','独立音乐']},{id:'p15',name:'高一诺',emoji:'🎨',intro:'美术生，随时在速写本上涂涂画画。',tags:['美术','设计','展览']},{id:'p16',name:'黄子豪',emoji:'🍜',intro:'学校周边美食活地图。',tags:['美食','探店','相声']},{id:'p17',name:'徐一诺',emoji:'🎭',intro:'话剧社主力，最喜欢扮演反派。',tags:['话剧','表演','配音']},{id:'p18',name:'曹雨欣',emoji:'🌸',intro:'喜欢春天，也喜欢所有粉色的东西。',tags:['春天','粉色','手工']},{id:'p19',name:'沈嘉树',emoji:'🌳',intro:'立志把教室窗台的绿植养活。',tags:['植物','环保','徒步']},{id:'p20',name:'韩雪',emoji:'❄️',intro:'冬天出生的，所以不怕冷。',tags:['滑雪','阅读','安静']},{id:'p21',name:'唐子墨',emoji:'🖋️',intro:'字写得还不错，可以帮同学抄笔记。',tags:['书法','写作','历史']},{id:'p22',name:'顾念',emoji:'🍀',intro:'运气型选手，考试全靠蒙对。',tags:['幸运','游戏','音乐']},{id:'p23',name:'程宇航',emoji:'🛰️',intro:'航天迷，梦想去酒泉看一次发射。',tags:['航天','天文','科幻']},{id:'p24',name:'卢佳琪',emoji:'🎤',intro:'唱歌跑调，但热情不减。',tags:['唱歌','K歌','综艺']},{id:'p25',name:'蒋子涵',emoji:'🏊',intro:'夏天最期待的就是游泳课。',tags:['游泳','运动','夏天']},{id:'p26',name:'宋雨桐',emoji:'🌈',intro:'喜欢雨后的天空和棉花糖。',tags:['彩虹','甜品','画画']},{id:'p27',name:'方启铭',emoji:'⚡',intro:'做什么都很快，除了写作业。',tags:['游戏','运动','熬夜']},{id:'p28',name:'秦悦',emoji:'🎻',intro:'学小提琴四年，还在和音准斗争。',tags:['小提琴','古典乐','阅读']},{id:'p29',name:'丁一',emoji:'📖',intro:'名字笔画最少，作业写得最多。',tags:['阅读','写作','历史']},{id:'p30',name:'罗子谦',emoji:'🎯',intro:'射箭社团成员，专注力满分。',tags:['射箭','专注','运动']},{id:'p31',name:'谢婉清',emoji:'🍵',intro:'喜欢喝茶和安静的下午。',tags:['茶道','安静','阅读']},{id:'p32',name:'崔博文',emoji:'🧩',intro:'拼图爱好者，一千片起步。',tags:['拼图','解谜','手工']},{id:'p33',name:'潘星辰',emoji:'✨',intro:'喜欢看星星，也喜欢看漫画。',tags:['天文','漫画','幻想']},{id:'p34',name:'汪雨萌',emoji:'🐰',intro:'养了两只兔子，一只叫团子一只叫汤圆。',tags:['兔子','萌宠','手工']},{id:'p35',name:'石天佑',emoji:'🏔️',intro:'暑假跟爸妈爬过泰山，全程没哭。',tags:['爬山','户外','旅行']},{id:'p36',name:'龚心悦',emoji:'💖',intro:'喜欢所有可爱的东西。',tags:['可爱','手账','甜品']},{id:'p37',name:'白泽宇',emoji:'🦉',intro:'博学多识，但考试总粗心。',tags:['百科','历史','科学']},{id:'p38',name:'钟灵',emoji:'🌙',intro:'晚上精神最好，白天永远没睡醒。',tags:['熬夜','写作','音乐']},{id:'p39',name:'严子轩',emoji:'🎧',intro:'耳机不离身，歌单比作业长。',tags:['音乐','耳机','电竞']},{id:'p40',name:'熊思远',emoji:'🌊',intro:'喜欢大海，也喜欢一切蓝色。',tags:['大海','游泳','蓝色']},{id:'p41',name:'孔令仪',emoji:'🎀',intro:'发饰收藏家，今天也是蝴蝶结。',tags:['发饰','可爱','手作']},{id:'p42',name:'温子瑜',emoji:'🍭',intro:'甜食爱好者，糖果分你一半。',tags:['甜品','分享','画画']},{id:'p43',name:'尹嘉树',emoji:'🌲',intro:'喜欢森林和一切绿色的东西。',tags:['自然','徒步','摄影']}];
 const BASE_RELATIONS=[['p1','p10','画友',5],['p1','p3','好朋友',4],['p1','p14','同桌',5],['p2','p7','球友',5],['p2','p13','球友',4],['p2','p6','前后桌',3],['p3','p14','书友',3],['p3','p11','辩论队',4],['p4','p11','室友',4],['p4','p8','游戏搭子',5],['p5','p12','乐队',4],['p5','p8','好朋友',3],['p6','p16','饭搭子',5],['p6','p9','好朋友',3],['p7','p13','队友',4],['p8','p15','社团',3],['p9','p15','画友',3],['p9','p14','安静组',3],['p10','p15','同好',4],['p11','p12','学习小组',3],['p17','p24','话剧社',4],['p18','p26','甜品搭子',3],['p19','p43','绿植组',4],['p20','p31','安静组',3],['p21','p3','书友',4],['p22','p27','游戏搭子',4],['p23','p33','天文社',5],['p25','p40','泳伴',5],['p28','p12','弦乐组',4],['p29','p21','写作组',3],['p30','p25','运动社',3],['p32','p9','手工组',3],['p34','p41','萌物组',4],['p35','p43','徒步社',4],['p36','p42','甜品组',4],['p37','p23','知识组',3],['p38','p39','夜猫组',3],['p40','p25','泳伴',4],['p41','p36','可爱联盟',4],['p42','p18','甜品组',3]];
 const BASE_TEACHERS=[{id:'t1',name:'王老师',emoji:'👩‍🏫',subject:'语文',intro:'教我们读书写字，也教我们做一个温柔而坚定的人。',color:'#a78bfa',flowers:0,hearts:0},{id:'t2',name:'李老师',emoji:'👨‍🏫',subject:'数学',intro:'黑板上写满公式，心里装满对我们的期待。',color:'#f0abfc',flowers:0,hearts:0},{id:'t3',name:'张老师',emoji:'👩‍🔬',subject:'英语',intro:'一口流利的英语，带我们看见更大的世界。',color:'#c4b5fd',flowers:0,hearts:0},{id:'t4',name:'刘老师',emoji:'🧑‍🏫',subject:'班主任',intro:'班里大大小小的事，都是她在操心。',color:'#e879f9',flowers:0,hearts:0},{id:'t5',name:'赵老师',emoji:'🧑‍🎤',subject:'音乐',intro:'琴键上跳动的音符，是他送给我们的礼物。',color:'#d8b4fe',flowers:0,hearts:0},{id:'t6',name:'孙老师',emoji:'🎨',subject:'美术',intro:'调色盘里装着整个世界的颜色。',color:'#c084fc',flowers:0,hearts:0}];
-/* ================= 勋章配置 ================= */
-const MEDALS=[
-  {icon:'🥉',name:'铜牌',need:5,color:'#d97706'},
-  {icon:'🥈',name:'银牌',need:15,color:'#cbd5e1'},
-  {icon:'🥇',name:'金牌',need:30,color:'#fbbf24'},
-  {icon:'💎',name:'钻石',need:50,color:'#67e8f9'},
-  {icon:'👑',name:'传说',need:100,color:'#f0abfc'}
-];
-/* ================= 节日配置 ================= */
-const FESTIVALS=[
-  {name:'元旦',icon:'🎉',month:1,day:1,color:'#a78bfa'},
-  {name:'儿童节',icon:'🎈',month:6,day:1,color:'#f0abfc'},
-  {name:'劳动节',icon:'💪',month:5,day:1,color:'#86efac'},
-  {name:'国庆节',icon:'🇨🇳',month:10,day:1,color:'#fca5a5'},
-  {name:'圣诞节',icon:'🎄',month:12,day:25,color:'#67e8f9'}
-];
+const MEDALS=[{icon:'🥉',name:'铜牌',need:5,color:'#d97706'},{icon:'🥈',name:'银牌',need:15,color:'#cbd5e1'},{icon:'🥇',name:'金牌',need:30,color:'#fbbf24'},{icon:'💎',name:'钻石',need:50,color:'#67e8f9'},{icon:'👑',name:'传说',need:100,color:'#f0abfc'}];
+const FESTIVALS=[{name:'元旦',icon:'🎉',month:1,day:1,color:'#a78bfa'},{name:'儿童节',icon:'🎈',month:6,day:1,color:'#f0abfc'},{name:'劳动节',icon:'💪',month:5,day:1,color:'#86efac'},{name:'国庆节',icon:'🇨🇳',month:10,day:1,color:'#fca5a5'},{name:'圣诞节',icon:'🎄',month:12,day:25,color:'#67e8f9'}];
 /* ================= 工具 ================= */
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function toHex(c){if(!c)return '#c4b5fd';if(/^#[0-9a-f]{6}$/i.test(c))return c;const m=c.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);if(m)return '#'+[1,2,3].map(i=>(+m[i]).toString(16).padStart(2,'0')).join('');return '#c4b5fd'}
 function formatFullTime(ts){const d=new Date(ts);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')+':'+String(d.getSeconds()).padStart(2,'0')}
-function formatTime(ts){const d=new Date(ts),now=new Date(),diff=now-d;if(diff<60000)return '刚刚';if(diff<3600000)return Math.floor(diff/60000)+' 分钟前';const today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),thatDay=new Date(d.getFullYear(),d.getMonth(),d.getDate()),dayDiff=Math.round((today-thatDay)/86400000),hh=String(d.getHours()).padStart(2,'0'),mm=String(d.getMinutes()).padStart(2,'0'),ss=String(d.getSeconds()).padStart(2,'0');if(dayDiff===0)return '今天 '+hh+':'+mm+':'+ss;if(dayDiff===1)return '昨天 '+hh+':'+mm+':'+ss;return (d.getMonth()+1)+'月'+d.getDate()+'日 '+hh+':'+mm+':'+ss}
-/* ================= 状态 ================= */
-const state={people:[],currentId:null};
-const scoreState={scores:{},records:[]};
-let teachers=[],searchKeyword='',editingId=null,editingTeacherId=null;
-let countdownTimer=null,currentFestivalIndex=0;
-function buildPeople(){const people=BASE.map((p,i)=>({...p,color:COLORS[i%COLORS.length],relations:{}}));const map=Object.fromEntries(people.map(p=>[p.id,p]));for(const [a,b,label,strength] of BASE_RELATIONS){if(map[a]&&map[b]){map[a].relations[b]={label,strength};map[b].relations[a]={label,strength}}}return people}
-function applyCacheToState(){if(!dataCache)return;state.people=dataCache.people||buildPeople();scoreState.scores=dataCache.score?.scores||{};scoreState.records=dataCache.score?.records||[];teachers=dataCache.teachers||BASE_TEACHERS.map(t=>({...t}))}
-function syncToCache(){if(!dataCache)return;dataCache.people=state.people;dataCache.score={scores:scoreState.scores,records:scoreState.records};dataCache.teachers=teachers}
-function saveData(){syncToCache();cloudPush()}
-function saveScore(){syncToCache();cloudPush()}
-function saveTeachers(){syncToCache();cloudPush()}
-function saveHomeData(d){if(!dataCache)return;dataCache.home=d;cloudPush()}
-function initHomeEditing(){document.querySelectorAll('#view-home [data-key]').forEach(el=>{el.addEventListener('keydown',e=>{if(e.key==='Enter'&&el.dataset.key!=='intro'){e.preventDefault();el.blur()}});el.addEventListener('blur',()=>{const d={...HOME_DEFAULT,...(dataCache?.home||{})};d[el.dataset.key]=el.innerText.trim();saveHomeData(d);if(el.dataset.key==='className'){const t=document.getElementById('navTitleText');if(t)t.textContent=d.className||'六年二班';document.title=(d.className||'六年二班')+' · 班级主页'}});el.addEventListener('paste',e=>{e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,text)})})}
-function switchView(name){
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  const target=document.getElementById('view-'+name);if(target)target.classList.add('active');
-  document.querySelectorAll('.nav-link').forEach(l=>{l.classList.toggle('active',l.dataset.view===name)});
-  if(name==='bubbles'){requestAnimationFrame(()=>renderBubbles())}
-  else if(name==='score'){renderStudents();renderRecords();renderLeaderboard()}
-  else if(name==='teachers'){renderTeachers()}
-  else if(name==='countdown'){startCountdown()}
-  else if(name!=='countdown'&&countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
-}
-function computeLayout(people,W,H){const n=people.length;if(!n||W<10||H<10)return[];const cx=W/2,cy=H/2,GOLDEN=2.399963,baseR=Math.max(16,Math.min(48,Math.sqrt((W*H)/(n*Math.PI*5))));const nodes=people.map((p,i)=>{const relCount=Object.keys(p.relations||{}).length,r=baseR+Math.min(relCount,8)*1.6,ang=i*GOLDEN,rad=Math.sqrt((i+0.5)/n)*Math.min(W,H)*0.42;return{id:p.id,r,x:cx+Math.cos(ang)*rad,y:cy+Math.sin(ang)*rad}});for(let it=0;it<420;it++){for(let i=0;i<n;i++){for(let j=i+1;j<n;j++){const a=nodes[i],b=nodes[j];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||0.01;const minD=a.r+b.r+8;if(d<minD){const push=(minD-d)/2,ux=dx/d,uy=dy/d;a.x-=ux*push;a.y-=uy*push;b.x+=ux*push;b.y+=uy*push}}}for(const nd of nodes){nd.x+=(cx-nd.x)*0.012;nd.y+=(cy-nd.y)*0.012}}for(const nd of nodes){nd.x=Math.max(nd.r+4,Math.min(W-nd.r-4,nd.x));nd.y=Math.max(nd.r+4,Math.min(H-nd.r-4,nd.y))}return nodes}
-const stage=document.getElementById('stage');
-function renderBubbles(){if(!stage)return;stage.innerHTML='';const W=stage.clientWidth,H=stage.clientHeight;if(W<10||H<10)return;const nodes=computeLayout(state.people,W,H);nodes.forEach((node,i)=>{const p=state.people.find(x=>x.id===node.id);if(!p)return;const el=document.createElement('div');el.className='bubble';el.style.width=(node.r*2)+'px';el.style.height=(node.r*2)+'px';el.style.left=(node.x-node.r)+'px';el.style.top=(node.y-node.r)+'px';el.style.setProperty('--c',p.color);el.style.animationDelay=Math.min(i*18,800)+'ms';const emojiSize=Math.max(13,node.r*0.60),nameSize=Math.max(9,node.r*0.27);el.innerHTML='<span class="bub-emoji" style="font-size:'+emojiSize+'px">'+escapeHtml(p.emoji||'🙂')+'</span><span class="bub-name" style="font-size:'+nameSize+'px">'+escapeHtml(p.name)+'</span>';el.addEventListener('click',()=>openProfile(p.id));stage.appendChild(el)})}
-/* ================= 勋章计算 ================= */
-function getUnlockedMedals(score){
-  return MEDALS.map(m=>({...m,unlocked:score>=m.need}));
-}
-function getTopMedal(score){
-  let top=null;
-  for(const m of MEDALS){if(score>=m.need)top=m;}
-  return top;
-}
-const overlay=document.getElementById('overlay');
-function openProfile(id){const p=state.people.find(x=>x.id===id);if(!p)return;state.currentId=id;renderProfile(p);overlay.classList.add('open')}
-function closeProfile(){overlay.classList.remove('open');state.currentId=null}
-function renderProfile(p){
-  const av=document.getElementById('pAvatar');av.textContent=p.emoji||'🙂';av.style.background='radial-gradient(circle at 32% 26%, rgba(255,255,255,.8), rgba(255,255,255,0) 60%), '+p.color;
-  document.getElementById('pName').textContent=p.name;
-  document.getElementById('pTags').innerHTML=(p.tags||[]).filter(Boolean).map(t=>'<span class="tag">'+escapeHtml(t)+'</span>').join('');
-  document.getElementById('pIntro').textContent=(p.intro&&p.intro.trim())?p.intro:'这个人很懒，什么都没写 ~';
-  const relCount=Object.keys(p.relations||{}).length,score=scoreState.scores[p.id]||0;
-  document.getElementById('pMeta').textContent='当前得分 '+score+' 分 · 班级关系 '+relCount+' 人 · 编号 '+(state.people.indexOf(p)+1)+' / '+state.people.length;
-  /* 勋章墙 */
-  const medals=getUnlockedMedals(score);
-  document.getElementById('medalList').innerHTML=medals.map(m=>'<div class="medal-item '+(m.unlocked?'unlocked':'')+'" style="color:'+m.color+'"><span>'+m.icon+'</span><span class="medal-tip">'+m.name+' '+m.need+'分</span></div>').join('');
-  const nextMedal=MEDALS.find(m=>score<m.need);
-  const progressEl=document.getElementById('medalProgress');
-  if(nextMedal){
-    const prevNeed=MEDALS[MEDALS.indexOf(nextMedal)-1]?.need||0;
-    const progress=Math.min(100,Math.max(0,((score-prevNeed)/(nextMedal.need-prevNeed))*100));
-    progressEl.innerHTML='下一个勋章：'+nextMedal.icon+' '+nextMedal.name+'（还需 '+(nextMedal.need-score)+' 分）<div class="medal-progress-bar"><div class="medal-progress-fill" style="width:'+progress+'%"></div></div>';
-  }else{
-    progressEl.innerHTML='🎊 已解锁全部勋章，太厉害了！';
-  }
-  renderGraph(p);
-}
-function renderGraph(p){const svg=document.getElementById('relGraph'),W=500,H=480,cx=W/2,cy=232;const entries=Object.entries(p.relations||{}).map(([id,r])=>({id,label:r.label||'同学',strength:Math.max(1,Math.min(5,r.strength||3)),person:state.people.find(x=>x.id===id)})).filter(e=>e.person).slice(0,8);const defs='<defs><filter id="softShadow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.45"/></filter></defs>';if(!entries.length){svg.innerHTML=defs+'<circle cx="'+cx+'" cy="'+cy+'" r="48" fill="'+p.color+'" opacity=".95" filter="url(#softShadow)"/><text x="'+cx+'" y="'+(cy-4)+'" text-anchor="middle" dominant-baseline="middle" font-size="30">'+escapeHtml(p.emoji||'🙂')+'</text><text x="'+cx+'" y="'+(cy+28)+'" text-anchor="middle" font-size="14" font-weight="800" fill="#2e1065">'+escapeHtml(p.name)+'</text><text x="'+cx+'" y="'+(cy+110)+'" text-anchor="middle" font-size="13" fill="#8b7bb8">还没有添加关系 ~</text>';return}const R=158,n=entries.length;entries.forEach((e,i)=>{const ang=-Math.PI/2+(i*2*Math.PI/n);e._x=cx+Math.cos(ang)*R;e._y=cy+Math.sin(ang)*R});let edges='';entries.forEach(e=>{const w=1+e.strength*1.7,op=0.22+e.strength*0.14;edges+='<line x1="'+cx+'" y1="'+cy+'" x2="'+e._x+'" y2="'+e._y+'" stroke="'+p.color+'" stroke-width="'+w+'" stroke-linecap="round" opacity="'+op+'"/>'});let nodesHtml='<g><circle cx="'+cx+'" cy="'+cy+'" r="50" fill="'+p.color+'" filter="url(#softShadow)"/><circle cx="'+cx+'" cy="'+cy+'" r="50" fill="none" stroke="#fff" stroke-width="3" opacity=".55"/><text x="'+cx+'" y="'+(cy-6)+'" text-anchor="middle" dominant-baseline="middle" font-size="30">'+escapeHtml(p.emoji||'🙂')+'</text><text x="'+cx+'" y="'+(cy+26)+'" text-anchor="middle" font-size="14" font-weight="800" fill="#2e1065">'+escapeHtml(p.name)+'</text></g>';entries.forEach(e=>{nodesHtml+='<g><circle cx="'+e._x+'" cy="'+e._y+'" r="30" fill="'+e.person.color+'" filter="url(#softShadow)"/><text x="'+e._x+'" y="'+(e._y-3)+'" text-anchor="middle" dominant-baseline="middle" font-size="21">'+escapeHtml(e.person.emoji||'🙂')+'</text><text x="'+e._x+'" y="'+(e._y+44)+'" text-anchor="middle" font-size="12" font-weight="800" fill="#e9d5ff">'+escapeHtml(e.person.name)+'</text><text x="'+e._x+'" y="'+(e._y+59)+'" text-anchor="middle" font-size="10" fill="#8b7bb8">'+escapeHtml(e.label)+'</text></g>'});svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML=defs+edges+nodesHtml}
-const modal=document.getElementById('modal');
-function openEdit(){const p=state.people.find(x=>x.id===state.currentId);if(!p)return;editingId=p.id;document.getElementById('fName').value=p.name||'';document.getElementById('fEmoji').value=p.emoji||'🙂';document.getElementById('fColor').value=toHex(p.color)||'#c4b5fd';document.getElementById('fIntro').value=p.intro||'';document.getElementById('fTags').value=(p.tags||[]).join(', ');renderRelRows(p);modal.classList.add('open')}
-function closeModal(){modal.classList.remove('open');editingId=null}
-function renderRelRows(p){const list=document.getElementById('relList');list.innerHTML='';Object.entries(p.relations||{}).forEach(([id,r])=>addRelRow(id,r.label,r.strength))}
-function addRelRow(targetId,label,strength){label=label||'';strength=strength||3;const list=document.getElementById('relList'),options=state.people.filter(x=>x.id!==editingId).map(x=>'<option value="'+x.id+'" '+(x.id===targetId?'selected':'')+'>'+escapeHtml(x.emoji||'🙂')+' '+escapeHtml(x.name)+'</option>').join(''),row=document.createElement('div');row.className='rel-row';row.innerHTML='<select class="rel-person">'+options+'</select><input type="text" class="rel-label" value="'+escapeHtml(label)+'" placeholder="关系，如 同桌"><input type="range" class="rel-strength" min="1" max="5" value="'+strength+'"><button class="rel-del">✕</button>';row.querySelector('.rel-del').addEventListener('click',()=>row.remove());list.appendChild(row)}
-function saveEdit(){const p=state.people.find(x=>x.id===editingId);if(!p)return;Object.keys(p.relations||{}).forEach(oid=>{const other=state.people.find(x=>x.id===oid);if(other&&other.relations)delete other.relations[p.id]});p.name=document.getElementById('fName').value.trim()||p.name;p.emoji=document.getElementById('fEmoji').value.trim()||'🙂';p.color=document.getElementById('fColor').value;p.intro=document.getElementById('fIntro').value.trim();p.tags=document.getElementById('fTags').value.split(/[,，、]/).map(s=>s.trim()).filter(Boolean);const newRel={};document.querySelectorAll('#relList .rel-row').forEach(row=>{const tid=row.querySelector('.rel-person').value;if(!tid)return;const label=row.querySelector('.rel-label').value.trim()||'同学',strength=Number(row.querySelector('.rel-strength').value)||3;newRel[tid]={label,strength};const other=state.people.find(x=>x.id===tid);if(other){other.relations=other.relations||{};other.relations[p.id]={label,strength}}});p.relations=newRel;saveData();renderBubbles();renderProfile(p);if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderLeaderboard()}closeModal()}
-function addScore(studentId,delta,reason){const student=state.people.find(s=>s.id===studentId);if(!student||!delta)return;scoreState.scores[studentId]=(scoreState.scores[studentId]||0)+delta;const finalReason=(reason&&reason.trim())||(delta>0?'表现优秀':'违反纪律');scoreState.records.unshift({id:'r'+Date.now()+'_'+Math.random().toString(36).slice(2,6),studentId:student.id,studentName:student.name,delta,reason:finalReason,time:Date.now()});if(scoreState.records.length>300)scoreState.records=scoreState.records.slice(0,300);saveScore();renderStudents();renderRecords();renderLeaderboard()}
-function undoRecord(recordId){const idx=scoreState.records.findIndex(r=>r.id===recordId);if(idx<0)return;const rec=scoreState.records[idx];scoreState.scores[rec.studentId]=(scoreState.scores[rec.studentId]||0)-rec.delta;scoreState.records.splice(idx,1);saveScore();renderStudents();renderRecords();renderLeaderboard()}
-function renderStudents(){const grid=document.getElementById('studentsGrid');if(!grid)return;grid.innerHTML='';const kw=searchKeyword.trim().toLowerCase(),list=kw?state.people.filter(p=>p.name.toLowerCase().includes(kw)||(p.tags||[]).some(t=>t.toLowerCase().includes(kw))):state.people;if(!list.length){grid.innerHTML='<div class="empty-records" style="grid-column:1/-1"><span class="ico">🔍</span>没有找到匹配的同学</div>';return}list.forEach(p=>{const score=scoreState.scores[p.id]||0,card=document.createElement('div');card.className='student-card';card.style.setProperty('--c',p.color);const tagsText=(p.tags||[]).slice(0,3).join(' · ');const topMedal=getTopMedal(score);const miniMedal=topMedal?'<div class="student-mini-medal" style="color:'+topMedal.color+'" title="'+topMedal.name+'">'+topMedal.icon+'</div>':'';card.innerHTML='<div class="student-top"><div class="student-avatar">'+escapeHtml(p.emoji||'🙂')+miniMedal+'</div><div class="student-info"><span class="student-name" contenteditable="true" spellcheck="false">'+escapeHtml(p.name)+'</span><div class="student-tags">'+escapeHtml(tagsText||'—')+'</div></div></div><div class="student-score-row"><span class="student-score-label">SCORE</span><span class="student-score">'+score+'</span></div><div class="student-add"><button class="score-add-btn" data-add="1">+1</button><button class="score-add-btn" data-add="2">+2</button><button class="score-add-btn" data-add="5">+5</button><button class="score-add-btn minus" data-add="-1">−1</button><button class="score-add-btn" data-add="custom">＋?</button></div>';const nameEl=card.querySelector('.student-name');nameEl.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();nameEl.blur()}});nameEl.addEventListener('blur',()=>{const newName=nameEl.innerText.trim()||p.name;if(newName!==p.name){p.name=newName;saveData();renderLeaderboard()}nameEl.innerText=newName});nameEl.addEventListener('paste',e=>{e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,text)});card.querySelectorAll('.score-add-btn').forEach(btn=>{btn.addEventListener('click',()=>{const val=btn.dataset.add;if(val==='custom'){const input=prompt('给「'+p.name+'」加减分（正数加分 / 负数扣分）：','3');if(input===null)return;const n=Number(input);if(!Number.isFinite(n)||n===0)return;const reason=prompt('原因（可选）：','');if(reason===null)return;addScore(p.id,n,reason)}else{addScore(p.id,Number(val),'')}})});grid.appendChild(card)})}
-function renderRecords(){const list=document.getElementById('recordsList'),countEl=document.getElementById('recordsCount');if(!list)return;if(countEl)countEl.textContent=scoreState.records.length?('共 '+scoreState.records.length+' 条'):'';if(!scoreState.records.length){list.innerHTML='<div class="empty-records"><span class="ico">📋</span>还没有加分记录，点同学卡片上的 +1 试试吧~</div>';return}list.innerHTML='';scoreState.records.forEach((r,i)=>{const item=document.createElement('div');item.className='record-item';item.style.animationDelay=Math.min(i*15,400)+'ms';const isPlus=r.delta>0,deltaText=(isPlus?'+':'')+r.delta,student=state.people.find(s=>s.id===r.studentId),avatar=student?(student.emoji||'🙂'):'🙂',color=student?student.color:'#a78bfa';item.innerHTML='<span class="record-delta '+(isPlus?'plus':'minus')+'">'+deltaText+'</span><span class="record-avatar" style="background:'+color+'">'+escapeHtml(avatar)+'</span><span class="record-student">'+escapeHtml(r.studentName||'未知同学')+'</span><span class="record-reason">'+escapeHtml(r.reason||'')+'</span><span class="record-time" title="'+formatFullTime(r.time)+'">'+formatTime(r.time)+'</span><button class="record-undo">撤销</button>';item.querySelector('.record-undo').addEventListener('click',()=>undoRecord(r.id));list.appendChild(item)})}
-function renderLeaderboard(){const listEl=document.getElementById('leaderboardList');if(!listEl)return;const ranked=state.people.map(p=>({...p,score:scoreState.scores[p.id]||0})).filter(p=>p.score>0).sort((a,b)=>{if(b.score!==a.score)return b.score-a.score;return a.name.localeCompare(b.name,'zh')}).slice(0,5);if(!ranked.length){listEl.innerHTML='<div class="empty-records" style="padding:24px 0"><span class="ico">🏆</span>还没有人获得加分，快去表扬同学吧~</div>';return}const medals=['🥇','🥈','🥉','',''];listEl.innerHTML='';ranked.forEach((p,i)=>{const item=document.createElement('div');item.className='leaderboard-item rank-'+(i+1);item.style.animationDelay=(i*50)+'ms';const medal=medals[i]||('#'+(i+1));item.innerHTML='<div class="leaderboard-rank">'+(i+1)+'</div><div class="leaderboard-avatar" style="background:'+p.color+'">'+escapeHtml(p.emoji||'🙂')+'</div><div class="leaderboard-name">'+escapeHtml(p.name)+'</div><div class="leaderboard-score">+'+p.score+'</div><div class="leaderboard-medal">'+medal+'</div>';listEl.appendChild(item)})}
-function renderTeachers(){const grid=document.getElementById('teachersGrid');if(!grid)return;grid.innerHTML='';teachers.forEach(t=>{const card=document.createElement('div');card.className='teacher-card';card.style.setProperty('--c',t.color);card.innerHTML='<div class="teacher-avatar-circle">'+escapeHtml(t.emoji||'🧑‍🏫')+'</div><div class="teacher-name">'+escapeHtml(t.name)+'</div><div class="teacher-subject">'+escapeHtml(t.subject||'老师')+'</div><div class="teacher-counts"><span>🌸 '+(t.flowers||0)+'</span><span>❤️ '+(t.hearts||0)+'</span></div>';card.addEventListener('click',()=>openTeacher(t.id));grid.appendChild(card)})}
-function openTeacher(id){const t=teachers.find(x=>x.id===id);if(!t)return;editingTeacherId=id;const av=document.getElementById('tmAvatar');av.textContent=t.emoji||'🧑‍🏫';av.style.background=t.color;document.getElementById('tmName').value=t.name||'';document.getElementById('tmSubject').value=t.subject||'';document.getElementById('tmIntro').value=t.intro||'';document.getElementById('tmFlowers').textContent=t.flowers||0;document.getElementById('tmHearts').textContent=t.hearts||0;document.getElementById('teacherModal').classList.add('open')}
-function closeTeacherModal(){document.getElementById('teacherModal').classList.remove('open');editingTeacherId=null}
-function saveTeacher(){const t=teachers.find(x=>x.id===editingTeacherId);if(!t)return;t.name=document.getElementById('tmName').value.trim()||t.name;t.subject=document.getElementById('tmSubject').value.trim();t.intro=document.getElementById('tmIntro').value.trim();saveTeachers();renderTeachers();closeTeacherModal()}
-function sendGift(teacherId,type){const t=teachers.find(x=>x.id===teacherId);if(!t)return;if(type==='flower'){t.flowers=(t.flowers||0)+1}else{t.hearts=(t.hearts||0)+1}saveTeachers();document.getElementById('tmFlowers').textContent=t.flowers||0;document.getElementById('tmHearts').textContent=t.hearts||0;renderTeachers();playGiftAnimation(type)}
-function playGiftAnimation(type){const layer=document.getElementById('giftLayer'),emojis=type==='flower'?['🌸','💐','🌷','🌺','🏵️','🌼']:['❤️','💖','💗','💓','💕','💝'];for(let i=0;i<18;i++){const el=document.createElement('div');el.className='gift-particle';el.textContent=emojis[Math.floor(Math.random()*emojis.length)];el.style.left=(Math.random()*100)+'vw';el.style.fontSize=(20+Math.random()*22)+'px';el.style.setProperty('--drift',((Math.random()-0.5)*220).toFixed(1)+'px');el.style.animationDelay=(Math.random()*0.5)+'s';el.style.animationDuration=(1.6+Math.random()*0.9)+'s';layer.appendChild(el);setTimeout(()=>el.remove(),3200)}}
-/* ================= 倒计时 ================= */
-function getNextFestival(){
-  const now=new Date();
-  const year=now.getFullYear();
-  const today=new Date(year,now.getMonth(),now.getDate());
-  const list=FESTIVALS.map(f=>{
-    let d=new Date(year,f.month-1,f.day);
-    if(d<today)d=new Date(year+1,f.month-1,f.day);
-    return {...f,date:d,year:d.getFullYear()};
-  }).sort((a,b)=>a.date-b.date);
-  return {next:list[0],list};
-}
-function updateCountdown(){
-  const {next,list}=getNextFestival();
-  const now=new Date();
-  let diff=next.date-now;
-  if(diff<0)diff=0;
-  const days=Math.floor(diff/86400000);
-  const hours=Math.floor((diff%86400000)/3600000);
-  const minutes=Math.floor((diff%3600000)/60000);
-  const seconds=Math.floor((diff%60000)/1000);
-  const dEl=document.getElementById('cdDays'),hEl=document.getElementById('cdHours'),mEl=document.getElementById('cdMinutes'),sEl=document.getElementById('cdSeconds');
-  const curSec=parseInt(sEl.textContent)||0;
-  if(seconds!==curSec){
-    sEl.textContent=String(seconds).padStart(2,'0');
-    sEl.classList.remove('flip');void sEl.offsetWidth;sEl.classList.add('flip');
-  }
-  dEl.textContent=String(days).padStart(2,'0');
-  hEl.textContent=String(hours).padStart(2,'0');
-  mEl.textContent=String(minutes).padStart(2,'0');
-  document.getElementById('cdIcon').textContent=next.icon;
-  document.getElementById('cdName').textContent=next.name;
-  document.getElementById('cdDate').textContent=next.year+'-'+String(next.month).padStart(2,'0')+'-'+String(next.day).padStart(2,'0');
-  document.getElementById('cdTotal').innerHTML='距离 <strong>'+next.name+'</strong> 还有 <strong>'+days+'</strong> 天';
-  document.getElementById('countdownMain').style.setProperty('--fc',next.color);
-  /* 节日列表 */
-  const listEl=document.getElementById('festivalList');
-  listEl.innerHTML=list.map(f=>{
-    const d=f.date-now;
-    const dd=Math.max(0,Math.ceil(d/86400000));
-    const isNext=f.name===next.name;
-    return '<div class="festival-card '+(isNext?'is-next':'')+'" style="--fc:'+f.color+'" data-festival="'+f.name+'">'+(isNext?'<span class="next-tag">即将到来</span>':'')+'<span class="fc-icon">'+f.icon+'</span><div class="fc-name">'+f.name+'</div><div class="fc-days">'+(dd===0?'就是今天！':'还有 '+dd+' 天')+'</div><div class="fc-date">'+f.year+'.'+String(f.month).padStart(2,'0')+'.'+String(f.day).padStart(2,'0')+'</div></div>';
-  }).join('');
-  listEl.querySelectorAll('.festival-card').forEach(card=>{
-    card.addEventListener('click',()=>{
-      const name=card.dataset.festival;
-      const f=list.find(x=>x.name===name);
-      if(!f)return;
-      currentFestivalIndex=FESTIVALS.findIndex(x=>x.name===name);
-      scrollToCountdown(f);
-    });
-  });
-  /* 星空背景 */
-  initStars();
-}
-function scrollToCountdown(f){
-  const main=document.getElementById('countdownMain');
-  main.scrollIntoView({behavior:'smooth',block:'center'});
-  main.style.transition='transform .5s cubic-bezier(.34,1.56,.64,1)';
-  main.style.transform='scale(1.03)';
-  setTimeout(()=>{main.style.transform='scale(1)'},500);
-}
-function startCountdown(){
-  if(countdownTimer)clearInterval(countdownTimer);
-  updateCountdown();
-  countdownTimer=setInterval(updateCountdown,1000);
-}
-function initStars(){
-  const bg=document.getElementById('starsBg');
-  if(!bg||bg.dataset.init==='1')return;
-  bg.dataset.init='1';
-  const count=60;
-  for(let i=0;i<count;i++){
-    const s=document.createElement('div');
-    s.className='star';
-    const size=Math.random()*2+1;
-    s.style.width=size+'px';s.style.height=size+'px';
-    s.style.left=Math.random()*100+'%';
-    s.style.top=Math.random()*100+'%';
-    s.style.animationDelay=(Math.random()*3)+'s';
-    s.style.animationDuration=(2+Math.random()*3)+'s';
-    bg.appendChild(s);
-  }
-}
-function refreshAllUI(){const hd={...HOME_DEFAULT,...(dataCache?.home||{})};document.querySelectorAll('#view-home [data-key]').forEach(el=>{if(hd[el.dataset.key]!==undefined)el.innerText=hd[el.dataset.key]});const nt=document.getElementById('navTitleText');if(nt)nt.textContent=hd.className||'六年二班';document.title=(hd.className||'六年二班')+' · 班级主页';if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles();if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderRecords();renderLeaderboard()}if(document.getElementById('view-teachers').classList.contains('active'))renderTeachers()}
-/* ================= 事件绑定 ================= */
-document.querySelectorAll('.nav-link').forEach(btn=>{btn.addEventListener('click',()=>switchView(btn.dataset.view))});
-document.getElementById('navBrand').addEventListener('click',()=>switchView('home'));
-document.getElementById('closeProfile').addEventListener('click',closeProfile);
-overlay.addEventListener('click',e=>{if(e.target===overlay)closeProfile()});
-document.getElementById('editBtn').addEventListener('click',openEdit);
-document.getElementById('addRelBtn').addEventListener('click',()=>addRelRow());
-document.getElementById('cancelBtn').addEventListener('click',closeModal);
-document.getElementById('saveBtn').addEventListener('click',saveEdit);
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.getElementById('studentSearch').addEventListener('input',e=>{searchKeyword=e.target.value;renderStudents()});
-document.getElementById('clearRecordsBtn').addEventListener('click',()=>{if(!scoreState.records.length){alert('还没有记录可以清空~');return}if(!confirm('确定要清空所有加分记录吗？（同学分数和排行榜不会重置）'))return;scoreState.records=[];saveScore();renderRecords()});
-document.getElementById('closeTeacherModal').addEventListener('click',closeTeacherModal);
-document.getElementById('cancelTeacherBtn').addEventListener('click',closeTeacherModal);
-document.getElementById('saveTeacherBtn').addEventListener('click',saveTeacher);
-document.getElementById('teacherModal').addEventListener('click',e=>{if(e.target===document.getElementById('teacherModal'))closeTeacherModal()});
-document.getElementById('sendFlowerBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'flower')});
-document.getElementById('sendHeartBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'heart')});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(modal.classList.contains('open'))closeModal();else if(document.getElementById('teacherModal').classList.contains('open'))closeTeacherModal();else if(overlay.classList.contains('open'))closeProfile()}});
-let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles()},180)});
-/* ================= 启动 ================= */
-(async function init(){
-  await cloudInit();
-  applyCacheToState();
-  refreshAllUI();
-  initHomeEditing();
-  setInterval(cloudPoll,8000);
-})();
-</script>
-</body>
-</html>
+function formatTime(ts){const d=new Date(ts),now=new Date(),diff=now-d;if(diff<60000)return '刚刚
