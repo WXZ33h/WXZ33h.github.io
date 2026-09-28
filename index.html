@@ -14,8 +14,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .nav-brand:hover .nav-logo{transform:rotate(-8deg) scale(1.06)}
 .nav-title{font-size:17px;font-weight:800;letter-spacing:.6px;background:linear-gradient(120deg,#c4b5fd,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .nav-sub{font-size:11px;color:var(--text-muted);letter-spacing:1.5px;white-space:nowrap}
-.nav-links{display:flex;gap:6px;margin-left:auto;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px sol;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px sol;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px sol;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px sol;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px sol;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px sol;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
-.nav-links::-webkit-scrollbar{display:none}
+.nav-links{display:flex;gap:6px;margin-left:auto;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px solid var(--border);overflow:visible;position:relative}
 .nav-link{border:none;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;padding:8px 18px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap}
 .nav-link:hover{color:var(--text);background:rgba(139,92,246,.18)}
 .nav-link.active{color:#fff;background:linear-gradient(120deg,#7c3aed,#a855f7);box-shadow:0 6px 18px -6px rgba(139,92,246,.9)}
@@ -325,8 +324,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .like-item .avatar{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
 .like-item .name{flex:1;font-size:14px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .like-item .role-tag{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,#7c3aed,#c026d3);color:#fff;letter-spacing:1px;flex-shrink:0}
-@media(max-width:780px){.navbar{padding:0 12px;gap:8px;height:60px}.nav-logo{width:32px;height:32px;flex-basis:32px}.nav-title{font-size:14px}.nav-sub{display:none}.nav-link{padding:7px 11px;font-size:11.5px}.sync-status{display:none}#view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}#view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}}
-@media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px;letter-spacing:1px}}
+
 /* ===== 下拉菜单 ===== */
 .nav-dropdown{position:relative;display:inline-block}
 .nav-drop-trigger{display:inline-flex;align-items:center;gap:4px}
@@ -352,13 +350,8 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .lock-toast .lock-title{font-size:20px;font-weight:900;color:#fff;letter-spacing:2px;margin-bottom:6px}
 .lock-toast .lock-desc{font-size:13px;color:var(--primary-lighter);letter-spacing:1.5px}
 
-@media(max-width:780px){
-  .nav-drop-menu{min-width:150px;padding:6px}
-  .nav-drop-item{font-size:12.5px;padding:9px 12px}
-  .lock-toast{padding:24px 34px}
-  .lock-toast .lock-emoji{font-size:42px}
-  .lock-toast .lock-title{font-size:17px}
-}
+@media(max-width:780px){.navbar{padding:0 12px;gap:8px;height:60px}.nav-logo{width:32px;height:32px;flex-basis:32px}.nav-title{font-size:14px}.nav-sub{display:none}.nav-link{padding:7px 11px;font-size:11.5px}.sync-status{display:none}#view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}#view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.nav-drop-menu{min-width:150px;padding:6px}.nav-drop-item{font-size:12.5px;padding:9px 12px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}}
+@media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px;letter-spacing:1px}}
 </style>
 </head>
 <body>
@@ -370,11 +363,18 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 </div>
 <div class="nav-links">
 <button class="nav-link active" data-view="home">首页</button>
-<button class="nav-link" data-view="bubbles">班级关系图</button>
-<button class="nav-link" data-view="score">个人加分</button>
+<div class="nav-dropdown">
+<button class="nav-link nav-drop-trigger">班级 <span class="caret">▾</span></button>
+<div class="nav-drop-menu">
+<button class="nav-drop-item" data-view="bubbles">🌐 班级关系图</button>
+<button class="nav-drop-item" data-view="score">🏆 个人加分</button>
+<button class="nav-drop-item" data-view="teachers">🎓 老师</button>
+</div>
+</div>
 <button class="nav-link" data-view="countdown">倒计时</button>
-<button class="nav-link" data-view="teachers">老师</button>
 <button class="nav-link" data-view="wish">许愿墙 ✨</button>
+<button class="nav-link nav-locked" data-locked="时间轴回忆">时间轴回忆 🔒</button>
+<button class="nav-link nav-locked" data-locked="班级相册">班级相册 🔒</button>
 </div>
 <span class="sync-status" id="syncStatus">⏳ 连接中…</span>
 </nav>
@@ -552,6 +552,9 @@ function switchView(name){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   const target=document.getElementById('view-'+name);if(target)target.classList.add('active');
   document.querySelectorAll('.nav-link').forEach(l=>{l.classList.toggle('active',l.dataset.view===name)});
+  document.querySelectorAll('.nav-drop-item').forEach(l=>{l.classList.toggle('active',l.dataset.view===name)});
+  const dt=document.querySelector('.nav-drop-trigger');
+  if(dt)dt.classList.toggle('active',!!document.querySelector('.nav-drop-item.active'));
   if(name==='bubbles'){requestAnimationFrame(()=>renderBubbles())}
   else if(name==='score'){renderStudents();renderRecords();renderLeaderboard()}
   else if(name==='teachers'){renderTeachers()}
@@ -818,7 +821,7 @@ function openWishMenu(wishId,btn){
   closeWishMenu();
   const w=dataCache.wishes.find(x=>x.id===wishId);
   if(!w)return;
-  const isMine=currentUser
+  const isMine=currentUser&&w.authorAccountId===currentUser.id;
   const isAdmin=currentUser&&currentUser.role==='admin';
   if(!isMine&&!isAdmin)return;
   let html='';
@@ -1036,6 +1039,7 @@ document.getElementById('saveTeacherBtn').addEventListener('click',saveTeacher);
 document.getElementById('teacherModal').addEventListener('click',e=>{if(e.target===document.getElementById('teacherModal'))closeTeacherModal()});
 document.getElementById('sendFlowerBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'flower')});
 document.getElementById('sendHeartBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'heart')});
+
 /* 下拉菜单 */
 document.querySelectorAll('.nav-drop-trigger').forEach(trigger=>{
   trigger.addEventListener('click',e=>{
