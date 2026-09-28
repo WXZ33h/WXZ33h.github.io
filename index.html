@@ -350,6 +350,57 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .lock-toast .lock-title{font-size:20px;font-weight:900;color:#fff;letter-spacing:2px;margin-bottom:6px}
 .lock-toast .lock-desc{font-size:13px;color:var(--primary-lighter);letter-spacing:1.5px}
 
+/* ===== 关系网 ===== */
+#view-network{min-height:100vh;padding:104px 24px 40px}
+.net-wrap{max-width:1440px;margin:0 auto;height:calc(100vh - 144px);display:flex;flex-direction:column}
+.net-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:14px;flex-shrink:0}
+.net-header h2{font-size:26px;margin:0;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:2px;display:flex;align-items:center;gap:12px}
+.net-header h2 .ico{font-size:24px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
+.net-header-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.net-search{border:1px solid var(--border-strong);background:rgba(139,92,246,.12);color:var(--text);font-family:inherit;padding:9px 18px;border-radius:999px;outline:none;font-size:13px;width:190px;transition:.2s}
+.net-search:focus{background:rgba(139,92,246,.22);border-color:var(--primary-light);box-shadow:0 0 0 4px rgba(139,92,246,.18)}
+.net-btn{border:1px solid var(--border-strong);background:rgba(139,92,246,.14);color:var(--primary-lighter);font-family:inherit;font-size:13px;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
+.net-btn:hover{background:rgba(139,92,246,.3);color:#fff}
+.net-body{flex:1;display:grid;grid-template-columns:260px 1fr;gap:16px;min-height:0}
+.net-sidebar{background:linear-gradient(160deg,rgba(45,17,71,.7),rgba(30,11,48,.7));border:1px solid var(--border);border-radius:20px;padding:16px;display:flex;flex-direction:column;min-height:0;backdrop-filter:blur(12px)}
+.net-side-title{font-size:12.5px;font-weight:800;color:var(--text-muted);letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.net-count{font-size:11.5px;color:var(--primary-lighter);font-weight:700;background:rgba(139,92,246,.18);padding:2px 9px;border-radius:999px;border:1px solid rgba(167,139,250,.25)}
+.net-list{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;padding-right:6px;min-height:0}
+.net-list::-webkit-scrollbar{width:6px}
+.net-list::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:3px}
+.net-item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:10px;cursor:pointer;transition:.18s;border:1px solid transparent}
+.net-item:hover{background:rgba(139,92,246,.15);border-color:rgba(167,139,250,.25)}
+.net-item.active{background:linear-gradient(120deg,rgba(124,58,237,.35),rgba(192,38,211,.35));border-color:rgba(240,171,252,.5)}
+.net-item.dim{opacity:.28}
+.net-item-avatar{width:26px;height:26px;flex:0 0 26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;background:var(--c,#a78bfa);box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
+.net-item-name{font-size:13px;font-weight:700;color:#fff;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.net-item-rel{font-size:10.5px;color:var(--text-muted);font-weight:700;flex-shrink:0}
+.net-orphan-tip{margin-top:12px;padding:10px 12px;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.3);border-radius:10px;font-size:11.5px;color:#fbbf24;font-weight:700;display:flex;align-items:center;gap:8px;flex-shrink:0;line-height:1.5}
+.net-orphan-tip.hidden{display:none}
+.net-canvas-wrap{position:relative;background:radial-gradient(ellipse at center,rgba(45,17,71,.55),rgba(20,8,31,.85));border:1px solid var(--border);border-radius:20px;overflow:hidden;backdrop-filter:blur(12px);min-height:0}
+#netCanvas{display:block;width:100%;height:100%;cursor:grab}
+#netCanvas.dragging{cursor:grabbing}
+.net-legend{position:absolute;left:16px;bottom:16px;background:rgba(20,8,31,.82);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:12px 14px;font-size:11px;pointer-events:none;max-width:140px}
+.net-legend-title{font-weight:800;color:var(--text-muted);letter-spacing:1.5px;margin-bottom:9px;font-size:10.5px}
+.net-legend-row{display:flex;align-items:center;gap:9px;margin-bottom:6px;color:var(--text-dim)}
+.net-legend-row:last-child{margin-bottom:0}
+.net-legend-line{display:inline-block;border-radius:4px;flex-shrink:0}
+.net-hint{position:absolute;right:16px;bottom:16px;font-size:11px;color:var(--text-muted);background:rgba(20,8,31,.78);padding:7px 14px;border-radius:999px;border:1px solid var(--border);letter-spacing:.5px;pointer-events:none;backdrop-filter:blur(8px)}
+.net-tooltip{position:absolute;padding:6px 12px;background:rgba(30,11,48,.96);border:1px solid var(--border-strong);border-radius:10px;font-size:12.5px;font-weight:700;color:#fff;pointer-events:none;white-space:nowrap;opacity:0;transition:opacity .15s;transform:translate(-50%,-140%);box-shadow:0 8px 24px -8px rgba(0,0,0,.8);z-index:5}
+.net-tooltip.show{opacity:1}
+
+@media(max-width:900px){
+  #view-network{padding:88px 14px 24px}
+  .net-wrap{height:calc(100vh - 124px)}
+  .net-body{grid-template-columns:1fr;grid-template-rows:180px 1fr}
+  .net-sidebar{padding:12px}
+  .net-header h2{font-size:20px}
+  .net-search{width:130px;padding:8px 14px;font-size:12.5px}
+  .net-btn{padding:8px 14px;font-size:12px}
+  .net-legend{padding:9px 11px;font-size:10px;left:10px;bottom:10px;max-width:110px}
+  .net-hint{right:10px;bottom:10px;font-size:10px;padding:5px 10px}
+}
+
 @media(max-width:780px){.navbar{padding:0 12px;gap:8px;height:60px}.nav-logo{width:32px;height:32px;flex-basis:32px}.nav-title{font-size:14px}.nav-sub{display:none}.nav-link{padding:7px 11px;font-size:11.5px}.sync-status{display:none}#view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}#view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.nav-drop-menu{min-width:150px;padding:6px}.nav-drop-item{font-size:12.5px;padding:9px 12px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}}
 @media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px;letter-spacing:1px}}
 </style>
@@ -367,6 +418,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <button class="nav-link nav-drop-trigger">班级 <span class="caret">▾</span></button>
 <div class="nav-drop-menu">
 <button class="nav-drop-item" data-view="bubbles">🌐 班级关系图</button>
+<button class="nav-drop-item" data-view="network">🕸️ 关系网</button>
 <button class="nav-drop-item" data-view="score">🏆 个人加分</button>
 <button class="nav-drop-item" data-view="teachers">🎓 老师</button>
 </div>
@@ -428,17 +480,46 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="wish-grid" id="wishGrid"></div>
 <button class="wish-fab hidden" id="wishFab" title="许一个愿">✨</button>
 </div></section>
+<section id="view-network" class="view"><div class="net-wrap">
+<div class="net-header">
+<h2><span class="ico">🕸️</span>班级关系网</h2>
+<div class="net-header-actions">
+<input type="text" id="netSearch" class="net-search" placeholder="🔍 搜索同学…">
+<button class="net-btn" id="netResetBtn">⟲ 重排</button>
+<button class="net-btn" id="netFullBtn">⛶ 全屏</button>
+</div>
+</div>
+<div class="net-body">
+<aside class="net-sidebar">
+<div class="net-side-title">全部同学 <span class="net-count" id="netCount"></span></div>
+<div class="net-list" id="netList"></div>
+<div class="net-orphan-tip hidden" id="netOrphanTip">
+<span>⚠️</span><span id="netOrphanText"></span>
+</div>
+</aside>
+<div class="net-canvas-wrap" id="netCanvasWrap">
+<canvas id="netCanvas"></canvas>
+<div class="net-legend">
+<div class="net-legend-title">关系亲密度</div>
+<div class="net-legend-row"><span class="net-legend-line" style="width:6px;height:1px;background:#8b5cf6"></span><span>一般</span></div>
+<div class="net-legend-row"><span class="net-legend-line" style="width:16px;height:2px;background:#a78bfa"></span><span>较好</span></div>
+<div class="net-legend-row"><span class="net-legend-line" style="width:26px;height:3.5px;background:#c4b5fd"></span><span>亲密</span></div>
+<div class="net-legend-row"><span class="net-legend-line" style="width:36px;height:5px;background:#e879f9"></span><span>很好</span></div>
+<div class="net-legend-row"><span class="net-legend-line" style="width:46px;height:7px;background:#f0abfc"></span><span>最铁</span></div>
+</div>
+<div class="net-hint">🖱 拖拽移动节点 · 点击看详情 · 双击重置</div>
+<div class="net-tooltip" id="netTooltip"></div>
+</div>
+</div>
+</div></section>
 <div class="overlay" id="overlay"><div class="card" id="profileCard"><button class="close-btn" id="closeProfile">✕</button><div class="p-left"><div class="big-avatar" id="pAvatar">🙂</div><h2 class="p-name" id="pName"></h2><div class="p-tags" id="pTags"></div><p class="p-intro" id="pIntro"></p><div class="p-meta" id="pMeta"></div><div class="medal-wall" id="medalWall"><h4>🏅 荣誉勋章</h4><div class="medal-list" id="medalList"></div><div class="medal-progress" id="medalProgress"></div></div><button class="btn-edit" id="editBtn">✏️ 编辑资料</button></div><div class="p-right"><h3>关系图</h3><div class="sub">线的粗细 = 关系亲密度</div><svg id="relGraph" viewBox="0 0 500 480" preserveAspectRatio="xMidYMid meet"></svg></div></div></div>
 <div class="modal" id="modal"><div class="modal-box"><h3>✏️ 编辑资料</h3><div class="field"><label>昵称</label><input type="text" id="fName"></div><div class="row2"><div class="field"><label>头像 Emoji</label><input type="text" id="fEmoji" maxlength="4"></div><div class="field"><label>主题色</label><input type="color" id="fColor" style="height:42px;padding:4px;cursor:pointer;"></div></div><div class="field"><label>个人简介</label><textarea id="fIntro"></textarea></div><div class="field"><label>标签（用逗号分隔）</label><input type="text" id="fTags"></div><div class="rel-head"><span>我的关系网</span><button class="btn-add" id="addRelBtn">+ 添加关系</button></div><div id="relList"></div><div class="modal-actions"><button class="btn-cancel" id="cancelBtn">取消</button><button class="btn-save" id="saveBtn">保存</button></div></div></div>
 <div class="modal" id="teacherModal"><div class="modal-box teacher-modal-box"><button class="close-btn" id="closeTeacherModal">✕</button><h3>🎓 老师主页</h3><div class="teacher-modal-head"><div class="teacher-modal-avatar" id="tmAvatar">👩‍🏫</div><div class="teacher-modal-info"><input type="text" class="teacher-input-name" id="tmName" placeholder="老师姓名"><input type="text" class="teacher-input-subject" id="tmSubject" placeholder="科目 / 职务"></div></div><div class="field"><label>简介</label><textarea id="tmIntro"></textarea></div><div class="teacher-gift-stats"><div class="gift-stat"><span class="gift-stat-emoji">🌸</span><span class="gift-stat-count" id="tmFlowers">0</span><span class="gift-stat-label">朵花</span></div><div class="gift-stat"><span class="gift-stat-emoji">❤️</span><span class="gift-stat-count" id="tmHearts">0</span><span class="gift-stat-label">颗爱心</span></div></div><div class="gift-buttons"><button class="gift-btn gift-btn-flower" id="sendFlowerBtn"><span class="gift-btn-emoji">💐</span><span>送一束花</span></button><button class="gift-btn gift-btn-heart" id="sendHeartBtn"><span class="gift-btn-emoji">💖</span><span>送爱心</span></button></div><div class="modal-actions"><button class="btn-cancel" id="cancelTeacherBtn">取消</button><button class="btn-save" id="saveTeacherBtn">保存</button></div></div></div>
-
 <div class="modal" id="wishModal"><div class="modal-box wish-modal-box"><button class="close-btn" id="closeWishModal">✕</button><h3>✨ 许一个愿</h3><div class="field"><label>选一个 emoji</label><div class="emoji-picker" id="emojiPicker"></div></div><div class="field"><label>写点什么…</label><textarea id="wishText" maxlength="60" placeholder="比如：希望毕业前能和大家一起去看一次海。"></textarea><div class="char-count"><span id="wishCharCount">0</span>/60</div></div><label class="anon-check"><input type="checkbox" id="wishAnon"> 匿名发布（不显示我的名字）</label><div class="modal-actions"><button class="btn-cancel" id="cancelWishBtn">取消</button><button class="btn-save" id="publishWishBtn">贴上墙</button></div></div></div>
-
 <div class="modal" id="authModal"><div class="modal-box auth-modal-box"><button class="close-btn" id="closeAuthModal">✕</button><h3 id="authTitle">👋 登录</h3><div class="auth-tabs"><button class="auth-tab active" data-tab="login">登录</button><button class="auth-tab" data-tab="register">注册</button></div><div class="field"><label>我是谁</label><select id="authPerson"></select></div><div class="field"><label>密码</label><input type="password" id="authPassword" placeholder="随便设一个，记住就行" autocomplete="new-password"></div><div class="auth-msg" id="authMsg"></div><div class="modal-actions"><button class="btn-cancel" id="cancelAuthBtn">取消</button><button class="btn-save" id="authSubmitBtn">登录</button></div><div class="auth-hint">💡 别用你其他账号的密码哦</div></div></div>
-
 <div class="modal" id="fulfillModal"><div class="modal-box"><button class="close-btn" id="closeFulfillModal">✕</button><h3>🎉 还愿</h3><div class="field"><label>想说什么？（可选）</label><textarea id="fulfillNote" maxlength="60" placeholder="比如：真的做到了！谢谢大家的鼓励～"></textarea></div><div class="modal-actions"><button class="btn-cancel" id="cancelFulfillBtn">取消</button><button class="btn-save" id="confirmFulfillBtn">确认已实现</button></div></div></div>
-
 <div class="modal" id="likeListModal"><div class="modal-box"><button class="close-btn" id="closeLikeListModal">✕</button><h3>❤️ 点赞的人</h3><div class="like-list" id="likeListBox"></div></div></div>
+
 <script>
 /* ================= Gitee 配置 ================= */
 const GITEE_OWNER='wxz33h';
@@ -522,6 +603,7 @@ const scoreState={scores:{},records:[]};
 let teachers=[],searchKeyword='',editingId=null,editingTeacherId=null;
 let countdownTimer=null,currentFestivalIndex=0;
 let accounts=[],currentUser=null,wishFilter='all',wishKeyword='',currentAuthTab='login',selectedEmoji='✨',fulfillingWishId=null,openMenuEl=null;
+let netNodes=[],netEdges=[],netOrphans=[],netAnimId=null,netHoverId=null,netDragId=null,netDragOffX=0,netDragOffY=0,netHighlightId=null,netSearchKw='',netInited=false,netScale=1,netOffX=0,netOffY=0,netPanning=false,netPanStartX=0,netPanStartY=0;
 function buildPeople(){const people=BASE.map((p,i)=>({...p,color:COLORS[i%COLORS.length],relations:{}}));const map=Object.fromEntries(people.map(p=>[p.id,p]));for(const [a,b,label,strength] of BASE_RELATIONS){if(map[a]&&map[b]){map[a].relations[b]={label,strength};map[b].relations[a]={label,strength}}}return people}
 function applyCacheToState(){
   if(!dataCache)return;
@@ -560,7 +642,9 @@ function switchView(name){
   else if(name==='teachers'){renderTeachers()}
   else if(name==='countdown'){startCountdown()}
   else if(name==='wish'){renderWishes();updateUserBtn()}
+  else if(name==='network'){requestAnimationFrame(()=>initNetwork())}
   if(name!=='countdown'&&countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
+  if(name!=='network'&&netAnimId){cancelAnimationFrame(netAnimId);netAnimId=null}
 }
 function computeLayout(people,W,H){const n=people.length;if(!n||W<10||H<10)return[];const cx=W/2,cy=H/2,GOLDEN=2.399963,baseR=Math.max(16,Math.min(48,Math.sqrt((W*H)/(n*Math.PI*5))));const nodes=people.map((p,i)=>{const relCount=Object.keys(p.relations||{}).length,r=baseR+Math.min(relCount,8)*1.6,ang=i*GOLDEN,rad=Math.sqrt((i+0.5)/n)*Math.min(W,H)*0.42;return{id:p.id,r,x:cx+Math.cos(ang)*rad,y:cy+Math.sin(ang)*rad}});for(let it=0;it<420;it++){for(let i=0;i<n;i++){for(let j=i+1;j<n;j++){const a=nodes[i],b=nodes[j];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||0.01;const minD=a.r+b.r+8;if(d<minD){const push=(minD-d)/2,ux=dx/d,uy=dy/d;a.x-=ux*push;a.y-=uy*push;b.x+=ux*push;b.y+=uy*push}}}for(const nd of nodes){nd.x+=(cx-nd.x)*0.012;nd.y+=(cy-nd.y)*0.012}}for(const nd of nodes){nd.x=Math.max(nd.r+4,Math.min(W-nd.r-4,nd.x));nd.y=Math.max(nd.r+4,Math.min(H-nd.r-4,nd.y))}return nodes}
 const stage=document.getElementById('stage');
@@ -596,7 +680,7 @@ function openEdit(){const p=state.people.find(x=>x.id===state.currentId);if(!p)r
 function closeModal(){modal.classList.remove('open');editingId=null}
 function renderRelRows(p){const list=document.getElementById('relList');list.innerHTML='';Object.entries(p.relations||{}).forEach(([id,r])=>addRelRow(id,r.label,r.strength))}
 function addRelRow(targetId,label,strength){label=label||'';strength=strength||3;const list=document.getElementById('relList'),options=state.people.filter(x=>x.id!==editingId).map(x=>'<option value="'+x.id+'" '+(x.id===targetId?'selected':'')+'>'+escapeHtml(x.emoji||'🙂')+' '+escapeHtml(x.name)+'</option>').join(''),row=document.createElement('div');row.className='rel-row';row.innerHTML='<select class="rel-person">'+options+'</select><input type="text" class="rel-label" value="'+escapeHtml(label)+'" placeholder="关系，如 同桌"><input type="range" class="rel-strength" min="1" max="5" value="'+strength+'"><button class="rel-del">✕</button>';row.querySelector('.rel-del').addEventListener('click',()=>row.remove());list.appendChild(row)}
-function saveEdit(){const p=state.people.find(x=>x.id===editingId);if(!p)return;Object.keys(p.relations||{}).forEach(oid=>{const other=state.people.find(x=>x.id===oid);if(other&&other.relations)delete other.relations[p.id]});p.name=document.getElementById('fName').value.trim()||p.name;p.emoji=document.getElementById('fEmoji').value.trim()||'🙂';p.color=document.getElementById('fColor').value;p.intro=document.getElementById('fIntro').value.trim();p.tags=document.getElementById('fTags').value.split(/[,，、]/).map(s=>s.trim()).filter(Boolean);const newRel={};document.querySelectorAll('#relList .rel-row').forEach(row=>{const tid=row.querySelector('.rel-person').value;if(!tid)return;const label=row.querySelector('.rel-label').value.trim()||'同学',strength=Number(row.querySelector('.rel-strength').value)||3;newRel[tid]={label,strength};const other=state.people.find(x=>x.id===tid);if(other){other.relations=other.relations||{};other.relations[p.id]={label,strength}}});p.relations=newRel;saveData();renderBubbles();renderProfile(p);if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderLeaderboard()}closeModal()}
+function saveEdit(){const p=state.people.find(x=>x.id===editingId);if(!p)return;Object.keys(p.relations||{}).forEach(oid=>{const other=state.people.find(x=>x.id===oid);if(other&&other.relations)delete other.relations[p.id]});p.name=document.getElementById('fName').value.trim()||p.name;p.emoji=document.getElementById('fEmoji').value.trim()||'🙂';p.color=document.getElementById('fColor').value;p.intro=document.getElementById('fIntro').value.trim();p.tags=document.getElementById('fTags').value.split(/[,，、]/).map(s=>s.trim()).filter(Boolean);const newRel={};document.querySelectorAll('#relList .rel-row').forEach(row=>{const tid=row.querySelector('.rel-person').value;if(!tid)return;const label=row.querySelector('.rel-label').value.trim()||'同学',strength=Number(row.querySelector('.rel-strength').value)||3;newRel[tid]={label,strength};const other=state.people.find(x=>x.id===tid);if(other){other.relations=other.relations||{};other.relations[p.id]={label,strength}}});p.relations=newRel;saveData();renderBubbles();renderProfile(p);if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderLeaderboard()}if(netInited){netInited=false}closeModal()}
 function addScore(studentId,delta,reason){const student=state.people.find(s=>s.id===studentId);if(!student||!delta)return;scoreState.scores[studentId]=(scoreState.scores[studentId]||0)+delta;const finalReason=(reason&&reason.trim())||(delta>0?'表现优秀':'违反纪律');scoreState.records.unshift({id:'r'+Date.now()+'_'+Math.random().toString(36).slice(2,6),studentId:student.id,studentName:student.name,delta,reason:finalReason,time:Date.now()});if(scoreState.records.length>300)scoreState.records=scoreState.records.slice(0,300);saveScore();renderStudents();renderRecords();renderLeaderboard()}
 function undoRecord(recordId){const idx=scoreState.records.findIndex(r=>r.id===recordId);if(idx<0)return;const rec=scoreState.records[idx];scoreState.scores[rec.studentId]=(scoreState.scores[rec.studentId]||0)-rec.delta;scoreState.records.splice(idx,1);saveScore();renderStudents();renderRecords();renderLeaderboard()}
 function renderStudents(){const grid=document.getElementById('studentsGrid');if(!grid)return;grid.innerHTML='';const kw=searchKeyword.trim().toLowerCase(),list=kw?state.people.filter(p=>p.name.toLowerCase().includes(kw)||(p.tags||[]).some(t=>t.toLowerCase().includes(kw))):state.people;if(!list.length){grid.innerHTML='<div class="empty-records" style="grid-column:1/-1"><span class="ico">🔍</span>没有找到匹配的同学</div>';return}list.forEach(p=>{const score=scoreState.scores[p.id]||0,card=document.createElement('div');card.className='student-card';card.style.setProperty('--c',p.color);const tagsText=(p.tags||[]).slice(0,3).join(' · ');const topMedal=getTopMedal(score);const miniMedal=topMedal?'<div class="student-mini-medal" style="color:'+topMedal.color+'" title="'+topMedal.name+'">'+topMedal.icon+'</div>':'';card.innerHTML='<div class="student-top"><div class="student-avatar">'+escapeHtml(p.emoji||'🙂')+miniMedal+'</div><div class="student-info"><span class="student-name" contenteditable="true" spellcheck="false">'+escapeHtml(p.name)+'</span><div class="student-tags">'+escapeHtml(tagsText||'—')+'</div></div></div><div class="student-score-row"><span class="student-score-label">SCORE</span><span class="student-score">'+score+'</span></div><div class="student-add"><button class="score-add-btn" data-add="1">+1</button><button class="score-add-btn" data-add="2">+2</button><button class="score-add-btn" data-add="5">+5</button><button class="score-add-btn minus" data-add="-1">−1</button><button class="score-add-btn" data-add="custom">＋?</button></div>';const nameEl=card.querySelector('.student-name');nameEl.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();nameEl.blur()}});nameEl.addEventListener('blur',()=>{const newName=nameEl.innerText.trim()||p.name;if(newName!==p.name){p.name=newName;saveData();renderLeaderboard()}nameEl.innerText=newName});nameEl.addEventListener('paste',e=>{e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,text)});card.querySelectorAll('.score-add-btn').forEach(btn=>{btn.addEventListener('click',()=>{const val=btn.dataset.add;if(val==='custom'){const input=prompt('给「'+p.name+'」加减分（正数加分 / 负数扣分）：','3');if(input===null)return;const n=Number(input);if(!Number.isFinite(n)||n===0)return;const reason=prompt('原因（可选）：','');if(reason===null)return;addScore(p.id,n,reason)}else{addScore(p.id,Number(val),'')}})});grid.appendChild(card)})}
@@ -608,6 +692,406 @@ function closeTeacherModal(){document.getElementById('teacherModal').classList.r
 function saveTeacher(){const t=teachers.find(x=>x.id===editingTeacherId);if(!t)return;t.name=document.getElementById('tmName').value.trim()||t.name;t.subject=document.getElementById('tmSubject').value.trim();t.intro=document.getElementById('tmIntro').value.trim();saveTeachers();renderTeachers();closeTeacherModal()}
 function sendGift(teacherId,type){const t=teachers.find(x=>x.id===teacherId);if(!t)return;if(type==='flower'){t.flowers=(t.flowers||0)+1}else{t.hearts=(t.hearts||0)+1}saveTeachers();document.getElementById('tmFlowers').textContent=t.flowers||0;document.getElementById('tmHearts').textContent=t.hearts||0;renderTeachers();playGiftAnimation(type)}
 function playGiftAnimation(type){const layer=document.getElementById('giftLayer'),emojis=type==='flower'?['🌸','💐','🌷','🌺','🏵️','🌼']:['❤️','💖','💗','💓','💕','💝'];for(let i=0;i<18;i++){const el=document.createElement('div');el.className='gift-particle';el.textContent=emojis[Math.floor(Math.random()*emojis.length)];el.style.left=(Math.random()*100)+'vw';el.style.fontSize=(20+Math.random()*22)+'px';el.style.setProperty('--drift',((Math.random()-0.5)*220).toFixed(1)+'px');el.style.animationDelay=(Math.random()*0.5)+'s';el.style.animationDuration=(1.6+Math.random()*0.9)+'s';layer.appendChild(el);setTimeout(()=>el.remove(),3200)}}
+/* ================= 关系网 ================= */
+function buildNetworkData(){
+  const people=state.people;
+  const relationCount={};
+  people.forEach(p=>relationCount[p.id]=Object.keys(p.relations||{}).length);
+  const orphans=people.filter(p=>relationCount[p.id]===0);
+  const linked=people.filter(p=>relationCount[p.id]>0);
+  const nodes=linked.map(p=>({id:p.id,person:p}));
+  const nodeMap=Object.fromEntries(nodes.map(n=>[n.id,n]));
+  const edges=[];
+  const seen=new Set();
+  for(const p of linked){
+    for(const [oid,r] of Object.entries(p.relations||{})){
+      if(!nodeMap[oid])continue;
+      const key=[p.id,oid].sort().join('|');
+      if(seen.has(key))continue;
+      seen.add(key);
+      edges.push({a:p.id,b:oid,strength:Math.max(1,Math.min(5,r.strength||3)),label:r.label||'同学'});
+    }
+  }
+  return {nodes,edges,orphans};
+}
+function initNetwork(){
+  const canvas=document.getElementById('netCanvas');
+  const wrap=document.getElementById('netCanvasWrap');
+  if(!canvas||!wrap)return;
+  const W=wrap.clientWidth,H=wrap.clientHeight;
+  if(W<10||H<10){setTimeout(initNetwork,80);return}
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=W*dpr;canvas.height=H*dpr;
+  canvas.style.width=W+'px';canvas.style.height=H+'px';
+  const ctx=canvas.getContext('2d');
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const data=buildNetworkData();
+  const n=data.nodes.length;
+  if(!n&&!data.orphans.length){renderNetList();return}
+  const cx=W/2,cy=H/2;
+  const baseR=Math.min(W,H)*0.36;
+  data.nodes.forEach((node,i)=>{
+    const ang=(i/n)*Math.PI*2;
+    const rad=baseR*(0.75+Math.random()*0.4);
+    node.x=cx+Math.cos(ang)*rad;
+    node.y=cy+Math.sin(ang)*rad;
+    node.vx=0;node.vy=0;
+    node.r=22+Math.min(10,Object.keys(node.person.relations||{}).length*2);
+  });
+  netOrphans=data.orphans;
+  simulateNetwork(data.nodes,data.edges,W,H);
+  netNodes=data.nodes;
+  netEdges=data.edges;
+  netScale=1;netOffX=0;netOffY=0;
+  renderNetList();
+  drawNetwork(ctx,W,H);
+  netInited=true;
+  bindNetEvents(canvas,wrap,ctx,W,H);
+}
+function simulateNetwork(nodes,edges,W,H){
+  const n=nodes.length;
+  if(!n)return;
+  const cx=W/2,cy=H/2;
+  const repulsion=5000;
+  const spring=0.012;
+  const centerPull=0.006;
+  const damping=0.82;
+  const iterations=320;
+  for(let it=0;it<iterations;it++){
+    for(let i=0;i<n;i++){
+      const a=nodes[i];
+      a.fx=0;a.fy=0;
+      for(let j=0;j<n;j++){
+        if(i===j)continue;
+        const b=nodes[j];
+        let dx=a.x-b.x,dy=a.y-b.y;
+        let d2=dx*dx+dy*dy;
+        if(d2<1)d2=1;
+        const d=Math.sqrt(d2);
+        const f=repulsion/d2;
+        a.fx+=(dx/d)*f;
+        a.fy+=(dy/d)*f;
+      }
+      a.fx+=(cx-a.x)*centerPull;
+      a.fy+=(cy-a.y)*centerPull;
+    }
+    for(const e of edges){
+      const a=nodes.find(x=>x.id===e.a);
+      const b=nodes.find(x=>x.id===e.b);
+      if(!a||!b)continue;
+      const dx=b.x-a.x,dy=b.y-a.y;
+      const d=Math.hypot(dx,dy)||1;
+      const rest=90+e.strength*(-8);
+      const f=(d-rest)*spring;
+      const ux=dx/d,uy=dy/d;
+      a.fx+=ux*f;a.fy+=uy*f;
+      b.fx-=ux*f;b.fy-=uy*f;
+    }
+    for(const nd of nodes){
+      nd.vx=(nd.vx+nd.fx)*damping;
+      nd.vy=(nd.vy+nd.fy)*damping;
+      nd.x+=nd.vx;
+      nd.y+=nd.vy;
+      const pad=nd.r+8;
+      nd.x=Math.max(pad,Math.min(W-pad,nd.x));
+      nd.y=Math.max(pad,Math.min(H-pad,nd.y));
+    }
+  }
+}
+function edgeStyle(strength){
+  const table={
+    1:{w:1,c:'#8b5cf6',a:0.55},
+    2:{w:2,c:'#a78bfa',a:0.65},
+    3:{w:3.5,c:'#c4b5fd',a:0.75},
+    4:{w:5,c:'#e879f9',a:0.85},
+    5:{w:7,c:'#f0abfc',a:0.95}
+  };
+  return table[Math.max(1,Math.min(5,strength))]||table[3];
+}
+function drawNetwork(ctx,W,H){
+  ctx.clearRect(0,0,W,H);
+  ctx.save();
+  ctx.translate(netOffX,netOffY);
+  ctx.scale(netScale,netScale);
+  const nodeMap=Object.fromEntries(netNodes.map(n=>[n.id,n]));
+  const hl=netHighlightId;
+  const hover=netHoverId;
+  const focusId=hover||hl;
+  const neighbors=new Set();
+  if(focusId){
+    neighbors.add(focusId);
+    for(const e of netEdges){
+      if(e.a===focusId)neighbors.add(e.b);
+      if(e.b===focusId)neighbors.add(e.a);
+    }
+  }
+  for(const e of netEdges){
+    const a=nodeMap[e.a],b=nodeMap[e.b];
+    if(!a||!b)continue;
+    const st=edgeStyle(e.strength);
+    let op=st.a;
+    if(focusId){
+      if(!(neighbors.has(e.a)&&neighbors.has(e.b)))op=0.08;
+    }
+    ctx.strokeStyle=st.c;
+    ctx.globalAlpha=op;
+    ctx.lineWidth=st.w;
+    ctx.lineCap='round';
+    ctx.beginPath();
+    ctx.moveTo(a.x,a.y);
+    ctx.lineTo(b.x,b.y);
+    ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+  for(const node of netNodes){
+    const p=node.person;
+    let alpha=1;
+    let scale=1;
+    if(focusId){
+      if(!neighbors.has(node.id))alpha=0.18;
+      if(node.id===focusId)scale=1.18;
+    }
+    if(netSearchKw&&!p.name.toLowerCase().includes(netSearchKw)&&!((p.tags||[]).some(t=>t.toLowerCase().includes(netSearchKw))))alpha=0.12;
+    ctx.globalAlpha=alpha;
+    const r=node.r*scale;
+    const grd=ctx.createRadialGradient(node.x-r*0.3,node.y-r*0.35,r*0.15,node.x,node.y,r);
+    grd.addColorStop(0,'rgba(255,255,255,0.75)');
+    grd.addColorStop(0.4,p.color);
+    grd.addColorStop(1,p.color);
+    ctx.fillStyle=grd;
+    ctx.beginPath();
+    ctx.arc(node.x,node.y,r,0,Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.35)';
+    ctx.lineWidth=1.5;
+    ctx.stroke();
+    if(node.id===focusId){
+      ctx.strokeStyle='#f0abfc';
+      ctx.lineWidth=3;
+      ctx.beginPath();
+      ctx.arc(node.x,node.y,r+4,0,Math.PI*2);
+      ctx.stroke();
+    }
+    const emojiSize=Math.max(12,r*0.8);
+    ctx.font=emojiSize+'px "PingFang SC","Microsoft YaHei",system-ui,sans-serif';
+    ctx.textAlign='center';
+    ctx.textBaseline='middle';
+    ctx.fillText(p.emoji||'🙂',node.x,node.y-1);
+    ctx.font='bold '+(Math.max(10,r*0.36))+'px "PingFang SC","Microsoft YaHei",system-ui,sans-serif';
+    ctx.fillStyle='#1a0a2a';
+    ctx.textBaseline='top';
+    ctx.fillText(p.name,node.x,node.y+r+4);
+    ctx.fillStyle='rgba(255,255,255,0.85)';
+  }
+  ctx.globalAlpha=1;
+  if(netOrphans.length){
+    const baseY=H-30;
+    ctx.font='11px "PingFang SC","Microsoft YaHei",system-ui,sans-serif';
+    ctx.fillStyle='rgba(139,123,184,0.75)';
+    ctx.textAlign='left';
+    ctx.textBaseline='bottom';
+    let x=16;
+    for(const o of netOrphans){
+      const r=13;
+      ctx.globalAlpha=0.32;
+      ctx.fillStyle='#8b7bb8';
+      ctx.beginPath();
+      ctx.arc(x+r,baseY-r,r,0,Math.PI*2);
+      ctx.fill();
+      ctx.globalAlpha=0.6;
+      ctx.font='12px "PingFang SC","Microsoft YaHei",system-ui,sans-serif';
+      ctx.fillStyle='#fff';
+      ctx.textAlign='center';
+      ctx.textBaseline='middle';
+      ctx.fillText(o.emoji||'🙂',x+r,baseY-r);
+      x+=r*2+6;
+      if(x>W-120)break;
+    }
+    ctx.globalAlpha=1;
+  }
+  ctx.restore();
+}
+function renderNetList(){
+  const list=document.getElementById('netList');
+  if(!list)return;
+  const countEl=document.getElementById('netCount');
+  const kw=netSearchKw;
+  const sorted=[...state.people].sort((a,b)=>{
+    const ra=Object.keys(a.relations||{}).length;
+    const rb=Object.keys(b.relations||{}).length;
+    if(rb!==ra)return rb-ra;
+    return a.name.localeCompare(b.name,'zh');
+  });
+  let shown=0;
+  list.innerHTML='';
+  sorted.forEach(p=>{
+    const match=!kw||p.name.toLowerCase().includes(kw)||(p.tags||[]).some(t=>t.toLowerCase().includes(kw));
+    const relCount=Object.keys(p.relations||{}).length;
+    const item=document.createElement('div');
+    item.className='net-item';
+    if(!match)item.classList.add('dim');
+    if(netHighlightId===p.id)item.classList.add('active');
+    item.style.setProperty('--c',p.color);
+    item.innerHTML='<div class="net-item-avatar">'+escapeHtml(p.emoji||'🙂')+'</div><div class="net-item-name">'+escapeHtml(p.name)+'</div><div class="net-item-rel">'+(relCount>0?relCount+' 关系':'未设定')+'</div>';
+    item.addEventListener('click',()=>{
+      netHighlightId=netHighlightId===p.id?null:p.id;
+      renderNetList();
+      const canvas=document.getElementById('netCanvas');
+      if(canvas){
+        const wrap=document.getElementById('netCanvasWrap');
+        const dpr=window.devicePixelRatio||1;
+        const ctx=canvas.getContext('2d');
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+        drawNetwork(ctx,wrap.clientWidth,wrap.clientHeight);
+      }
+    });
+    item.addEventListener('dblclick',()=>openProfile(p.id));
+    list.appendChild(item);
+    if(match)shown++;
+  });
+  if(countEl)countEl.textContent=shown+' / '+state.people.length;
+  const tip=document.getElementById('netOrphanTip');
+  const tipText=document.getElementById('netOrphanText');
+  if(tip&&tipText){
+    if(netOrphans.length){
+      tip.classList.remove('hidden');
+      tipText.textContent=netOrphans.length+' 位同学还没有设定关系';
+    }else{
+      tip.classList.add('hidden');
+    }
+  }
+}
+function getCanvasPos(canvas,e){
+  const rect=canvas.getBoundingClientRect();
+  const clientX=e.touches?e.touches[0].clientX:e.clientX;
+  const clientY=e.touches?e.touches[0].clientY:e.clientY;
+  const x=(clientX-rect.left-netOffX)/netScale;
+  const y=(clientY-rect.top-netOffY)/netScale;
+  return {x,y,clientX,clientY};
+}
+function findNodeAt(x,y){
+  for(let i=netNodes.length-1;i>=0;i--){
+    const n=netNodes[i];
+    if(Math.hypot(n.x-x,n.y-y)<=n.r+3)return n;
+  }
+  return null;
+}
+function bindNetEvents(canvas,wrap,ctx,W,H){
+  const redraw=()=>drawNetwork(ctx,wrap.clientWidth,wrap.clientHeight);
+  const tooltip=document.getElementById('netTooltip');
+  canvas.addEventListener('mousedown',e=>{
+    const pos=getCanvasPos(canvas,e);
+    const n=findNodeAt(pos.x,pos.y);
+    if(n){
+      netDragId=n.id;
+      netDragOffX=pos.x-n.x;
+      netDragOffY=pos.y-n.y;
+      canvas.classList.add('dragging');
+    }else{
+      netPanning=true;
+      netPanStartX=e.clientX-netOffX;
+      netPanStartY=e.clientY-netOffY;
+    }
+  });
+  canvas.addEventListener('mousemove',e=>{
+    const pos=getCanvasPos(canvas,e);
+    if(netDragId){
+      const n=netNodes.find(x=>x.id===netDragId);
+      if(n){
+        n.x=pos.x-netDragOffX;
+        n.y=pos.y-netDragOffY;
+        redraw();
+      }
+      return;
+    }
+    if(netPanning){
+      netOffX=e.clientX-netPanStartX;
+      netOffY=e.clientY-netPanStartY;
+      redraw();
+      return;
+    }
+    const n=findNodeAt(pos.x,pos.y);
+    if(n){
+      if(netHoverId!==n.id){
+        netHoverId=n.id;
+        redraw();
+      }
+      if(tooltip){
+        const relCount=Object.keys(n.person.relations||{}).length;
+        tooltip.textContent=n.person.name+(relCount>0?' · '+relCount+' 个关系':' · 未设定关系');
+        tooltip.style.left=(n.x*netScale+netOffX)+'px';
+        tooltip.style.top=(n.y*netScale+netOffY)+'px';
+        tooltip.classList.add('show');
+      }
+    }else{
+      if(netHoverId){
+        netHoverId=null;
+        redraw();
+      }
+      if(tooltip)tooltip.classList.remove('show');
+    }
+  });
+  const endDrag=()=>{
+    netDragId=null;
+    netPanning=false;
+    canvas.classList.remove('dragging');
+  };
+  canvas.addEventListener('mouseup',endDrag);
+  canvas.addEventListener('mouseleave',()=>{
+    endDrag();
+    if(netHoverId){netHoverId=null;redraw()}
+    if(tooltip)tooltip.classList.remove('show');
+  });
+  canvas.addEventListener('click',e=>{
+    const pos=getCanvasPos(canvas,e);
+    const n=findNodeAt(pos.x,pos.y);
+    if(n&&!netPanning){openProfile(n.person.id)}
+  });
+  canvas.addEventListener('dblclick',e=>{
+    const pos=getCanvasPos(canvas,e);
+    const n=findNodeAt(pos.x,pos.y);
+    if(!n){netScale=1;netOffX=0;netOffY=0;netHighlightId=null;renderNetList();redraw()}
+  });
+  canvas.addEventListener('wheel',e=>{
+    e.preventDefault();
+    const rect=canvas.getBoundingClientRect();
+    const mx=e.clientX-rect.left;
+    const my=e.clientY-rect.top;
+    const oldScale=netScale;
+    const delta=e.deltaY>0?0.92:1.08;
+    netScale=Math.max(0.3,Math.min(3,netScale*delta));
+    netOffX=mx-(mx-netOffX)*(netScale/oldScale);
+    netOffY=my-(my-netOffY)*(netScale/oldScale);
+    redraw();
+  },{passive:false});
+  canvas.addEventListener('touchstart',e=>{
+    const pos=getCanvasPos(canvas,e);
+    const n=findNodeAt(pos.x,pos.y);
+    if(n){
+      netDragId=n.id;
+      netDragOffX=pos.x-n.x;
+      netDragOffY=pos.y-n.y;
+    }else{
+      netPanning=true;
+      netPanStartX=e.touches[0].clientX-netOffX;
+      netPanStartY=e.touches[0].clientY-netOffY;
+    }
+  },{passive:true});
+  canvas.addEventListener('touchmove',e=>{
+    const pos=getCanvasPos(canvas,e);
+    if(netDragId){
+      const n=netNodes.find(x=>x.id===netDragId);
+      if(n){n.x=pos.x-netDragOffX;n.y=pos.y-netDragOffY;redraw()}
+      e.preventDefault();
+    }else if(netPanning){
+      netOffX=e.touches[0].clientX-netPanStartX;
+      netOffY=e.touches[0].clientY-netPanStartY;
+      redraw();
+      e.preventDefault();
+    }
+  },{passive:false});
+  canvas.addEventListener('touchend',endDrag);
+}
 /* ================= 许愿墙 ================= */
 function saveAuth(){syncToCache();cloudPush()}
 function saveWishes(){syncToCache();cloudPush()}
@@ -1019,6 +1503,7 @@ function refreshAllUI(){
   if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderRecords();renderLeaderboard()}
   if(document.getElementById('view-teachers').classList.contains('active'))renderTeachers();
   if(document.getElementById('view-wish').classList.contains('active')){renderWishes();updateUserBtn()}
+  if(document.getElementById('view-network').classList.contains('active')&&!netInited){initNetwork()}
 }
 
 /* ================= 事件绑定 ================= */
@@ -1079,6 +1564,34 @@ document.querySelectorAll('.nav-locked').forEach(btn=>{
   btn.addEventListener('click',()=>showLockToast(btn.dataset.locked||''));
 });
 
+/* 关系网事件 */
+document.getElementById('netSearch').addEventListener('input',e=>{
+  netSearchKw=e.target.value.trim().toLowerCase();
+  renderNetList();
+  const canvas=document.getElementById('netCanvas');
+  if(canvas&&netInited){
+    const wrap=document.getElementById('netCanvasWrap');
+    const dpr=window.devicePixelRatio||1;
+    const ctx=canvas.getContext('2d');
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    drawNetwork(ctx,wrap.clientWidth,wrap.clientHeight);
+  }
+});
+document.getElementById('netResetBtn').addEventListener('click',()=>{
+  netInited=false;netHighlightId=null;netHoverId=null;netDragId=null;
+  initNetwork();
+});
+document.getElementById('netFullBtn').addEventListener('click',()=>{
+  const wrap=document.getElementById('netCanvasWrap');
+  if(!document.fullscreenElement){
+    if(wrap.requestFullscreen)wrap.requestFullscreen();
+    else if(wrap.webkitRequestFullscreen)wrap.webkitRequestFullscreen();
+  }else{
+    if(document.exitFullscreen)document.exitFullscreen();
+    else if(document.webkitExitFullscreen)document.webkitExitFullscreen();
+  }
+});
+
 /* 许愿墙事件 */
 document.getElementById('wishFab').addEventListener('click',openWishModal);
 document.getElementById('closeWishModal').addEventListener('click',closeWishModal);
@@ -1102,7 +1615,7 @@ document.querySelectorAll('.wish-filter').forEach(f=>{f.addEventListener('click'
 document.getElementById('wishSearch').addEventListener('input',e=>{wishKeyword=e.target.value;renderWishes()});
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('wishModal').classList.contains('open'))closeWishModal();else if(document.getElementById('authModal').classList.contains('open'))closeAuthModal();else if(document.getElementById('fulfillModal').classList.contains('open'))closeFulfillModal();else if(document.getElementById('likeListModal').classList.contains('open'))closeLikeList();else if(modal.classList.contains('open'))closeModal();else if(document.getElementById('teacherModal').classList.contains('open'))closeTeacherModal();else if(overlay.classList.contains('open'))closeProfile();closeWishMenu()}});
-let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles()},180)});
+let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles();if(document.getElementById('view-network').classList.contains('active')&&netInited){const canvas=document.getElementById('netCanvas');const wrap=document.getElementById('netCanvasWrap');const dpr=window.devicePixelRatio||1;canvas.width=wrap.clientWidth*dpr;canvas.height=wrap.clientHeight*dpr;const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);drawNetwork(ctx,wrap.clientWidth,wrap.clientHeight)}},200)});
 
 /* ================= 启动 ================= */
 (async function init(){
