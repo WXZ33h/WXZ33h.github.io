@@ -317,6 +317,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .auth-modal-box select{width:100%;padding:11px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:.2s;cursor:pointer}
 .auth-modal-box select:focus{border-color:var(--primary-light);box-shadow:0 0 0 4px rgba(139,92,246,.22)}
 .auth-modal-box select option{background:#1e0b30;color:var(--text)}
+.auth-modal-box select optgroup{background:#1e0b30;color:var(--primary-lighter);font-weight:800}
 .auth-msg{font-size:12.5px;color:#fca5a5;font-weight:700;margin-top:10px;min-height:18px;text-align:center}
 .auth-msg.ok{color:#86efac}
 .auth-hint{font-size:11.5px;color:var(--text-muted);margin-top:14px;line-height:1.7;text-align:center}
@@ -580,7 +581,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="guide-item"><span class="guide-item-emoji">🏆</span><div class="guide-item-body"><div class="guide-item-name">个人加分</div><div class="guide-item-desc">给表现好的同学加分，自动生成排行榜和加分记录，可以撤销。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🎓</span><div class="guide-item-body"><div class="guide-item-name">老师</div><div class="guide-item-desc">给老师送花🌷或爱心❤️，会飘出动画哦。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">⏳</span><div class="guide-item-body"><div class="guide-item-name">倒计时</div><div class="guide-item-desc">距离下一个节日还有多少天，精确到秒。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">✨</span><div class="guide-item-body"><div class="guide-item-name">许愿墙</div><div class="guide-item-desc">许下心愿、点赞、还愿。需要先注册登录（名字从班级名单里选）。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">✨</span><div class="guide-item-body"><div class="guide-item-name">许愿墙</div><div class="guide-item-desc">许下心愿、点赞、还愿。需要先注册登录（名字从班级名单里选，老师也可以注册）。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">📋</span><div class="guide-item-body"><div class="guide-item-name">动态</div><div class="guide-item-desc">谁加分了、谁许愿了、谁改了资料……这里都能看到，最近 100 条。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🔒</span><div class="guide-item-body"><div class="guide-item-name">敬请期待</div><div class="guide-item-desc">时间轴回忆、班级相册等功能正在开发中，敬请期待 😃</div></div></div>
 </div>
@@ -748,10 +749,16 @@ function renderLogs(){
 function openGuide(){
   document.getElementById('guideModal').classList.add('open');
 }
-function closeGuide(){document.getElementById('guideModal').classList.remove('open')}
+function closeGuide(){
+  document.getElementById('guideModal').classList.remove('open');
+  if(!currentUser)setTimeout(()=>openAuthModal('login'),300);
+}
 function initGuide(){
   const hide=localStorage.getItem('class_guide_hidden');
-  if(hide==='1')return;
+  if(hide==='1'){
+    if(!currentUser)setTimeout(()=>openAuthModal('login'),400);
+    return;
+  }
   setTimeout(openGuide,600);
 }
 
@@ -1251,7 +1258,9 @@ function updateUserBtn(){
   const fab=document.getElementById('wishFab');
   if(!btn)return;
   if(currentUser){
-    btn.textContent='👤 '+currentUser.name+(currentUser.role==='admin'?' 👑':'');
+    btn.textContent='👤 '+currentUser.name
+      +(currentUser.isTeacher?' 🎓':'')
+      +(currentUser.role==='admin'?' 👑':'');
     btn.classList.add('logged-in');
     btn.title='点击退出登录';
     btn.onclick=logout;
@@ -1286,16 +1295,42 @@ function fillAuthPersonSelect(){
   sel.innerHTML='';
   if(currentAuthTab==='register'){
     const taken=new Set(accounts.map(a=>a.personId));
-    const avail=state.people.filter(p=>!taken.has(p.id));
-    if(!avail.length){sel.innerHTML='<option value="">所有同学都注册过了</option>';return}
-    avail.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=(p.emoji||'🙂')+' '+p.name;sel.appendChild(o)});
+    const availStudents=state.people.filter(p=>!taken.has(p.id));
+    const availTeachers=teachers.filter(t=>!taken.has(t.id));
+    if(!availStudents.length&&!availTeachers.length){sel.innerHTML='<option value="">所有人都注册过了</option>';return}
+    if(availStudents.length){
+      const og=document.createElement('optgroup');
+      og.label='👥 同学';
+      availStudents.forEach(p=>{
+        const o=document.createElement('option');
+        o.value=p.id;
+        o.textContent=(p.emoji||'🙂')+' '+p.name;
+        og.appendChild(o);
+      });
+      sel.appendChild(og);
+    }
+    if(availTeachers.length){
+      const og=document.createElement('optgroup');
+      og.label='🎓 老师';
+      availTeachers.forEach(t=>{
+        const o=document.createElement('option');
+        o.value=t.id;
+        o.textContent=(t.emoji||'🧑‍🏫')+' '+t.name+(t.subject?'（'+t.subject+'）':'');
+        og.appendChild(o);
+      });
+      sel.appendChild(og);
+    }
   }else{
     if(!accounts.length){sel.innerHTML='<option value="">还没有人注册过，先注册吧</option>';return}
     accounts.forEach(a=>{
       const person=state.people.find(p=>p.id===a.personId);
+      const teacher=teachers.find(t=>t.id===a.personId);
+      const who=person||teacher;
       const o=document.createElement('option');
       o.value=a.personId;
-      o.textContent=(person?((person.emoji||'🙂')+' '+person.name):a.name)+(a.role==='admin'?' 👑':'');
+      o.textContent=(who?((who.emoji||'🙂')+' '+who.name):a.name)
+        +(teacher?' 🎓':'')
+        +(a.role==='admin'?' 👑':'');
       sel.appendChild(o);
     });
   }
@@ -1309,12 +1344,22 @@ function submitAuth(){
   if(!password){msgEl.textContent='请输入密码';return}
   if(password.length<2){msgEl.textContent='密码至少 2 位';return}
   if(currentAuthTab==='register'){
-    if(accounts.find(a=>a.personId===personId)){msgEl.textContent='这个名字已经注册过了';return}
+    if(accounts.find(a=>a.personId===personId)){msgEl.textContent='这个名字已经注册过了，直接登录吧';return}
     const person=state.people.find(p=>p.id===personId);
-    const account={id:'u_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),personId,name:person?person.name:'同学',password,role:accounts.length===0?'admin':'user',createdAt:Date.now()};
+    const teacher=teachers.find(t=>t.id===personId);
+    const displayName=person?person.name:(teacher?teacher.name:'同学');
+    const account={
+      id:'u_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),
+      personId,
+      name:displayName,
+      password,
+      role:accounts.length===0?'admin':'user',
+      isTeacher:!!teacher,
+      createdAt:Date.now()
+    };
     accounts.push(account);currentUser=account;
     localStorage.setItem('class_wish_userId',account.id);
-    addLog('🎉',(account.role==='admin'?'注册成为了管理员':'注册了账号'));
+    addLog('🎉',(teacher?'老师 ':'')+(account.role==='admin'?'注册成为了管理员':'注册了账号'));
     saveAuth();
     msgEl.classList.add('ok');
     msgEl.textContent=account.role==='admin'?'🎉 注册成功！你是第一个注册的人，获得管理员权限':'🎉 注册成功！';
