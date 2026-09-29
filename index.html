@@ -15,7 +15,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .nav-title{font-size:17px;font-weight:800;letter-spacing:.6px;background:linear-gradient(120deg,#c4b5fd,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .nav-sub{font-size:11px;color:var(--text-muted);letter-spacing:1.5px;white-space:nowrap}
 .nav-links{display:flex;gap:6px;margin-left:auto;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px solid var(--border);overflow:visible;position:relative}
-.nav-link{border:none;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;padding:8px 18px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap}
+.nav-link{border:none;cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.4px;padding:8px 18px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap;flex-shrink:0}
 .nav-link:hover{color:var(--text);background:rgba(139,92,246,.18)}
 .nav-link.active{color:#fff;background:linear-gradient(120deg,#7c3aed,#a855f7);box-shadow:0 6px 18px -6px rgba(139,92,246,.9)}
 .sync-status{font-size:11px;color:var(--text-muted);margin-left:8px;white-space:nowrap}
@@ -35,6 +35,64 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .edit-tip{margin-top:22px;font-size:12px;color:var(--text-muted);letter-spacing:1.2px;display:flex;align-items:center;justify-content:center;gap:7px}
 .edit-tip .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-light);box-shadow:0 0 10px var(--accent-light);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+/* ===== 公告页 ===== */
+#view-notice{min-height:100vh;padding:120px 24px 80px}
+.notice-wrap{max-width:820px;margin:0 auto}
+.notice-header{text-align:center;margin-bottom:34px}
+.notice-header h2{font-size:30px;margin:0 0 8px;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:12px}
+.notice-header h2 .ico{font-size:28px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
+.notice-header p{font-size:13px;color:var(--text-muted);letter-spacing:2px;margin:0}
+.notice-card{position:relative;background:linear-gradient(160deg,rgba(45,17,71,.85),rgba(30,11,48,.85));border:1px solid var(--border-strong);border-radius:26px;padding:44px 46px 34px;backdrop-filter:blur(16px);box-shadow:0 30px 70px -30px rgba(240,171,252,.35),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden}
+.notice-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#7c3aed,#f0abfc,#7c3aed);box-shadow:0 0 24px rgba(240,171,252,.6);border-radius:26px 26px 0 0}
+.notice-badge{position:absolute;top:-12px;left:38px;font-size:12px;font-weight:800;letter-spacing:2.5px;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);padding:5px 16px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(139,92,246,.9)}
+.notice-text{font-size:16px;line-height:2;color:var(--text);margin:0;white-space:pre-wrap;word-break:break-word;outline:none;cursor:text;border-radius:12px;padding:10px 12px;min-height:200px;transition:.25s;letter-spacing:.3px}
+.notice-text:focus{background:rgba(139,92,246,.14);box-shadow:0 0 0 2px rgba(167,139,250,.4)}
+.notice-text.locked{cursor:default;user-select:text}
+.notice-text.locked:focus{background:transparent;box-shadow:none}
+.notice-text:empty::before{content:attr(data-placeholder);color:var(--text-muted);font-style:italic}
+.notice-meta{margin-top:26px;padding-top:18px;border-top:1px dashed rgba(167,139,250,.22);font-size:12px;color:var(--text-muted);text-align:right;letter-spacing:.5px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.notice-tip{margin-top:22px;font-size:12px;color:var(--text-muted);letter-spacing:1.2px;display:flex;align-items:center;justify-content:center;gap:7px}
+.notice-tip .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-light);box-shadow:0 0 10px var(--accent-light);animation:pulse 2s ease-in-out infinite}
+
+/* ===== 相册页 ===== */
+#view-album{min-height:100vh;padding:120px 24px 80px}
+.album-wrap{max-width:1320px;margin:0 auto}
+.album-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:14px}
+.album-header h2{font-size:30px;margin:0;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:flex;align-items:center;gap:12px}
+.album-header h2 .ico{font-size:28px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
+.album-header-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.album-count{font-size:12.5px;color:var(--text-muted);letter-spacing:1px;font-weight:700;padding:6px 14px;border-radius:999px;background:rgba(139,92,246,.12);border:1px solid var(--border)}
+.album-upload-btn{border:1px solid rgba(240,171,252,.5);background:linear-gradient(120deg,rgba(124,58,237,.55),rgba(192,38,211,.55));color:#fff;font-family:inherit;font-size:13.5px;font-weight:800;padding:11px 22px;border-radius:999px;cursor:pointer;transition:.22s;letter-spacing:.6px;box-shadow:0 12px 28px -10px rgba(192,38,211,.9)}
+.album-upload-btn:hover{background:linear-gradient(120deg,rgba(124,58,237,.8),rgba(192,38,211,.8));transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(192,38,211,1)}
+.album-upload-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.album-grid{column-count:3;column-gap:18px}
+@media(max-width:900px){.album-grid{column-count:2;column-gap:12px}}
+@media(max-width:520px){.album-grid{column-count:1}}
+.album-card{break-inside:avoid;margin:0 0 18px;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,rgba(45,17,71,.85),rgba(30,11,48,.85));border:1px solid var(--border);position:relative;transition:.3s;animation:slideIn .4s ease backwards}
+.album-card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:0 22px 45px -18px rgba(0,0,0,.75)}
+.album-card img{display:block;width:100%;height:auto;background:rgba(0,0,0,.3);min-height:80px}
+.album-card-info{padding:12px 14px 14px;display:flex;flex-direction:column;gap:8px}
+.album-card-top{display:flex;align-items:center;gap:8px}
+.album-avatar{width:28px;height:28px;flex:0 0 28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;background:var(--c,#a78bfa);box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
+.album-uploader{flex:1;font-size:13.5px;font-weight:800;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.album-time{font-size:11px;color:var(--text-muted);font-variant-numeric:tabular-nums;letter-spacing:.5px;flex-shrink:0}
+.album-caption{font-size:13px;line-height:1.6;color:var(--text-dim);word-break:break-word;margin:0}
+.album-del{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;border:none;background:rgba(20,8,31,.85);color:#fca5a5;cursor:pointer;font-size:13px;line-height:1;transition:.2s;backdrop-filter:blur(8px);opacity:0;z-index:2}
+.album-card:hover .album-del{opacity:1}
+.album-del:hover{background:rgba(239,68,68,.85);color:#fff;transform:rotate(90deg)}
+.album-empty{text-align:center;color:var(--text-muted);padding:80px 0;font-size:14px;letter-spacing:1px;column-span:all}
+.album-empty .ico{display:block;font-size:52px;margin-bottom:14px;opacity:.5;filter:drop-shadow(0 4px 12px rgba(240,171,252,.4))}
+.upload-preview{margin:12px 0;border-radius:14px;overflow:hidden;background:rgba(20,8,31,.5);border:1px dashed rgba(167,139,250,.3);display:flex;align-items:center;justify-content:center;min-height:140px;padding:10px}
+.upload-preview img{max-width:100%;max-height:260px;border-radius:10px;display:block}
+.upload-preview:empty::before{content:"尚未选择图片";color:var(--text-muted);font-size:12.5px;letter-spacing:1px}
+.upload-msg{font-size:12.5px;color:#fca5a5;font-weight:700;min-height:18px;text-align:center;margin-top:8px;letter-spacing:.5px}
+.upload-msg.ok{color:#86efac}
+.upload-tip{font-size:11.5px;color:var(--text-muted);margin-top:12px;line-height:1.7;text-align:center}
+#uploadFile{width:100%;padding:10px;border-radius:12px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:var(--text);font-size:13px;font-family:inherit;cursor:pointer}
+#uploadFile::file-selector-button{background:rgba(139,92,246,.25);color:var(--text);border:1px solid rgba(167,139,250,.3);border-radius:8px;padding:6px 14px;font-family:inherit;font-size:12.5px;font-weight:700;cursor:pointer;margin-right:10px;transition:.2s}
+#uploadFile::file-selector-button:hover{background:rgba(139,92,246,.45)}
+
 #view-bubbles{position:relative;height:100vh;padding-top:68px}
 #view-bubbles .stage{position:relative;width:100%;height:100%;overflow:hidden}
 .bubble{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85),rgba(255,255,255,0) 58%),var(--c);box-shadow:0 12px 30px -8px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08),inset 0 -8px 18px rgba(255,255,255,.28),inset 0 4px 10px rgba(255,255,255,.4);transition:transform .28s cubic-bezier(.34,1.56,.64,1),box-shadow .28s;will-change:transform;animation:pop .5s cubic-bezier(.34,1.56,.64,1) backwards;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -317,7 +375,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .auth-modal-box select{width:100%;padding:11px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:.2s;cursor:pointer}
 .auth-modal-box select:focus{border-color:var(--primary-light);box-shadow:0 0 0 4px rgba(139,92,246,.22)}
 .auth-modal-box select option{background:#1e0b30;color:var(--text)}
-.auth-modal-box select optgroup{background:#1e0b30;color:var(--primary-lighter);font-weight:800}
 .auth-msg{font-size:12.5px;color:#fca5a5;font-weight:700;margin-top:10px;min-height:18px;text-align:center}
 .auth-msg.ok{color:#86efac}
 .auth-hint{font-size:11.5px;color:var(--text-muted);margin-top:14px;line-height:1.7;text-align:center}
@@ -328,6 +385,22 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .like-item .avatar{width:34px;height:34px;flex:0 0 34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
 .like-item .name{flex:1;font-size:14px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .like-item .role-tag{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,#7c3aed,#c026d3);color:#fff;letter-spacing:1px;flex-shrink:0}
+
+/* ===== 密码验证弹窗 ===== */
+.gate-modal{z-index:9999}
+.gate-box{width:min(420px,100%);text-align:center;padding:38px 32px 30px}
+.gate-icon{font-size:56px;line-height:1;margin-bottom:16px;display:block;filter:drop-shadow(0 8px 24px rgba(240,171,252,.7));animation:floaty 3s ease-in-out infinite}
+.gate-box h3{margin:0 0 8px;font-size:20px;font-weight:900;letter-spacing:2px;text-align:center}
+.gate-sub{font-size:12.5px;color:var(--text-muted);letter-spacing:1.5px;margin-bottom:22px}
+.gate-box .field{margin-bottom:14px}
+.gate-box .field input{text-align:center;font-size:22px;font-weight:800;letter-spacing:10px;padding:14px 12px;font-variant-numeric:tabular-nums}
+.gate-msg{font-size:13px;color:#fca5a5;font-weight:700;min-height:20px;text-align:center;letter-spacing:1px}
+.gate-msg.ok{color:#86efac}
+.gate-box .modal-actions{justify-content:center;margin-top:20px;padding-top:18px}
+.gate-box .modal-actions .btn-save{width:100%;padding:13px 24px;font-size:15px;letter-spacing:2px}
+.gate-hint{font-size:11.5px;color:var(--text-muted);margin-top:16px;line-height:1.7}
+@keyframes gateShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.gate-box.shake{animation:gateShake .4s ease}
 
 /* ===== 下拉菜单 ===== */
 .nav-dropdown{position:relative;display:inline-block}
@@ -452,7 +525,41 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .guide-title{font-size:18px}
 }
 
-@media(max-width:780px){.navbar{padding:0 12px;gap:8px;height:60px}.nav-logo{width:32px;height:32px;flex-basis:32px}.nav-title{font-size:14px}.nav-sub{display:none}.nav-link{padding:7px 11px;font-size:11.5px}.sync-status{display:none}#view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}#view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.nav-drop-menu{min-width:150px;padding:6px}.nav-drop-item{font-size:12.5px;padding:9px 12px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}}
+@media(max-width:780px){
+  .navbar{padding:0 12px;gap:8px;height:60px}
+  .nav-logo{width:32px;height:32px;flex-basis:32px}
+  .nav-title{font-size:14px}
+  .nav-sub{display:none}
+  .nav-links{padding:4px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;max-width:calc(100vw - 180px)}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-link{padding:7px 12px;font-size:11.5px}
+  .nav-drop-trigger{padding:7px 12px;font-size:11.5px}
+  .nav-drop-menu{position:fixed;top:68px;left:50%;transform:translateX(-50%) translateY(-8px);min-width:170px;max-width:calc(100vw - 24px)}
+  .nav-dropdown.open .nav-drop-menu{transform:translateX(-50%) translateY(0)}
+  .nav-drop-menu::before{display:none}
+  .nav-drop-item{font-size:12.5px;padding:9px 12px}
+  .sync-status{display:none}
+  #view-home{padding:92px 16px 50px}.home-logo{width:126px;height:126px;margin-bottom:20px}.intro-card{padding:30px 22px;border-radius:22px}
+  #view-notice{padding:88px 16px 60px}
+  .notice-header h2{font-size:22px}
+  .notice-card{padding:34px 24px 26px;border-radius:22px}
+  .notice-badge{left:22px}
+  .notice-text{font-size:15px;min-height:160px}
+  .notice-meta{flex-direction:column;align-items:flex-end;gap:6px}
+  #view-album{padding:88px 14px 60px}
+  .album-header h2{font-size:22px}
+  .album-header-actions{width:100%;justify-content:space-between}
+  .album-count{font-size:11.5px}
+  .album-upload-btn{font-size:12.5px;padding:9px 18px}
+  .album-grid{column-count:2;column-gap:10px}
+  .album-card{margin-bottom:12px;border-radius:14px}
+  .album-card-info{padding:9px 11px 11px;gap:6px}
+  .album-avatar{width:24px;height:24px;flex-basis:24px;font-size:12px}
+  .album-uploader{font-size:12px}
+  .album-time{font-size:10px}
+  .album-caption{font-size:12px}
+  #view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}.gate-box{padding:32px 22px 26px}.gate-icon{font-size:46px}.gate-box h3{font-size:17px}.gate-box .field input{font-size:20px;letter-spacing:8px}
+}
 @media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px;letter-spacing:1px}}
 </style>
 </head>
@@ -465,11 +572,13 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 </div>
 <div class="nav-links">
 <button class="nav-link active" data-view="home">首页</button>
+<button class="nav-link" data-view="notice">公告 📢</button>
 <div class="nav-dropdown">
 <button class="nav-link nav-drop-trigger">班级 <span class="caret">▾</span></button>
 <div class="nav-drop-menu">
 <button class="nav-drop-item" data-view="bubbles">👥 班级成员</button>
 <button class="nav-drop-item" data-view="network">🕸️ 关系网</button>
+<button class="nav-drop-item" data-view="album">📸 班级相册</button>
 <button class="nav-drop-item" data-view="score">🏆 个人加分</button>
 <button class="nav-drop-item" data-view="teachers">🎓 老师</button>
 </div>
@@ -477,7 +586,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <button class="nav-link" data-view="countdown">倒计时</button>
 <button class="nav-link" data-view="wish">许愿墙 ✨</button>
 <button class="nav-link" data-view="logs">动态 📋</button>
-<button class="nav-link nav-locked" data-locked="时间轴回忆、班级相册等功能">敬请期待 🔒</button>
+<button class="nav-link nav-locked" data-locked="时间轴回忆等功能">敬请期待 🔒</button>
 </div>
 <span class="sync-status" id="syncStatus">⏳ 连接中…</span>
 </nav>
@@ -487,6 +596,21 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <p class="hero-sub" contenteditable="true" spellcheck="false" data-key="schoolName">北京邮电大学附属小学</p>
 <div class="intro-card"><p class="hero-intro" contenteditable="true" spellcheck="false" data-key="intro">六年二班是一个温暖又热闹的大家庭。我们在这里一起读书、一起运动、一起长大。\n\n北邮附小见证着我们的每一次进步，每一张笑脸都是班级最珍贵的风景。愿我们永远保持好奇与热爱，把这段时光写成最棒的故事。</p></div>
 <div class="edit-tip"><span class="dot"></span><span>点击文字即可直接编辑，内容会自动保存</span></div>
+</div></section>
+<section id="view-notice" class="view"><div class="notice-wrap">
+<div class="notice-header"><h2><span class="ico">📢</span>班级公告</h2><p>重要的事都在这里 ✨</p></div>
+<div class="notice-card"><span class="notice-badge">公告</span><p class="notice-text" contenteditable="false" spellcheck="false" data-key="notice" data-placeholder="点击这里开始写公告内容…">欢迎来到六年二班主页！这里会发布班级的重要通知，点击文字即可编辑，会自动保存。</p><div class="notice-meta"><span id="noticeHint"></span><span id="noticeMeta"></span></div></div>
+<div class="notice-tip" id="noticeTip"><span class="dot"></span><span id="noticeTipText">管理员登录后可编辑公告</span></div>
+</div></section>
+<section id="view-album" class="view"><div class="album-wrap">
+<div class="album-header">
+<h2><span class="ico">📸</span>班级相册</h2>
+<div class="album-header-actions">
+<span class="album-count" id="albumCount">0 张</span>
+<button class="album-upload-btn" id="albumUploadBtn">📷 发布照片</button>
+</div>
+</div>
+<div class="album-grid" id="albumGrid"></div>
 </div></section>
 <section id="view-bubbles" class="view"><div class="stage" id="stage"></div></section>
 <section id="view-score" class="view"><div class="score-wrap">
@@ -574,20 +698,24 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="modal" id="authModal"><div class="modal-box auth-modal-box"><button class="close-btn" id="closeAuthModal">✕</button><h3 id="authTitle">👋 登录</h3><div class="auth-tabs"><button class="auth-tab active" data-tab="login">登录</button><button class="auth-tab" data-tab="register">注册</button></div><div class="field"><label>我是谁</label><select id="authPerson"></select></div><div class="field"><label>密码</label><input type="password" id="authPassword" placeholder="随便设一个，记住就行" autocomplete="new-password"></div><div class="auth-msg" id="authMsg"></div><div class="modal-actions"><button class="btn-cancel" id="cancelAuthBtn">取消</button><button class="btn-save" id="authSubmitBtn">登录</button></div><div class="auth-hint">💡 别用你其他账号的密码哦</div></div></div>
 <div class="modal" id="fulfillModal"><div class="modal-box"><button class="close-btn" id="closeFulfillModal">✕</button><h3>🎉 还愿</h3><div class="field"><label>想说什么？（可选）</label><textarea id="fulfillNote" maxlength="60" placeholder="比如：真的做到了！谢谢大家的鼓励～"></textarea></div><div class="modal-actions"><button class="btn-cancel" id="cancelFulfillBtn">取消</button><button class="btn-save" id="confirmFulfillBtn">确认已实现</button></div></div></div>
 <div class="modal" id="likeListModal"><div class="modal-box"><button class="close-btn" id="closeLikeListModal">✕</button><h3>❤️ 点赞的人</h3><div class="like-list" id="likeListBox"></div></div></div>
+<div class="modal" id="uploadModal"><div class="modal-box"><button class="close-btn" id="closeUploadModal">✕</button><h3>📷 发布照片</h3><div class="field"><label>选择图片（压缩后不超过 400KB）</label><input type="file" id="uploadFile" accept="image/*"></div><div class="upload-preview" id="uploadPreview"></div><div class="field"><label>想说什么？（可选，最多 60 字）</label><textarea id="uploadCaption" maxlength="60" placeholder="比如：运动会决赛的瞬间！"></textarea></div><div class="upload-msg" id="uploadMsg"></div><div class="modal-actions"><button class="btn-cancel" id="cancelUploadBtn">取消</button><button class="btn-save" id="confirmUploadBtn">发布</button></div><div class="upload-tip">💡 照片会压缩后保存，发布后会显示你的名字</div></div></div>
 <div class="modal guide-modal" id="guideModal"><div class="guide-box"><div class="guide-title">🌟 欢迎来到六年二班主页</div><div class="guide-sub">第一次来？先看看这里都能做什么吧</div><div class="guide-list">
 <div class="guide-item"><span class="guide-item-emoji">🏠</span><div class="guide-item-body"><div class="guide-item-name">首页</div><div class="guide-item-desc">班级名称和简介，点击文字就能直接编辑，自动保存。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">📢</span><div class="guide-item-body"><div class="guide-item-name">公告</div><div class="guide-item-desc">班级重要通知发布在这里。只有管理员才能编辑。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">📸</span><div class="guide-item-body"><div class="guide-item-name">班级相册</div><div class="guide-item-desc">发布班级照片，会显示发布者名字。需要先注册登录。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🕸️</span><div class="guide-item-body"><div class="guide-item-name">关系网</div><div class="guide-item-desc">所有人的关系连成一张网，线的粗细代表关系亲密度。可拖拽、缩放、搜索。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">👥</span><div class="guide-item-body"><div class="guide-item-name">班级成员</div><div class="guide-item-desc">气泡展示全班同学和老师，点击可以查看/编辑资料。老师气泡更大，带金色头衔。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🏆</span><div class="guide-item-body"><div class="guide-item-name">个人加分</div><div class="guide-item-desc">给表现好的同学加分，自动生成排行榜和加分记录，可以撤销。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🎓</span><div class="guide-item-body"><div class="guide-item-name">老师</div><div class="guide-item-desc">给老师送花🌷或爱心❤️，会飘出动画哦。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">⏳</span><div class="guide-item-body"><div class="guide-item-name">倒计时</div><div class="guide-item-desc">距离下一个节日还有多少天，精确到秒。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">✨</span><div class="guide-item-body"><div class="guide-item-name">许愿墙</div><div class="guide-item-desc">许下心愿、点赞、还愿。需要先注册登录（名字从班级名单里选，老师也可以注册）。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">✨</span><div class="guide-item-body"><div class="guide-item-name">许愿墙</div><div class="guide-item-desc">许下心愿、点赞、还愿。需要先注册登录（名字从班级名单里选）。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">📋</span><div class="guide-item-body"><div class="guide-item-name">动态</div><div class="guide-item-desc">谁加分了、谁许愿了、谁改了资料……这里都能看到，最近 100 条。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">🔒</span><div class="guide-item-body"><div class="guide-item-name">敬请期待</div><div class="guide-item-desc">时间轴回忆、班级相册等功能正在开发中，敬请期待 😃</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">🔒</span><div class="guide-item-body"><div class="guide-item-name">敬请期待</div><div class="guide-item-desc">时间轴回忆等功能正在开发中，敬请期待 😃</div></div></div>
 </div>
-<div class="guide-tip">💡 <b>小提示</b><br>· 很多地方（首页文字、同学名字）可以直接点击编辑<br>· 所有改动会自动同步到云端，所有人看到的是同一份数据<br>· 密码别用你其他账号的，随便设一个记住就行</div>
+<div class="guide-tip">💡 <b>小提示</b><br>· 很多地方（首页文字、公告、同学名字）可以直接点击编辑<br>· 所有改动会自动同步到云端，所有人看到的是同一份数据<br>· 密码别用你其他账号的，随便设一个记住就行</div>
 <div class="guide-actions"><button class="guide-btn guide-btn-ghost" id="guideNeverBtn">不再显示</button><button class="guide-btn guide-btn-primary" id="guideOkBtn">我知道了</button></div>
 </div></div>
+<div class="modal gate-modal open" id="gateModal"><div class="modal-box gate-box" id="gateBox"><span class="gate-icon">🔐</span><h3>请输入访问密码</h3><div class="gate-sub">本页面仅限本班同学访问</div><div class="field"><input type="password" id="gatePassword" maxlength="20" placeholder="· · · ·" autocomplete="off" inputmode="numeric"></div><div class="gate-msg" id="gateMsg"></div><div class="modal-actions"><button class="btn-save" id="gateSubmitBtn">进 入</button></div><div class="gate-hint">💡 密码找班长要哦</div></div></div>
 <script>
 /* ================= Gitee 配置 ================= */
 const GITEE_OWNER='wxz33h';
@@ -605,13 +733,14 @@ async function cloudInit(){
   try{
     const res=await fetch(GITEE_API+'?access_token='+GITEE_TOKEN+'&t='+Date.now());
     if(res.status===404){
-      dataCache={people:buildPeople(),home:{...HOME_DEFAULT},score:{scores:{},records:[]},teachers:BASE_TEACHERS.map(t=>({...t})),wishes:[],accounts:[],logs:[]};
+      dataCache={people:buildPeople(),home:{...HOME_DEFAULT},score:{scores:{},records:[]},teachers:BASE_TEACHERS.map(t=>({...t})),wishes:[],accounts:[],logs:[],album:[]};
       fileSha=null;cloudReady=true;setSync('🔄 初始化…','#fbbf24');
       await cloudPush(true);
     }else if(res.ok){
       const json=await res.json();fileSha=json.sha;
       dataCache=JSON.parse(b64Decode(json.content));cloudReady=true;
       if(!Array.isArray(dataCache.logs))dataCache.logs=[];
+      if(!Array.isArray(dataCache.album))dataCache.album=[];
       setSync('🟢 已同步','#86efac');
     }else{setSync('❌ 连接失败','#fca5a5')}
   }catch(e){console.error(e);setSync('❌ 连接失败','#fca5a5')}
@@ -652,7 +781,7 @@ async function cloudPoll(){
   }catch(e){}
 }
 /* ================= 基础数据 ================= */
-const HOME_DEFAULT={className:'六年二班',schoolName:'北京邮电大学附属小学',intro:'六年二班是一个温暖又热闹的大家庭。我们在这里一起读书、一起运动、一起长大。\n\n北邮附小见证着我们的每一次进步，每一张笑脸都是班级最珍贵的风景。愿我们永远保持好奇与热爱，把这段时光写成最棒的故事。'};
+const HOME_DEFAULT={className:'六年二班',schoolName:'北京邮电大学附属小学',intro:'六年二班是一个温暖又热闹的大家庭。我们在这里一起读书、一起运动、一起长大。\n\n北邮附小见证着我们的每一次进步，每一张笑脸都是班级最珍贵的风景。愿我们永远保持好奇与热爱，把这段时光写成最棒的故事。',notice:'欢迎来到六年二班主页！这里会发布班级的重要通知。'};
 const COLORS=['#c4b5fd','#e9d5ff','#f0abfc','#ddd6fe','#d8b4fe','#a78bfa','#f5d0fe','#c084fc','#e879f9','#ede9fe'];
 const BASE=[{id:'p1',name:'林小雨',emoji:'🌧️',intro:'喜欢下雨天和耳机里的歌，\n画画是我和世界说话的方式。',tags:['画画','民谣','猫']},{id:'p2',name:'陈子航',emoji:'⚽',intro:'球场上的位置：哪里缺人补哪里。',tags:['足球','篮球','熬夜']},{id:'p3',name:'苏念',emoji:'📚',intro:'看书很快，写字很慢。',tags:['阅读','写作','历史']},{id:'p4',name:'王浩',emoji:'🎮',intro:'每天上分一小时（实际三小时）。',tags:['游戏','编程','B站']},{id:'p5',name:'李思远',emoji:'🎸',intro:'吉他初学者，弹得最好的是《晴天》。',tags:['吉他','唱歌','周杰伦']},{id:'p6',name:'周佳怡',emoji:'🍰',intro:'甜品鉴赏家，兼职数学课代表。',tags:['烘焙','数学','奶茶']},{id:'p7',name:'赵一鸣',emoji:'🏀',intro:'身高是优势，投篮是玄学。',tags:['篮球','球鞋','说唱']},{id:'p8',name:'孙悦',emoji:'🎬',intro:'电影看得比作业多。',tags:['电影','摄影','剪辑']},{id:'p9',name:'吴桐',emoji:'🌱',intro:'养了七盆多肉，活下来三盆。',tags:['植物','手工','安静']},{id:'p10',name:'郑亦然',emoji:'🐱',intro:'猫派，坚定不移。',tags:['猫','画画','二次元']},{id:'p11',name:'刘星宇',emoji:'🚀',intro:'想造火箭，先从物理及格开始。',tags:['物理','天文','科幻']},{id:'p12',name:'何雨薇',emoji:'🎹',intro:'钢琴十级，最近在学即兴。',tags:['钢琴','古典乐','日语']},{id:'p13',name:'马小跳',emoji:'🏃',intro:'课间十分钟能跑三圈操场。',tags:['跑步','田径','活力']},{id:'p14',name:'许安然',emoji:'☕',intro:'安静地待在角落，偶尔说一句很好笑的话。',tags:['咖啡','手账','独立音乐']},{id:'p15',name:'高一诺',emoji:'🎨',intro:'美术生，随时在速写本上涂涂画画。',tags:['美术','设计','展览']},{id:'p16',name:'黄子豪',emoji:'🍜',intro:'学校周边美食活地图。',tags:['美食','探店','相声']},{id:'p17',name:'徐一诺',emoji:'🎭',intro:'话剧社主力，最喜欢扮演反派。',tags:['话剧','表演','配音']},{id:'p18',name:'曹雨欣',emoji:'🌸',intro:'喜欢春天，也喜欢所有粉色的东西。',tags:['春天','粉色','手工']},{id:'p19',name:'沈嘉树',emoji:'🌳',intro:'立志把教室窗台的绿植养活。',tags:['植物','环保','徒步']},{id:'p20',name:'韩雪',emoji:'❄️',intro:'冬天出生的，所以不怕冷。',tags:['滑雪','阅读','安静']},{id:'p21',name:'唐子墨',emoji:'🖋️',intro:'字写得还不错，可以帮同学抄笔记。',tags:['书法','写作','历史']},{id:'p22',name:'顾念',emoji:'🍀',intro:'运气型选手，考试全靠蒙对。',tags:['幸运','游戏','音乐']},{id:'p23',name:'程宇航',emoji:'🛰️',intro:'航天迷，梦想去酒泉看一次发射。',tags:['航天','天文','科幻']},{id:'p24',name:'卢佳琪',emoji:'🎤',intro:'唱歌跑调，但热情不减。',tags:['唱歌','K歌','综艺']},{id:'p25',name:'蒋子涵',emoji:'🏊',intro:'夏天最期待的就是游泳课。',tags:['游泳','运动','夏天']},{id:'p26',name:'宋雨桐',emoji:'🌈',intro:'喜欢雨后的天空和棉花糖。',tags:['彩虹','甜品','画画']},{id:'p27',name:'方启铭',emoji:'⚡',intro:'做什么都很快，除了写作业。',tags:['游戏','运动','熬夜']},{id:'p28',name:'秦悦',emoji:'🎻',intro:'学小提琴四年，还在和音准斗争。',tags:['小提琴','古典乐','阅读']},{id:'p29',name:'丁一',emoji:'📖',intro:'名字笔画最少，作业写得最多。',tags:['阅读','写作','历史']},{id:'p30',name:'罗子谦',emoji:'🎯',intro:'射箭社团成员，专注力满分。',tags:['射箭','专注','运动']},{id:'p31',name:'谢婉清',emoji:'🍵',intro:'喜欢喝茶和安静的下午。',tags:['茶道','安静','阅读']},{id:'p32',name:'崔博文',emoji:'🧩',intro:'拼图爱好者，一千片起步。',tags:['拼图','解谜','手工']},{id:'p33',name:'潘星辰',emoji:'✨',intro:'喜欢看星星，也喜欢看漫画。',tags:['天文','漫画','幻想']},{id:'p34',name:'汪雨萌',emoji:'🐰',intro:'养了两只兔子，一只叫团子一只叫汤圆。',tags:['兔子','萌宠','手工']},{id:'p35',name:'石天佑',emoji:'🏔️',intro:'暑假跟爸妈爬过泰山，全程没哭。',tags:['爬山','户外','旅行']},{id:'p36',name:'龚心悦',emoji:'💖',intro:'喜欢所有可爱的东西。',tags:['可爱','手账','甜品']},{id:'p37',name:'白泽宇',emoji:'🦉',intro:'博学多识，但考试总粗心。',tags:['百科','历史','科学']},{id:'p38',name:'钟灵',emoji:'🌙',intro:'晚上精神最好，白天永远没睡醒。',tags:['熬夜','写作','音乐']},{id:'p39',name:'严子轩',emoji:'🎧',intro:'耳机不离身，歌单比作业长。',tags:['音乐','耳机','电竞']},{id:'p40',name:'熊思远',emoji:'🌊',intro:'喜欢大海，也喜欢一切蓝色。',tags:['大海','游泳','蓝色']},{id:'p41',name:'孔令仪',emoji:'🎀',intro:'发饰收藏家，今天也是蝴蝶结。',tags:['发饰','可爱','手作']},{id:'p42',name:'温子瑜',emoji:'🍭',intro:'甜食爱好者，糖果分你一半。',tags:['甜品','分享','画画']},{id:'p43',name:'尹嘉树',emoji:'🌲',intro:'喜欢森林和一切绿色的东西。',tags:['自然','徒步','摄影']},{id:'p44',name:'叶知秋',emoji:'🍂',intro:'捡秋叶，抄好句，写很短的诗。',tags:['写诗','秋天','民谣']},{id:'p45',name:'江照月',emoji:'🌊',intro:'想沿着海岸线走一遍，把每片海都拍下来。',tags:['大海','摄影','旅行']}];
 const BASE_RELATIONS=[];
@@ -673,6 +802,7 @@ let teachers=[],searchKeyword='',editingId=null,editingTeacherId=null;
 let countdownTimer=null,currentFestivalIndex=0;
 let accounts=[],currentUser=null,wishFilter='all',wishKeyword='',currentAuthTab='login',selectedEmoji='✨',fulfillingWishId=null,openMenuEl=null;
 let netNodes=[],netEdges=[],netOrphans=[],netAnimId=null,netHoverId=null,netDragId=null,netDragOffX=0,netDragOffY=0,netHighlightId=null,netSearchKw='',netInited=false,netScale=1,netOffX=0,netOffY=0,netPanning=false,netPanStartX=0,netPanStartY=0;
+let uploadImageData=null;
 function buildPeople(){const people=BASE.map((p,i)=>({...p,color:COLORS[i%COLORS.length],relations:{}}));const map=Object.fromEntries(people.map(p=>[p.id,p]));for(const [a,b,label,strength] of BASE_RELATIONS){if(map[a]&&map[b]){map[a].relations[b]={label,strength};map[b].relations[a]={label,strength}}}return people}
 function applyCacheToState(){
   if(!dataCache)return;
@@ -683,6 +813,7 @@ function applyCacheToState(){
   if(!Array.isArray(dataCache.wishes))dataCache.wishes=[];
   if(!Array.isArray(dataCache.accounts))dataCache.accounts=[];
   if(!Array.isArray(dataCache.logs))dataCache.logs=[];
+  if(!Array.isArray(dataCache.album))dataCache.album=[];
   accounts=dataCache.accounts;
   const uid=localStorage.getItem('class_wish_userId');
   currentUser=uid?accounts.find(a=>a.id===uid)||null:null;
@@ -695,11 +826,44 @@ function syncToCache(){
   dataCache.wishes=dataCache.wishes||[];
   dataCache.accounts=accounts;
   dataCache.logs=dataCache.logs||[];
+  dataCache.album=dataCache.album||[];
 }
 function saveData(){syncToCache();cloudPush()}
 function saveScore(){syncToCache();cloudPush()}
 function saveTeachers(){syncToCache();cloudPush()}
 function saveHomeData(d){if(!dataCache)return;dataCache.home=d;cloudPush()}
+function saveAlbum(){syncToCache();cloudPush()}
+
+/* ================= 密码门 ================= */
+const GATE_PASSWORD='62';
+function initGate(){
+  const gate=document.getElementById('gateModal');
+  const input=document.getElementById('gatePassword');
+  const btn=document.getElementById('gateSubmitBtn');
+  const msg=document.getElementById('gateMsg');
+  const box=document.getElementById('gateBox');
+  const ok=sessionStorage.getItem('class_gate_ok');
+  if(ok==='1'){gate.classList.remove('open');return}
+  setTimeout(()=>input.focus(),200);
+  const submit=()=>{
+    const v=input.value.trim();
+    if(v===GATE_PASSWORD){
+      sessionStorage.setItem('class_gate_ok','1');
+      msg.textContent='✅ 验证通过';
+      msg.classList.add('ok');
+      btn.disabled=true;
+      setTimeout(()=>{gate.classList.remove('open');},450);
+    }else{
+      msg.textContent='密码不对哦，再试试';
+      msg.classList.remove('ok');
+      input.value='';
+      box.classList.remove('shake');void box.offsetWidth;box.classList.add('shake');
+      input.focus();
+    }
+  };
+  btn.addEventListener('click',submit);
+  input.addEventListener('keydown',e=>{if(e.key==='Enter')submit()});
+}
 
 /* ================= 动态日志 ================= */
 function getActor(){
@@ -762,7 +926,183 @@ function initGuide(){
   setTimeout(openGuide,600);
 }
 
-function initHomeEditing(){document.querySelectorAll('#view-home [data-key]').forEach(el=>{el.addEventListener('keydown',e=>{if(e.key==='Enter'&&el.dataset.key!=='intro'){e.preventDefault();el.blur()}});el.addEventListener('blur',()=>{const d={...HOME_DEFAULT,...(dataCache?.home||{})};const oldVal=d[el.dataset.key];const newVal=el.innerText.trim();if(oldVal===newVal)return;d[el.dataset.key]=newVal;saveHomeData(d);const keyNames={className:'班级名称',schoolName:'学校名称',intro:'班级简介'};addLog('🖋️','修改了 '+keyNames[el.dataset.key]);if(el.dataset.key==='className'){const t=document.getElementById('navTitleText');if(t)t.textContent=d.className||'六年二班';document.title=(d.className||'六年二班')+' · 班级主页'}});el.addEventListener('paste',e=>{e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,text)})})}
+/* ================= 公告权限 ================= */
+function updateNoticePermission(){
+  const noticeEl=document.querySelector('#view-notice .notice-text');
+  const hint=document.getElementById('noticeHint');
+  const tipText=document.getElementById('noticeTipText');
+  if(!noticeEl)return;
+  const isAdmin=currentUser&&currentUser.role==='admin';
+  if(isAdmin){
+    noticeEl.setAttribute('contenteditable','true');
+    noticeEl.classList.remove('locked');
+    if(hint)hint.textContent='👑 你是管理员，可直接编辑';
+    if(tipText)tipText.textContent='点击公告文字即可直接编辑，内容会自动保存';
+  }else{
+    noticeEl.setAttribute('contenteditable','false');
+    noticeEl.classList.add('locked');
+    if(hint)hint.textContent=currentUser?'仅管理员可编辑':'请先登录管理员账号';
+    if(tipText)tipText.textContent='公告仅管理员可编辑';
+  }
+}
+
+/* ================= 相册 ================= */
+function compressImage(file,callback){
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const img=new Image();
+    img.onload=()=>{
+      const MAX=720;
+      let w=img.width,h=img.height;
+      if(w>h){if(w>MAX){h=Math.round(h*MAX/w);w=MAX}}
+      else{if(h>MAX){w=Math.round(w*MAX/h);h=MAX}}
+      const c=document.createElement('canvas');
+      c.width=w;c.height=h;
+      const ctx=c.getContext('2d');
+      ctx.drawImage(img,0,0,w,h);
+      let quality=0.75;
+      let dataUrl=c.toDataURL('image/jpeg',quality);
+      while(dataUrl.length>560000&&quality>0.4){
+        quality-=0.1;
+        dataUrl=c.toDataURL('image/jpeg',quality);
+      }
+      callback(dataUrl,dataUrl.length);
+    };
+    img.src=e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+function openUploadModal(){
+  if(!currentUser){openAuthModal('login');return}
+  uploadImageData=null;
+  document.getElementById('uploadFile').value='';
+  document.getElementById('uploadPreview').innerHTML='';
+  document.getElementById('uploadCaption').value='';
+  const msg=document.getElementById('uploadMsg');msg.textContent='';msg.classList.remove('ok');
+  document.getElementById('uploadModal').classList.add('open');
+}
+function closeUploadModal(){document.getElementById('uploadModal').classList.remove('open')}
+function renderAlbum(){
+  const grid=document.getElementById('albumGrid');
+  const countEl=document.getElementById('albumCount');
+  if(!grid)return;
+  const list=(dataCache&&dataCache.album)||[];
+  if(countEl)countEl.textContent=list.length+' 张';
+  if(!list.length){
+    grid.innerHTML='<div class="album-empty"><span class="ico">📸</span>还没有照片，点右上角"发布照片"第一个来吧~</div>';
+    return;
+  }
+  const sorted=[...list].sort((a,b)=>(b.time||0)-(a.time||0));
+  grid.innerHTML='';
+  sorted.forEach((item,i)=>{
+    const card=document.createElement('div');
+    card.className='album-card';
+    card.style.animationDelay=Math.min(i*40,600)+'ms';
+    const canDel=currentUser&&(item.uploaderAccountId===currentUser.id||currentUser.role==='admin');
+    card.innerHTML=
+      '<img src="'+item.imageData+'" alt="照片" loading="lazy">'+
+      '<div class="album-card-info">'+
+        '<div class="album-card-top">'+
+          '<div class="album-avatar" style="background:'+escapeHtml(item.uploaderColor||'#a78bfa')+'">'+escapeHtml(item.uploaderEmoji||'🙂')+'</div>'+
+          '<div class="album-uploader">'+escapeHtml(item.uploaderName||'同学')+'</div>'+
+          '<div class="album-time" title="'+formatFullTime(item.time)+'">'+formatTime(item.time)+'</div>'+
+        '</div>'+
+        (item.caption?'<p class="album-caption">'+escapeHtml(item.caption)+'</p>':'')+
+      '</div>'+
+      (canDel?'<button class="album-del" title="删除">✕</button>':'');
+    if(canDel){
+      card.querySelector('.album-del').addEventListener('click',e=>{
+        e.stopPropagation();
+        if(!confirm('确定要删除这张照片吗？'))return;
+        const idx=dataCache.album.findIndex(x=>x.id===item.id);
+        if(idx<0)return;
+        dataCache.album.splice(idx,1);
+        addLog('🗑️','删除了相册里的一张照片');
+        saveAlbum();
+        renderAlbum();
+        if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
+      });
+    }
+    grid.appendChild(card);
+  });
+}
+function submitUpload(){
+  if(!currentUser){openAuthModal('login');return}
+  const msg=document.getElementById('uploadMsg');
+  if(!uploadImageData){msg.textContent='请先选择一张图片';msg.classList.remove('ok');return}
+  const caption=document.getElementById('uploadCaption').value.trim();
+  const accountPerson=state.people.find(p=>p.id===currentUser.personId);
+  const item={
+    id:'img'+Date.now()+'_'+Math.random().toString(36).slice(2,6),
+    uploaderAccountId:currentUser.id,
+    uploaderName:currentUser.name,
+    uploaderEmoji:accountPerson?(accountPerson.emoji||'🙂'):'🙂',
+    uploaderColor:accountPerson?accountPerson.color:'#a78bfa',
+    imageData:uploadImageData,
+    caption:caption,
+    time:Date.now()
+  };
+  dataCache.album=dataCache.album||[];
+  dataCache.album.push(item);
+  addLog('📸',(caption?'发布了一张照片：'+escapeHtml(caption.slice(0,15))+(caption.length>15?'…':''):'发布了一张照片'));
+  msg.classList.add('ok');
+  msg.textContent='✅ 发布成功！';
+  saveAlbum();
+  setTimeout(()=>{
+    closeUploadModal();
+    renderAlbum();
+    if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
+  },500);
+}
+
+function initHomeEditing(){
+  document.querySelectorAll('#view-home [data-key]').forEach(el=>{
+    el.addEventListener('keydown',e=>{
+      if(e.key==='Enter'&&el.dataset.key!=='intro'){e.preventDefault();el.blur()}
+    });
+    el.addEventListener('blur',()=>{
+      const d={...HOME_DEFAULT,...(dataCache?.home||{})};
+      const oldVal=d[el.dataset.key];
+      const newVal=el.innerText.trim();
+      if(oldVal===newVal)return;
+      d[el.dataset.key]=newVal;
+      saveHomeData(d);
+      const keyNames={className:'班级名称',schoolName:'学校名称',intro:'班级简介'};
+      addLog('🖋️','修改了 '+keyNames[el.dataset.key]);
+      if(el.dataset.key==='className'){
+        const t=document.getElementById('navTitleText');
+        if(t)t.textContent=d.className||'六年二班';
+        document.title=(d.className||'六年二班')+' · 班级主页';
+      }
+    });
+    el.addEventListener('paste',e=>{e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,text)});
+  });
+  // 公告单独处理（需要权限判断）
+  const noticeEl=document.querySelector('#view-notice .notice-text');
+  if(noticeEl){
+    noticeEl.addEventListener('keydown',e=>{
+      if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();noticeEl.blur()}
+    });
+    noticeEl.addEventListener('blur',()=>{
+      if(!currentUser||currentUser.role!=='admin')return;
+      const d={...HOME_DEFAULT,...(dataCache?.home||{})};
+      const oldVal=d.notice;
+      const newVal=noticeEl.innerText.trim();
+      if(oldVal===newVal)return;
+      d.notice=newVal;
+      saveHomeData(d);
+      addLog('🖋️','修改了 班级公告');
+      const meta=document.getElementById('noticeMeta');
+      if(meta)meta.textContent='最后更新：'+formatFullTime(Date.now());
+    });
+    noticeEl.addEventListener('paste',e=>{
+      if(!currentUser||currentUser.role!=='admin'){e.preventDefault();return}
+      e.preventDefault();
+      const text=(e.clipboardData||window.clipboardData).getData('text/plain');
+      document.execCommand('insertText',false,text);
+    });
+  }
+}
 function switchView(name){
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   const target=document.getElementById('view-'+name);if(target)target.classList.add('active');
@@ -777,8 +1117,14 @@ function switchView(name){
   else if(name==='wish'){renderWishes();updateUserBtn()}
   else if(name==='network'){requestAnimationFrame(()=>initNetwork())}
   else if(name==='logs'){renderLogs()}
+  else if(name==='notice'){updateNoticePermission();renderNoticeMeta()}
+  else if(name==='album'){renderAlbum()}
   if(name!=='countdown'&&countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
   if(name!=='network'&&netAnimId){cancelAnimationFrame(netAnimId);netAnimId=null}
+}
+function renderNoticeMeta(){
+  const meta=document.getElementById('noticeMeta');
+  if(meta&&!meta.textContent)meta.textContent='';
 }
 function computeLayout(people,W,H){const n=people.length;if(!n||W<10||H<10)return[];const cx=W/2,cy=H/2,GOLDEN=2.399963,baseR=Math.max(16,Math.min(48,Math.sqrt((W*H)/(n*Math.PI*5))));const nodes=people.map((p,i)=>{const relCount=Object.keys(p.relations||{}).length;let r=baseR+Math.min(relCount,8)*1.6;if(p.isTeacher)r=r*1.7;const ang=i*GOLDEN,rad=Math.sqrt((i+0.5)/n)*Math.min(W,H)*0.42;return{id:p.id,r,x:cx+Math.cos(ang)*rad,y:cy+Math.sin(ang)*rad}});for(let it=0;it<420;it++){for(let i=0;i<n;i++){for(let j=i+1;j<n;j++){const a=nodes[i],b=nodes[j];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||0.01;const minD=a.r+b.r+8;if(d<minD){const push=(minD-d)/2,ux=dx/d,uy=dy/d;a.x-=ux*push;a.y-=uy*push;b.x+=ux*push;b.y+=uy*push}}}for(const nd of nodes){nd.x+=(cx-nd.x)*0.012;nd.y+=(cy-nd.y)*0.012}}for(const nd of nodes){nd.x=Math.max(nd.r+4,Math.min(W-nd.r-4,nd.x));nd.y=Math.max(nd.r+4,Math.min(H-nd.r-4,nd.y))}return nodes}
 const stage=document.getElementById('stage');
@@ -1259,7 +1605,6 @@ function updateUserBtn(){
   if(!btn)return;
   if(currentUser){
     btn.textContent='👤 '+currentUser.name
-      +(currentUser.isTeacher?' 🎓':'')
       +(currentUser.role==='admin'?' 👑':'');
     btn.classList.add('logged-in');
     btn.title='点击退出登录';
@@ -1295,42 +1640,16 @@ function fillAuthPersonSelect(){
   sel.innerHTML='';
   if(currentAuthTab==='register'){
     const taken=new Set(accounts.map(a=>a.personId));
-    const availStudents=state.people.filter(p=>!taken.has(p.id));
-    const availTeachers=teachers.filter(t=>!taken.has(t.id));
-    if(!availStudents.length&&!availTeachers.length){sel.innerHTML='<option value="">所有人都注册过了</option>';return}
-    if(availStudents.length){
-      const og=document.createElement('optgroup');
-      og.label='👥 同学';
-      availStudents.forEach(p=>{
-        const o=document.createElement('option');
-        o.value=p.id;
-        o.textContent=(p.emoji||'🙂')+' '+p.name;
-        og.appendChild(o);
-      });
-      sel.appendChild(og);
-    }
-    if(availTeachers.length){
-      const og=document.createElement('optgroup');
-      og.label='🎓 老师';
-      availTeachers.forEach(t=>{
-        const o=document.createElement('option');
-        o.value=t.id;
-        o.textContent=(t.emoji||'🧑‍🏫')+' '+t.name+(t.subject?'（'+t.subject+'）':'');
-        og.appendChild(o);
-      });
-      sel.appendChild(og);
-    }
+    const avail=state.people.filter(p=>!taken.has(p.id));
+    if(!avail.length){sel.innerHTML='<option value="">所有同学都注册过了</option>';return}
+    avail.forEach(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=(p.emoji||'🙂')+' '+p.name;sel.appendChild(o)});
   }else{
     if(!accounts.length){sel.innerHTML='<option value="">还没有人注册过，先注册吧</option>';return}
     accounts.forEach(a=>{
       const person=state.people.find(p=>p.id===a.personId);
-      const teacher=teachers.find(t=>t.id===a.personId);
-      const who=person||teacher;
       const o=document.createElement('option');
       o.value=a.personId;
-      o.textContent=(who?((who.emoji||'🙂')+' '+who.name):a.name)
-        +(teacher?' 🎓':'')
-        +(a.role==='admin'?' 👑':'');
+      o.textContent=(person?((person.emoji||'🙂')+' '+person.name):a.name)+(a.role==='admin'?' 👑':'');
       sel.appendChild(o);
     });
   }
@@ -1346,24 +1665,22 @@ function submitAuth(){
   if(currentAuthTab==='register'){
     if(accounts.find(a=>a.personId===personId)){msgEl.textContent='这个名字已经注册过了，直接登录吧';return}
     const person=state.people.find(p=>p.id===personId);
-    const teacher=teachers.find(t=>t.id===personId);
-    const displayName=person?person.name:(teacher?teacher.name:'同学');
+    const displayName=person?person.name:'同学';
     const account={
       id:'u_'+Date.now()+'_'+Math.random().toString(36).slice(2,6),
       personId,
       name:displayName,
       password,
       role:accounts.length===0?'admin':'user',
-      isTeacher:!!teacher,
       createdAt:Date.now()
     };
     accounts.push(account);currentUser=account;
     localStorage.setItem('class_wish_userId',account.id);
-    addLog('🎉',(teacher?'老师 ':'')+(account.role==='admin'?'注册成为了管理员':'注册了账号'));
+    addLog('🎉',(account.role==='admin'?'注册成为了管理员':'注册了账号'));
     saveAuth();
     msgEl.classList.add('ok');
     msgEl.textContent=account.role==='admin'?'🎉 注册成功！你是第一个注册的人，获得管理员权限':'🎉 注册成功！';
-    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn()},900);
+    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();renderAlbum()},900);
   }else{
     const acc=accounts.find(a=>a.personId===personId);
     if(!acc){msgEl.textContent='这个名字还没注册，请先注册';return}
@@ -1371,14 +1688,14 @@ function submitAuth(){
     currentUser=acc;
     localStorage.setItem('class_wish_userId',acc.id);
     msgEl.classList.add('ok');msgEl.textContent='✅ 登录成功！';
-    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn()},500);
+    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();renderAlbum()},500);
   }
 }
 function logout(){
   if(!confirm('确定要退出登录吗？'))return;
   currentUser=null;
   localStorage.removeItem('class_wish_userId');
-  updateUserBtn();renderWishes();
+  updateUserBtn();renderWishes();updateNoticePermission();renderAlbum();
 }
 function openWishModal(){
   if(!currentUser){openAuthModal('login');return}
@@ -1698,7 +2015,9 @@ function migratePeople(){
 
 function refreshAllUI(){
   const hd={...HOME_DEFAULT,...(dataCache?.home||{})};
-  document.querySelectorAll('#view-home [data-key]').forEach(el=>{if(hd[el.dataset.key]!==undefined)el.innerText=hd[el.dataset.key]});
+  document.querySelectorAll('#view-home [data-key], #view-notice [data-key]').forEach(el=>{
+    if(hd[el.dataset.key]!==undefined)el.innerText=hd[el.dataset.key];
+  });
   const nt=document.getElementById('navTitleText');
   if(nt)nt.textContent=hd.className||'六年二班';
   document.title=(hd.className||'六年二班')+' · 班级主页';
@@ -1708,6 +2027,9 @@ function refreshAllUI(){
   if(document.getElementById('view-wish').classList.contains('active')){renderWishes();updateUserBtn()}
   if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
   if(document.getElementById('view-network').classList.contains('active')&&!netInited){initNetwork()}
+  if(document.getElementById('view-notice').classList.contains('active'))renderNoticeMeta();
+  if(document.getElementById('view-album').classList.contains('active'))renderAlbum();
+  updateNoticePermission();
 }
 
 /* ================= 事件绑定 ================= */
@@ -1728,6 +2050,29 @@ document.getElementById('saveTeacherBtn').addEventListener('click',saveTeacher);
 document.getElementById('teacherModal').addEventListener('click',e=>{if(e.target===document.getElementById('teacherModal'))closeTeacherModal()});
 document.getElementById('sendFlowerBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'flower')});
 document.getElementById('sendHeartBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'heart')});
+
+/* 相册事件 */
+document.getElementById('albumUploadBtn').addEventListener('click',openUploadModal);
+document.getElementById('closeUploadModal').addEventListener('click',closeUploadModal);
+document.getElementById('cancelUploadBtn').addEventListener('click',closeUploadModal);
+document.getElementById('uploadModal').addEventListener('click',e=>{if(e.target===document.getElementById('uploadModal'))closeUploadModal()});
+document.getElementById('uploadFile').addEventListener('change',e=>{
+  const file=e.target.files[0];
+  const msg=document.getElementById('uploadMsg');
+  if(!file){uploadImageData=null;document.getElementById('uploadPreview').innerHTML='';return}
+  if(!file.type.startsWith('image/')){msg.textContent='请选择图片文件';msg.classList.remove('ok');e.target.value='';return}
+  if(file.size>8*1024*1024){msg.textContent='原图太大啦，请选小于 8MB 的图片';msg.classList.remove('ok');e.target.value='';return}
+  msg.textContent='正在压缩…';msg.classList.remove('ok');
+  compressImage(file,(dataUrl,len)=>{
+    uploadImageData=dataUrl;
+    const preview=document.getElementById('uploadPreview');
+    preview.innerHTML='<img src="'+dataUrl+'" alt="预览">';
+    const kb=Math.round(len*0.75/1024);
+    msg.classList.add('ok');
+    msg.textContent='✅ 已选择，压缩后约 '+kb+' KB';
+  });
+});
+document.getElementById('confirmUploadBtn').addEventListener('click',submitUpload);
 
 /* 下拉菜单 */
 document.querySelectorAll('.nav-drop-trigger').forEach(trigger=>{
@@ -1834,11 +2179,12 @@ document.getElementById('likeListModal').addEventListener('click',e=>{if(e.targe
 document.querySelectorAll('.wish-filter').forEach(f=>{f.addEventListener('click',()=>{wishFilter=f.dataset.filter;document.querySelectorAll('.wish-filter').forEach(x=>x.classList.toggle('active',x===f));renderWishes()})});
 document.getElementById('wishSearch').addEventListener('input',e=>{wishKeyword=e.target.value;renderWishes()});
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('guideModal').classList.contains('open'))closeGuide();else if(document.getElementById('wishModal').classList.contains('open'))closeWishModal();else if(document.getElementById('authModal').classList.contains('open'))closeAuthModal();else if(document.getElementById('fulfillModal').classList.contains('open'))closeFulfillModal();else if(document.getElementById('likeListModal').classList.contains('open'))closeLikeList();else if(modal.classList.contains('open'))closeModal();else if(document.getElementById('teacherModal').classList.contains('open'))closeTeacherModal();else if(overlay.classList.contains('open'))closeProfile();closeWishMenu()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('gateModal').classList.contains('open'))return;if(document.getElementById('uploadModal').classList.contains('open'))closeUploadModal();else if(document.getElementById('guideModal').classList.contains('open'))closeGuide();else if(document.getElementById('wishModal').classList.contains('open'))closeWishModal();else if(document.getElementById('authModal').classList.contains('open'))closeAuthModal();else if(document.getElementById('fulfillModal').classList.contains('open'))closeFulfillModal();else if(document.getElementById('likeListModal').classList.contains('open'))closeLikeList();else if(modal.classList.contains('open'))closeModal();else if(document.getElementById('teacherModal').classList.contains('open'))closeTeacherModal();else if(overlay.classList.contains('open'))closeProfile();closeWishMenu()}});
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles();if(document.getElementById('view-network').classList.contains('active')&&netInited){const canvas=document.getElementById('netCanvas');const wrap=document.getElementById('netCanvasWrap');const dpr=window.devicePixelRatio||1;canvas.width=wrap.clientWidth*dpr;canvas.height=wrap.clientHeight*dpr;const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);drawNetwork(ctx,wrap.clientWidth,wrap.clientHeight)}},200)});
 
 /* ================= 启动 ================= */
 (async function init(){
+  initGate();
   await cloudInit();
   applyCacheToState();
   if(migratePeople()){
@@ -1847,7 +2193,13 @@ let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);
   }
   refreshAllUI();
   initHomeEditing();
-  initGuide();
+  const gateOk=sessionStorage.getItem('class_gate_ok')==='1';
+  if(gateOk)initGuide();
+  else{
+    const timer=setInterval(()=>{
+      if(sessionStorage.getItem('class_gate_ok')==='1'){clearInterval(timer);initGuide()}
+    },300);
+  }
   setInterval(cloudPoll,8000);
 })();
 </script>
