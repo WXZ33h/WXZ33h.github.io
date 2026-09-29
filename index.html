@@ -561,6 +561,57 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   #view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}.gate-box{padding:32px 22px 26px}.gate-icon{font-size:46px}.gate-box h3{font-size:17px}.gate-box .field input{font-size:20px;letter-spacing:8px}
 }
 @media(max-width:420px){.countdown-grid{grid-template-columns:repeat(4,1fr);gap:5px}.countdown-box{padding:12px 4px 10px}.countdown-num{font-size:28px}.countdown-label{font-size:9px;letter-spacing:1px}}
+
+/* ===== 管理员面板（新增） ===== */
+#view-admin{min-height:100vh;padding:104px 24px 70px}
+.admin-wrap{max-width:920px;margin:0 auto}
+.admin-header{text-align:center;margin-bottom:28px}
+.admin-header h2{font-size:28px;margin:0 0 8px;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:12px}
+.admin-header h2 .ico{font-size:26px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
+.admin-hint{font-size:12.5px;color:var(--text-muted);letter-spacing:1.5px;margin:0}
+.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:22px}
+.admin-stat{position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(45,17,71,.85),rgba(30,11,48,.85));border:1px solid var(--border);border-radius:18px;padding:18px 14px 15px;text-align:center;transition:.3s}
+.admin-stat:hover{transform:translateY(-3px);border-color:var(--border-strong)}
+.admin-stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--sc,#a78bfa);box-shadow:0 0 16px -2px var(--sc,#a78bfa)}
+.admin-stat-num{font-size:30px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;text-shadow:0 0 18px currentColor}
+.admin-stat-label{font-size:11.5px;color:var(--text-muted);letter-spacing:1.2px;font-weight:700;margin-top:8px}
+.admin-section{background:linear-gradient(160deg,rgba(45,17,71,.7),rgba(30,11,48,.7));border:1px solid var(--border);border-radius:22px;padding:22px 24px;backdrop-filter:blur(12px);margin-bottom:20px}
+.admin-section h3{font-size:15px;margin:0 0 16px;color:var(--text-dim);letter-spacing:2px;font-weight:800;display:flex;align-items:center;gap:10px}
+.admin-section h3::before{content:"";width:4px;height:17px;border-radius:2px;background:linear-gradient(180deg,#a78bfa,#c026d3)}
+.admin-section h3 .count{font-size:12px;color:var(--text-muted);font-weight:600;letter-spacing:0;margin-left:auto}
+.admin-acc{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.12);margin-bottom:8px;flex-wrap:wrap;transition:.2s}
+.admin-acc:hover{border-color:var(--border-strong);background:rgba(20,8,31,.72)}
+.admin-acc-avatar{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;box-shadow:inset 0 -4px 10px rgba(255,255,255,.22),0 6px 16px -6px rgba(0,0,0,.6)}
+.admin-acc-info{flex:1 1 170px;min-width:0}
+.admin-acc-name{font-size:14.5px;font-weight:800;color:#fff;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.admin-acc-meta{font-size:11px;color:var(--text-muted);margin-top:4px;letter-spacing:.4px;line-height:1.7;word-break:break-all}
+.admin-acc-meta b{color:var(--text-dim);font-variant-numeric:tabular-nums}
+.admin-badge{font-size:9.5px;font-weight:800;letter-spacing:.8px;padding:2px 8px;border-radius:999px;line-height:1.6}
+.admin-badge.admin{background:linear-gradient(120deg,#f59e0b,#fbbf24);color:#78350f}
+.admin-badge.me{background:linear-gradient(120deg,#7c3aed,#c026d3);color:#fff}
+.admin-badge.warn{background:rgba(239,68,68,.2);color:#fca5a5;border:1px solid rgba(239,68,68,.35)}
+.admin-acc-actions{display:flex;gap:6px;flex-wrap:wrap;flex-shrink:0}
+.admin-act{border:1px solid rgba(167,139,250,.28);background:rgba(139,92,246,.14);color:var(--primary-lighter);font-family:inherit;font-size:12px;font-weight:700;padding:6px 12px;border-radius:9px;cursor:pointer;transition:.2s;white-space:nowrap}
+.admin-act:hover{background:rgba(139,92,246,.32);color:#fff;transform:translateY(-1px)}
+.admin-act.gold{color:#fcd34d;border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.1)}
+.admin-act.gold:hover{background:rgba(251,191,36,.28);color:#fff}
+.admin-act.danger{color:#fca5a5;border-color:rgba(239,68,68,.32);background:rgba(239,68,68,.1)}
+.admin-act.danger:hover{background:rgba(239,68,68,.28);color:#fff}
+.admin-unreg{display:flex;flex-wrap:wrap;gap:8px}
+.admin-unreg-item{display:flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;background:rgba(139,92,246,.1);border:1px solid rgba(167,139,250,.18);font-size:12.5px;font-weight:700;color:var(--text-dim)}
+.admin-empty{text-align:center;color:var(--text-muted);font-size:13px;padding:26px 0;letter-spacing:1px}
+@media(max-width:780px){
+  #view-admin{padding:88px 14px 50px}
+  .admin-header h2{font-size:22px}
+  .admin-stats{grid-template-columns:repeat(2,1fr);gap:10px}
+  .admin-stat{padding:14px 10px 12px;border-radius:15px}
+  .admin-stat-num{font-size:24px}
+  .admin-section{padding:18px 14px;border-radius:18px}
+  .admin-acc{padding:11px 12px;gap:10px}
+  .admin-acc-avatar{width:36px;height:36px;flex-basis:36px;font-size:18px}
+  .admin-acc-actions{width:100%}
+  .admin-act{flex:1 1 auto;text-align:center;padding:7px 8px;font-size:11.5px}
+}
 </style>
 </head>
 <body>
@@ -586,6 +637,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <button class="nav-link" data-view="countdown">倒计时</button>
 <button class="nav-link" data-view="wish">许愿墙 ✨</button>
 <button class="nav-link" data-view="logs">动态 📋</button>
+<button class="nav-link" id="navAdminBtn" data-view="admin" style="display:none">管理 👑</button>
 <button class="nav-link nav-locked" data-locked="时间轴回忆等功能">敬请期待 🔒</button>
 </div>
 <span class="sync-status" id="syncStatus">⏳ 连接中…</span>
@@ -691,6 +743,23 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="logs-header"><h2><span class="ico">📋</span>班级动态</h2><p>看看大家都在做什么 ✨</p></div>
 <div class="logs-list" id="logsList"></div>
 </div></section>
+<section id="view-admin" class="view"><div class="admin-wrap">
+  <div class="admin-header">
+    <h2><span class="ico">👑</span>管理员面板</h2>
+    <p class="admin-hint">只有管理员能看见这里 · 管账号、改密码、清错误</p>
+  </div>
+  <div class="admin-stats" id="adminStats"></div>
+
+  <div class="admin-section">
+    <h3>已注册账号 <span class="count" id="adminAccountCount"></span></h3>
+    <div id="adminAccountList"></div>
+  </div>
+
+  <div class="admin-section">
+    <h3>还没注册的同学 <span class="count" id="adminUnregCount"></span></h3>
+    <div class="admin-unreg" id="adminUnregList"></div>
+  </div>
+</div></section>
 <div class="overlay" id="overlay"><div class="card" id="profileCard"><button class="close-btn" id="closeProfile">✕</button><div class="p-left"><div class="big-avatar" id="pAvatar">🙂</div><h2 class="p-name" id="pName"></h2><div class="p-tags" id="pTags"></div><p class="p-intro" id="pIntro"></p><div class="p-meta" id="pMeta"></div><div class="medal-wall" id="medalWall"><h4>🏅 荣誉勋章</h4><div class="medal-list" id="medalList"></div><div class="medal-progress" id="medalProgress"></div></div><button class="btn-edit" id="editBtn">✏️ 编辑资料</button></div><div class="p-right"><h3>关系图</h3><div class="sub">线的粗细 = 关系亲密度</div><svg id="relGraph" viewBox="0 0 500 480" preserveAspectRatio="xMidYMid meet"></svg></div></div></div>
 <div class="modal" id="modal"><div class="modal-box"><h3>✏️ 编辑资料</h3><div class="field"><label>昵称</label><input type="text" id="fName"></div><div class="row2"><div class="field"><label>头像 Emoji</label><input type="text" id="fEmoji" maxlength="4"></div><div class="field"><label>主题色</label><input type="color" id="fColor" style="height:42px;padding:4px;cursor:pointer;"></div></div><div class="field"><label>个人简介</label><textarea id="fIntro"></textarea></div><div class="field"><label>标签（用逗号分隔）</label><input type="text" id="fTags"></div><div class="rel-head"><span>我的关系网</span><button class="btn-add" id="addRelBtn">+ 添加关系</button></div><div id="relList"></div><div class="modal-actions"><button class="btn-cancel" id="cancelBtn">取消</button><button class="btn-save" id="saveBtn">保存</button></div></div></div>
 <div class="modal" id="teacherModal"><div class="modal-box teacher-modal-box"><button class="close-btn" id="closeTeacherModal">✕</button><h3>🎓 老师主页</h3><div class="teacher-modal-head"><div class="teacher-modal-avatar" id="tmAvatar">👩‍🏫</div><div class="teacher-modal-info"><input type="text" class="teacher-input-name" id="tmName" placeholder="老师姓名"><input type="text" class="teacher-input-subject" id="tmSubject" placeholder="科目 / 职务"></div></div><div class="field"><label>简介</label><textarea id="tmIntro"></textarea></div><div class="teacher-gift-stats"><div class="gift-stat"><span class="gift-stat-emoji">🌸</span><span class="gift-stat-count" id="tmFlowers">0</span><span class="gift-stat-label">朵花</span></div><div class="gift-stat"><span class="gift-stat-emoji">❤️</span><span class="gift-stat-count" id="tmHearts">0</span><span class="gift-stat-label">颗爱心</span></div></div><div class="gift-buttons"><button class="gift-btn gift-btn-flower" id="sendFlowerBtn"><span class="gift-btn-emoji">💐</span><span>送一束花</span></button><button class="gift-btn gift-btn-heart" id="sendHeartBtn"><span class="gift-btn-emoji">💖</span><span>送爱心</span></button></div><div class="modal-actions"><button class="btn-cancel" id="cancelTeacherBtn">取消</button><button class="btn-save" id="saveTeacherBtn">保存</button></div></div></div>
@@ -710,6 +779,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="guide-item"><span class="guide-item-emoji">⏳</span><div class="guide-item-body"><div class="guide-item-name">倒计时</div><div class="guide-item-desc">距离下一个节日还有多少天，精确到秒。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">✨</span><div class="guide-item-body"><div class="guide-item-name">许愿墙</div><div class="guide-item-desc">许下心愿、点赞、还愿。需要先注册登录（名字从班级名单里选）。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">📋</span><div class="guide-item-body"><div class="guide-item-name">动态</div><div class="guide-item-desc">谁加分了、谁许愿了、谁改了资料……这里都能看到，最近 100 条。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">👑</span><div class="guide-item-body"><div class="guide-item-name">管理面板</div><div class="guide-item-desc">只有管理员可见。可以查看所有账号、重置密码、设/取消管理员、删除账号。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🔒</span><div class="guide-item-body"><div class="guide-item-name">敬请期待</div><div class="guide-item-desc">时间轴回忆等功能正在开发中，敬请期待 😃</div></div></div>
 </div>
 <div class="guide-tip">💡 <b>小提示</b><br>· 很多地方（首页文字、公告、同学名字）可以直接点击编辑<br>· 所有改动会自动同步到云端，所有人看到的是同一份数据<br>· 密码别用你其他账号的，随便设一个记住就行</div>
@@ -1077,7 +1147,6 @@ function initHomeEditing(){
     });
     el.addEventListener('paste',e=>{e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,text)});
   });
-  // 公告单独处理（需要权限判断）
   const noticeEl=document.querySelector('#view-notice .notice-text');
   if(noticeEl){
     noticeEl.addEventListener('keydown',e=>{
@@ -1104,6 +1173,10 @@ function initHomeEditing(){
   }
 }
 function switchView(name){
+  if(name==='admin'&&!isCurrentAdmin()){
+    showLockToast('管理面板（仅管理员可访问）');
+    return;
+  }
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   const target=document.getElementById('view-'+name);if(target)target.classList.add('active');
   document.querySelectorAll('.nav-link').forEach(l=>{l.classList.toggle('active',l.dataset.view===name)});
@@ -1117,6 +1190,7 @@ function switchView(name){
   else if(name==='wish'){renderWishes();updateUserBtn()}
   else if(name==='network'){requestAnimationFrame(()=>initNetwork())}
   else if(name==='logs'){renderLogs()}
+  else if(name==='admin'){renderAdminPanel()}
   else if(name==='notice'){updateNoticePermission();renderNoticeMeta()}
   else if(name==='album'){renderAlbum()}
   if(name!=='countdown'&&countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
@@ -1680,7 +1754,7 @@ function submitAuth(){
     saveAuth();
     msgEl.classList.add('ok');
     msgEl.textContent=account.role==='admin'?'🎉 注册成功！你是第一个注册的人，获得管理员权限':'🎉 注册成功！';
-    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();renderAlbum()},900);
+    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();renderAlbum();updateAdminVisibility()},900);
   }else{
     const acc=accounts.find(a=>a.personId===personId);
     if(!acc){msgEl.textContent='这个名字还没注册，请先注册';return}
@@ -1688,14 +1762,16 @@ function submitAuth(){
     currentUser=acc;
     localStorage.setItem('class_wish_userId',acc.id);
     msgEl.classList.add('ok');msgEl.textContent='✅ 登录成功！';
-    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();renderAlbum()},500);
+    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();renderAlbum();updateAdminVisibility()},500);
   }
 }
 function logout(){
   if(!confirm('确定要退出登录吗？'))return;
   currentUser=null;
   localStorage.removeItem('class_wish_userId');
-  updateUserBtn();renderWishes();updateNoticePermission();renderAlbum();
+  updateUserBtn();renderWishes();updateNoticePermission();renderAlbum();updateAdminVisibility();
+  const adminView=document.getElementById('view-admin');
+  if(adminView&&adminView.classList.contains('active'))switchView('home');
 }
 function openWishModal(){
   if(!currentUser){openAuthModal('login');return}
@@ -1990,7 +2066,7 @@ function initStars(){
   }
 }
 
-/* ================= 数据迁移（保留旧数据，补新同学） ================= */
+/* ================= 数据迁移 ================= */
 function migratePeople(){
   if(!dataCache||!Array.isArray(dataCache.people))return false;
   const ids=new Set(dataCache.people.map(p=>p.id));
@@ -2013,6 +2089,177 @@ function migratePeople(){
   return added;
 }
 
+/* ================= 管理员面板 ================= */
+function isCurrentAdmin(){return !!(currentUser&&currentUser.role==='admin')}
+
+function updateAdminVisibility(){
+  const btn=document.getElementById('navAdminBtn');
+  if(!btn)return;
+  btn.style.display=isCurrentAdmin()?'':'none';
+  const view=document.getElementById('view-admin');
+  if(view&&view.classList.contains('active')&&!isCurrentAdmin()){
+    switchView('home');
+  }
+}
+
+function renderAdminPanel(){
+  const statsEl=document.getElementById('adminStats');
+  if(!statsEl)return;
+  if(!isCurrentAdmin()){
+    statsEl.innerHTML='';
+    const a=document.getElementById('adminAccountList');
+    const u=document.getElementById('adminUnregList');
+    if(a)a.innerHTML='';
+    if(u)u.innerHTML='';
+    return;
+  }
+  const total=state.people.length;
+  const registered=accounts.length;
+  const adminCount=accounts.filter(a=>a.role==='admin').length;
+  const unregCount=Math.max(0,total-registered);
+  const stats=[
+    {n:total,l:'班级总人数',c:'#a78bfa',i:'👥'},
+    {n:registered,l:'已注册账号',c:'#86efac',i:'✅'},
+    {n:unregCount,l:'尚未注册',c:'#fbbf24',i:'⏳'},
+    {n:adminCount,l:'管理员',c:'#f0abfc',i:'👑'}
+  ];
+  statsEl.innerHTML=stats.map(s=>
+    '<div class="admin-stat" style="--sc:'+s.c+'">'+
+    '<div class="admin-stat-num" style="color:'+s.c+'">'+s.n+'</div>'+
+    '<div class="admin-stat-label">'+s.i+' '+s.l+'</div></div>'
+  ).join('');
+
+  const listEl=document.getElementById('adminAccountList');
+  const cntEl=document.getElementById('adminAccountCount');
+  if(cntEl)cntEl.textContent=accounts.length+' 个';
+  if(!accounts.length){
+    listEl.innerHTML='<div class="admin-empty">还没有任何人注册</div>';
+  }else{
+    const sorted=[...accounts].sort((a,b)=>(a.createdAt||0)-(b.createdAt||0));
+    listEl.innerHTML='';
+    sorted.forEach(acc=>{
+      const person=state.people.find(p=>p.id===acc.personId);
+      const wishCount=(dataCache.wishes||[]).filter(w=>w.authorAccountId===acc.id&&!w.deleted).length;
+      const photoCount=(dataCache.album||[]).filter(x=>x.uploaderAccountId===acc.id).length;
+      const badges=[];
+      if(acc.role==='admin')badges.push('<span class="admin-badge admin">👑 管理员</span>');
+      if(currentUser&&currentUser.id===acc.id)badges.push('<span class="admin-badge me">我</span>');
+      if(!person)badges.push('<span class="admin-badge warn">⚠️ 名单里找不到</span>');
+
+      const el=document.createElement('div');
+      el.className='admin-acc';
+      el.innerHTML=
+        '<div class="admin-acc-avatar" style="background:'+((person&&person.color)||'#a78bfa')+'">'+escapeHtml((person&&person.emoji)||'🙂')+'</div>'+
+        '<div class="admin-acc-info">'+
+          '<div class="admin-acc-name">'+escapeHtml(acc.name||'同学')+badges.join('')+'</div>'+
+          '<div class="admin-acc-meta">密码 <b class="admin-pwd">••••</b> · 注册于 '+formatFullTime(acc.createdAt||Date.now())+' · 许愿 '+wishCount+' 条 · 照片 '+photoCount+' 张</div>'+
+        '</div>'+
+        '<div class="admin-acc-actions">'+
+          '<button class="admin-act" data-act="pwd">👁 查看密码</button>'+
+          '<button class="admin-act gold" data-act="reset">🔑 重置密码</button>'+
+          '<button class="admin-act" data-act="role">'+(acc.role==='admin'?'⬇️ 取消管理员':'👑 设为管理员')+'</button>'+
+          '<button class="admin-act danger" data-act="del">🗑 删除账号</button>'+
+        '</div>';
+
+      const pwdEl=el.querySelector('.admin-pwd');
+      el.querySelector('[data-act="pwd"]').addEventListener('click',()=>{
+        if(pwdEl.textContent==='••••'){
+          pwdEl.textContent=acc.password||'（空）';
+          pwdEl.style.color='#fcd34d';
+        }else{
+          pwdEl.textContent='••••';
+          pwdEl.style.color='';
+        }
+      });
+      el.querySelector('[data-act="reset"]').addEventListener('click',()=>adminResetPassword(acc.id));
+      el.querySelector('[data-act="role"]').addEventListener('click',()=>adminToggleRole(acc.id));
+      el.querySelector('[data-act="del"]').addEventListener('click',()=>adminDeleteAccount(acc.id));
+      listEl.appendChild(el);
+    });
+  }
+
+  const taken=new Set(accounts.map(a=>a.personId));
+  const unreg=state.people.filter(p=>!taken.has(p.id));
+  const unregEl=document.getElementById('adminUnregList');
+  const unregCnt=document.getElementById('adminUnregCount');
+  if(unregCnt)unregCnt.textContent=unreg.length+' 人';
+  if(!unreg.length){
+    unregEl.innerHTML='<div class="admin-empty">🎉 全班同学都注册啦</div>';
+  }else{
+    unregEl.innerHTML=unreg.map(p=>
+      '<span class="admin-unreg-item">'+escapeHtml(p.emoji||'🙂')+' '+escapeHtml(p.name)+'</span>'
+    ).join('');
+  }
+}
+
+function adminResetPassword(accId){
+  const acc=accounts.find(a=>a.id===accId);
+  if(!acc)return;
+  const input=prompt('为「'+acc.name+'」设置新密码（2-20 位）\n直接点确定 = 自动生成一个', '');
+  if(input===null)return;
+  let p=input.trim();
+  let auto=false;
+  if(!p){p=Math.random().toString(36).slice(2,8);auto=true}
+  if(p.length<2){alert('密码至少 2 位');return}
+  if(p.length>20)p=p.slice(0,20);
+  acc.password=p;
+  addLog('🔑','重置了 <span class="hl">'+escapeHtml(acc.name)+'</span> 的密码');
+  saveAuth();
+  renderAdminPanel();
+  if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
+  alert('✅ 已把「'+acc.name+'」的密码设为：\n\n'+p+(auto?'\n\n（系统自动生成，请告诉 TA）':'')+'\n\n请把这个密码告诉 TA，让 TA 尽快登录。');
+}
+
+function adminToggleRole(accId){
+  const acc=accounts.find(a=>a.id===accId);
+  if(!acc)return;
+  if(acc.role==='admin'){
+    if(accounts.filter(a=>a.role==='admin').length<=1){alert('至少要保留一个管理员哦');return}
+    if(!confirm('确定取消「'+acc.name+'」的管理员权限吗？'))return;
+    acc.role='user';
+    addLog('👑','取消了 <span class="hl">'+escapeHtml(acc.name)+'</span> 的管理员权限');
+  }else{
+    if(!confirm('把「'+acc.name+'」设为管理员？\nTA 将能编辑公告、管理账号、删除任何人的内容。'))return;
+    acc.role='admin';
+    addLog('👑','把 <span class="hl">'+escapeHtml(acc.name)+'</span> 设为管理员');
+  }
+  if(currentUser&&currentUser.id===acc.id)currentUser=acc;
+  saveAuth();
+  renderAdminPanel();
+  updateUserBtn();
+  updateNoticePermission();
+  updateAdminVisibility();
+  if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
+}
+
+function adminDeleteAccount(accId){
+  const acc=accounts.find(a=>a.id===accId);
+  if(!acc)return;
+  if(acc.role==='admin'&&accounts.filter(a=>a.role==='admin').length<=1){
+    alert('这是唯一的管理员账号，不能删除哦');
+    return;
+  }
+  if(!confirm('确定删除「'+acc.name+'」的账号吗？\n\n删除后 TA 需要重新注册，但 TA 已发的许愿和照片会保留。'))return;
+  const isSelf=currentUser&&currentUser.id===acc.id;
+  const idx=accounts.findIndex(a=>a.id===accId);
+  if(idx<0)return;
+  accounts.splice(idx,1);
+  addLog('🗑️','删除了 <span class="hl">'+escapeHtml(acc.name)+'</span> 的账号');
+  if(isSelf){
+    currentUser=null;
+    localStorage.removeItem('class_wish_userId');
+  }
+  saveAuth();
+  updateUserBtn();
+  updateNoticePermission();
+  updateAdminVisibility();
+  renderAdminPanel();
+  renderWishes();
+  if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
+  if(isSelf)alert('已删除你自己的账号，已退出登录。');
+}
+
+/* ================= 刷新所有 UI ================= */
 function refreshAllUI(){
   const hd={...HOME_DEFAULT,...(dataCache?.home||{})};
   document.querySelectorAll('#view-home [data-key], #view-notice [data-key]').forEach(el=>{
@@ -2030,10 +2277,12 @@ function refreshAllUI(){
   if(document.getElementById('view-notice').classList.contains('active'))renderNoticeMeta();
   if(document.getElementById('view-album').classList.contains('active'))renderAlbum();
   updateNoticePermission();
+  updateAdminVisibility();
+  if(document.getElementById('view-admin').classList.contains('active'))renderAdminPanel();
 }
 
 /* ================= 事件绑定 ================= */
-document.querySelectorAll('.nav-link').forEach(btn=>{btn.addEventListener('click',()=>switchView(btn.dataset.view))});
+document.querySelectorAll('.nav-link[data-view]').forEach(btn=>{btn.addEventListener('click',()=>switchView(btn.dataset.view))});
 document.getElementById('navBrand').addEventListener('click',()=>switchView('home'));
 document.getElementById('closeProfile').addEventListener('click',closeProfile);
 overlay.addEventListener('click',e=>{if(e.target===overlay)closeProfile()});
