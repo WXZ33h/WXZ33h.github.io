@@ -314,6 +314,11 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .wish-menu button:hover{background:rgba(139,92,246,.15)}
 .wish-menu button.danger{color:#dc2626}
 .wish-menu button.danger:hover{background:rgba(239,68,68,.15)}
+.user-menu{background:#fff;border-radius:12px;padding:5px;box-shadow:0 12px 30px -8px rgba(0,0,0,.4);min-width:160px}
+.user-menu button{display:block;width:100%;text-align:left;border:none;background:transparent;font-family:inherit;font-size:13px;font-weight:700;color:#2e1065;padding:10px 14px;border-radius:8px;cursor:pointer;transition:.15s}
+.user-menu button:hover{background:rgba(139,92,246,.15)}
+.user-menu button.danger{color:#dc2626}
+.user-menu button.danger:hover{background:rgba(239,68,68,.15)}
 .wish-empty{text-align:center;color:var(--text-muted);padding:60px 0;font-size:14px;letter-spacing:1px;column-span:all}
 .wish-empty .ico{display:block;font-size:52px;margin-bottom:14px;opacity:.5;filter:drop-shadow(0 4px 12px rgba(240,171,252,.4))}
 .wish-fab{position:fixed;right:28px;bottom:32px;z-index:150;width:64px;height:64px;border-radius:50%;border:none;cursor:pointer;font-size:30px;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;box-shadow:0 16px 40px -10px rgba(192,38,211,.85),0 0 0 1px rgba(255,255,255,.15),inset 0 1px 0 rgba(255,255,255,.3);transition:.28s cubic-bezier(.34,1.56,.64,1)}
@@ -373,8 +378,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .nav-drop-item{display:flex;align-items:center;gap:10px;width:100%;border:none;background:transparent;font-family:inherit;font-size:13.5px;font-weight:700;color:var(--text-dim);padding:10px 14px;border-radius:10px;cursor:pointer;transition:.2s;text-align:left;white-space:nowrap}
 .nav-drop-item:hover{background:rgba(139,92,246,.22);color:#fff}
 .nav-drop-item.active{background:linear-gradient(120deg,#7c3aed,#a855f7);color:#fff;box-shadow:0 6px 16px -6px rgba(139,92,246,.9)}
-
-.nav-badge{display:inline-block;font-size:10px;font-weight:800;padding:1px 7px;border-radius:999px;background:linear-gradient(120deg,#f59e0b,#fbbf24);color:#78350f;margin-left:6px;line-height:1.6;vertical-align:middle}
 
 #view-network{min-height:100vh;padding:104px 24px 40px}
 .net-wrap{max-width:1440px;margin:0 auto;height:calc(100vh - 144px);display:flex;flex-direction:column}
@@ -451,7 +454,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .guide-btn-ghost{background:rgba(139,92,246,.14);color:var(--text-dim);border:1px solid var(--border-strong)}
 .guide-btn-ghost:hover{background:rgba(139,92,246,.26);color:#fff}
 
-/* ===== 班级时间轴 ===== */
 #view-timeline{min-height:100vh;padding:104px 0 60px}
 .tl-wrap{max-width:1400px;margin:0 auto;padding:0 24px}
 .tl-header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:8px}
@@ -493,13 +495,10 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tl-empty{text-align:center;color:var(--text-muted);font-size:14px;letter-spacing:1px;padding:60px 20px}
 .tl-empty .ico{display:block;font-size:52px;margin-bottom:14px;opacity:.5;filter:drop-shadow(0 4px 12px rgba(240,171,252,.4))}
 .tl-editor-preview{width:100%;max-height:220px;object-fit:contain;border-radius:10px;display:block;margin-bottom:14px;background:rgba(0,0,0,.4)}
-
-/* ===== 通用时间轴：类型 & 筛选 & 匿名 ===== */
 .tl-filters{display:flex;gap:4px;background:rgba(139,92,246,.10);padding:4px;border-radius:999px;border:1px solid var(--border);flex-wrap:wrap}
 .tl-filter{border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap}
 .tl-filter:hover{color:var(--text);background:rgba(139,92,246,.18)}
 .tl-filter.active{color:#fff;background:linear-gradient(120deg,#7c3aed,#a855f7);box-shadow:0 6px 16px -6px rgba(139,92,246,.9)}
-
 .tl-type-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px}
 .tl-type-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:12px 6px;border-radius:14px;border:1px solid rgba(167,139,250,.25);background:rgba(20,8,31,.5);color:var(--text-dim);font-family:inherit;font-size:11.5px;font-weight:800;cursor:pointer;transition:.2s;letter-spacing:.5px}
 .tl-type-btn .t-emo{font-size:22px;line-height:1;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
@@ -509,7 +508,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tl-type-btn[data-type="image"]{--tc:#a78bfa}
 .tl-type-btn[data-type="small"]{--tc:#86efac}
 .tl-type-btn[data-type="big"]{--tc:#f0abfc}
-
 .tl-card.type-meme{--tc:#fbbf24;background:linear-gradient(160deg,rgba(120,80,10,.42),rgba(30,11,48,.9))}
 .tl-card.type-image{--tc:#a78bfa;background:linear-gradient(160deg,rgba(45,17,71,.92),rgba(30,11,48,.92))}
 .tl-card.type-small{--tc:#86efac;background:linear-gradient(160deg,rgba(20,80,50,.34),rgba(30,11,48,.9))}
@@ -517,7 +515,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tl-card[class*="type-"]{border-color:var(--tc)}
 .tl-card[class*="type-"]:hover{border-color:var(--tc);box-shadow:0 24px 55px -18px var(--tc)}
 .tl-card.type-big::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(240,171,252,.28),transparent 60%);pointer-events:none;border-radius:inherit}
-
 .tl-badge{position:absolute;top:8px;left:8px;z-index:3;display:flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;background:var(--tc,#a78bfa);color:#1e0b30;font-size:10px;font-weight:900;letter-spacing:.5px;box-shadow:0 4px 12px -4px rgba(0,0,0,.7)}
 .tl-badge .bi{font-size:11px;line-height:1}
 .tl-card-text{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;position:relative;z-index:1}
@@ -527,12 +524,10 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tl-card.type-meme .tl-card-desc::before{content:"😄 "}
 .tl-card.type-small .tl-card-desc::before{content:"📝 "}
 .tl-card.type-big .tl-card-desc::before{content:"✨ "}
-
 .tl-anon-check{display:flex;align-items:center;gap:9px;padding:12px 14px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);border-radius:12px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text-dim);transition:.2s;user-select:none;margin-bottom:16px}
 .tl-anon-check:hover{border-color:var(--border-strong);color:var(--text)}
 .tl-anon-check input{accent-color:var(--primary-light);width:16px;height:16px;cursor:pointer}
 
-/* ===== 私信 ===== */
 #view-message{min-height:100vh;padding:96px 24px 40px}
 .msg-wrap{max-width:1140px;margin:0 auto;height:calc(100vh - 130px);display:flex;flex-direction:column;min-height:520px}
 .msg-header{text-align:center;margin-bottom:16px;flex-shrink:0}
@@ -552,7 +547,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .msg-contact.active{background:linear-gradient(120deg,rgba(124,58,237,.35),rgba(192,38,211,.35));border-color:rgba(240,171,252,.5)}
 .msg-contact-av{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--c,#a78bfa);box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
 .msg-contact-name{flex:1;font-size:13px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.msg-contact-dot{width:8px;height:8px;border-radius:50%;background:#fbbf24;box-shadow:0 0 8px #fbbf24;flex-shrink:0}
 .msg-main{background:linear-gradient(160deg,rgba(45,17,71,.72),rgba(30,11,48,.72));border:1px solid var(--border);border-radius:20px;display:flex;flex-direction:column;min-height:0;backdrop-filter:blur(12px);overflow:hidden}
 .msg-main-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;min-height:58px}
 .msg-main-head .mh-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--c,#a78bfa);box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
@@ -579,7 +573,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .msg-locked .ico{font-size:56px;opacity:.6;filter:drop-shadow(0 8px 20px rgba(240,171,252,.6))}
 .msg-locked p{margin:0;color:var(--text-muted);font-size:13.5px;letter-spacing:1.2px;line-height:1.7}
 
-/* ===== 意见箱 ===== */
 #view-feedback{min-height:100vh;padding:104px 24px 70px}
 .fb-wrap{max-width:760px;margin:0 auto}
 .fb-header{text-align:center;margin-bottom:26px}
@@ -616,7 +609,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .fb-empty{text-align:center;color:var(--text-muted);font-size:13px;padding:30px 0;letter-spacing:1px}
 .fb-empty .ico{display:block;font-size:36px;margin-bottom:10px;opacity:.5}
 
-/* ===== 管理员面板 ===== */
 #view-admin{min-height:100vh;padding:104px 24px 70px}
 .admin-wrap{max-width:1000px;margin:0 auto}
 .admin-header{text-align:center;margin-bottom:28px}
@@ -661,7 +653,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .admin-unreg{display:flex;flex-wrap:wrap;gap:8px}
 .admin-unreg-item{display:flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;background:rgba(139,92,246,.1);border:1px solid rgba(167,139,250,.18);font-size:12.5px;font-weight:700;color:var(--text-dim)}
 .admin-empty{text-align:center;color:var(--text-muted);font-size:13px;padding:26px 0;letter-spacing:1px}
-
 .admin-msg-list{display:flex;flex-direction:column;gap:10px;max-height:520px;overflow-y:auto;padding-right:4px}
 .admin-msg-list::-webkit-scrollbar{width:6px}
 .admin-msg-list::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:3px}
@@ -677,7 +668,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .admin-msg-del{border:none;background:rgba(239,68,68,.12);color:#fca5a5;font-family:inherit;font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;cursor:pointer;transition:.2s;margin-top:10px}
 .admin-msg-del:hover{background:rgba(239,68,68,.3);color:#fff}
 
-/* ===== 锁定 Toast ===== */
 .lock-toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.85);z-index:999;padding:30px 48px;background:rgba(45,17,71,.98);backdrop-filter:blur(20px);border:1px solid rgba(240,171,252,.4);border-radius:24px;box-shadow:0 30px 80px -20px rgba(240,171,252,.5),inset 0 1px 0 rgba(255,255,255,.1);text-align:center;opacity:0;pointer-events:none;transition:.35s cubic-bezier(.34,1.56,.64,1)}
 .lock-toast.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
 .lock-toast .lock-emoji{font-size:52px;line-height:1;margin-bottom:14px;display:block;filter:drop-shadow(0 6px 20px rgba(167,139,250,.6));animation:floaty 3s ease-in-out infinite}
@@ -707,7 +697,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .msg-contacts{flex-direction:row;overflow-x:auto;overflow-y:hidden}
   .msg-contact{flex:0 0 auto;flex-direction:column;padding:8px 10px;gap:4px;text-align:center}
   .msg-contact-name{font-size:11px;max-width:60px}
-  .msg-contact-dot{position:absolute;top:6px;right:6px}
   .msg-main-head{padding:10px 14px;min-height:50px}
   .msg-thread{padding:14px}
   .msg-input-bar{padding:10px 12px}
@@ -719,7 +708,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .tl-track{padding:0 50px}
   .tl-line{left:50px;right:50px}
 }
-
 @media(max-width:780px){
   .navbar{padding:0 12px;gap:8px;height:60px}
   .nav-logo{width:32px;height:32px;flex-basis:32px}
@@ -741,19 +729,10 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .notice-badge{left:22px}
   .notice-text{font-size:15px;min-height:160px}
   .notice-meta{flex-direction:column;align-items:flex-end;gap:6px}
-  #view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px
-;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}.gate-box{padding:32px 22px 26px}.gate-icon{font-size:46px}.gate-box h3{font-size:17px}.gate-box .field input{font-size:20px;letter-spacing:8px}
+  #view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}.gate-box{padding:32px 22px 26px}.gate-icon{font-size:46px}.gate-box h3{font-size:17px}.gate-box .field input{font-size:20px;letter-spacing:8px}
   #view-timeline{padding:88px 0 40px}
   .tl-wrap{padding:0 14px}
   .tl-header h2{font-size:20px}
-  .tl-items{gap:46px}
-  .tl-item{width:150px}
-  .tl-card{width:150px;border-radius:13px}
-  .tl-card img{height:110px}
-  .tl-caption{font-size:11.5px}
-  .tl-date{font-size:11px;padding:3px 10px}
-  .tl-track{padding:0 40px}
-  .tl-line{left:40px;right:40px}
   .tl-filters{width:100%;justify-content:center}
   .tl-filter{padding:5px 11px;font-size:11px}
   .tl-type-btn{padding:10px 4px;font-size:10.5px}
@@ -983,7 +962,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="modal" id="modal"><div class="modal-box"><h3>✏️ 编辑资料</h3><div class="field"><label>昵称</label><input type="text" id="fName"></div><div class="row2"><div class="field"><label>头像 Emoji</label><input type="text" id="fEmoji" maxlength="4"></div><div class="field"><label>主题色</label><input type="color" id="fColor" style="height:42px;padding:4px;cursor:pointer;"></div></div><div class="field"><label>个人简介</label><textarea id="fIntro"></textarea></div><div class="field"><label>标签（用逗号分隔）</label><input type="text" id="fTags"></div><div class="rel-head"><span>我的关系网</span><button class="btn-add" id="addRelBtn">+ 添加关系</button></div><div id="relList"></div><div class="modal-actions"><button class="btn-cancel" id="cancelBtn">取消</button><button class="btn-save" id="saveBtn">保存</button></div></div></div>
 <div class="modal" id="teacherModal"><div class="modal-box teacher-modal-box"><button class="close-btn" id="closeTeacherModal">✕</button><h3>🎓 老师主页</h3><div class="teacher-modal-head"><div class="teacher-modal-avatar" id="tmAvatar">👩‍🏫</div><div class="teacher-modal-info"><input type="text" class="teacher-input-name" id="tmName" placeholder="老师姓名"><input type="text" class="teacher-input-subject" id="tmSubject" placeholder="科目 / 职务"></div></div><div class="field"><label>简介</label><textarea id="tmIntro"></textarea></div><div class="teacher-gift-stats"><div class="gift-stat"><span class="gift-stat-emoji">🌸</span><span class="gift-stat-count" id="tmFlowers">0</span><span class="gift-stat-label">朵花</span></div><div class="gift-stat"><span class="gift-stat-emoji">❤️</span><span class="gift-stat-count" id="tmHearts">0</span><span class="gift-stat-label">颗爱心</span></div></div><div class="gift-buttons"><button class="gift-btn gift-btn-flower" id="sendFlowerBtn"><span class="gift-btn-emoji">💐</span><span>送一束花</span></button><button class="gift-btn gift-btn-heart" id="sendHeartBtn"><span class="gift-btn-emoji">💖</span><span>送爱心</span></button></div><div class="modal-actions"><button class="btn-cancel" id="cancelTeacherBtn">取消</button><button class="btn-save" id="saveTeacherBtn">保存</button></div></div></div>
 <div class="modal" id="wishModal"><div class="modal-box wish-modal-box"><button class="close-btn" id="closeWishModal">✕</button><h3>✨ 许一个愿</h3><div class="field"><label>选一个 emoji</label><div class="emoji-picker" id="emojiPicker"></div></div><div class="field"><label>写点什么…</label><textarea id="wishText" maxlength="60" placeholder="比如：希望毕业前能和大家一起去看一次海。"></textarea><div class="char-count"><span id="wishCharCount">0</span>/60</div></div><label class="anon-check"><input type="checkbox" id="wishAnon"> 匿名发布（不显示我的名字）</label><div class="modal-actions"><button class="btn-cancel" id="cancelWishBtn">取消</button><button class="btn-save" id="publishWishBtn">贴上墙</button></div></div></div>
-<div class="modal" id="authModal"><div class="modal-box auth-modal-box"><button class="close-btn" id="closeAuthModal">✕</button><h3 id="authTitle">👋 登录</h3><div class="auth-tabs"><button class="auth-tab active" data-tab="login">登录</button><button class="auth-tab" data-tab="register">注册</button></div><div class="field"><label>我是谁</label><select id="authPerson"></select></div><div class="field"><label>密码</label><input type="password" id="authPassword" placeholder="随便设一个，记住就行" autocomplete="new-password"></div><div class="auth-msg" id="authMsg"></div><div class="modal-actions"><button class="btn-cancel" id="cancelAuthBtn">取消</button><button class="btn-save" id="authSubmitBtn">登录</button></div><div class="auth-hint">💡 别用你其他账号的密码哦</div></div></div>
+<div class="modal" id="authModal"><div class="modal-box auth-modal-box"><button class="close-btn" id="closeAuthModal">✕</button><h3 id="authTitle">👋 登录</h3><div class="auth-tabs"><button class="auth-tab active" data-tab="login">登录</button><button class="auth-tab" data-tab="register">注册</button></div><div class="field"><label>我是谁</label><select id="authPerson"></select></div><div class="field"><label>密码</label><input type="password" id="authPassword" placeholder="随便设一个，记住就行" autocomplete="new-password"></div><div class="auth-msg" id="authMsg"></div><div class="modal-actions"><button class="btn-cancel" id="cancelAuthBtn">取消</button><button class="btn-save" id="authSubmitBtn">登录</button></div><div class="auth-hint">💡 密码忘记可以找管理员重置</div></div></div>
 <div class="modal" id="fulfillModal"><div class="modal-box"><button class="close-btn" id="closeFulfillModal">✕</button><h3>🎉 还愿</h3><div class="field"><label>想说什么？（可选）</label><textarea id="fulfillNote" maxlength="60" placeholder="比如：真的做到了！谢谢大家的鼓励～"></textarea></div><div class="modal-actions"><button class="btn-cancel" id="cancelFulfillBtn">取消</button><button class="btn-save" id="confirmFulfillBtn">确认已实现</button></div></div></div>
 <div class="modal" id="likeListModal"><div class="modal-box"><button class="close-btn" id="closeLikeListModal">✕</button><h3>❤️ 点赞的人</h3><div class="like-list" id="likeListBox"></div></div></div>
 <div class="modal" id="tlEditModal"><div class="modal-box"><button class="close-btn" id="closeTlEditModal">✕</button><h3 id="tlEditHeading">➕ 添加记录</h3>
@@ -1020,7 +999,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="guide-item"><span class="guide-item-emoji">📋</span><div class="guide-item-body"><div class="guide-item-name">动态</div><div class="guide-item-desc">谁加分了、谁许愿了、谁改了资料……这里都能看到。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">👑</span><div class="guide-item-body"><div class="guide-item-name">管理面板</div><div class="guide-item-desc">只有管理员可见。可以管账号、重置密码、查看私信。</div></div></div>
 </div>
-<div class="guide-tip">💡 <b>小提示</b><br>· 很多地方（首页文字、公告、同学名字）可以直接点击编辑<br>· 所有改动会自动同步到云端，所有人看到的是同一份数据<br>· 密码别用你其他账号的，随便设一个记住就行</div>
+<div class="guide-tip">💡 <b>小提示</b><br>· 很多地方（首页文字、公告、同学名字）可以直接点击编辑<br>· 所有改动会自动同步到云端，所有人看到的是同一份数据<br>· 密码忘记可以找管理员重置</div>
 <div class="guide-actions"><button class="guide-btn guide-btn-ghost" id="guideNeverBtn">不再显示</button><button class="guide-btn guide-btn-primary" id="guideOkBtn">我知道了</button></div>
 </div></div>
 <div class="modal gate-modal open" id="gateModal"><div class="modal-box gate-box" id="gateBox"><span class="gate-icon">🔐</span><h3>请输入访问密码</h3><div class="gate-sub">本页面仅限本班同学访问</div><div class="field"><input type="password" id="gatePassword" maxlength="20" placeholder="· · · ·" autocomplete="off" inputmode="numeric"></div><div class="gate-msg" id="gateMsg"></div><div class="modal-actions"><button class="btn-save" id="gateSubmitBtn">进 入</button></div><div class="gate-hint">💡 密码找班长要哦</div></div></div>
@@ -2014,13 +1993,35 @@ function updateUserBtn(){
   if(!btn)return;
   if(currentUser){
     btn.textContent='👤 '+currentUser.name+(currentUser.role==='admin'?' 👑':'');
-    btn.classList.add('logged-in');btn.title='点击退出登录';btn.onclick=logout;
+    btn.classList.add('logged-in');btn.title='点击打开菜单';
+    btn.onclick=(e)=>{e.stopPropagation();openUserMenu(btn)};
     if(fab)fab.classList.remove('hidden');
   }else{
     btn.textContent='登录 / 注册';btn.classList.remove('logged-in');btn.title='登录后才能许愿和点赞';
     btn.onclick=()=>openAuthModal('login');
     if(fab)fab.classList.add('hidden');
   }
+}
+function openUserMenu(btn){
+  closeWishMenu();
+  if(!currentUser)return;
+  const menu=document.createElement('div');
+  menu.className='user-menu';
+  menu.innerHTML='<button class="danger" data-act="logout">👋 退出登录</button>';
+  const rect=btn.getBoundingClientRect();
+  menu.style.position='fixed';
+  menu.style.top=(rect.bottom+6)+'px';
+  menu.style.right=Math.max(8,window.innerWidth-rect.right)+'px';
+  menu.style.zIndex=400;
+  document.body.appendChild(menu);
+  openMenuEl=menu;
+  menu.querySelectorAll('button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const act=b.dataset.act;
+      closeWishMenu();
+      if(act==='logout')logout();
+    });
+  });
 }
 function openAuthModal(tab){
   tab=tab||'login';
@@ -2081,7 +2082,7 @@ function submitAuth(){
   }else{
     const acc=accounts.find(a=>a.personId===personId);
     if(!acc){msgEl.textContent='这个名字还没注册，请先注册';return}
-    if(acc.password!==password){msgEl.textContent='密码不对哦';return}
+    if(acc.password!==password){msgEl.textContent='密码不对哦（忘了可以找管理员重置）';return}
     currentUser=acc;
     localStorage.setItem('class_wish_userId',acc.id);
     msgEl.classList.add('ok');msgEl.textContent='✅ 登录成功！';
