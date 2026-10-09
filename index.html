@@ -62,9 +62,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .bubble:active{transform:scale(.96)}
 .bub-emoji{line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))}
 .bub-name{font-weight:800;line-height:1.1;letter-spacing:.3px;text-shadow:0 1px 2px rgba(255,255,255,.55);color:#2e1065}
-.bubble.teacher{box-shadow:0 16px 40px -8px rgba(0,0,0,.65),0 0 0 3px #fbbf24,0 0 32px rgba(251,191,36,.55),inset 0 -10px 22px rgba(255,255,255,.35),inset 0 6px 14px rgba(255,255,255,.5)!important}
-.bubble.teacher:hover{transform:scale(1.07);box-shadow:0 26px 55px -12px rgba(0,0,0,.75),0 0 0 5px #fde68a,0 0 55px rgba(251,191,36,.9),inset 0 -10px 22px rgba(255,255,255,.35),inset 0 6px 14px rgba(255,255,255,.5)!important}
-.bub-teacher-title{font-size:11px;font-weight:900;color:#78350f;background:linear-gradient(135deg,#fde68a,#fbbf24);padding:2px 9px;border-radius:999px;margin-top:3px;box-shadow:0 2px 8px -2px rgba(251,191,36,.85),inset 0 1px 0 rgba(255,255,255,.55);letter-spacing:.5px;white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.45);line-height:1.4}
+
 .overlay{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(20,8,31,.78);backdrop-filter:blur(20px);opacity:0;pointer-events:none;transition:.3s}
 .overlay.open{opacity:1;pointer-events:auto}
 .card{position:relative;width:min(1000px,100%);max-height:calc(100vh - 48px);overflow:auto;display:grid;grid-template-columns:1fr 1.05fr;gap:32px;padding:38px 40px;border-radius:30px;background:linear-gradient(160deg,rgba(45,17,71,.96),rgba(30,11,48,.96));border:1px solid var(--border-strong);box-shadow:0 40px 100px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.07);transform:translateY(18px) scale(.97);transition:.38s}
@@ -78,23 +76,13 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tag{display:inline-block;padding:4px 12px;margin:0 6px 6px 0;border-radius:999px;background:rgba(139,92,246,.2);border:1px solid rgba(167,139,250,.3);color:var(--primary-lighter);font-size:12.5px;font-weight:700}
 .p-intro{font-size:15px;line-height:1.9;color:var(--text-dim);margin:0 0 24px;white-space:pre-wrap;word-break:break-word}
 .p-meta{font-size:12.5px;color:var(--text-muted);margin-bottom:22px}
-.medal-wall{margin:0 0 22px;padding:16px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);border-radius:16px;width:100%}
-.medal-wall h4{margin:0 0 12px;font-size:12px;letter-spacing:2px;color:var(--text-muted);font-weight:800}
-.medal-list{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-start}
-.medal-item{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;background:rgba(139,92,246,.1);border:2px solid rgba(167,139,250,.15);position:relative;transition:.3s;filter:grayscale(1) brightness(.5);opacity:.45}
-.medal-item.unlocked{filter:none;opacity:1;border-color:currentColor;box-shadow:0 0 18px -4px currentColor;animation:medalPop .55s cubic-bezier(.34,1.56,.64,1)}
-.medal-item.unlocked:hover{transform:scale(1.15) rotate(-8deg)}
-@keyframes medalPop{0%{transform:scale(0) rotate(-180deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
-.medal-item .medal-tip{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--text-muted);white-space:nowrap;font-weight:700;letter-spacing:.5px}
-.medal-progress{margin-top:26px;font-size:11px;color:var(--text-muted);letter-spacing:1px}
-.medal-progress-bar{width:100%;height:6px;background:rgba(139,92,246,.15);border-radius:3px;margin-top:8px;overflow:hidden}
-.medal-progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#f0abfc);border-radius:3px;transition:width .6s cubic-bezier(.22,1,.36,1);box-shadow:0 0 12px rgba(240,171,252,.7)}
 .btn-edit{border:none;cursor:pointer;font-family:inherit;padding:11px 24px;border-radius:999px;font-size:14px;font-weight:800;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);box-shadow:0 12px 28px -10px rgba(139,92,246,.95);transition:.22s}
 .btn-edit:hover{transform:translateY(-2px)}
 .p-right{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:340px}
 .p-right h3{margin:0 0 4px;font-size:13px;color:var(--text-muted);font-weight:800;letter-spacing:3px}
 .p-right .sub{font-size:11px;color:var(--text-muted);margin-bottom:10px;letter-spacing:1px}
 #relGraph{width:100%;height:auto;display:block}
+
 .modal{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(10,4,18,.72);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:.25s}
 .modal.open{opacity:1;pointer-events:auto}
 .modal-box{width:min(580px,100%);max-height:88vh;overflow:auto;background:linear-gradient(160deg,#2d1147,#1e0b30);border:1px solid var(--border-strong);border-radius:24px;padding:30px;box-shadow:0 40px 90px -25px rgba(0,0,0,.95);transform:scale(.96);transition:.28s;color:var(--text);position:relative}
@@ -122,77 +110,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .btn-cancel:hover{background:rgba(139,92,246,.26);color:#fff}
 .btn-save{background:linear-gradient(120deg,#7c3aed,#c026d3);color:#fff;box-shadow:0 12px 26px -10px rgba(139,92,246,.95)}
 .btn-save:hover{transform:translateY(-2px)}
-#view-score{min-height:100vh;padding:104px 24px 70px}
-.score-wrap{max-width:1280px;margin:0 auto}
-.score-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:14px}
-.score-header h2{font-size:26px;margin:0;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:2px;display:flex;align-items:center;gap:12px}
-.score-header h2 .ico{font-size:24px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
-.score-header-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.score-search{border:1px solid var(--border-strong);background:rgba(139,92,246,.12);color:var(--text);font-family:inherit;padding:9px 18px;border-radius:999px;outline:none;font-size:13px;width:190px;transition:.2s}
-.score-search:focus{background:rgba(139,92,246,.22);border-color:var(--primary-light);box-shadow:0 0 0 4px rgba(139,92,246,.18)}
-.score-btn{border:1px solid var(--border-strong);background:rgba(139,92,246,.14);color:var(--primary-lighter);font-family:inherit;font-size:13px;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
-.score-btn:hover{background:rgba(139,92,246,.3);color:#fff}
-.score-btn.danger{color:#fca5a5;border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.1)}
-.score-btn.danger:hover{background:rgba(239,68,68,.25);color:#fff}
-.students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:36px}
-.student-card{position:relative;background:linear-gradient(160deg,rgba(45,17,71,.9),rgba(30,11,48,.9));border:1px solid var(--border);border-radius:20px;padding:16px;overflow:hidden;transition:.3s;box-shadow:0 16px 40px -22px rgba(0,0,0,.7)}
-.student-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,#a78bfa);box-shadow:0 0 16px -2px var(--c,#a78bfa)}
-.student-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
-.student-top{display:flex;align-items:center;gap:11px;margin-bottom:12px}
-.student-avatar{width:46px;height:46px;flex:0 0 46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 6px 14px -4px rgba(0,0,0,.55),inset 0 -4px 10px rgba(255,255,255,.2),inset 0 2px 6px rgba(255,255,255,.35);background:var(--c,#a78bfa);position:relative}
-.student-mini-medal{position:absolute;bottom:-2px;right:-2px;width:20px;height:20px;border-radius:50%;background:rgba(20,8,31,.95);display:flex;align-items:center;justify-content:center;font-size:11px;border:1.5px solid currentColor;box-shadow:0 0 8px currentColor}
-.student-info{flex:1;min-width:0}
-.student-name{font-size:15px;font-weight:800;color:#fff;outline:none;border-radius:6px;padding:2px 6px;margin-left:-6px;transition:.2s;cursor:text;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
-.student-name:focus{background:rgba(139,92,246,.2);box-shadow:0 0 0 2px rgba(167,139,250,.4)}
-.student-tags{font-size:10.5px;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
-.student-score-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px;gap:8px}
-.student-score-label{font-size:10.5px;color:var(--text-muted);letter-spacing:1.5px;font-weight:700}
-.student-score{font-size:26px;font-weight:900;color:var(--c,#a78bfa);text-shadow:0 0 18px var(--c,#a78bfa);font-variant-numeric:tabular-nums;line-height:1}
-.student-add{display:flex;gap:5px;flex-wrap:wrap}
-.score-add-btn{flex:1 1 34px;border:1px solid rgba(167,139,250,.3);background:rgba(139,92,246,.15);color:#fff;font-family:inherit;font-size:12.5px;font-weight:800;padding:7px 0;border-radius:10px;cursor:pointer;transition:.2s;font-variant-numeric:tabular-nums;min-width:0}
-.score-add-btn:hover{background:rgba(139,92,246,.4);border-color:var(--primary-light);transform:translateY(-1px)}
-.score-add-btn.minus{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.12);color:#fca5a5}
-.score-add-btn.minus:hover{background:rgba(239,68,68,.3);border-color:rgba(239,68,68,.6);color:#fff}
-.records-section{background:linear-gradient(160deg,rgba(45,17,71,.7),rgba(30,11,48,.7));border:1px solid var(--border);border-radius:24px;padding:26px 28px;backdrop-filter:blur(12px);margin-bottom:24px}
-.records-section h3{font-size:16px;margin:0 0 18px;color:var(--text-dim);letter-spacing:2px;font-weight:800;display:flex;align-items:center;gap:10px}
-.records-section h3::before{content:"";width:4px;height:18px;border-radius:2px;background:linear-gradient(180deg,#a78bfa,#c026d3)}
-.records-section h3 .count{font-size:12px;color:var(--text-muted);font-weight:600;letter-spacing:0;margin-left:auto}
-.records-list{display:flex;flex-direction:column;gap:8px;max-height:440px;overflow-y:auto;padding-right:6px}
-.records-list::-webkit-scrollbar{width:6px}
-.records-list::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:3px}
-.record-item{display:flex;align-items:center;gap:12px;padding:11px 16px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.1);border-radius:12px;font-size:13.5px;animation:slideIn .35s ease backwards}
-@keyframes slideIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
-.record-delta{font-weight:900;font-size:15px;min-width:52px;font-variant-numeric:tabular-nums;text-align:center;flex-shrink:0}
-.record-delta.plus{color:#86efac}
-.record-delta.minus{color:#fca5a5}
-.record-avatar{width:26px;height:26px;flex:0 0 26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
-.record-student{font-weight:700;color:var(--primary-lighter);min-width:60px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.record-reason{flex:1;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.record-time{font-size:11.5px;color:#a78bfa;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;flex-shrink:0;background:rgba(139,92,246,.12);padding:3px 9px;border-radius:8px;border:1px solid rgba(167,139,250,.18)}
-.record-undo{border:none;background:rgba(139,92,246,.15);color:var(--text-dim);font-family:inherit;font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;cursor:pointer;transition:.2s;flex-shrink:0}
-.record-undo:hover{background:rgba(139,92,246,.4);color:#fff}
-.empty-records{text-align:center;color:var(--text-muted);font-size:13px;padding:34px 0;letter-spacing:1px}
-.empty-records .ico{display:block;font-size:32px;margin-bottom:10px;opacity:.5}
-.leaderboard-section{background:linear-gradient(160deg,rgba(91,33,182,.35),rgba(45,17,71,.85));border:1px solid rgba(240,171,252,.25);border-radius:24px;padding:26px 28px;backdrop-filter:blur(14px);box-shadow:0 20px 60px -28px rgba(240,171,252,.45);position:relative;overflow:hidden}
-.leaderboard-section::before{content:"";position:absolute;top:-50%;right:-20%;width:340px;height:340px;background:radial-gradient(circle,rgba(240,171,252,.22),transparent 65%);pointer-events:none}
-.leaderboard-section h3{font-size:16px;margin:0 0 20px;color:#fff;letter-spacing:2px;font-weight:800;display:flex;align-items:center;gap:10px;position:relative}
-.leaderboard-section h3::before{content:"";width:4px;height:18px;border-radius:2px;background:linear-gradient(180deg,#fbbf24,#f0abfc);box-shadow:0 0 12px rgba(251,191,36,.7)}
-.leaderboard-section h3 .hint{font-size:11.5px;color:var(--text-muted);font-weight:600;letter-spacing:0;margin-left:auto}
-.leaderboard-list{display:flex;flex-direction:column;gap:10px;position:relative}
-.leaderboard-item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:rgba(20,8,31,.55);border:1px solid rgba(167,139,250,.12);transition:.28s;animation:slideIn .4s ease backwards;position:relative;overflow:hidden}
-.leaderboard-item:hover{border-color:var(--border-strong);transform:translateX(6px);background:rgba(20,8,31,.75)}
-.leaderboard-rank{width:42px;height:42px;flex:0 0 42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;font-variant-numeric:tabular-nums;background:rgba(139,92,246,.18);border:2px solid rgba(167,139,250,.3);color:var(--primary-lighter)}
-.leaderboard-item.rank-1{background:linear-gradient(120deg,rgba(251,191,36,.16),rgba(20,8,31,.6));border-color:rgba(251,191,36,.45);box-shadow:0 0 30px -10px rgba(251,191,36,.55)}
-.leaderboard-item.rank-1 .leaderboard-rank{background:linear-gradient(135deg,#fde68a,#f59e0b);border-color:#fef3c7;color:#78350f;box-shadow:0 0 22px rgba(251,191,36,.85);font-size:20px}
-.leaderboard-item.rank-2{background:linear-gradient(120deg,rgba(229,231,235,.13),rgba(20,8,31,.6));border-color:rgba(229,231,235,.4)}
-.leaderboard-item.rank-2 .leaderboard-rank{background:linear-gradient(135deg,#f3f4f6,#9ca3af);border-color:#f9fafb;color:#374151;box-shadow:0 0 16px rgba(229,231,235,.6)}
-.leaderboard-item.rank-3{background:linear-gradient(120deg,rgba(217,119,6,.14),rgba(20,8,31,.6));border-color:rgba(217,119,6,.4)}
-.leaderboard-item.rank-3 .leaderboard-rank{background:linear-gradient(135deg,#fbbf24,#b45309);border-color:#fcd34d;color:#fff;box-shadow:0 0 16px rgba(217,119,6,.65)}
-.leaderboard-avatar{width:46px;height:46px;flex:0 0 46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px;box-shadow:inset 0 -4px 10px rgba(255,255,255,.22),0 4px 14px -4px rgba(0,0,0,.6)}
-.leaderboard-name{flex:1;font-size:15.5px;font-weight:800;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.leaderboard-score{font-size:24px;font-weight:900;font-variant-numeric:tabular-nums;color:#86efac;text-shadow:0 0 16px rgba(134,239,172,.7);line-height:1;flex-shrink:0}
-.leaderboard-item.rank-1 .leaderboard-score{color:#fbbf24;text-shadow:0 0 20px rgba(251,191,36,.95)}
-.leaderboard-medal{font-size:22px;flex-shrink:0;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.45))}
+
 #view-countdown{min-height:100vh;padding:104px 24px 70px;position:relative;overflow:hidden}
 .stars-bg{position:fixed;inset:0;pointer-events:none;z-index:0}
 .star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 3s ease-in-out infinite;opacity:.7}
@@ -228,46 +146,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .festival-card .fc-date{font-size:11px;color:var(--text-muted);margin-top:2px;letter-spacing:.5px}
 .festival-card.is-next{border-color:var(--fc,#a78bfa);box-shadow:0 0 30px -8px var(--fc,#a78bfa)}
 .festival-card .next-tag{position:absolute;top:12px;right:12px;font-size:10px;font-weight:800;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);padding:3px 9px;border-radius:999px;letter-spacing:1px;box-shadow:0 4px 12px -4px rgba(139,92,246,.9)}
-#view-teachers{min-height:100vh;padding:104px 24px 70px}
-.teacher-wrap{max-width:1180px;margin:0 auto}
-.teacher-header{text-align:center;margin-bottom:46px}
-.teacher-header h2{font-size:30px;margin:0 0 10px;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:12px}
-.teacher-header h2 .ico{font-size:28px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
-.teacher-hint{font-size:13px;color:var(--text-muted);letter-spacing:1.8px;margin:0}
-.teachers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:26px;max-width:1080px;margin:0 auto}
-.teacher-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:13px;padding:28px 16px 22px;border-radius:26px;background:linear-gradient(160deg,rgba(45,17,71,.75),rgba(30,11,48,.75));border:1px solid var(--border);cursor:pointer;transition:.32s;overflow:hidden;box-shadow:0 16px 40px -22px rgba(0,0,0,.7)}
-.teacher-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--c);box-shadow:0 0 22px -2px var(--c);border-radius:26px 26px 0 0}
-.teacher-card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:0 32px 70px -25px rgba(0,0,0,.85)}
-.teacher-avatar-circle{width:154px;height:154px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:76px;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.85),rgba(255,255,255,0) 60%),var(--c);box-shadow:0 20px 48px -12px rgba(0,0,0,.7),0 0 0 4px rgba(167,139,250,.2),inset 0 -10px 24px rgba(255,255,255,.3),inset 0 5px 14px rgba(255,255,255,.45);transition:.35s cubic-bezier(.34,1.56,.64,1);flex-shrink:0}
-.teacher-card:hover .teacher-avatar-circle{transform:scale(1.06);box-shadow:0 28px 60px -14px rgba(0,0,0,.85),0 0 0 9px rgba(167,139,250,.32),0 0 50px rgba(240,171,252,.4)}
-.teacher-name{font-size:20px;font-weight:800;color:#fff;letter-spacing:1px}
-.teacher-subject{font-size:12.5px;font-weight:700;padding:4px 14px;border-radius:999px;background:rgba(139,92,246,.2);border:1px solid rgba(167,139,250,.3);color:var(--primary-lighter);letter-spacing:1.5px}
-.teacher-counts{display:flex;gap:14px;font-size:13px;color:var(--text-dim);font-weight:800;margin-top:2px}
-.teacher-counts span{display:flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums;padding:3px 10px;border-radius:999px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.1)}
-.teacher-modal-box{width:min(540px,100%)}
-.teacher-modal-head{display:flex;align-items:center;gap:18px;margin-bottom:22px}
-.teacher-modal-avatar{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:46px;flex-shrink:0;background:var(--c,#a78bfa);box-shadow:0 16px 38px -12px rgba(0,0,0,.75),0 0 0 3px rgba(167,139,250,.2),inset 0 -8px 20px rgba(255,255,255,.3)}
-.teacher-modal-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px}
-.teacher-input-name{width:100%;padding:9px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:#fff;font-family:inherit;font-size:17px;font-weight:800;outline:none;transition:.2s}
-.teacher-input-subject{width:100%;padding:7px 14px;border-radius:12px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:var(--text-dim);font-family:inherit;font-size:12.5px;font-weight:700;letter-spacing:1px;outline:none;transition:.2s}
-.teacher-input-name:focus,.teacher-input-subject:focus{border-color:var(--primary-light);background:rgba(20,8,31,.9);box-shadow:0 0 0 4px rgba(139,92,246,.22)}
-.teacher-gift-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 4px}
-.gift-stat{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 10px;border-radius:14px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);font-weight:700}
-.gift-stat-emoji{font-size:20px}
-.gift-stat-count{font-size:22px;font-weight:900;color:#fff;font-variant-numeric:tabular-nums;line-height:1}
-.gift-stat-label{font-size:11.5px;color:var(--text-muted);letter-spacing:1px}
-.gift-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px}
-.gift-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:18px 12px;border-radius:18px;border:1px solid transparent;font-family:inherit;font-size:14px;font-weight:800;letter-spacing:1.5px;cursor:pointer;transition:.25s;color:#fff;position:relative;overflow:hidden}
-.gift-btn-emoji{font-size:34px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));transition:transform .35s cubic-bezier(.34,1.56,.64,1);line-height:1}
-.gift-btn:hover .gift-btn-emoji{transform:scale(1.28) rotate(-10deg)}
-.gift-btn:active{transform:scale(.97)}
-.gift-btn-flower{background:linear-gradient(135deg,rgba(244,114,182,.32),rgba(217,70,239,.32));border-color:rgba(244,114,182,.5);box-shadow:0 12px 30px -12px rgba(244,114,182,.75)}
-.gift-btn-flower:hover{background:linear-gradient(135deg,rgba(244,114,182,.55),rgba(217,70,239,.55));box-shadow:0 18px 42px -12px rgba(244,114,182,1);transform:translateY(-3px)}
-.gift-btn-heart{background:linear-gradient(135deg,rgba(239,68,68,.32),rgba(236,72,153,.32));border-color:rgba(239,68,68,.5);box-shadow:0 12px 30px -12px rgba(239,68,68,.75)}
-.gift-btn-heart:hover{background:linear-gradient(135deg,rgba(239,68,68,.55),rgba(236,72,153,.55));box-shadow:0 18px 42px -12px rgba(239,68,68,1);transform:translateY(-3px)}
-#giftLayer{position:fixed;inset:0;pointer-events:none;z-index:600;overflow:hidden}
-.gift-particle{position:absolute;bottom:-90px;will-change:transform,opacity;animation:giftFloat 2s cubic-bezier(.22,.61,.36,1) forwards;filter:drop-shadow(0 0 10px rgba(240,171,252,.65));user-select:none}
-@keyframes giftFloat{0%{transform:translateY(0) translateX(0) scale(.4) rotate(0deg);opacity:0}18%{opacity:1;transform:translateY(-14vh) translateX(calc(var(--drift) * .25)) scale(1.1) rotate(50deg)}100%{transform:translateY(-118vh) translateX(var(--drift)) scale(1.35) rotate(420deg);opacity:0}}
 
 #view-wish{min-height:100vh;padding:104px 24px 120px}
 .wish-wrap{max-width:1320px;margin:0 auto}
@@ -454,6 +332,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .guide-btn-ghost{background:rgba(139,92,246,.14);color:var(--text-dim);border:1px solid var(--border-strong)}
 .guide-btn-ghost:hover{background:rgba(139,92,246,.26);color:#fff}
 
+/* ===== 班级时间轴 ===== */
 #view-timeline{min-height:100vh;padding:104px 0 60px}
 .tl-wrap{max-width:1400px;margin:0 auto;padding:0 24px}
 .tl-header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:8px}
@@ -480,11 +359,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tl-card{width:210px;background:linear-gradient(160deg,rgba(45,17,71,.92),rgba(30,11,48,.92));border:1px solid var(--border-strong);border-radius:16px;overflow:hidden;box-shadow:0 16px 40px -16px rgba(0,0,0,.85);transition:.28s;position:relative;cursor:pointer}
 .tl-card:hover{transform:translateY(-4px) scale(1.02);border-color:#f0abfc;box-shadow:0 24px 55px -18px rgba(240,171,252,.6)}
 .tl-card img{width:100%;height:150px;object-fit:cover;display:block;background:rgba(0,0,0,.35)}
-.tl-card-body{padding:10px 12px 12px}
-.tl-caption{font-size:12.5px;line-height:1.55;color:var(--text-dim);word-break:break-word;margin:0 0 6px;min-height:16px}
-.tl-caption:empty{display:none}
-.tl-uploader{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted);font-weight:700}
-.tl-uploader .u-av{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;background:var(--c,#a78bfa);box-shadow:inset 0 -2px 5px rgba(255,255,255,.22);flex-shrink:0}
 .tl-card-ops{position:absolute;top:8px;right:8px;display:flex;gap:5px;opacity:0;transition:.22s;z-index:4}
 .tl-card:hover .tl-card-ops{opacity:1}
 .tl-op{width:30px;height:30px;border-radius:50%;border:none;background:rgba(20,8,31,.85);color:#fff;cursor:pointer;font-size:13px;line-height:1;transition:.2s;backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:0}
@@ -524,54 +398,86 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .tl-card.type-meme .tl-card-desc::before{content:"😄 "}
 .tl-card.type-small .tl-card-desc::before{content:"📝 "}
 .tl-card.type-big .tl-card-desc::before{content:"✨ "}
+.tl-uploader{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted);font-weight:700}
+.tl-uploader .u-av{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;background:var(--c,#a78bfa);box-shadow:inset 0 -2px 5px rgba(255,255,255,.22);flex-shrink:0}
 .tl-anon-check{display:flex;align-items:center;gap:9px;padding:12px 14px;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);border-radius:12px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text-dim);transition:.2s;user-select:none;margin-bottom:16px}
 .tl-anon-check:hover{border-color:var(--border-strong);color:var(--text)}
 .tl-anon-check input{accent-color:var(--primary-light);width:16px;height:16px;cursor:pointer}
 
-#view-message{min-height:100vh;padding:96px 24px 40px}
-.msg-wrap{max-width:1140px;margin:0 auto;height:calc(100vh - 130px);display:flex;flex-direction:column;min-height:520px}
-.msg-header{text-align:center;margin-bottom:16px;flex-shrink:0}
-.msg-header h2{font-size:24px;margin:0 0 6px;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:10px}
-.msg-header h2 .ico{font-size:22px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
-.msg-header p{font-size:12px;color:var(--text-muted);letter-spacing:1.5px;margin:0}
-.msg-body{flex:1;display:grid;grid-template-columns:250px 1fr;gap:14px;min-height:0}
-.msg-sidebar{background:linear-gradient(160deg,rgba(45,17,71,.72),rgba(30,11,48,.72));border:1px solid var(--border);border-radius:20px;padding:14px;display:flex;flex-direction:column;min-height:0;backdrop-filter:blur(12px)}
-.msg-side-title{font-size:12px;font-weight:800;color:var(--text-muted);letter-spacing:2px;margin-bottom:10px;flex-shrink:0;display:flex;justify-content:space-between;align-items:center}
-.msg-side-search{width:100%;padding:8px 12px;border-radius:10px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:var(--text);font-size:12.5px;font-family:inherit;outline:none;margin-bottom:10px;flex-shrink:0;transition:.2s}
-.msg-side-search:focus{border-color:var(--primary-light);box-shadow:0 0 0 3px rgba(139,92,246,.2)}
-.msg-contacts{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:3px;padding-right:4px;min-height:0}
-.msg-contacts::-webkit-scrollbar{width:6px}
-.msg-contacts::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:3px}
-.msg-contact{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:10px;cursor:pointer;transition:.18s;border:1px solid transparent;position:relative}
-.msg-contact:hover{background:rgba(139,92,246,.15);border-color:rgba(167,139,250,.25)}
-.msg-contact.active{background:linear-gradient(120deg,rgba(124,58,237,.35),rgba(192,38,211,.35));border-color:rgba(240,171,252,.5)}
-.msg-contact-av{width:30px;height:30px;flex:0 0 30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--c,#a78bfa);box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
-.msg-contact-name{flex:1;font-size:13px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-.msg-main{background:linear-gradient(160deg,rgba(45,17,71,.72),rgba(30,11,48,.72));border:1px solid var(--border);border-radius:20px;display:flex;flex-direction:column;min-height:0;backdrop-filter:blur(12px);overflow:hidden}
-.msg-main-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;font-size:14px;font-weight:800;color:#fff;flex-shrink:0;min-height:58px}
-.msg-main-head .mh-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--c,#a78bfa);box-shadow:inset 0 -3px 8px rgba(255,255,255,.22)}
-.msg-main-head .mh-sub{font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:.5px;margin-top:2px}
-.msg-thread{flex:1;overflow-y:auto;padding:18px 22px;display:flex;flex-direction:column;gap:12px;min-height:0}
-.msg-thread::-webkit-scrollbar{width:8px}
-.msg-thread::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:4px}
-.msg-thread-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:var(--text-muted);gap:8px;font-size:13px;letter-spacing:1px}
-.msg-thread-empty .ico{font-size:48px;opacity:.5}
-.msg-bubble-row{display:flex;flex-direction:column;max-width:78%}
-.msg-bubble-row.me{align-self:flex-end;align-items:flex-end}
-.msg-bubble-row.other{align-self:flex-start;align-items:flex-start}
-.msg-bubble{padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.6;word-break:break-word;white-space:pre-wrap;box-shadow:0 6px 16px -8px rgba(0,0,0,.7)}
-.msg-bubble-row.me .msg-bubble{background:linear-gradient(120deg,#7c3aed,#c026d3);color:#fff;border-bottom-right-radius:4px}
-.msg-bubble-row.other .msg-bubble{background:rgba(139,92,246,.18);color:var(--text);border-bottom-left-radius:4px;border:1px solid rgba(167,139,250,.2)}
-.msg-bubble-time{font-size:10.5px;color:var(--text-muted);margin-top:4px;padding:0 4px;font-variant-numeric:tabular-nums;letter-spacing:.3px}
-.msg-input-bar{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--border);flex-shrink:0;align-items:flex-end}
-.msg-input-bar textarea{flex:1;resize:none;min-height:44px;max-height:120px;padding:11px 14px;border-radius:14px;border:1px solid rgba(167,139,250,.25);background:rgba(20,8,31,.6);color:var(--text);font-family:inherit;font-size:14px;outline:none;transition:.2s;line-height:1.5}
-.msg-input-bar textarea:focus{border-color:var(--primary-light);box-shadow:0 0 0 4px rgba(139,92,246,.18);background:rgba(20,8,31,.9)}
-.msg-send-btn{padding:0 26px;height:44px;border-radius:14px;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:800;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);box-shadow:0 10px 22px -8px rgba(139,92,246,.9);transition:.2s;flex-shrink:0;letter-spacing:1px}
-.msg-send-btn:hover{transform:translateY(-2px)}
-.msg-send-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
-.msg-locked{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:40px}
-.msg-locked .ico{font-size:56px;opacity:.6;filter:drop-shadow(0 8px 20px rgba(240,171,252,.6))}
-.msg-locked p{margin:0;color:var(--text-muted);font-size:13.5px;letter-spacing:1.2px;line-height:1.7}
+/* ===== 默契大考验 ===== */
+#view-quiz{min-height:100vh;padding:104px 24px 70px}
+.qz-wrap{max-width:880px;margin:0 auto}
+.qz-header{text-align:center;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.qz-header h2{font-size:26px;margin:0;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:2px;display:inline-flex;align-items:center;gap:12px}
+.qz-header h2 .ico{font-size:24px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
+.qz-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.qz-period-tabs{display:flex;gap:4px;background:rgba(139,92,246,.10);padding:4px;border-radius:999px;border:1px solid var(--border);margin-bottom:18px;flex-wrap:wrap}
+.qz-period-tab{border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:800;padding:7px 16px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;white-space:nowrap}
+.qz-period-tab:hover{color:var(--text);background:rgba(139,92,246,.18)}
+.qz-period-tab.active{color:#fff;background:linear-gradient(120deg,#7c3aed,#a855f7);box-shadow:0 6px 16px -6px rgba(139,92,246,.9)}
+.qz-btn{border:1px solid var(--border-strong);background:rgba(139,92,246,.14);color:var(--primary-lighter);font-family:inherit;font-size:13px;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer;transition:.2s;white-space:nowrap}
+.qz-btn:hover{background:rgba(139,92,246,.3);color:#fff}
+.qz-btn.gold{color:#fcd34d;border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.1)}
+.qz-btn.gold:hover{background:rgba(251,191,36,.3);color:#fff}
+.qz-btn.danger{color:#fca5a5;border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.1)}
+.qz-btn.danger:hover{background:rgba(239,68,68,.28);color:#fff}
+.qz-card{position:relative;background:linear-gradient(160deg,rgba(45,17,71,.9),rgba(30,11,48,.9));border:1px solid var(--border-strong);border-radius:24px;padding:32px 30px 28px;backdrop-filter:blur(14px);box-shadow:0 30px 70px -30px rgba(240,171,252,.4),inset 0 1px 0 rgba(255,255,255,.06);overflow:hidden;margin-bottom:22px}
+.qz-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#7c3aed,#f0abfc,#7c3aed);box-shadow:0 0 24px rgba(240,171,252,.6);border-radius:24px 24px 0 0}
+.qz-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text-muted);letter-spacing:1px;margin-bottom:14px;flex-wrap:wrap}
+.qz-meta .pill{background:rgba(139,92,246,.14);border:1px solid var(--border);padding:3px 11px;border-radius:999px;font-weight:700}
+.qz-meta .pill.gold{color:#fcd34d;border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.1)}
+.qz-meta .pill.green{color:#86efac;border-color:rgba(134,239,172,.35);background:rgba(134,239,172,.1)}
+.qz-question{font-size:22px;font-weight:900;color:#fff;line-height:1.55;margin:0 0 22px;letter-spacing:.5px;word-break:break-word;white-space:pre-wrap}
+.qz-options{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+.qz-option{position:relative;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:16px;border:1.5px solid rgba(167,139,250,.25);background:rgba(20,8,31,.55);cursor:pointer;transition:.25s;overflow:hidden;text-align:left;font-family:inherit;color:var(--text)}
+.qz-option:hover{border-color:var(--primary-light);background:rgba(139,92,246,.15);transform:translateX(3px)}
+.qz-option.selected{border-color:#f0abfc;background:linear-gradient(120deg,rgba(124,58,237,.35),rgba(192,38,211,.35));box-shadow:0 0 0 3px rgba(240,171,252,.25)}
+.qz-option.revealed{cursor:default;transform:none}
+.qz-option.revealed:hover{transform:none}
+.qz-opt-bar{position:absolute;inset:0;background:linear-gradient(90deg,rgba(124,58,237,.22),rgba(192,38,211,.22));transform-origin:left;width:0;transition:width .8s cubic-bezier(.22,1,.36,1);z-index:0}
+.qz-option.winner .qz-opt-bar{background:linear-gradient(90deg,rgba(251,191,36,.32),rgba(251,191,36,.18))}
+.qz-opt-radio{width:20px;height:20px;flex:0 0 20px;border-radius:50%;border:2px solid rgba(167,139,250,.45);background:rgba(20,8,31,.7);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;transition:.2s}
+.qz-option.selected .qz-opt-radio{border-color:#f0abfc;background:#f0abfc;box-shadow:0 0 14px rgba(240,171,252,.8)}
+.qz-option.selected .qz-opt-radio::after{content:"";width:8px;height:8px;border-radius:50%;background:#2d1147}
+.qz-opt-av{width:32px;height:32px;flex:0 0 32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--c,#a78bfa);box-shadow:inset 0 -3px 8px rgba(255,255,255,.22);position:relative;z-index:1}
+.qz-opt-name{flex:1;font-size:15px;font-weight:800;color:#fff;position:relative;z-index:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.qz-opt-count{font-size:14px;font-weight:900;color:var(--primary-lighter);font-variant-numeric:tabular-nums;position:relative;z-index:1;flex-shrink:0;padding-left:8px}
+.qz-option.winner .qz-opt-count{color:#fbbf24;text-shadow:0 0 12px rgba(251,191,36,.9);font-size:16px}
+.qz-option.winner .qz-opt-name{color:#fff;text-shadow:0 0 12px rgba(251,191,36,.6)}
+.qz-option.winner .qz-opt-av{box-shadow:0 0 0 3px #fbbf24,inset 0 -3px 8px rgba(255,255,255,.22);animation:winnerPop .6s cubic-bezier(.34,1.56,.64,1)}
+@keyframes winnerPop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+.qz-opt-crown{font-size:20px;position:relative;z-index:1;flex-shrink:0;padding-left:4px;filter:drop-shadow(0 2px 6px rgba(251,191,36,.9));animation:floaty 2s ease-in-out infinite}
+.qz-status{text-align:center;font-size:13px;color:var(--text-muted);letter-spacing:1px;margin-bottom:16px}
+.qz-status strong{color:#f0abfc;font-weight:900;font-size:15px}
+.qz-foot{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.qz-submit{border:none;cursor:pointer;font-family:inherit;font-size:15px;font-weight:900;padding:14px 40px;border-radius:16px;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3);box-shadow:0 14px 34px -10px rgba(139,92,246,.95);transition:.2s;letter-spacing:2px}
+.qz-submit:hover{transform:translateY(-2px)}
+.qz-submit:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.qz-tip{margin-top:14px;text-align:center;font-size:11.5px;color:var(--text-muted);letter-spacing:1px;line-height:1.7}
+.qz-empty{text-align:center;color:var(--text-muted);padding:60px 20px;font-size:14px;letter-spacing:1px}
+.qz-empty .ico{display:block;font-size:56px;margin-bottom:14px;opacity:.55;filter:drop-shadow(0 6px 16px rgba(240,171,252,.5))}
+.qz-empty p{margin:0 0 4px;line-height:1.7}
+.qz-history{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.qz-history-item{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;background:rgba(20,8,31,.55);border:1px solid rgba(167,139,250,.12);cursor:pointer;transition:.2s}
+.qz-history-item:hover{border-color:var(--border-strong);background:rgba(20,8,31,.75);transform:translateX(4px)}
+.qz-history-num{width:36px;height:36px;flex:0 0 36px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#c026d3);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;box-shadow:0 4px 12px -4px rgba(139,92,246,.9)}
+.qz-history-body{flex:1;min-width:0}
+.qz-history-q{font-size:14px;font-weight:800;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-bottom:3px}
+.qz-history-sub{font-size:11.5px;color:var(--text-muted);letter-spacing:.5px;font-weight:600}
+.qz-history-status{font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:999px;flex-shrink:0;letter-spacing:.5px}
+.qz-history-status.open{background:rgba(134,239,172,.15);color:#86efac;border:1px solid rgba(134,239,172,.35)}
+.qz-history-status.done{background:rgba(251,191,36,.15);color:#fcd34d;border:1px solid rgba(251,191,36,.35)}
+.qz-editor-options{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.qz-editor-opt{display:flex;gap:8px;align-items:center}
+.qz-editor-opt select{flex:1;padding:9px 12px;border-radius:10px;border:1px solid rgba(167,139,250,.2);background:rgba(20,8,31,.6);color:var(--text);font-size:13.5px;font-family:inherit;outline:none;transition:.2s;cursor:pointer}
+.qz-editor-opt select:focus{border-color:var(--primary-light);box-shadow:0 0 0 4px rgba(139,92,246,.22)}
+.qz-editor-opt select option{background:#1e0b30;color:var(--text)}
+.qz-editor-opt .del{flex:0 0 32px;height:32px;border-radius:50%;border:none;background:rgba(239,68,68,.15);color:#fca5a5;cursor:pointer;font-size:12px;transition:.2s}
+.qz-editor-opt .del:hover{background:rgba(239,68,68,.32)}
+.qz-add-opt{margin-top:8px;border:1px dashed rgba(167,139,250,.45);background:rgba(139,92,246,.14);color:var(--primary-lighter);font-family:inherit;font-size:12.5px;font-weight:800;padding:8px 16px;border-radius:999px;cursor:pointer;transition:.2s;width:100%}
+.qz-add-opt:hover{background:rgba(139,92,246,.3);color:#fff}
+.qz-rules-content{font-size:14px;line-height:2;color:var(--text-dim);white-space:pre-wrap;word-break:break-word;background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.15);border-radius:14px;padding:16px 18px;min-height:120px}
+.qz-rules-content[contenteditable="true"]:focus{outline:none;border-color:var(--primary-light);box-shadow:0 0 0 3px rgba(139,92,246,.22);background:rgba(20,8,31,.85)}
 
 #view-feedback{min-height:100vh;padding:104px 24px 70px}
 .fb-wrap{max-width:760px;margin:0 auto}
@@ -610,7 +516,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .fb-empty .ico{display:block;font-size:36px;margin-bottom:10px;opacity:.5}
 
 #view-admin{min-height:100vh;padding:104px 24px 70px}
-.admin-wrap{max-width:1000px;margin:0 auto}
+.admin-wrap{max-width:920px;margin:0 auto}
 .admin-header{text-align:center;margin-bottom:28px}
 .admin-header h2{font-size:28px;margin:0 0 8px;background:linear-gradient(120deg,#ddd6fe,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;letter-spacing:3px;display:inline-flex;align-items:center;gap:12px}
 .admin-header h2 .ico{font-size:26px;filter:drop-shadow(0 4px 12px rgba(240,171,252,.6))}
@@ -621,13 +527,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .admin-stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--sc,#a78bfa);box-shadow:0 0 16px -2px var(--sc,#a78bfa)}
 .admin-stat-num{font-size:28px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;text-shadow:0 0 18px currentColor}
 .admin-stat-label{font-size:11px;color:var(--text-muted);letter-spacing:1.2px;font-weight:700;margin-top:8px}
-.admin-tabs{display:flex;gap:4px;background:rgba(139,92,246,.10);padding:5px;border-radius:999px;border:1px solid var(--border);margin-bottom:18px;overflow-x:auto;scrollbar-width:none}
-.admin-tabs::-webkit-scrollbar{display:none}
-.admin-tab{flex:1;white-space:nowrap;border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:800;padding:9px 16px;border-radius:999px;background:transparent;color:var(--text-dim);transition:.25s;letter-spacing:.5px}
-.admin-tab:hover{color:var(--text);background:rgba(139,92,246,.18)}
-.admin-tab.active{color:#fff;background:linear-gradient(120deg,#7c3aed,#a855f7);box-shadow:0 6px 16px -6px rgba(139,92,246,.9)}
-.admin-panel{display:none}
-.admin-panel.active{display:block}
 .admin-section{background:linear-gradient(160deg,rgba(45,17,71,.7),rgba(30,11,48,.7));border:1px solid var(--border);border-radius:22px;padding:22px 24px;backdrop-filter:blur(12px);margin-bottom:20px}
 .admin-section h3{font-size:15px;margin:0 0 16px;color:var(--text-dim);letter-spacing:2px;font-weight:800;display:flex;align-items:center;gap:10px}
 .admin-section h3::before{content:"";width:4px;height:17px;border-radius:2px;background:linear-gradient(180deg,#a78bfa,#c026d3)}
@@ -653,20 +552,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 .admin-unreg{display:flex;flex-wrap:wrap;gap:8px}
 .admin-unreg-item{display:flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;background:rgba(139,92,246,.1);border:1px solid rgba(167,139,250,.18);font-size:12.5px;font-weight:700;color:var(--text-dim)}
 .admin-empty{text-align:center;color:var(--text-muted);font-size:13px;padding:26px 0;letter-spacing:1px}
-.admin-msg-list{display:flex;flex-direction:column;gap:10px;max-height:520px;overflow-y:auto;padding-right:4px}
-.admin-msg-list::-webkit-scrollbar{width:6px}
-.admin-msg-list::-webkit-scrollbar-thumb{background:rgba(139,92,246,.35);border-radius:3px}
-.admin-msg-pair{background:rgba(20,8,31,.5);border:1px solid rgba(167,139,250,.12);border-radius:14px;padding:14px 16px}
-.admin-msg-pair-head{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;flex-wrap:wrap}
-.admin-msg-pair-head .arw{color:var(--primary-lighter);font-weight:900}
-.admin-msg-pair-head .cnt{font-size:11px;font-weight:700;color:var(--text-muted);margin-left:auto;letter-spacing:.5px;background:rgba(139,92,246,.14);padding:2px 9px;border-radius:999px}
-.admin-msg-bubbles{display:flex;flex-direction:column;gap:6px}
-.admin-msg-b{font-size:12.5px;line-height:1.6;color:var(--text-dim);padding:8px 12px;background:rgba(139,92,246,.1);border-radius:10px;word-break:break-word;white-space:pre-wrap;border-left:3px solid rgba(167,139,250,.4)}
-.admin-msg-b.me{border-left-color:#e879f9;background:rgba(232,121,249,.1)}
-.admin-msg-b .who{font-size:10.5px;color:var(--text-muted);font-weight:800;letter-spacing:.5px;margin-right:8px}
-.admin-msg-b .when{font-size:10px;color:var(--text-muted);float:right;margin-left:8px;font-variant-numeric:tabular-nums}
-.admin-msg-del{border:none;background:rgba(239,68,68,.12);color:#fca5a5;font-family:inherit;font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;cursor:pointer;transition:.2s;margin-top:10px}
-.admin-msg-del:hover{background:rgba(239,68,68,.3);color:#fff}
 
 .lock-toast{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.85);z-index:999;padding:30px 48px;background:rgba(45,17,71,.98);backdrop-filter:blur(20px);border:1px solid rgba(240,171,252,.4);border-radius:24px;box-shadow:0 30px 80px -20px rgba(240,171,252,.5),inset 0 1px 0 rgba(255,255,255,.1);text-align:center;opacity:0;pointer-events:none;transition:.35s cubic-bezier(.34,1.56,.64,1)}
 .lock-toast.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
@@ -692,15 +577,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .log-text{font-size:12.5px}
   .guide-box{padding:26px 22px}
   .guide-title{font-size:18px}
-  .msg-body{grid-template-columns:1fr;grid-template-rows:150px 1fr}
-  .msg-sidebar{padding:10px}
-  .msg-contacts{flex-direction:row;overflow-x:auto;overflow-y:hidden}
-  .msg-contact{flex:0 0 auto;flex-direction:column;padding:8px 10px;gap:4px;text-align:center}
-  .msg-contact-name{font-size:11px;max-width:60px}
-  .msg-main-head{padding:10px 14px;min-height:50px}
-  .msg-thread{padding:14px}
-  .msg-input-bar{padding:10px 12px}
-  .msg-send-btn{padding:0 18px;font-size:13px}
   .tl-items{gap:60px}
   .tl-item{width:170px}
   .tl-card{width:170px}
@@ -729,7 +605,12 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .notice-badge{left:22px}
   .notice-text{font-size:15px;min-height:160px}
   .notice-meta{flex-direction:column;align-items:flex-end;gap:6px}
-  #view-bubbles{padding-top:60px}#view-score{padding:88px 14px 50px}.score-header h2{font-size:20px}.score-search{width:130px;padding:8px 14px;font-size:12.5px}.students-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}.student-card{padding:13px;border-radius:16px}.student-avatar{width:40px;height:40px;flex-basis:40px;font-size:20px}.student-name{font-size:13px}.student-score{font-size:22px}.score-add-btn{font-size:11px;padding:6px 0}.records-section{padding:20px 16px;border-radius:20px}.record-item{padding:9px 11px;font-size:12.5px;gap:8px}.record-delta{min-width:44px;font-size:13.5px}.record-student{min-width:48px}.record-time{font-size:10px;padding:2px 7px}.record-undo{font-size:10px;padding:4px 8px}.leaderboard-section{padding:20px 16px;border-radius:20px}.leaderboard-section h3{font-size:14px}.leaderboard-section h3 .hint{font-size:10px}.leaderboard-item{padding:11px 13px;gap:10px;border-radius:13px}.leaderboard-rank{width:34px;height:34px;flex-basis:34px;font-size:14px}.leaderboard-item.rank-1 .leaderboard-rank{font-size:17px}.leaderboard-avatar{width:38px;height:38px;flex-basis:38px;font-size:19px}.leaderboard-name{font-size:13.5px}.leaderboard-score{font-size:20px}.leaderboard-medal{font-size:18px}#view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}.medal-wall{padding:14px}.medal-item{width:46px;height:46px;font-size:22px}#view-teachers{padding:88px 16px 50px}.teacher-header h2{font-size:22px}.teachers-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}.teacher-card{padding:20px 10px 16px;border-radius:20px;gap:10px}.teacher-avatar-circle{width:112px;height:112px;font-size:56px}.teacher-name{font-size:16px}.teacher-subject{font-size:11px;padding:3px 11px}.teacher-counts{font-size:11.5px;gap:8px}.teacher-modal-avatar{width:74px;height:74px;font-size:36px}.gift-btn{padding:14px 8px;font-size:12.5px}.gift-btn-emoji{font-size:28px}.card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}#view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}.lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}.gate-box{padding:32px 22px 26px}.gate-icon{font-size:46px}.gate-box h3{font-size:17px}.gate-box .field input{font-size:20px;letter-spacing:8px}
+  #view-bubbles{padding-top:60px}
+  #view-countdown{padding:88px 14px 50px}.countdown-header h2{font-size:22px}.countdown-main{padding:36px 20px;border-radius:24px}.festival-icon{font-size:58px}.festival-name{font-size:22px}.festival-date{font-size:12px;margin-bottom:30px}.countdown-grid{gap:8px}.countdown-box{padding:16px 6px 12px;border-radius:14px}.countdown-label{font-size:10px;letter-spacing:2px}.countdown-total{font-size:11.5px}.festival-list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}.festival-card{padding:14px;border-radius:14px}.festival-card .fc-icon{font-size:26px}.festival-card .fc-name{font-size:13.5px}
+  .card{grid-template-columns:1fr;padding:26px 22px;gap:20px;border-radius:24px}.big-avatar{width:80px;height:80px;font-size:38px}.p-name{font-size:23px}.p-right{min-height:auto}.close-btn{top:14px;right:14px}
+  #view-wish{padding:88px 14px 110px}.wish-header h2{font-size:20px}.wish-search{width:120px;padding:8px 14px;font-size:12.5px}.wish-user-btn{font-size:11.5px;padding:8px 12px;max-width:130px}.wish-filter{padding:6px 12px;font-size:11.5px}.wish-fab{width:56px;height:56px;font-size:26px;right:18px;bottom:22px}.emoji-picker{grid-template-columns:repeat(6,1fr);gap:6px}.emoji-picker button{font-size:20px}.wish-card{padding:16px 18px 10px;border-radius:15px}
+  .lock-toast{padding:24px 34px}.lock-toast .lock-emoji{font-size:42px}.lock-toast .lock-title{font-size:17px}
+  .gate-box{padding:32px 22px 26px}.gate-icon{font-size:46px}.gate-box h3{font-size:17px}.gate-box .field input{font-size:20px;letter-spacing:8px}
   #view-timeline{padding:88px 0 40px}
   .tl-wrap{padding:0 14px}
   .tl-header h2{font-size:20px}
@@ -737,9 +618,17 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .tl-filter{padding:5px 11px;font-size:11px}
   .tl-type-btn{padding:10px 4px;font-size:10.5px}
   .tl-type-btn .t-emo{font-size:19px}
-  #view-message{padding:78px 10px 20px}
-  .msg-wrap{height:calc(100vh - 100px)}
-  .msg-header h2{font-size:20px}
+  #view-quiz{padding:88px 14px 50px}
+  .qz-header h2{font-size:20px}
+  .qz-question{font-size:18px}
+  .qz-card{padding:24px 20px 22px;border-radius:20px}
+  .qz-option{padding:12px 14px;gap:10px;border-radius:14px}
+  .qz-opt-av{width:28px;height:28px;flex-basis:28px;font-size:14px}
+  .qz-opt-name{font-size:13.5px}
+  .qz-opt-count{font-size:13px}
+  .qz-submit{padding:12px 32px;font-size:14px}
+  .qz-period-tab{padding:6px 12px;font-size:11.5px}
+  .qz-btn{padding:8px 14px;font-size:12px}
   #view-feedback{padding:88px 14px 60px}
   .fb-header h2{font-size:22px}
   .fb-card{padding:22px 18px;border-radius:20px}
@@ -750,7 +639,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
   .admin-stats{grid-template-columns:repeat(2,1fr);gap:10px}
   .admin-stat{padding:13px 10px 11px;border-radius:15px}
   .admin-stat-num{font-size:23px}
-  .admin-tab{font-size:11.5px;padding:7px 12px}
   .admin-section{padding:18px 14px;border-radius:18px}
   .admin-acc{padding:11px 12px;gap:10px}
   .admin-acc-avatar{width:36px;height:36px;flex-basis:36px;font-size:18px}
@@ -776,8 +664,6 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <button class="nav-drop-item" data-view="bubbles">👥 班级成员</button>
 <button class="nav-drop-item" data-view="network">🕸️ 关系网</button>
 <button class="nav-drop-item" data-view="timeline">🕰️ 班级时间轴</button>
-<button class="nav-drop-item" data-view="score">🏆 个人加分</button>
-<button class="nav-drop-item" data-view="teachers">🎓 老师</button>
 </div>
 </div>
 <div class="nav-dropdown">
@@ -785,7 +671,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="nav-drop-menu">
 <button class="nav-drop-item" data-view="wish">✨ 许愿墙</button>
 <button class="nav-drop-item" data-view="countdown">⏳ 倒计时</button>
-<button class="nav-drop-item" data-view="message">💬 私信</button>
+<button class="nav-drop-item" data-view="quiz">🎯 默契大考验</button>
 </div>
 </div>
 <button class="nav-link" data-view="logs">动态 📋</button>
@@ -794,6 +680,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 </div>
 <span class="sync-status" id="syncStatus">⏳ 连接中…</span>
 </nav>
+
 <section id="view-home" class="view active"><div class="home-wrap">
 <svg class="home-logo" viewBox="0 0 240 240"><defs><linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="50%" stop-color="#e879f9"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient><radialGradient id="lg2" cx="0.5" cy="0.38"><stop offset="0%" stop-color="#5b21b6"/><stop offset="70%" stop-color="#2d1147"/><stop offset="100%" stop-color="#1a0a2a"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><circle cx="120" cy="120" r="116" fill="url(#lg1)" opacity="0.12"/><circle cx="120" cy="120" r="98" fill="url(#lg2)" stroke="url(#lg1)" stroke-width="4.5"/><circle cx="120" cy="120" r="85" fill="none" stroke="url(#lg1)" stroke-width="1.4" opacity="0.55"/><path d="M120 52 L127.5 75.5 L152 75.5 L132.5 90.5 L140 114 L120 99 L100 114 L107.5 90.5 L88 75.5 L112.5 75.5 Z" fill="url(#lg1)" filter="url(#glow)"/><path d="M76 142 Q98 129.5 120 144 L120 184 Q98 169.5 76 182 Z" fill="#a78bfa"/><path d="M164 142 Q142 129.5 120 144 L120 184 Q142 169.5 164 182 Z" fill="#8b5cf6"/><path d="M120 144 L120 184" stroke="#3b0764" stroke-width="2.6" opacity="0.7"/></svg>
 <h1 class="hero-title" contenteditable="true" spellcheck="false" data-key="className">六年二班</h1>
@@ -801,11 +688,13 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="intro-card"><p class="hero-intro" contenteditable="true" spellcheck="false" data-key="intro">六年二班是一个温暖又热闹的大家庭。我们在这里一起读书、一起运动、一起长大。\n\n北邮附小见证着我们的每一次进步，每一张笑脸都是班级最珍贵的风景。愿我们永远保持好奇与热爱，把这段时光写成最棒的故事。</p></div>
 <div class="edit-tip"><span class="dot"></span><span>点击文字即可直接编辑，内容会自动保存</span></div>
 </div></section>
+
 <section id="view-notice" class="view"><div class="notice-wrap">
 <div class="notice-header"><h2><span class="ico">📢</span>班级公告</h2><p>重要的事都在这里 ✨</p></div>
 <div class="notice-card"><span class="notice-badge">公告</span><p class="notice-text" contenteditable="false" spellcheck="false" data-key="notice" data-placeholder="点击这里开始写公告内容…">欢迎来到六年二班主页！这里会发布班级的重要通知，点击文字即可编辑，会自动保存。</p><div class="notice-meta"><span id="noticeHint"></span><span id="noticeMeta"></span></div></div>
 <div class="notice-tip" id="noticeTip"><span class="dot"></span><span id="noticeTipText">管理员登录后可编辑公告</span></div>
 </div></section>
+
 <section id="view-timeline" class="view"><div class="tl-wrap">
 <div class="tl-header">
 <div>
@@ -831,13 +720,9 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 </div>
 </div>
 </div></section>
+
 <section id="view-bubbles" class="view"><div class="stage" id="stage"></div></section>
-<section id="view-score" class="view"><div class="score-wrap">
-<div class="score-header"><h2><span class="ico">🏆</span>个人加分系统</h2><div class="score-header-actions"><input type="text" id="studentSearch" class="score-search" placeholder="🔍 搜索同学…"><button class="score-btn danger" id="clearRecordsBtn">清空记录</button></div></div>
-<div class="students-grid" id="studentsGrid"></div>
-<div class="records-section"><h3>加分记录 <span class="count" id="recordsCount"></span></h3><div class="records-list" id="recordsList"></div></div>
-<div class="leaderboard-section"><h3>🥇 表扬前五排行榜 <span class="hint">实时更新</span></h3><div class="leaderboard-list" id="leaderboardList"></div></div>
-</div></section>
+
 <section id="view-countdown" class="view">
 <div class="stars-bg" id="starsBg"></div>
 <div class="countdown-wrap">
@@ -857,7 +742,7 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="festival-list" id="festivalList"></div>
 </div>
 </section>
-<section id="view-teachers" class="view"><div class="teacher-wrap"><div class="teacher-header"><h2><span class="ico">🎓</span>我们的老师</h2><p class="teacher-hint">点击老师，送上一束花或一颗爱心 💐❤️</p></div><div class="teachers-grid" id="teachersGrid"></div></div></section>
+
 <section id="view-wish" class="view"><div class="wish-wrap">
 <div class="wish-header">
 <h2><span class="ico">✨</span>许愿墙</h2>
@@ -874,10 +759,19 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="wish-grid" id="wishGrid"></div>
 <button class="wish-fab hidden" id="wishFab" title="许一个愿">✨</button>
 </div></section>
-<section id="view-message" class="view"><div class="msg-wrap">
-<div class="msg-header"><h2><span class="ico">💬</span>私信</h2><p>同学之间的悄悄话 · 不会出现在动态里</p></div>
-<div class="msg-body" id="msgBody"></div>
+
+<section id="view-quiz" class="view"><div class="qz-wrap">
+<div class="qz-header">
+<h2><span class="ico">🎯</span>默契大考验</h2>
+<div class="qz-actions">
+<button class="qz-btn" id="qzRulesBtn">📖 规则</button>
+<button class="qz-btn gold" id="qzCreateBtn">➕ 出题</button>
+</div>
+</div>
+<div class="qz-period-tabs" id="qzPeriodTabs"></div>
+<div id="qzMain"></div>
 </div></section>
+
 <section id="view-network" class="view"><div class="net-wrap">
 <div class="net-header">
 <h2><span class="ico">🕸️</span>班级关系网</h2>
@@ -910,10 +804,12 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 </div>
 </div>
 </div></section>
+
 <section id="view-logs" class="view"><div class="logs-wrap">
 <div class="logs-header"><h2><span class="ico">📋</span>班级动态</h2><p>看看大家都在做什么 ✨</p></div>
 <div class="logs-list" id="logsList"></div>
 </div></section>
+
 <section id="view-feedback" class="view"><div class="fb-wrap">
 <div class="fb-header">
 <h2><span class="ico">💌</span>意见箱</h2>
@@ -931,17 +827,13 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="fb-list" id="fbList"></div>
 </div>
 </div></section>
+
 <section id="view-admin" class="view"><div class="admin-wrap">
 <div class="admin-header">
 <h2><span class="ico">👑</span>管理员面板</h2>
-<p class="admin-hint">只有管理员能看见这里 · 管账号、改密码、查看私信</p>
+<p class="admin-hint">只有管理员能看见这里</p>
 </div>
 <div class="admin-stats" id="adminStats"></div>
-<div class="admin-tabs">
-<button class="admin-tab active" data-atab="accounts">👥 账号</button>
-<button class="admin-tab" data-atab="messages">💬 私信</button>
-</div>
-<div class="admin-panel active" data-apanel="accounts">
 <div class="admin-section">
 <h3>已注册账号 <span class="count" id="adminAccountCount"></span></h3>
 <div id="adminAccountList"></div>
@@ -950,21 +842,20 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <h3>还没注册的同学 <span class="count" id="adminUnregCount"></span></h3>
 <div class="admin-unreg" id="adminUnregList"></div>
 </div>
-</div>
-<div class="admin-panel" data-apanel="messages">
-<div class="admin-section">
-<h3>所有私信 <span class="count" id="adminMsgCount"></span></h3>
-<div class="admin-msg-list" id="adminMsgList"></div>
-</div>
-</div>
 </div></section>
-<div class="overlay" id="overlay"><div class="card" id="profileCard"><button class="close-btn" id="closeProfile">✕</button><div class="p-left"><div class="big-avatar" id="pAvatar">🙂</div><h2 class="p-name" id="pName"></h2><div class="p-tags" id="pTags"></div><p class="p-intro" id="pIntro"></p><div class="p-meta" id="pMeta"></div><div class="medal-wall" id="medalWall"><h4>🏅 荣誉勋章</h4><div class="medal-list" id="medalList"></div><div class="medal-progress" id="medalProgress"></div></div><button class="btn-edit" id="editBtn">✏️ 编辑资料</button></div><div class="p-right"><h3>关系图</h3><div class="sub">线的粗细 = 关系亲密度</div><svg id="relGraph" viewBox="0 0 500 480" preserveAspectRatio="xMidYMid meet"></svg></div></div></div>
+
+<div class="overlay" id="overlay"><div class="card" id="profileCard"><button class="close-btn" id="closeProfile">✕</button><div class="p-left"><div class="big-avatar" id="pAvatar">🙂</div><h2 class="p-name" id="pName"></h2><div class="p-tags" id="pTags"></div><p class="p-intro" id="pIntro"></p><div class="p-meta" id="pMeta"></div><button class="btn-edit" id="editBtn">✏️ 编辑资料</button></div><div class="p-right"><h3>关系图</h3><div class="sub">线的粗细 = 关系亲密度</div><svg id="relGraph" viewBox="0 0 500 480" preserveAspectRatio="xMidYMid meet"></svg></div></div></div>
+
 <div class="modal" id="modal"><div class="modal-box"><h3>✏️ 编辑资料</h3><div class="field"><label>昵称</label><input type="text" id="fName"></div><div class="row2"><div class="field"><label>头像 Emoji</label><input type="text" id="fEmoji" maxlength="4"></div><div class="field"><label>主题色</label><input type="color" id="fColor" style="height:42px;padding:4px;cursor:pointer;"></div></div><div class="field"><label>个人简介</label><textarea id="fIntro"></textarea></div><div class="field"><label>标签（用逗号分隔）</label><input type="text" id="fTags"></div><div class="rel-head"><span>我的关系网</span><button class="btn-add" id="addRelBtn">+ 添加关系</button></div><div id="relList"></div><div class="modal-actions"><button class="btn-cancel" id="cancelBtn">取消</button><button class="btn-save" id="saveBtn">保存</button></div></div></div>
-<div class="modal" id="teacherModal"><div class="modal-box teacher-modal-box"><button class="close-btn" id="closeTeacherModal">✕</button><h3>🎓 老师主页</h3><div class="teacher-modal-head"><div class="teacher-modal-avatar" id="tmAvatar">👩‍🏫</div><div class="teacher-modal-info"><input type="text" class="teacher-input-name" id="tmName" placeholder="老师姓名"><input type="text" class="teacher-input-subject" id="tmSubject" placeholder="科目 / 职务"></div></div><div class="field"><label>简介</label><textarea id="tmIntro"></textarea></div><div class="teacher-gift-stats"><div class="gift-stat"><span class="gift-stat-emoji">🌸</span><span class="gift-stat-count" id="tmFlowers">0</span><span class="gift-stat-label">朵花</span></div><div class="gift-stat"><span class="gift-stat-emoji">❤️</span><span class="gift-stat-count" id="tmHearts">0</span><span class="gift-stat-label">颗爱心</span></div></div><div class="gift-buttons"><button class="gift-btn gift-btn-flower" id="sendFlowerBtn"><span class="gift-btn-emoji">💐</span><span>送一束花</span></button><button class="gift-btn gift-btn-heart" id="sendHeartBtn"><span class="gift-btn-emoji">💖</span><span>送爱心</span></button></div><div class="modal-actions"><button class="btn-cancel" id="cancelTeacherBtn">取消</button><button class="btn-save" id="saveTeacherBtn">保存</button></div></div></div>
+
 <div class="modal" id="wishModal"><div class="modal-box wish-modal-box"><button class="close-btn" id="closeWishModal">✕</button><h3>✨ 许一个愿</h3><div class="field"><label>选一个 emoji</label><div class="emoji-picker" id="emojiPicker"></div></div><div class="field"><label>写点什么…</label><textarea id="wishText" maxlength="60" placeholder="比如：希望毕业前能和大家一起去看一次海。"></textarea><div class="char-count"><span id="wishCharCount">0</span>/60</div></div><label class="anon-check"><input type="checkbox" id="wishAnon"> 匿名发布（不显示我的名字）</label><div class="modal-actions"><button class="btn-cancel" id="cancelWishBtn">取消</button><button class="btn-save" id="publishWishBtn">贴上墙</button></div></div></div>
+
 <div class="modal" id="authModal"><div class="modal-box auth-modal-box"><button class="close-btn" id="closeAuthModal">✕</button><h3 id="authTitle">👋 登录</h3><div class="auth-tabs"><button class="auth-tab active" data-tab="login">登录</button><button class="auth-tab" data-tab="register">注册</button></div><div class="field"><label>我是谁</label><select id="authPerson"></select></div><div class="field"><label>密码</label><input type="password" id="authPassword" placeholder="随便设一个，记住就行" autocomplete="new-password"></div><div class="auth-msg" id="authMsg"></div><div class="modal-actions"><button class="btn-cancel" id="cancelAuthBtn">取消</button><button class="btn-save" id="authSubmitBtn">登录</button></div><div class="auth-hint">💡 密码忘记可以找管理员重置</div></div></div>
+
 <div class="modal" id="fulfillModal"><div class="modal-box"><button class="close-btn" id="closeFulfillModal">✕</button><h3>🎉 还愿</h3><div class="field"><label>想说什么？（可选）</label><textarea id="fulfillNote" maxlength="60" placeholder="比如：真的做到了！谢谢大家的鼓励～"></textarea></div><div class="modal-actions"><button class="btn-cancel" id="cancelFulfillBtn">取消</button><button class="btn-save" id="confirmFulfillBtn">确认已实现</button></div></div></div>
+
 <div class="modal" id="likeListModal"><div class="modal-box"><button class="close-btn" id="closeLikeListModal">✕</button><h3>❤️ 点赞的人</h3><div class="like-list" id="likeListBox"></div></div></div>
+
 <div class="modal" id="tlEditModal"><div class="modal-box"><button class="close-btn" id="closeTlEditModal">✕</button><h3 id="tlEditHeading">➕ 添加记录</h3>
 <div class="field"><label>选择类型</label>
 <div class="tl-type-row" id="tlTypeRow">
@@ -984,25 +875,37 @@ body{margin:0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;c
 <div class="modal-actions"><button class="btn-cancel" id="cancelTlEditBtn">取消</button><button class="btn-save" id="confirmTlEditBtn">保存</button></div>
 <div class="upload-tip">💡 谁都可以编辑和删除时间轴上的记录</div>
 </div></div>
+
+<div class="modal" id="qzRulesModal"><div class="modal-box"><button class="close-btn" id="closeQzRulesModal">✕</button><h3>🎯 默契大考验 · 规则</h3><div class="qz-rules-content" id="qzRulesContent"></div><div class="modal-actions"><button class="btn-cancel" id="qzEditRulesBtn">✏️ 编辑规则</button><button class="btn-save" id="qzRulesOkBtn">我知道了</button></div></div></div>
+
+<div class="modal" id="qzRulesEditModal"><div class="modal-box"><button class="close-btn" id="closeQzRulesEditModal">✕</button><h3>✏️ 编辑规则</h3><div class="field"><label>规则内容（换行保留）</label><textarea id="qzRulesEditText" style="min-height:200px"></textarea></div><div class="modal-actions"><button class="btn-cancel" id="qzRulesEditCancelBtn">取消</button><button class="btn-save" id="qzRulesEditSaveBtn">保存</button></div></div></div>
+
+<div class="modal" id="qzCreateModal"><div class="modal-box"><button class="close-btn" id="closeQzCreateModal">✕</button><h3>➕ 出一道题</h3>
+<div class="field"><label>题目</label><input type="text" id="qzQuestionInput" maxlength="40" placeholder="比如：班上谁最爱睡觉？"></div>
+<div class="field"><label>选项（从班级名单里选，不设上限）</label><div class="qz-editor-options" id="qzEditorOptions"></div><button type="button" class="qz-add-opt" id="qzAddOptBtn">+ 添加一个选项</button></div>
+<div class="upload-msg" id="qzCreateMsg"></div>
+<div class="modal-actions"><button class="btn-cancel" id="qzCreateCancelBtn">取消</button><button class="btn-save" id="qzCreateConfirmBtn">发布</button></div>
+</div></div>
+
 <div class="modal guide-modal" id="guideModal"><div class="guide-box"><div class="guide-title">🌟 欢迎来到六年二班主页</div><div class="guide-sub">第一次来？先看看这里都能做什么吧</div><div class="guide-list">
 <div class="guide-item"><span class="guide-item-emoji">🏠</span><div class="guide-item-body"><div class="guide-item-name">首页</div><div class="guide-item-desc">班级名称和简介，点击文字就能直接编辑，自动保存。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">📢</span><div class="guide-item-body"><div class="guide-item-name">公告</div><div class="guide-item-desc">班级重要通知发布在这里。只有管理员才能编辑。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🕰️</span><div class="guide-item-body"><div class="guide-item-name">班级时间轴</div><div class="guide-item-desc">热梗、图片、小事件、大事件都能记录，横向拖动查看，谁都可以编辑。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">🕸️</span><div class="guide-item-body"><div class="guide-item-name">关系网</div><div class="guide-item-desc">所有人的关系连成一张网，线的粗细代表关系亲密度。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">👥</span><div class="guide-item-body"><div class="guide-item-name">班级成员</div><div class="guide-item-desc">气泡展示全班同学和老师，点击可以查看/编辑资料。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">🏆</span><div class="guide-item-body"><div class="guide-item-name">个人加分</div><div class="guide-item-desc">给表现好的同学加分，自动生成排行榜和加分记录。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">🎓</span><div class="guide-item-body"><div class="guide-item-name">老师</div><div class="guide-item-desc">给老师送花🌷或爱心❤️，会飘出动画哦。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">👥</span><div class="guide-item-body"><div class="guide-item-name">班级成员</div><div class="guide-item-desc">气泡展示全班同学，点击可以查看/编辑资料。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">✨</span><div class="guide-item-body"><div class="guide-item-name">许愿墙</div><div class="guide-item-desc">许下心愿、点赞、还愿。需要先注册登录。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">⏳</span><div class="guide-item-body"><div class="guide-item-name">倒计时</div><div class="guide-item-desc">距离下一个节日还有多少天，精确到秒。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">💬</span><div class="guide-item-body"><div class="guide-item-name">私信</div><div class="guide-item-desc">和同学一对一聊天。登录后可用，聊天不会出现在动态里。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">🎯</span><div class="guide-item-body"><div class="guide-item-name">默契大考验</div><div class="guide-item-desc">全班一起玩的选择题，看大家有多默契。谁都能出题、答题，出题人可以揭晓答案。</div></div></div>
 <div class="guide-item"><span class="guide-item-emoji">💌</span><div class="guide-item-body"><div class="guide-item-name">意见箱</div><div class="guide-item-desc">有什么想法，悄悄写下来吧。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">📋</span><div class="guide-item-body"><div class="guide-item-name">动态</div><div class="guide-item-desc">谁加分了、谁许愿了、谁改了资料……这里都能看到。</div></div></div>
-<div class="guide-item"><span class="guide-item-emoji">👑</span><div class="guide-item-body"><div class="guide-item-name">管理面板</div><div class="guide-item-desc">只有管理员可见。可以管账号、重置密码、查看私信。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">📋</span><div class="guide-item-body"><div class="guide-item-name">动态</div><div class="guide-item-desc">谁许愿了、谁改了资料……这里都能看到。</div></div></div>
+<div class="guide-item"><span class="guide-item-emoji">👑</span><div class="guide-item-body"><div class="guide-item-name">管理面板</div><div class="guide-item-desc">只有管理员可见。可以管账号、重置密码。</div></div></div>
 </div>
 <div class="guide-tip">💡 <b>小提示</b><br>· 很多地方（首页文字、公告、同学名字）可以直接点击编辑<br>· 所有改动会自动同步到云端，所有人看到的是同一份数据<br>· 密码忘记可以找管理员重置</div>
 <div class="guide-actions"><button class="guide-btn guide-btn-ghost" id="guideNeverBtn">不再显示</button><button class="guide-btn guide-btn-primary" id="guideOkBtn">我知道了</button></div>
 </div></div>
+
 <div class="modal gate-modal open" id="gateModal"><div class="modal-box gate-box" id="gateBox"><span class="gate-icon">🔐</span><h3>请输入访问密码</h3><div class="gate-sub">本页面仅限本班同学访问</div><div class="field"><input type="password" id="gatePassword" maxlength="20" placeholder="· · · ·" autocomplete="off" inputmode="numeric"></div><div class="gate-msg" id="gateMsg"></div><div class="modal-actions"><button class="btn-save" id="gateSubmitBtn">进 入</button></div><div class="gate-hint">💡 密码找班长要哦</div></div></div>
+
 <script>
 /* ================= Gitee 配置 ================= */
 const GITEE_OWNER='wxz33h';
@@ -1020,7 +923,7 @@ async function cloudInit(){
   try{
     const res=await fetch(GITEE_API+'?access_token='+GITEE_TOKEN+'&t='+Date.now());
     if(res.status===404){
-      dataCache={people:buildPeople(),home:{...HOME_DEFAULT},score:{scores:{},records:[]},teachers:BASE_TEACHERS.map(t=>({...t})),wishes:[],accounts:[],logs:[],timeline:[],messages:[],feedback:[]};
+      dataCache={people:buildPeople(),home:{...HOME_DEFAULT},accounts:[],logs:[],wishes:[],timeline:[],feedback:[],quiz:[],quizRules:QUIZ_RULES_DEFAULT,quizCurrentIdx:null};
       fileSha=null;cloudReady=true;setSync('🔄 初始化…','#fbbf24');
       await cloudPush(true);
     }else if(res.ok){
@@ -1028,8 +931,9 @@ async function cloudInit(){
       dataCache=JSON.parse(b64Decode(json.content));cloudReady=true;
       if(!Array.isArray(dataCache.logs))dataCache.logs=[];
       if(!Array.isArray(dataCache.timeline))dataCache.timeline=[];
-      if(!Array.isArray(dataCache.messages))dataCache.messages=[];
       if(!Array.isArray(dataCache.feedback))dataCache.feedback=[];
+      if(!Array.isArray(dataCache.quiz))dataCache.quiz=[];
+      if(typeof dataCache.quizRules!=='string')dataCache.quizRules=QUIZ_RULES_DEFAULT;
       setSync('🟢 已同步','#86efac');
     }else{setSync('❌ 连接失败','#fca5a5')}
   }catch(e){console.error(e);setSync('❌ 连接失败','#fca5a5')}
@@ -1065,23 +969,25 @@ async function cloudPoll(){
     fileSha=json.sha;
     dataCache=JSON.parse(b64Decode(json.content));
     if(!Array.isArray(dataCache.timeline))dataCache.timeline=[];
-    if(!Array.isArray(dataCache.messages))dataCache.messages=[];
     if(!Array.isArray(dataCache.feedback))dataCache.feedback=[];
+    if(!Array.isArray(dataCache.quiz))dataCache.quiz=[];
+    if(typeof dataCache.quizRules!=='string')dataCache.quizRules=QUIZ_RULES_DEFAULT;
     applyCacheToState();
     refreshAllUI();
     setSync('🟢 已同步（有新更新）','#86efac');
   }catch(e){}
 }
+
 /* ================= 基础数据 ================= */
 const HOME_DEFAULT={className:'六年二班',schoolName:'北京邮电大学附属小学',intro:'六年二班是一个温暖又热闹的大家庭。我们在这里一起读书、一起运动、一起长大。\n\n北邮附小见证着我们的每一次进步，每一张笑脸都是班级最珍贵的风景。愿我们永远保持好奇与热爱，把这段时光写成最棒的故事。',notice:'欢迎来到六年二班主页！这里会发布班级的重要通知。'};
+const QUIZ_RULES_DEFAULT='🎯 默契大考验 · 怎么玩？\n\n1. 谁都能出题，从班级名单里选出候选同学当选项。\n2. 每期一道题，全班每人只能投 1 票。\n3. 投票是匿名的，投完看不到别人投给谁。\n4. 出题人觉得差不多了，点「揭晓答案」，票数分布就会公布。\n5. 得票最高的人获胜，看看大家是不是心有灵犀吧！\n\n💡 可以在右上角「📖 规则」里编辑这段说明。';
 const COLORS=['#c4b5fd','#e9d5ff','#f0abfc','#ddd6fe','#d8b4fe','#a78bfa','#f5d0fe','#c084fc','#e879f9','#ede9fe'];
 const BASE=[{id:'p1',name:'林小雨',emoji:'🌧️',intro:'喜欢下雨天和耳机里的歌，\n画画是我和世界说话的方式。',tags:['画画','民谣','猫']},{id:'p2',name:'陈子航',emoji:'⚽',intro:'球场上的位置：哪里缺人补哪里。',tags:['足球','篮球','熬夜']},{id:'p3',name:'苏念',emoji:'📚',intro:'看书很快，写字很慢。',tags:['阅读','写作','历史']},{id:'p4',name:'王浩',emoji:'🎮',intro:'每天上分一小时（实际三小时）。',tags:['游戏','编程','B站']},{id:'p5',name:'李思远',emoji:'🎸',intro:'吉他初学者，弹得最好的是《晴天》。',tags:['吉他','唱歌','周杰伦']},{id:'p6',name:'周佳怡',emoji:'🍰',intro:'甜品鉴赏家，兼职数学课代表。',tags:['烘焙','数学','奶茶']},{id:'p7',name:'赵一鸣',emoji:'🏀',intro:'身高是优势，投篮是玄学。',tags:['篮球','球鞋','说唱']},{id:'p8',name:'孙悦',emoji:'🎬',intro:'电影看得比作业多。',tags:['电影','摄影','剪辑']},{id:'p9',name:'吴桐',emoji:'🌱',intro:'养了七盆多肉，活下来三盆。',tags:['植物','手工','安静']},{id:'p10',name:'郑亦然',emoji:'🐱',intro:'猫派，坚定不移。',tags:['猫','画画','二次元']},{id:'p11',name:'刘星宇',emoji:'🚀',intro:'想造火箭，先从物理及格开始。',tags:['物理','天文','科幻']},{id:'p12',name:'何雨薇',emoji:'🎹',intro:'钢琴十级，最近在学即兴。',tags:['钢琴','古典乐','日语']},{id:'p13',name:'马小跳',emoji:'🏃',intro:'课间十分钟能跑三圈操场。',tags:['跑步','田径','活力']},{id:'p14',name:'许安然',emoji:'☕',intro:'安静地待在角落，偶尔说一句很好笑的话。',tags:['咖啡','手账','独立音乐']},{id:'p15',name:'高一诺',emoji:'🎨',intro:'美术生，随时在速写本上涂涂画画。',tags:['美术','设计','展览']},{id:'p16',name:'黄子豪',emoji:'🍜',intro:'学校周边美食活地图。',tags:['美食','探店','相声']},{id:'p17',name:'徐一诺',emoji:'🎭',intro:'话剧社主力，最喜欢扮演反派。',tags:['话剧','表演','配音']},{id:'p18',name:'曹雨欣',emoji:'🌸',intro:'喜欢春天，也喜欢所有粉色的东西。',tags:['春天','粉色','手工']},{id:'p19',name:'沈嘉树',emoji:'🌳',intro:'立志把教室窗台的绿植养活。',tags:['植物','环保','徒步']},{id:'p20',name:'韩雪',emoji:'❄️',intro:'冬天出生的，所以不怕冷。',tags:['滑雪','阅读','安静']},{id:'p21',name:'唐子墨',emoji:'🖋️',intro:'字写得还不错，可以帮同学抄笔记。',tags:['书法','写作','历史']},{id:'p22',name:'顾念',emoji:'🍀',intro:'运气型选手，考试全靠蒙对。',tags:['幸运','游戏','音乐']},{id:'p23',name:'程宇航',emoji:'🛰️',intro:'航天迷，梦想去酒泉看一次发射。',tags:['航天','天文','科幻']},{id:'p24',name:'卢佳琪',emoji:'🎤',intro:'唱歌跑调，但热情不减。',tags:['唱歌','K歌','综艺']},{id:'p25',name:'蒋子涵',emoji:'🏊',intro:'夏天最期待的就是游泳课。',tags:['游泳','运动','夏天']},{id:'p26',name:'宋雨桐',emoji:'🌈',intro:'喜欢雨后的天空和棉花糖。',tags:['彩虹','甜品','画画']},{id:'p27',name:'方启铭',emoji:'⚡',intro:'做什么都很快，除了写作业。',tags:['游戏','运动','熬夜']},{id:'p28',name:'秦悦',emoji:'🎻',intro:'学小提琴四年，还在和音准斗争。',tags:['小提琴','古典乐','阅读']},{id:'p29',name:'丁一',emoji:'📖',intro:'名字笔画最少，作业写得最多。',tags:['阅读','写作','历史']},{id:'p30',name:'罗子谦',emoji:'🎯',intro:'射箭社团成员，专注力满分。',tags:['射箭','专注','运动']},{id:'p31',name:'谢婉清',emoji:'🍵',intro:'喜欢喝茶和安静的下午。',tags:['茶道','安静','阅读']},{id:'p32',name:'崔博文',emoji:'🧩',intro:'拼图爱好者，一千片起步。',tags:['拼图','解谜','手工']},{id:'p33',name:'潘星辰',emoji:'✨',intro:'喜欢看星星，也喜欢看漫画。',tags:['天文','漫画','幻想']},{id:'p34',name:'汪雨萌',emoji:'🐰',intro:'养了两只兔子，一只叫团子一只叫汤圆。',tags:['兔子','萌宠','手工']},{id:'p35',name:'石天佑',emoji:'🏔️',intro:'暑假跟爸妈爬过泰山，全程没哭。',tags:['爬山','户外','旅行']},{id:'p36',name:'龚心悦',emoji:'💖',intro:'喜欢所有可爱的东西。',tags:['可爱','手账','甜品']},{id:'p37',name:'白泽宇',emoji:'🦉',intro:'博学多识，但考试总粗心。',tags:['百科','历史','科学']},{id:'p38',name:'钟灵',emoji:'🌙',intro:'晚上精神最好，白天永远没睡醒。',tags:['熬夜','写作','音乐']},{id:'p39',name:'严子轩',emoji:'🎧',intro:'耳机不离身，歌单比作业长。',tags:['音乐','耳机','电竞']},{id:'p40',name:'熊思远',emoji:'🌊',intro:'喜欢大海，也喜欢一切蓝色。',tags:['大海','游泳','蓝色']},{id:'p41',name:'孔令仪',emoji:'🎀',intro:'发饰收藏家，今天也是蝴蝶结。',tags:['发饰','可爱','手作']},{id:'p42',name:'温子瑜',emoji:'🍭',intro:'甜食爱好者，糖果分你一半。',tags:['甜品','分享','画画']},{id:'p43',name:'尹嘉树',emoji:'🌲',intro:'喜欢森林和一切绿色的东西。',tags:['自然','徒步','摄影']},{id:'p44',name:'叶知秋',emoji:'🍂',intro:'捡秋叶，抄好句，写很短的诗。',tags:['写诗','秋天','民谣']},{id:'p45',name:'江照月',emoji:'🌊',intro:'想沿着海岸线走一遍，把每片海都拍下来。',tags:['大海','摄影','旅行']}];
 const BASE_RELATIONS=[];
-const BASE_TEACHERS=[{id:'t1',name:'王老师',emoji:'👩‍🏫',subject:'语文',intro:'教我们读书写字，也教我们做一个温柔而坚定的人。',color:'#a78bfa',flowers:0,hearts:0},{id:'t2',name:'李老师',emoji:'👨‍🏫',subject:'数学',intro:'黑板上写满公式，心里装满对我们的期待。',color:'#f0abfc',flowers:0,hearts:0},{id:'t3',name:'张老师',emoji:'👩‍🔬',subject:'英语',intro:'一口流利的英语，带我们看见更大的世界。',color:'#c4b5fd',flowers:0,hearts:0},{id:'t4',name:'刘老师',emoji:'🧑‍🏫',subject:'班主任',intro:'班里大大小小的事，都是她在操心。',color:'#e879f9',flowers:0,hearts:0},{id:'t5',name:'赵老师',emoji:'🧑‍🎤',subject:'音乐',intro:'琴键上跳动的音符，是他送给我们的礼物。',color:'#d8b4fe',flowers:0,hearts:0},{id:'t6',name:'孙老师',emoji:'🎨',subject:'美术',intro:'调色盘里装着整个世界的颜色。',color:'#c084fc',flowers:0,hearts:0}];
-const MEDALS=[{icon:'🥉',name:'铜牌',need:5,color:'#d97706'},{icon:'🥈',name:'银牌',need:15,color:'#cbd5e1'},{icon:'🥇',name:'金牌',need:30,color:'#fbbf24'},{icon:'💎',name:'钻石',need:50,color:'#67e8f9'},{icon:'👑',name:'传说',need:100,color:'#f0abfc'}];
 const FESTIVALS=[{name:'元旦',icon:'🎉',month:1,day:1,color:'#a78bfa'},{name:'儿童节',icon:'🎈',month:6,day:1,color:'#f0abfc'},{name:'劳动节',icon:'💪',month:5,day:1,color:'#86efac'},{name:'国庆节',icon:'🇨🇳',month:10,day:1,color:'#fca5a5'},{name:'圣诞节',icon:'🎄',month:12,day:25,color:'#67e8f9'}];
 const WISH_COLORS=['#fde68a','#fbcfe8','#bfdbfe','#bbf7d0','#fed7aa','#ddd6fe','#fecaca','#a5f3fc','#fef08a','#e9d5ff','#c7d2fe','#fbcfe8'];
 const WISH_EMOJIS=['🌠','⭐','🌈','🍀','💫','✨','🌙','🎈','🌻','🦋','🍭','🎯'];
+
 /* ================= 工具 ================= */
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function toHex(c){if(!c)return '#c4b5fd';if(/^#[0-9a-f]{6}$/i.test(c))return c;const m=c.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);if(m)return '#'+[1,2,3].map(i=>(+m[i]).toString(16).padStart(2,'0')).join('');return '#c4b5fd'}
@@ -1089,27 +995,27 @@ function formatFullTime(ts){const d=new Date(ts);return d.getFullYear()+'-'+Stri
 function formatTime(ts){const d=new Date(ts),now=new Date(),diff=now-d;if(diff<60000)return '刚刚';if(diff<3600000)return Math.floor(diff/60000)+' 分钟前';const today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),thatDay=new Date(d.getFullYear(),d.getMonth(),d.getDate()),dayDiff=Math.round((today-thatDay)/86400000),hh=String(d.getHours()).padStart(2,'0'),mm=String(d.getMinutes()).padStart(2,'0'),ss=String(d.getSeconds()).padStart(2,'0');if(dayDiff===0)return '今天 '+hh+':'+mm+':'+ss;if(dayDiff===1)return '昨天 '+hh+':'+mm+':'+ss;return (d.getMonth()+1)+'月'+d.getDate()+'日 '+hh+':'+mm+':'+ss}
 function dateToDisplay(str){if(!str)return '日期未知';const m=String(str).match(/^(\d{4})-(\d{2})-(\d{2})$/);if(!m)return str;return m[1]+'年'+parseInt(m[2],10)+'月'+parseInt(m[3],10)+'日'}
 function todayStr(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+
 /* ================= 状态 ================= */
 const state={people:[],currentId:null};
-const scoreState={scores:{},records:[]};
-let teachers=[],searchKeyword='',editingId=null,editingTeacherId=null;
+let searchKeyword='',editingId=null;
 let countdownTimer=null,currentFestivalIndex=0;
 let accounts=[],currentUser=null,wishFilter='all',wishKeyword='',currentAuthTab='login',selectedEmoji='✨',fulfillingWishId=null,openMenuEl=null;
 let netNodes=[],netEdges=[],netOrphans=[],netAnimId=null,netHoverId=null,netDragId=null,netDragOffX=0,netDragOffY=0,netHighlightId=null,netSearchKw='',netInited=false,netScale=1,netOffX=0,netOffY=0,netPanning=false,netPanStartX=0,netPanStartY=0;
-let currentMsgTarget=null;
+let tlFilter='all',tlEditType='image',tlEditingId=null,tlEditImageData=null;
+let qzPeriodIdx=null;
+let qzEditorOptions=[];
 function buildPeople(){const people=BASE.map((p,i)=>({...p,color:COLORS[i%COLORS.length],relations:{}}));const map=Object.fromEntries(people.map(p=>[p.id,p]));for(const [a,b,label,strength] of BASE_RELATIONS){if(map[a]&&map[b]){map[a].relations[b]={label,strength};map[b].relations[a]={label,strength}}}return people}
 function applyCacheToState(){
   if(!dataCache)return;
   state.people=dataCache.people||buildPeople();
-  scoreState.scores=dataCache.score?.scores||{};
-  scoreState.records=dataCache.score?.records||[];
-  teachers=dataCache.teachers||BASE_TEACHERS.map(t=>({...t}));
   if(!Array.isArray(dataCache.wishes))dataCache.wishes=[];
   if(!Array.isArray(dataCache.accounts))dataCache.accounts=[];
   if(!Array.isArray(dataCache.logs))dataCache.logs=[];
   if(!Array.isArray(dataCache.timeline))dataCache.timeline=[];
-  if(!Array.isArray(dataCache.messages))dataCache.messages=[];
   if(!Array.isArray(dataCache.feedback))dataCache.feedback=[];
+  if(!Array.isArray(dataCache.quiz))dataCache.quiz=[];
+  if(typeof dataCache.quizRules!=='string')dataCache.quizRules=QUIZ_RULES_DEFAULT;
   accounts=dataCache.accounts;
   const uid=localStorage.getItem('class_wish_userId');
   currentUser=uid?accounts.find(a=>a.id===uid)||null:null;
@@ -1117,24 +1023,21 @@ function applyCacheToState(){
 function syncToCache(){
   if(!dataCache)return;
   dataCache.people=state.people;
-  dataCache.score={scores:scoreState.scores,records:scoreState.records};
-  dataCache.teachers=teachers;
   dataCache.wishes=dataCache.wishes||[];
   dataCache.accounts=accounts;
   dataCache.logs=dataCache.logs||[];
   dataCache.timeline=dataCache.timeline||[];
-  dataCache.messages=dataCache.messages||[];
   dataCache.feedback=dataCache.feedback||[];
+  dataCache.quiz=dataCache.quiz||[];
+  dataCache.quizRules=dataCache.quizRules||QUIZ_RULES_DEFAULT;
 }
 function saveData(){syncToCache();cloudPush()}
-function saveScore(){syncToCache();cloudPush()}
-function saveTeachers(){syncToCache();cloudPush()}
 function saveHomeData(d){if(!dataCache)return;dataCache.home=d;cloudPush()}
 function saveTimeline(){syncToCache();cloudPush()}
-function saveMessages(){syncToCache();cloudPush()}
 function saveFeedback(){syncToCache();cloudPush()}
 function saveAuth(){syncToCache();cloudPush()}
 function saveWishes(){syncToCache();cloudPush()}
+function saveQuiz(){syncToCache();cloudPush()}
 
 /* ================= 密码门 ================= */
 const GATE_PASSWORD='202102';
@@ -1255,10 +1158,6 @@ function compressImage(file,callback){
 }
 
 /* ================= 班级时间轴 ================= */
-let tlFilter='all';
-let tlEditType='image';
-let tlEditingId=null;
-let tlEditImageData=null;
 const TL_TYPES={
   meme:{icon:'🔥',label:'热梗',color:'#fbbf24'},
   image:{icon:'📷',label:'图片',color:'#a78bfa'},
@@ -1460,119 +1359,210 @@ function deleteTimelineItem(id){
   if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
 }
 
-/* ================= 私信 ================= */
-function renderMessages(){
-  const body=document.getElementById('msgBody');
-  if(!body)return;
-  if(!currentUser){
-    body.innerHTML=
-      '<div class="msg-locked" style="grid-column:1/-1">'+
-        '<span class="ico">🔒</span>'+
-        '<p>请先登录才能使用私信功能<br>（名字从班级名单里选，别人不会看到你的密码）</p>'+
-        '<button class="btn-save" id="msgLoginBtn" style="padding:12px 30px;border-radius:12px;cursor:pointer;border:none;font-family:inherit;font-weight:800;color:#fff;background:linear-gradient(120deg,#7c3aed,#c026d3)">登录 / 注册</button>'+
-      '</div>';
-    const lb=document.getElementById('msgLoginBtn');
-    if(lb)lb.addEventListener('click',()=>openAuthModal('login'));
+/* ================= 默契大考验 ================= */
+function getQuizList(){return (dataCache&&Array.isArray(dataCache.quiz))?dataCache.quiz:[]}
+function renderQuiz(){
+  if(!dataCache){return}
+  const tabsEl=document.getElementById('qzPeriodTabs');
+  const mainEl=document.getElementById('qzMain');
+  if(!tabsEl||!mainEl)return;
+  const list=getQuizList();
+  if(!list.length){
+    tabsEl.innerHTML='';
+    mainEl.innerHTML='<div class="qz-empty"><span class="ico">🎯</span><p>还没有任何题目</p><p style="font-size:12px;color:var(--text-muted)">点右上角「➕ 出题」第一个来吧~</p></div>';
     return;
   }
-  const otherCount=accounts.filter(a=>a.id!==currentUser.id).length;
-  body.innerHTML=
-    '<aside class="msg-sidebar">'+
-      '<div class="msg-side-title">选择联系人 <span class="net-count">'+otherCount+'</span></div>'+
-      '<input type="text" id="msgSearch" class="msg-side-search" placeholder="🔍 搜索同学…">'+
-      '<div class="msg-contacts" id="msgContacts"></div>'+
-    '</aside>'+
-    '<div class="msg-main" id="msgMain"></div>';
-  const searchEl=document.getElementById('msgSearch');
-  if(searchEl)searchEl.addEventListener('input',renderContactList);
-  renderContactList();
-  if(currentMsgTarget&&accounts.find(a=>a.id===currentMsgTarget)){
-    renderConversation();
-  }else{
-    currentMsgTarget=null;
-    const m=document.getElementById('msgMain');
-    if(m)m.innerHTML='<div class="msg-thread-empty" style="height:100%"><span class="ico">💬</span>选择左侧联系人开始聊天</div>';
+  if(qzPeriodIdx===null||qzPeriodIdx<0||qzPeriodIdx>=list.length){
+    qzPeriodIdx=list.length-1;
   }
-}
-function renderContactList(){
-  const list=document.getElementById('msgContacts');
-  if(!list||!currentUser)return;
-  const kw=(document.getElementById('msgSearch')?.value||'').trim().toLowerCase();
-  const others=accounts.filter(a=>a.id!==currentUser.id);
-  const filtered=kw?others.filter(a=>a.name.toLowerCase().includes(kw)):others;
-  list.innerHTML='';
-  if(!filtered.length){list.innerHTML='<div style="padding:20px 10px;text-align:center;color:var(--text-muted);font-size:12px">没有其他联系人</div>';return}
-  filtered.forEach(acc=>{
-    const person=state.people.find(p=>p.id===acc.personId);
-    const item=document.createElement('div');
-    item.className='msg-contact';
-    if(currentMsgTarget===acc.id)item.classList.add('active');
-    item.style.setProperty('--c',person?person.color:'#a78bfa');
-    item.innerHTML=
-      '<div class="msg-contact-av">'+escapeHtml(person?(person.emoji||'🙂'):'🙂')+'</div>'+
-      '<div class="msg-contact-name">'+escapeHtml(acc.name)+(acc.role==='admin'?' 👑':'')+'</div>';
-    item.addEventListener('click',()=>{
-      currentMsgTarget=acc.id;
-      renderContactList();
-      renderConversation();
-    });
-    list.appendChild(item);
+  tabsEl.innerHTML='';
+  list.forEach((q,i)=>{
+    const b=document.createElement('button');
+    b.className='qz-period-tab'+(i===qzPeriodIdx?' active':'');
+    b.textContent='第 '+(i+1)+' 期';
+    b.onclick=()=>{qzPeriodIdx=i;renderQuiz()};
+    tabsEl.appendChild(b);
   });
-}
-function renderConversation(){
-  const main=document.getElementById('msgMain');
-  if(!main||!currentMsgTarget||!currentUser)return;
-  const target=accounts.find(a=>a.id===currentMsgTarget);
-  if(!target){main.innerHTML='';return}
-  const targetPerson=state.people.find(p=>p.id===target.personId);
-  const msgs=(dataCache.messages||[]).filter(m=>
-    (m.fromAccountId===currentUser.id&&m.toAccountId===target.id)||
-    (m.fromAccountId===target.id&&m.toAccountId===currentUser.id)
-  ).sort((a,b)=>(a.time||0)-(b.time||0));
-  main.innerHTML=
-    '<div class="msg-main-head">'+
-      '<div class="mh-av" style="--c:'+escapeHtml(targetPerson?targetPerson.color:'#a78bfa')+'">'+escapeHtml(targetPerson?(targetPerson.emoji||'🙂'):'🙂')+'</div>'+
-      '<div><div>'+escapeHtml(target.name)+(target.role==='admin'?' 👑':'')+'</div>'+
-      '<div class="mh-sub">聊天不会出现在动态里</div></div>'+
-    '</div>'+
-    '<div class="msg-thread" id="msgThread"></div>'+
-    '<div class="msg-input-bar">'+
-      '<textarea id="msgInput" placeholder="说点什么…（Enter 发送 / Shift+Enter 换行）"></textarea>'+
-      '<button class="msg-send-btn" id="msgSendBtn">发送</button>'+
+  const q=list[qzPeriodIdx];
+  const isCreator=currentUser&&q.creatorAccountId===currentUser.id;
+  const myVote=currentUser?q.votes.find(v=>v.voterAccountId===currentUser.id):null;
+  const totalVotes=q.votes.length;
+  const canReveal=isCreator&&q.status==='open';
+  const isOpen=q.status==='open';
+  mainEl.innerHTML=
+    '<div class="qz-card">'+
+      '<div class="qz-meta">'+
+        '<span class="pill">第 '+(qzPeriodIdx+1)+' 期</span>'+
+        '<span class="pill">出题人：'+escapeHtml(q.creatorName)+'</span>'+
+        '<span class="pill">'+formatTime(q.createdAt)+'</span>'+
+        (isOpen?'<span class="pill green">投票中</span>':'<span class="pill gold">已揭晓</span>')+
+      '</div>'+
+      '<h3 class="qz-question">'+escapeHtml(q.question)+'</h3>'+
+      '<div class="qz-options" id="qzOptions"></div>'+
+      '<div class="qz-status" id="qzStatus"></div>'+
+      '<div class="qz-foot" id="qzFoot"></div>'+
+      '<div class="qz-tip">💡 投票是匿名的，每人只能投 1 票</div>'+
     '</div>';
-  const thread=document.getElementById('msgThread');
-  if(!msgs.length){
-    thread.innerHTML='<div class="msg-thread-empty"><span class="ico">🌱</span>还没有聊天记录，说点什么吧~</div>';
-  }else{
-    msgs.forEach(m=>{
-      const row=document.createElement('div');
-      row.className='msg-bubble-row '+(m.fromAccountId===currentUser.id?'me':'other');
-      row.innerHTML='<div class="msg-bubble">'+escapeHtml(m.text)+'</div><div class="msg-bubble-time">'+formatTime(m.time)+'</div>';
-      thread.appendChild(row);
-    });
-    thread.scrollTop=thread.scrollHeight;
-  }
-  const input=document.getElementById('msgInput');
-  const sendBtn=document.getElementById('msgSendBtn');
-  const send=()=>{
-    const text=input.value.trim();
-    if(!text)return;
-    dataCache.messages=dataCache.messages||[];
-    dataCache.messages.push({
-      id:'msg'+Date.now()+'_'+Math.random().toString(36).slice(2,6),
-      fromAccountId:currentUser.id,fromName:currentUser.name,
-      toAccountId:target.id,toName:target.name,
-      text,time:Date.now()
-    });
-    saveMessages();
-    input.value='';
-    renderConversation();
-  };
-  sendBtn.addEventListener('click',send);
-  input.addEventListener('keydown',e=>{
-    if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}
+  const optsEl=document.getElementById('qzOptions');
+  const counts={};
+  q.options.forEach(o=>counts[o.personId]=0);
+  q.votes.forEach(v=>{if(counts[v.optionPersonId]!==undefined)counts[v.optionPersonId]++});
+  let maxCount=0;
+  q.options.forEach(o=>{if(counts[o.personId]>maxCount)maxCount=counts[o.personId]});
+  q.options.forEach(o=>{
+    const person=state.people.find(p=>p.id===o.personId);
+    const emoji=person?(person.emoji||'🙂'):'🙂';
+    const color=person?person.color:'#a78bfa';
+    const cnt=counts[o.personId];
+    const isWinner=!isOpen&&cnt===maxCount&&maxCount>0;
+    const selected=myVote&&myVote.optionPersonId===o.personId;
+    const pct=totalVotes>0?(cnt/totalVotes*100):0;
+    const div=document.createElement('div');
+    div.className='qz-option'+(selected?' selected':'')+(!isOpen?' revealed':'')+(isWinner?' winner':'');
+    div.innerHTML=
+      '<div class="qz-opt-bar" style="width:'+(isOpen?'0':pct+'%')+'"></div>'+
+      '<div class="qz-opt-radio"></div>'+
+      '<div class="qz-opt-av" style="--c:'+escapeHtml(color)+'">'+escapeHtml(emoji)+'</div>'+
+      '<div class="qz-opt-name">'+escapeHtml(person?person.name:'(已删除)')+'</div>'+
+      (isOpen?'':(isWinner?'<div class="qz-opt-crown">👑</div>':'')+'<div class="qz-opt-count">'+cnt+' 票</div>')+
+      '';
+    if(isOpen){
+      div.onclick=()=>{
+        if(!currentUser){openAuthModal('login');return}
+        if(myVote)return;
+        q.votes.push({voterAccountId:currentUser.id,voterName:currentUser.name,optionPersonId:o.personId,time:Date.now()});
+        saveQuiz();
+        addLog('🎯','在默契大考验里投了一票');
+        renderQuiz();
+      };
+    }
+    optsEl.appendChild(div);
   });
-  input.focus();
+  const statusEl=document.getElementById('qzStatus');
+  if(isOpen){
+    if(myVote){
+      statusEl.innerHTML='✅ 你已经投过票了 · 已投票 <strong>'+totalVotes+'</strong> 人';
+    }else if(currentUser){
+      statusEl.innerHTML='已有 <strong>'+totalVotes+'</strong> 人投票 · 点击上面的选项投票';
+    }else{
+      statusEl.innerHTML='请先登录再投票';
+    }
+  }else{
+    statusEl.innerHTML='🎉 已揭晓 · 共 <strong>'+totalVotes+'</strong> 人投票';
+  }
+  const footEl=document.getElementById('qzFoot');
+  footEl.innerHTML='';
+  if(canReveal){
+    const btn=document.createElement('button');
+    btn.className='qz-submit';
+    btn.textContent='揭晓答案';
+    btn.onclick=()=>{
+      if(!confirm('确定揭晓答案吗？揭晓后不能再投票。'))return;
+      q.status='done';
+      q.revealedAt=Date.now();
+      saveQuiz();
+      addLog('🎯','揭晓了一期默契大考验的答案');
+      renderQuiz();
+    };
+    footEl.appendChild(btn);
+  }
+  if(isCreator){
+    const delBtn=document.createElement('button');
+    delBtn.className='qz-btn danger';
+    delBtn.textContent='🗑 删除本期';
+    delBtn.onclick=()=>{
+      if(!confirm('确定删除这一期吗？'))return;
+      dataCache.quiz.splice(qzPeriodIdx,1);
+      qzPeriodIdx=Math.min(qzPeriodIdx,dataCache.quiz.length-1);
+      saveQuiz();
+      renderQuiz();
+    };
+    footEl.appendChild(delBtn);
+  }
+}
+function openQuizRules(forceShow){
+  document.getElementById('qzRulesContent').textContent=(dataCache&&dataCache.quizRules)||QUIZ_RULES_DEFAULT;
+  document.getElementById('qzRulesModal').classList.add('open');
+}
+function closeQuizRules(){document.getElementById('qzRulesModal').classList.remove('open')}
+function openQuizRulesEdit(){
+  if(!currentUser){openAuthModal('login');return}
+  document.getElementById('qzRulesEditText').value=(dataCache&&dataCache.quizRules)||QUIZ_RULES_DEFAULT;
+  closeQuizRules();
+  document.getElementById('qzRulesEditModal').classList.add('open');
+}
+function saveQuizRulesEdit(){
+  const txt=document.getElementById('qzRulesEditText').value.trim();
+  dataCache.quizRules=txt||QUIZ_RULES_DEFAULT;
+  saveQuiz();
+  addLog('🎯','修改了默契大考验的规则');
+  document.getElementById('qzRulesEditModal').classList.remove('open');
+  setTimeout(()=>openQuizRules(true),200);
+}
+function openQuizCreate(){
+  if(!currentUser){openAuthModal('login');return}
+  document.getElementById('qzQuestionInput').value='';
+  qzEditorOptions=[null,null];
+  renderQuizEditorOptions();
+  const msg=document.getElementById('qzCreateMsg');msg.textContent='';msg.className='upload-msg';
+  document.getElementById('qzCreateModal').classList.add('open');
+}
+function renderQuizEditorOptions(){
+  const box=document.getElementById('qzEditorOptions');
+  box.innerHTML='';
+  qzEditorOptions.forEach((opt,idx)=>{
+    const row=document.createElement('div');
+    row.className='qz-editor-opt';
+    const sel=document.createElement('select');
+    sel.innerHTML='<option value="">— 选一位同学 —</option>'+state.people.map(p=>'<option value="'+p.id+'" '+(opt===p.id?'selected':'')+'>'+escapeHtml((p.emoji||'🙂')+' '+p.name)+'</option>').join('');
+    sel.onchange=()=>{qzEditorOptions[idx]=sel.value||null};
+    row.appendChild(sel);
+    const del=document.createElement('button');
+    del.className='del';
+    del.type='button';
+    del.textContent='✕';
+    del.onclick=()=>{
+      if(qzEditorOptions.length<=2){alert('至少要保留 2 个选项');return}
+      qzEditorOptions.splice(idx,1);
+      renderQuizEditorOptions();
+    };
+    row.appendChild(del);
+    box.appendChild(row);
+  });
+}
+function submitQuizCreate(){
+  const question=document.getElementById('qzQuestionInput').value.trim();
+  const msg=document.getElementById('qzCreateMsg');
+  const opts=qzEditorOptions.filter(Boolean);
+  if(!question){msg.textContent='先写个题目吧~';msg.className='upload-msg';return}
+  if(opts.length<2){msg.textContent='至少要选 2 位同学作为选项';msg.className='upload-msg';return}
+  if(new Set(opts).size!==opts.length){msg.textContent='选项里有重复的同学';msg.className='upload-msg';return}
+  const options=opts.map(id=>{
+    const p=state.people.find(x=>x.id===id);
+    return {personId:id,name:p?p.name:'',emoji:p?p.emoji:'🙂',color:p?p.color:'#a78bfa'};
+  });
+  dataCache.quiz=dataCache.quiz||[];
+  dataCache.quiz.push({
+    id:'q'+Date.now()+'_'+Math.random().toString(36).slice(2,6),
+    question,
+    options,
+    creatorAccountId:currentUser.id,
+    creatorName:currentUser.name,
+    createdAt:Date.now(),
+    status:'open',
+    revealedAt:null,
+    votes:[]
+  });
+  saveQuiz();
+  addLog('🎯','出了一期默契大考验：'+escapeHtml(question.slice(0,20))+(question.length>20?'…':''));
+  msg.className='upload-msg ok';
+  msg.textContent='✅ 已发布';
+  setTimeout(()=>{
+    document.getElementById('qzCreateModal').classList.remove('open');
+    qzPeriodIdx=dataCache.quiz.length-1;
+    renderQuiz();
+    if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
+  },400);
 }
 
 /* ================= 意见箱 ================= */
@@ -1695,8 +1685,6 @@ function switchView(name){
     dt.classList.toggle('active',!!has);
   });
   if(name==='bubbles'){requestAnimationFrame(()=>renderBubbles())}
-  else if(name==='score'){renderStudents();renderRecords();renderLeaderboard()}
-  else if(name==='teachers'){renderTeachers()}
   else if(name==='countdown'){startCountdown()}
   else if(name==='wish'){renderWishes();updateUserBtn()}
   else if(name==='network'){requestAnimationFrame(()=>initNetwork())}
@@ -1704,13 +1692,19 @@ function switchView(name){
   else if(name==='admin'){renderAdminPanel()}
   else if(name==='notice'){updateNoticePermission();renderNoticeMeta()}
   else if(name==='timeline'){renderTimeline();bindTimelineDrag()}
-  else if(name==='message'){renderMessages()}
   else if(name==='feedback'){renderFeedback()}
+  else if(name==='quiz'){
+    const shown=localStorage.getItem('class_quiz_rules_shown');
+    if(shown!=='1'){openQuizRules(true);localStorage.setItem('class_quiz_rules_shown','1')}
+    renderQuiz();
+  }
   if(name!=='countdown'&&countdownTimer){clearInterval(countdownTimer);countdownTimer=null}
   if(name!=='network'&&netAnimId){cancelAnimationFrame(netAnimId);netAnimId=null}
 }
 function renderNoticeMeta(){const meta=document.getElementById('noticeMeta');if(meta&&!meta.textContent)meta.textContent=''}
-function computeLayout(people,W,H){const n=people.length;if(!n||W<10||H<10)return[];const cx=W/2,cy=H/2,GOLDEN=2.399963,baseR=Math.max(16,Math.min(48,Math.sqrt((W*H)/(n*Math.PI*5))));const nodes=people.map((p,i)=>{const relCount=Object.keys(p.relations||{}).length;let r=baseR+Math.min(relCount,8)*1.6;if(p.isTeacher)r=r*1.7;const ang=i*GOLDEN,rad=Math.sqrt((i+0.5)/n)*Math.min(W,H)*0.42;return{id:p.id,r,x:cx+Math.cos(ang)*rad,y:cy+Math.sin(ang)*rad}});for(let it=0;it<420;it++){for(let i=0;i<n;i++){for(let j=i+1;j<n;j++){const a=nodes[i],b=nodes[j];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||0.01;const minD=a.r+b.r+8;if(d<minD){const push=(minD-d)/2,ux=dx/d,uy=dy/d;a.x-=ux*push;a.y-=uy*push;b.x+=ux*push;b.y+=uy*push}}}for(const nd of nodes){nd.x+=(cx-nd.x)*0.012;nd.y+=(cy-nd.y)*0.012}}for(const nd of nodes){nd.x=Math.max(nd.r+4,Math.min(W-nd.r-4,nd.x));nd.y=Math.max(nd.r+4,Math.min(H-nd.r-4,nd.y))}return nodes}
+
+/* ================= 气泡 ================= */
+function computeLayout(people,W,H){const n=people.length;if(!n||W<10||H<10)return[];const cx=W/2,cy=H/2,GOLDEN=2.399963,baseR=Math.max(16,Math.min(48,Math.sqrt((W*H)/(n*Math.PI*5))));const nodes=people.map((p,i)=>{const relCount=Object.keys(p.relations||{}).length;let r=baseR+Math.min(relCount,8)*1.6;const ang=i*GOLDEN,rad=Math.sqrt((i+0.5)/n)*Math.min(W,H)*0.42;return{id:p.id,r,x:cx+Math.cos(ang)*rad,y:cy+Math.sin(ang)*rad}});for(let it=0;it<420;it++){for(let i=0;i<n;i++){for(let j=i+1;j<n;j++){const a=nodes[i],b=nodes[j];let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||0.01;const minD=a.r+b.r+8;if(d<minD){const push=(minD-d)/2,ux=dx/d,uy=dy/d;a.x-=ux*push;a.y-=uy*push;b.x+=ux*push;b.y+=uy*push}}}for(const nd of nodes){nd.x+=(cx-nd.x)*0.012;nd.y+=(cy-nd.y)*0.012}}for(const nd of nodes){nd.x=Math.max(nd.r+4,Math.min(W-nd.r-4,nd.x));nd.y=Math.max(nd.r+4,Math.min(H-nd.r-4,nd.y))}return nodes}
 const stage=document.getElementById('stage');
 function renderBubbles(){
   if(!stage)return;
@@ -1719,13 +1713,12 @@ function renderBubbles(){
   if(W<10||H<10)return;
   const allNodes=[];
   state.people.forEach(p=>allNodes.push({...p,isTeacher:false}));
-  teachers.forEach(t=>allNodes.push({id:t.id,name:t.name,emoji:t.emoji,color:t.color,isTeacher:true,subject:t.subject||'老师',relations:{}}));
   const nodes=computeLayout(allNodes,W,H);
   nodes.forEach((node,i)=>{
     const p=allNodes.find(x=>x.id===node.id);
     if(!p)return;
     const el=document.createElement('div');
-    el.className='bubble'+(p.isTeacher?' teacher':'');
+    el.className='bubble';
     el.style.width=(node.r*2)+'px';
     el.style.height=(node.r*2)+'px';
     el.style.left=(node.x-node.r)+'px';
@@ -1735,14 +1728,11 @@ function renderBubbles(){
     const emojiSize=Math.max(13,node.r*0.60),nameSize=Math.max(9,node.r*0.27);
     let inner='<span class="bub-emoji" style="font-size:'+emojiSize+'px">'+escapeHtml(p.emoji||'🙂')+'</span>';
     inner+='<span class="bub-name" style="font-size:'+nameSize+'px">'+escapeHtml(p.name)+'</span>';
-    if(p.isTeacher){inner+='<span class="bub-teacher-title">'+escapeHtml(p.subject||'老师')+'</span>'}
     el.innerHTML=inner;
-    el.addEventListener('click',()=>{if(p.isTeacher)openTeacher(p.id);else openProfile(p.id)});
+    el.addEventListener('click',()=>openProfile(p.id));
     stage.appendChild(el);
   });
 }
-function getUnlockedMedals(score){return MEDALS.map(m=>({...m,unlocked:score>=m.need}))}
-function getTopMedal(score){let top=null;for(const m of MEDALS){if(score>=m.need)top=m}return top}
 const overlay=document.getElementById('overlay');
 function openProfile(id){const p=state.people.find(x=>x.id===id);if(!p)return;state.currentId=id;renderProfile(p);overlay.classList.add('open')}
 function closeProfile(){overlay.classList.remove('open');state.currentId=null}
@@ -1751,17 +1741,8 @@ function renderProfile(p){
   document.getElementById('pName').textContent=p.name;
   document.getElementById('pTags').innerHTML=(p.tags||[]).filter(Boolean).map(t=>'<span class="tag">'+escapeHtml(t)+'</span>').join('');
   document.getElementById('pIntro').textContent=(p.intro&&p.intro.trim())?p.intro:'这个人很懒，什么都没写 ~';
-  const relCount=Object.keys(p.relations||{}).length,score=scoreState.scores[p.id]||0;
-  document.getElementById('pMeta').textContent='当前得分 '+score+' 分 · 班级关系 '+relCount+' 人 · 编号 '+(state.people.indexOf(p)+1)+' / '+state.people.length;
-  const medals=getUnlockedMedals(score);
-  document.getElementById('medalList').innerHTML=medals.map(m=>'<div class="medal-item '+(m.unlocked?'unlocked':'')+'" style="color:'+m.color+'"><span>'+m.icon+'</span><span class="medal-tip">'+m.name+' '+m.need+'分</span></div>').join('');
-  const nextMedal=MEDALS.find(m=>score<m.need);
-  const progressEl=document.getElementById('medalProgress');
-  if(nextMedal){
-    const prevNeed=MEDALS[MEDALS.indexOf(nextMedal)-1]?.need||0;
-    const progress=Math.min(100,Math.max(0,((score-prevNeed)/(nextMedal.need-prevNeed))*100));
-    progressEl.innerHTML='下一个勋章：'+nextMedal.icon+' '+nextMedal.name+'（还需 '+(nextMedal.need-score)+' 分）<div class="medal-progress-bar"><div class="medal-progress-fill" style="width:'+progress+'%"></div></div>';
-  }else{progressEl.innerHTML='🎊 已解锁全部勋章，太厉害了！'}
+  const relCount=Object.keys(p.relations||{}).length;
+  document.getElementById('pMeta').textContent='班级关系 '+relCount+' 人 · 编号 '+(state.people.indexOf(p)+1)+' / '+state.people.length;
   renderGraph(p);
 }
 function renderGraph(p){const svg=document.getElementById('relGraph'),W=500,H=480,cx=W/2,cy=232;const entries=Object.entries(p.relations||{}).map(([id,r])=>({id,label:r.label||'同学',strength:Math.max(1,Math.min(5,r.strength||3)),person:state.people.find(x=>x.id===id)})).filter(e=>e.person).slice(0,8);const defs='<defs><filter id="softShadow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#000" flood-opacity="0.45"/></filter></defs>';if(!entries.length){svg.innerHTML=defs+'<circle cx="'+cx+'" cy="'+cy+'" r="48" fill="'+p.color+'" opacity=".95" filter="url(#softShadow)"/><text x="'+cx+'" y="'+(cy-4)+'" text-anchor="middle" dominant-baseline="middle" font-size="30">'+escapeHtml(p.emoji||'🙂')+'</text><text x="'+cx+'" y="'+(cy+28)+'" text-anchor="middle" font-size="14" font-weight="800" fill="#2e1065">'+escapeHtml(p.name)+'</text><text x="'+cx+'" y="'+(cy+110)+'" text-anchor="middle" font-size="13" fill="#8b7bb8">还没有添加关系 ~</text>';return}const R=158,n=entries.length;entries.forEach((e,i)=>{const ang=-Math.PI/2+(i*2*Math.PI/n);e._x=cx+Math.cos(ang)*R;e._y=cy+Math.sin(ang)*R});let edges='';entries.forEach(e=>{const w=1+e.strength*1.7,op=0.22+e.strength*0.14;edges+='<line x1="'+cx+'" y1="'+cy+'" x2="'+e._x+'" y2="'+e._y+'" stroke="'+p.color+'" stroke-width="'+w+'" stroke-linecap="round" opacity="'+op+'"/>'});let nodesHtml='<g><circle cx="'+cx+'" cy="'+cy+'" r="50" fill="'+p.color+'" filter="url(#softShadow)"/><circle cx="'+cx+'" cy="'+cy+'" r="50" fill="none" stroke="#fff" stroke-width="3" opacity=".55"/><text x="'+cx+'" y="'+(cy-6)+'" text-anchor="middle" dominant-baseline="middle" font-size="30">'+escapeHtml(p.emoji||'🙂')+'</text><text x="'+cx+'" y="'+(cy+26)+'" text-anchor="middle" font-size="14" font-weight="800" fill="#2e1065">'+escapeHtml(p.name)+'</text></g>';entries.forEach(e=>{nodesHtml+='<g><circle cx="'+e._x+'" cy="'+e._y+'" r="30" fill="'+e.person.color+'" filter="url(#softShadow)"/><text x="'+e._x+'" y="'+(e._y-3)+'" text-anchor="middle" dominant-baseline="middle" font-size="21">'+escapeHtml(e.person.emoji||'🙂')+'</text><text x="'+e._x+'" y="'+(e._y+44)+'" text-anchor="middle" font-size="12" font-weight="800" fill="#e9d5ff">'+escapeHtml(e.person.name)+'</text><text x="'+e._x+'" y="'+(e._y+59)+'" text-anchor="middle" font-size="10" fill="#8b7bb8">'+escapeHtml(e.label)+'</text></g>'});svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML=defs+edges+nodesHtml}
@@ -1770,18 +1751,7 @@ function openEdit(){const p=state.people.find(x=>x.id===state.currentId);if(!p)r
 function closeModal(){modal.classList.remove('open');editingId=null}
 function renderRelRows(p){const list=document.getElementById('relList');list.innerHTML='';Object.entries(p.relations||{}).forEach(([id,r])=>addRelRow(id,r.label,r.strength))}
 function addRelRow(targetId,label,strength){label=label||'';strength=strength||3;const list=document.getElementById('relList'),options=state.people.filter(x=>x.id!==editingId).map(x=>'<option value="'+x.id+'" '+(x.id===targetId?'selected':'')+'>'+escapeHtml(x.emoji||'🙂')+' '+escapeHtml(x.name)+'</option>').join(''),row=document.createElement('div');row.className='rel-row';row.innerHTML='<select class="rel-person">'+options+'</select><input type="text" class="rel-label" value="'+escapeHtml(label)+'" placeholder="关系，如 同桌"><input type="range" class="rel-strength" min="1" max="5" value="'+strength+'"><button class="rel-del">✕</button>';row.querySelector('.rel-del').addEventListener('click',()=>row.remove());list.appendChild(row)}
-function saveEdit(){const p=state.people.find(x=>x.id===editingId);if(!p)return;Object.keys(p.relations||{}).forEach(oid=>{const other=state.people.find(x=>x.id===oid);if(other&&other.relations)delete other.relations[p.id]});p.name=document.getElementById('fName').value.trim()||p.name;p.emoji=document.getElementById('fEmoji').value.trim()||'🙂';p.color=document.getElementById('fColor').value;p.intro=document.getElementById('fIntro').value.trim();p.tags=document.getElementById('fTags').value.split(/[,，、]/).map(s=>s.trim()).filter(Boolean);const newRel={};let relAdded=0;document.querySelectorAll('#relList .rel-row').forEach(row=>{const tid=row.querySelector('.rel-person').value;if(!tid)return;const label=row.querySelector('.rel-label').value.trim()||'同学',strength=Number(row.querySelector('.rel-strength').value)||3;newRel[tid]={label,strength};relAdded++;const other=state.people.find(x=>x.id===tid);if(other){other.relations=other.relations||{};other.relations[p.id]={label,strength}}});p.relations=newRel;saveData();addLog('🖋️','编辑了 <span class="hl">'+escapeHtml(p.name)+'</span> 的资料，共 '+relAdded+' 个关系');renderBubbles();renderProfile(p);if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderLeaderboard()}if(document.getElementById('view-logs').classList.contains('active'))renderLogs();if(netInited){netInited=false}closeModal()}
-function addScore(studentId,delta,reason){const student=state.people.find(s=>s.id===studentId);if(!student||!delta)return;scoreState.scores[studentId]=(scoreState.scores[studentId]||0)+delta;const finalReason=(reason&&reason.trim())||(delta>0?'表现优秀':'违反纪律');scoreState.records.unshift({id:'r'+Date.now()+'_'+Math.random().toString(36).slice(2,6),studentId:student.id,studentName:student.name,delta,reason:finalReason,time:Date.now()});if(scoreState.records.length>300)scoreState.records=scoreState.records.slice(0,300);saveScore();addLog(delta>0?'🏆':'⚠️',(delta>0?'给 <span class="hl">'+escapeHtml(student.name)+'</span> 加了 <span class="hl">'+delta+'</span> 分':'给 <span class="hl">'+escapeHtml(student.name)+'</span> 扣了 <span class="hl">'+Math.abs(delta)+'</span> 分')+(reason&&reason.trim()?'（'+escapeHtml(reason.trim())+'）':''));renderStudents();renderRecords();renderLeaderboard();if(document.getElementById('view-logs').classList.contains('active'))renderLogs()}
-function undoRecord(recordId){const idx=scoreState.records.findIndex(r=>r.id===recordId);if(idx<0)return;const rec=scoreState.records[idx];scoreState.scores[rec.studentId]=(scoreState.scores[rec.studentId]||0)-rec.delta;scoreState.records.splice(idx,1);saveScore();addLog('↩️','撤销了 <span class="hl">'+escapeHtml(rec.studentName)+'</span> 的 '+((rec.delta>0?'+':'')+rec.delta)+' 分记录');renderStudents();renderRecords();renderLeaderboard();if(document.getElementById('view-logs').classList.contains('active'))renderLogs()}
-function renderStudents(){const grid=document.getElementById('studentsGrid');if(!grid)return;grid.innerHTML='';const kw=searchKeyword.trim().toLowerCase(),list=kw?state.people.filter(p=>p.name.toLowerCase().includes(kw)||(p.tags||[]).some(t=>t.toLowerCase().includes(kw))):state.people;if(!list.length){grid.innerHTML='<div class="empty-records" style="grid-column:1/-1"><span class="ico">🔍</span>没有找到匹配的同学</div>';return}list.forEach(p=>{const score=scoreState.scores[p.id]||0,card=document.createElement('div');card.className='student-card';card.style.setProperty('--c',p.color);const tagsText=(p.tags||[]).slice(0,3).join(' · ');const topMedal=getTopMedal(score);const miniMedal=topMedal?'<div class="student-mini-medal" style="color:'+topMedal.color+'" title="'+topMedal.name+'">'+topMedal.icon+'</div>':'';card.innerHTML='<div class="student-top"><div class="student-avatar">'+escapeHtml(p.emoji||'🙂')+miniMedal+'</div><div class="student-info"><span class="student-name" contenteditable="true" spellcheck="false">'+escapeHtml(p.name)+'</span><div class="student-tags">'+escapeHtml(tagsText||'—')+'</div></div></div><div class="student-score-row"><span class="student-score-label">SCORE</span><span class="student-score">'+score+'</span></div><div class="student-add"><button class="score-add-btn" data-add="1">+1</button><button class="score-add-btn" data-add="2">+2</button><button class="score-add-btn" data-add="5">+5</button><button class="score-add-btn minus" data-add="-1">−1</button><button class="score-add-btn" data-add="custom">＋?</button></div>';const nameEl=card.querySelector('.student-name');nameEl.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();nameEl.blur()}});nameEl.addEventListener('blur',()=>{const newName=nameEl.innerText.trim()||p.name;if(newName!==p.name){const old=p.name;p.name=newName;saveData();addLog('🖋️','把 <span class="hl">'+escapeHtml(old)+'</span> 的名字改为 <span class="hl">'+escapeHtml(newName)+'</span>');renderLeaderboard();if(document.getElementById('view-logs').classList.contains('active'))renderLogs()}nameEl.innerText=newName});nameEl.addEventListener('paste',e=>{e.preventDefault();const text=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,text)});card.querySelectorAll('.score-add-btn').forEach(btn=>{btn.addEventListener('click',()=>{const val=btn.dataset.add;if(val==='custom'){const input=prompt('给「'+p.name+'」加减分（正数加分 / 负数扣分）：','3');if(input===null)return;const n=Number(input);if(!Number.isFinite(n)||n===0)return;const reason=prompt('原因（可选）：','');if(reason===null)return;addScore(p.id,n,reason)}else{addScore(p.id,Number(val),'')}})});grid.appendChild(card)})}
-function renderRecords(){const list=document.getElementById('recordsList'),countEl=document.getElementById('recordsCount');if(!list)return;if(countEl)countEl.textContent=scoreState.records.length?('共 '+scoreState.records.length+' 条'):'';if(!scoreState.records.length){list.innerHTML='<div class="empty-records"><span class="ico">📋</span>还没有加分记录，点同学卡片上的 +1 试试吧~</div>';return}list.innerHTML='';scoreState.records.forEach((r,i)=>{const item=document.createElement('div');item.className='record-item';item.style.animationDelay=Math.min(i*15,400)+'ms';const isPlus=r.delta>0,deltaText=(isPlus?'+':'')+r.delta,student=state.people.find(s=>s.id===r.studentId),avatar=student?(student.emoji||'🙂'):'🙂',color=student?student.color:'#a78bfa';item.innerHTML='<span class="record-delta '+(isPlus?'plus':'minus')+'">'+deltaText+'</span><span class="record-avatar" style="background:'+color+'">'+escapeHtml(avatar)+'</span><span class="record-student">'+escapeHtml(r.studentName||'未知同学')+'</span><span class="record-reason">'+escapeHtml(r.reason||'')+'</span><span class="record-time" title="'+formatFullTime(r.time)+'">'+formatTime(r.time)+'</span><button class="record-undo">撤销</button>';item.querySelector('.record-undo').addEventListener('click',()=>undoRecord(r.id));list.appendChild(item)})}
-function renderLeaderboard(){const listEl=document.getElementById('leaderboardList');if(!listEl)return;const ranked=state.people.map(p=>({...p,score:scoreState.scores[p.id]||0})).filter(p=>p.score>0).sort((a,b)=>{if(b.score!==a.score)return b.score-a.score;return a.name.localeCompare(b.name,'zh')}).slice(0,5);if(!ranked.length){listEl.innerHTML='<div class="empty-records" style="padding:24px 0"><span class="ico">🏆</span>还没有人获得加分，快去表扬同学吧~</div>';return}const medals=['🥇','🥈','🥉','',''];listEl.innerHTML='';ranked.forEach((p,i)=>{const item=document.createElement('div');item.className='leaderboard-item rank-'+(i+1);item.style.animationDelay=(i*50)+'ms';const medal=medals[i]||('#'+(i+1));item.innerHTML='<div class="leaderboard-rank">'+(i+1)+'</div><div class="leaderboard-avatar" style="background:'+p.color+'">'+escapeHtml(p.emoji||'🙂')+'</div><div class="leaderboard-name">'+escapeHtml(p.name)+'</div><div class="leaderboard-score">+'+p.score+'</div><div class="leaderboard-medal">'+medal+'</div>';listEl.appendChild(item)})}
-function renderTeachers(){const grid=document.getElementById('teachersGrid');if(!grid)return;grid.innerHTML='';teachers.forEach(t=>{const card=document.createElement('div');card.className='teacher-card';card.style.setProperty('--c',t.color);card.innerHTML='<div class="teacher-avatar-circle">'+escapeHtml(t.emoji||'🧑‍🏫')+'</div><div class="teacher-name">'+escapeHtml(t.name)+'</div><div class="teacher-subject">'+escapeHtml(t.subject||'老师')+'</div><div class="teacher-counts"><span>🌸 '+(t.flowers||0)+'</span><span>❤️ '+(t.hearts||0)+'</span></div>';card.addEventListener('click',()=>openTeacher(t.id));grid.appendChild(card)})}
-function openTeacher(id){const t=teachers.find(x=>x.id===id);if(!t)return;editingTeacherId=id;const av=document.getElementById('tmAvatar');av.textContent=t.emoji||'🧑‍🏫';av.style.background=t.color;document.getElementById('tmName').value=t.name||'';document.getElementById('tmSubject').value=t.subject||'';document.getElementById('tmIntro').value=t.intro||'';document.getElementById('tmFlowers').textContent=t.flowers||0;document.getElementById('tmHearts').textContent=t.hearts||0;document.getElementById('teacherModal').classList.add('open')}
-function closeTeacherModal(){document.getElementById('teacherModal').classList.remove('open');editingTeacherId=null}
-function saveTeacher(){const t=teachers.find(x=>x.id===editingTeacherId);if(!t)return;t.name=document.getElementById('tmName').value.trim()||t.name;t.subject=document.getElementById('tmSubject').value.trim();t.intro=document.getElementById('tmIntro').value.trim();saveTeachers();addLog('✏️','更新了 <span class="hl">'+escapeHtml(t.name)+'</span> 的资料');renderTeachers();closeTeacherModal();if(document.getElementById('view-logs').classList.contains('active'))renderLogs()}
-function sendGift(teacherId,type){const t=teachers.find(x=>x.id===teacherId);if(!t)return;if(type==='flower'){t.flowers=(t.flowers||0)+1}else{t.hearts=(t.hearts||0)+1}saveTeachers();addLog(type==='flower'?'🌸':'❤️','给 <span class="hl">'+escapeHtml(t.name)+'</span> 送了'+(type==='flower'?'一束花':'一颗爱心'));document.getElementById('tmFlowers').textContent=t.flowers||0;document.getElementById('tmHearts').textContent=t.hearts||0;renderTeachers();playGiftAnimation(type);if(document.getElementById('view-logs').classList.contains('active'))renderLogs()}
-function playGiftAnimation(type){const layer=document.getElementById('giftLayer'),emojis=type==='flower'?['🌸','💐','🌷','🌺','🏵️','🌼']:['❤️','💖','💗','💓','💕','💝'];for(let i=0;i<18;i++){const el=document.createElement('div');el.className='gift-particle';el.textContent=emojis[Math.floor(Math.random()*emojis.length)];el.style.left=(Math.random()*100)+'vw';el.style.fontSize=(20+Math.random()*22)+'px';el.style.setProperty('--drift',((Math.random()-0.5)*220).toFixed(1)+'px');el.style.animationDelay=(Math.random()*0.5)+'s';el.style.animationDuration=(1.6+Math.random()*0.9)+'s';layer.appendChild(el);setTimeout(()=>el.remove(),3200)}}
+function saveEdit(){const p=state.people.find(x=>x.id===editingId);if(!p)return;Object.keys(p.relations||{}).forEach(oid=>{const other=state.people.find(x=>x.id===oid);if(other&&other.relations)delete other.relations[p.id]});p.name=document.getElementById('fName').value.trim()||p.name;p.emoji=document.getElementById('fEmoji').value.trim()||'🙂';p.color=document.getElementById('fColor').value;p.intro=document.getElementById('fIntro').value.trim();p.tags=document.getElementById('fTags').value.split(/[,，、]/).map(s=>s.trim()).filter(Boolean);const newRel={};let relAdded=0;document.querySelectorAll('#relList .rel-row').forEach(row=>{const tid=row.querySelector('.rel-person').value;if(!tid)return;const label=row.querySelector('.rel-label').value.trim()||'同学',strength=Number(row.querySelector('.rel-strength').value)||3;newRel[tid]={label,strength};relAdded++;const other=state.people.find(x=>x.id===tid);if(other){other.relations=other.relations||{};other.relations[p.id]={label,strength}}});p.relations=newRel;saveData();addLog('🖋️','编辑了 <span class="hl">'+escapeHtml(p.name)+'</span> 的资料，共 '+relAdded+' 个关系');renderBubbles();renderProfile(p);if(document.getElementById('view-logs').classList.contains('active'))renderLogs();if(netInited){netInited=false}closeModal()}
 
 /* ================= 关系网 ================= */
 function buildNetworkData(){
@@ -2078,7 +2048,7 @@ function submitAuth(){
     saveAuth();
     msgEl.classList.add('ok');
     msgEl.textContent=account.role==='admin'?'🎉 注册成功！你是第一个注册的人，获得管理员权限':'🎉 注册成功！';
-    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();updateAdminVisibility();renderMessages();renderFeedback()},900);
+    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();updateAdminVisibility();renderFeedback()},900);
   }else{
     const acc=accounts.find(a=>a.personId===personId);
     if(!acc){msgEl.textContent='这个名字还没注册，请先注册';return}
@@ -2086,14 +2056,14 @@ function submitAuth(){
     currentUser=acc;
     localStorage.setItem('class_wish_userId',acc.id);
     msgEl.classList.add('ok');msgEl.textContent='✅ 登录成功！';
-    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();updateAdminVisibility();renderMessages();renderFeedback()},500);
+    setTimeout(()=>{closeAuthModal();renderWishes();updateUserBtn();updateNoticePermission();updateAdminVisibility();renderFeedback()},500);
   }
 }
 function logout(){
   if(!confirm('确定要退出登录吗？'))return;
   currentUser=null;
   localStorage.removeItem('class_wish_userId');
-  updateUserBtn();renderWishes();updateNoticePermission();updateAdminVisibility();renderMessages();renderFeedback();
+  updateUserBtn();renderWishes();updateNoticePermission();updateAdminVisibility();renderFeedback();
   const adminView=document.getElementById('view-admin');
   if(adminView&&adminView.classList.contains('active'))switchView('home');
 }
@@ -2401,20 +2371,18 @@ function renderAdminPanel(){
   if(!statsEl)return;
   if(!isCurrentAdmin()){
     statsEl.innerHTML='';
-    ['adminAccountList','adminUnregList','adminMsgList'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=''});
+    ['adminAccountList','adminUnregList'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=''});
     return;
   }
   const total=state.people.length;
   const registered=accounts.length;
   const adminCount=accounts.filter(a=>a.role==='admin').length;
   const unregCount=Math.max(0,total-registered);
-  const msgCount=(dataCache.messages||[]).length;
   const stats=[
     {n:total,l:'班级总人数',c:'#a78bfa',i:'👥'},
     {n:registered,l:'已注册账号',c:'#86efac',i:'✅'},
     {n:unregCount,l:'尚未注册',c:'#fbbf24',i:'⏳'},
-    {n:adminCount,l:'管理员',c:'#f0abfc',i:'👑'},
-    {n:msgCount,l:'私信条数',c:'#67e8f9',i:'💬'}
+    {n:adminCount,l:'管理员',c:'#f0abfc',i:'👑'}
   ];
   statsEl.innerHTML=stats.map(s=>'<div class="admin-stat" style="--sc:'+s.c+'"><div class="admin-stat-num" style="color:'+s.c+'">'+s.n+'</div><div class="admin-stat-label">'+s.i+' '+s.l+'</div></div>').join('');
   const listEl=document.getElementById('adminAccountList');
@@ -2429,7 +2397,6 @@ function renderAdminPanel(){
       const person=state.people.find(p=>p.id===acc.personId);
       const wishCount=(dataCache.wishes||[]).filter(w=>w.authorAccountId===acc.id&&!w.deleted).length;
       const photoCount=(dataCache.timeline||[]).filter(x=>x.uploaderAccountId===acc.id).length;
-      const msgCount=(dataCache.messages||[]).filter(m=>m.fromAccountId===acc.id||m.toAccountId===acc.id).length;
       const badges=[];
       if(acc.role==='admin')badges.push('<span class="admin-badge admin">👑 管理员</span>');
       if(currentUser&&currentUser.id===acc.id)badges.push('<span class="admin-badge me">我</span>');
@@ -2440,7 +2407,7 @@ function renderAdminPanel(){
         '<div class="admin-acc-avatar" style="background:'+((person&&person.color)||'#a78bfa')+'">'+escapeHtml((person&&person.emoji)||'🙂')+'</div>'+
         '<div class="admin-acc-info">'+
           '<div class="admin-acc-name">'+escapeHtml(acc.name||'同学')+badges.join('')+'</div>'+
-          '<div class="admin-acc-meta">密码 <b class="admin-pwd">••••</b> · 注册于 '+formatFullTime(acc.createdAt||Date.now())+' · 许愿 '+wishCount+' · 时间轴 '+photoCount+' · 私信 '+msgCount+'</div>'+
+          '<div class="admin-acc-meta">密码 <b class="admin-pwd">••••</b> · 注册于 '+formatFullTime(acc.createdAt||Date.now())+' · 许愿 '+wishCount+' · 时间轴 '+photoCount+'</div>'+
         '</div>'+
         '<div class="admin-acc-actions">'+
           '<button class="admin-act" data-act="pwd">👁 查看密码</button>'+
@@ -2466,54 +2433,6 @@ function renderAdminPanel(){
   if(unregCnt)unregCnt.textContent=unreg.length+' 人';
   if(!unreg.length){unregEl.innerHTML='<div class="admin-empty">🎉 全班同学都注册啦</div>'}
   else{unregEl.innerHTML=unreg.map(p=>'<span class="admin-unreg-item">'+escapeHtml(p.emoji||'🙂')+' '+escapeHtml(p.name)+'</span>').join('')}
-  renderAdminMessages();
-}
-function renderAdminMessages(){
-  if(!isCurrentAdmin())return;
-  const listEl=document.getElementById('adminMsgList');
-  const cntEl=document.getElementById('adminMsgCount');
-  if(!listEl)return;
-  const msgs=(dataCache&&dataCache.messages)||[];
-  if(cntEl)cntEl.textContent=msgs.length+' 条';
-  if(!msgs.length){listEl.innerHTML='<div class="admin-empty">还没有任何私信</div>';return}
-  const groups={};
-  msgs.forEach(m=>{
-    const key=[m.fromAccountId,m.toAccountId].sort().join('|');
-    if(!groups[key])groups[key]=[];
-    groups[key].push(m);
-  });
-  const keys=Object.keys(groups).sort((a,b)=>{
-    const la=groups[a][groups[a].length-1].time||0;
-    const lb=groups[b][groups[b].length-1].time||0;
-    return lb-la;
-  });
-  listEl.innerHTML='';
-  keys.forEach(k=>{
-    const arr=groups[k].sort((a,b)=>(a.time||0)-(b.time||0));
-    const first=arr[0];
-    const a1=accounts.find(x=>x.id===first.fromAccountId);
-    const a2=accounts.find(x=>x.id===first.toAccountId);
-    const nameA=a1?a1.name:first.fromName;
-    const nameB=a2?a2.name:first.toName;
-    const el=document.createElement('div');
-    el.className='admin-msg-pair';
-    const heads='<div class="admin-msg-pair-head"><span>'+escapeHtml(nameA)+'</span><span class="arw">⇄</span><span>'+escapeHtml(nameB)+'</span><span class="cnt">'+arr.length+' 条</span></div>';
-    const bubbles=arr.map(m=>{
-      const isLeft=m.fromAccountId===(a1?a1.id:first.fromAccountId);
-      return '<div class="admin-msg-b '+(isLeft?'':'me')+'"><span class="who">'+escapeHtml(m.fromName)+'</span>'+escapeHtml(m.text)+'<span class="when">'+formatTime(m.time)+'</span></div>';
-    }).join('');
-    el.innerHTML=heads+'<div class="admin-msg-bubbles">'+bubbles+'</div><button class="admin-msg-del">🗑 删除整段对话</button>';
-    el.querySelector('.admin-msg-del').addEventListener('click',()=>{
-      if(!confirm('确定删除这两个人之间的所有私信吗？'))return;
-      dataCache.messages=msgs.filter(m=>{
-        const k2=[m.fromAccountId,m.toAccountId].sort().join('|');
-        return k2!==k;
-      });
-      saveMessages();
-      renderAdminMessages();
-    });
-    listEl.appendChild(el);
-  });
 }
 function adminResetPassword(accId){
   const acc=accounts.find(a=>a.id===accId);if(!acc)return;
@@ -2537,7 +2456,7 @@ function adminToggleRole(accId){
     acc.role='user';
     addLog('👑','取消了 <span class="hl">'+escapeHtml(acc.name)+'</span> 的管理员权限');
   }else{
-    if(!confirm('把「'+acc.name+'」设为管理员？\nTA 将能编辑公告、管理账号、查看私信。'))return;
+    if(!confirm('把「'+acc.name+'」设为管理员？\nTA 将能编辑公告、管理账号。'))return;
     acc.role='admin';
     addLog('👑','把 <span class="hl">'+escapeHtml(acc.name)+'</span> 设为管理员');
   }
@@ -2548,7 +2467,7 @@ function adminToggleRole(accId){
 function adminDeleteAccount(accId){
   const acc=accounts.find(a=>a.id===accId);if(!acc)return;
   if(acc.role==='admin'&&accounts.filter(a=>a.role==='admin').length<=1){alert('这是唯一的管理员账号，不能删除哦');return}
-  if(!confirm('确定删除「'+acc.name+'」的账号吗？\n\n删除后 TA 需要重新注册，但 TA 已发的许愿、时间轴、私信会保留。'))return;
+  if(!confirm('确定删除「'+acc.name+'」的账号吗？\n\n删除后 TA 需要重新注册，但 TA 已发的许愿、时间轴会保留。'))return;
   const isSelf=currentUser&&currentUser.id===acc.id;
   const idx=accounts.findIndex(a=>a.id===accId);
   if(idx<0)return;
@@ -2571,15 +2490,13 @@ function refreshAllUI(){
   if(nt)nt.textContent=hd.className||'六年二班';
   document.title=(hd.className||'六年二班')+' · 班级主页';
   if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles();
-  if(document.getElementById('view-score').classList.contains('active')){renderStudents();renderRecords();renderLeaderboard()}
-  if(document.getElementById('view-teachers').classList.contains('active'))renderTeachers();
   if(document.getElementById('view-wish').classList.contains('active')){renderWishes();updateUserBtn()}
   if(document.getElementById('view-logs').classList.contains('active'))renderLogs();
   if(document.getElementById('view-network').classList.contains('active')&&!netInited){initNetwork()}
   if(document.getElementById('view-notice').classList.contains('active'))renderNoticeMeta();
   if(document.getElementById('view-timeline').classList.contains('active')){renderTimeline();bindTimelineDrag()}
-  if(document.getElementById('view-message').classList.contains('active'))renderMessages();
   if(document.getElementById('view-feedback').classList.contains('active'))renderFeedback();
+  if(document.getElementById('view-quiz').classList.contains('active'))renderQuiz();
   updateNoticePermission();
   updateAdminVisibility();
   if(document.getElementById('view-admin').classList.contains('active'))renderAdminPanel();
@@ -2595,14 +2512,6 @@ document.getElementById('addRelBtn').addEventListener('click',()=>addRelRow());
 document.getElementById('cancelBtn').addEventListener('click',closeModal);
 document.getElementById('saveBtn').addEventListener('click',saveEdit);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.getElementById('studentSearch').addEventListener('input',e=>{searchKeyword=e.target.value;renderStudents()});
-document.getElementById('clearRecordsBtn').addEventListener('click',()=>{if(!scoreState.records.length){alert('还没有记录可以清空~');return}if(!confirm('确定要清空所有加分记录吗？（同学分数和排行榜不会重置）'))return;scoreState.records=[];saveScore();renderRecords()});
-document.getElementById('closeTeacherModal').addEventListener('click',closeTeacherModal);
-document.getElementById('cancelTeacherBtn').addEventListener('click',closeTeacherModal);
-document.getElementById('saveTeacherBtn').addEventListener('click',saveTeacher);
-document.getElementById('teacherModal').addEventListener('click',e=>{if(e.target===document.getElementById('teacherModal'))closeTeacherModal()});
-document.getElementById('sendFlowerBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'flower')});
-document.getElementById('sendHeartBtn').addEventListener('click',()=>{if(editingTeacherId)sendGift(editingTeacherId,'heart')});
 /* 时间轴事件 */
 document.getElementById('tlUploadBtn').addEventListener('click',openTimelineUpload);
 document.getElementById('closeTlEditModal').addEventListener('click',()=>document.getElementById('tlEditModal').classList.remove('open'));
@@ -2635,16 +2544,28 @@ document.querySelectorAll('.tl-filter').forEach(f=>{
     renderTimeline();
   });
 });
+/* 默契大考验事件 */
+document.getElementById('qzRulesBtn').addEventListener('click',()=>openQuizRules(false));
+document.getElementById('closeQzRulesModal').addEventListener('click',closeQuizRules);
+document.getElementById('qzRulesOkBtn').addEventListener('click',closeQuizRules);
+document.getElementById('qzRulesModal').addEventListener('click',e=>{if(e.target===document.getElementById('qzRulesModal'))closeQuizRules()});
+document.getElementById('qzEditRulesBtn').addEventListener('click',openQuizRulesEdit);
+document.getElementById('closeQzRulesEditModal').addEventListener('click',()=>document.getElementById('qzRulesEditModal').classList.remove('open'));
+document.getElementById('qzRulesEditCancelBtn').addEventListener('click',()=>document.getElementById('qzRulesEditModal').classList.remove('open'));
+document.getElementById('qzRulesEditSaveBtn').addEventListener('click',saveQuizRulesEdit);
+document.getElementById('qzRulesEditModal').addEventListener('click',e=>{if(e.target===document.getElementById('qzRulesEditModal'))document.getElementById('qzRulesEditModal').classList.remove('open')});
+document.getElementById('qzCreateBtn').addEventListener('click',openQuizCreate);
+document.getElementById('closeQzCreateModal').addEventListener('click',()=>document.getElementById('qzCreateModal').classList.remove('open'));
+document.getElementById('qzCreateCancelBtn').addEventListener('click',()=>document.getElementById('qzCreateModal').classList.remove('open'));
+document.getElementById('qzCreateModal').addEventListener('click',e=>{if(e.target===document.getElementById('qzCreateModal'))document.getElementById('qzCreateModal').classList.remove('open')});
+document.getElementById('qzCreateConfirmBtn').addEventListener('click',submitQuizCreate);
+document.getElementById('qzAddOptBtn').addEventListener('click',()=>{
+  if(qzEditorOptions.length>=20){alert('选项太多了，最多 20 个');return}
+  qzEditorOptions.push(null);
+  renderQuizEditorOptions();
+});
 /* 意见箱事件 */
 document.getElementById('fbSubmit').addEventListener('click',submitFeedback);
-/* 管理面板 tab 切换 */
-document.querySelectorAll('.admin-tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.admin-tab').forEach(t=>t.classList.toggle('active',t===tab));
-    document.querySelectorAll('.admin-panel').forEach(p=>{p.classList.toggle('active',p.dataset.apanel===tab.dataset.atab)});
-    if(tab.dataset.atab==='messages')renderAdminMessages();
-  });
-});
 /* 下拉菜单 */
 document.querySelectorAll('.nav-drop-trigger').forEach(trigger=>{
   trigger.addEventListener('click',e=>{
@@ -2695,8 +2616,9 @@ document.getElementById('netRefreshBtn').addEventListener('click',async()=>{
       fileSha=json.sha;
       dataCache=JSON.parse(b64Decode(json.content));
       if(!Array.isArray(dataCache.timeline))dataCache.timeline=[];
-      if(!Array.isArray(dataCache.messages))dataCache.messages=[];
       if(!Array.isArray(dataCache.feedback))dataCache.feedback=[];
+      if(!Array.isArray(dataCache.quiz))dataCache.quiz=[];
+      if(typeof dataCache.quizRules!=='string')dataCache.quizRules=QUIZ_RULES_DEFAULT;
       applyCacheToState();
       setSync('🟢 已同步','#86efac');
     }
@@ -2739,7 +2661,7 @@ document.getElementById('closeLikeListModal').addEventListener('click',closeLike
 document.getElementById('likeListModal').addEventListener('click',e=>{if(e.target===document.getElementById('likeListModal'))closeLikeList()});
 document.querySelectorAll('.wish-filter').forEach(f=>{f.addEventListener('click',()=>{wishFilter=f.dataset.filter;document.querySelectorAll('.wish-filter').forEach(x=>x.classList.toggle('active',x===f));renderWishes()})});
 document.getElementById('wishSearch').addEventListener('input',e=>{wishKeyword=e.target.value;renderWishes()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('gateModal').classList.contains('open'))return;if(document.getElementById('guideModal').classList.contains('open'))closeGuide();else if(document.getElementById('wishModal').classList.contains('open'))closeWishModal();else if(document.getElementById('authModal').classList.contains('open'))closeAuthModal();else if(document.getElementById('fulfillModal').classList.contains('open'))closeFulfillModal();else if(document.getElementById('likeListModal').classList.contains('open'))closeLikeList();else if(document.getElementById('tlEditModal').classList.contains('open'))document.getElementById('tlEditModal').classList.remove('open');else if(modal.classList.contains('open'))closeModal();else if(document.getElementById('teacherModal').classList.contains('open'))closeTeacherModal();else if(overlay.classList.contains('open'))closeProfile();closeWishMenu()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(document.getElementById('gateModal').classList.contains('open'))return;if(document.getElementById('guideModal').classList.contains('open'))closeGuide();else if(document.getElementById('wishModal').classList.contains('open'))closeWishModal();else if(document.getElementById('authModal').classList.contains('open'))closeAuthModal();else if(document.getElementById('fulfillModal').classList.contains('open'))closeFulfillModal();else if(document.getElementById('likeListModal').classList.contains('open'))closeLikeList();else if(document.getElementById('tlEditModal').classList.contains('open'))document.getElementById('tlEditModal').classList.remove('open');else if(document.getElementById('qzRulesModal').classList.contains('open'))closeQuizRules();else if(document.getElementById('qzRulesEditModal').classList.contains('open'))document.getElementById('qzRulesEditModal').classList.remove('open');else if(document.getElementById('qzCreateModal').classList.contains('open'))document.getElementById('qzCreateModal').classList.remove('open');else if(modal.classList.contains('open'))closeModal();else if(overlay.classList.contains('open'))closeProfile();closeWishMenu()}});
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(document.getElementById('view-bubbles').classList.contains('active'))renderBubbles();if(document.getElementById('view-network').classList.contains('active')&&netInited){const canvas=document.getElementById('netCanvas');const wrap=document.getElementById('netCanvasWrap');const dpr=window.devicePixelRatio||1;canvas.width=wrap.clientWidth*dpr;canvas.height=wrap.clientHeight*dpr;const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);drawNetwork(ctx,wrap.clientWidth,wrap.clientHeight)}},200)});
 
 /* ================= 启动 ================= */
